@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://photolocation.local/schemas/manifest.schema.json",
+  "title": "Generated public manifest",
+  "description": "Build output consumed by the client. Only approved records. See plan.md §10. Never edited by hand.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifestVersion", "generatedAt", "contentHash", "items"],
+  "properties": {
+    "manifestVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "contentHash": { "type": "string", "minLength": 1 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id", "workType", "image", "location", "depictedDate", "creationDate",
+          "classification", "clues", "title", "artistOrCreator", "context", "attribution"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "workType": { "enum": ["photo", "painting", "drawing"] },
+          "image": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["src", "srcset", "width", "height", "placeholder"],
+            "properties": {
+              "src": { "type": "string", "minLength": 1 },
+              "srcset": { "type": "string" },
+              "width": { "type": "integer", "minimum": 1 },
+              "height": { "type": "integer", "minimum": 1 },
+              "placeholder": { "type": ["string", "null"] }
+            }
+          },
+          "location": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["placeId", "acceptedPlaceIds"],
+            "properties": {
+              "placeId": { "type": "string" },
+              "acceptedPlaceIds": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "depictedDate": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["minYear", "maxYear"],
+            "properties": { "minYear": { "type": "integer" }, "maxYear": { "type": "integer" } }
+          },
+          "creationDate": {
+            "oneOf": [
+              { "type": "null" },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["minYear", "maxYear"],
+                "properties": { "minYear": { "type": "integer" }, "maxYear": { "type": "integer" } }
+              }
+            ]
+          },
+          "classification": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["region", "difficulty", "tags"],
+            "properties": {
+              "region": { "type": "string" },
+              "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 },
+              "tags": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "clues": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["region", "era", "country"],
+            "properties": {
+              "region": { "type": "string" },
+              "era": { "type": "string" },
+              "country": { "type": "string" }
+            }
+          },
+          "title": { "type": "string" },
+          "artistOrCreator": { "type": ["string", "null"] },
+          "context": { "type": "string" },
+          "attribution": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["source", "license", "sourceUrl", "creditText"],
+            "properties": {
+              "source": { "type": "string" },
+              "license": { "type": "string" },
+              "sourceUrl": { "type": "string" },
+              "creditText": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    }
+  }
+}

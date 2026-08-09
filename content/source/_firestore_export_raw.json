@@ -1,0 +1,2112 @@
+{
+  "documents": [
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/0MDvrWOLpWuvP64Rm7xT",
+      "fields": {
+        "file_size": {
+          "doubleValue": 5.12
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Fort_William%2C_Calcutta%2C_1735.jpg"
+        },
+        "name": {
+          "stringValue": "Kolkata"
+        },
+        "width": {
+          "integerValue": "3891"
+        },
+        "height": {
+          "integerValue": "3199"
+        },
+        "country": {
+          "stringValue": "India"
+        },
+        "year": {
+          "integerValue": "1735"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "View of Fort William done after the painting in the Court Room of the Company's house in Leaden Hall Street"
+        }
+      },
+      "createTime": "2025-01-27T09:57:55.097987Z",
+      "updateTime": "2025-01-27T09:57:55.097987Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/10hln5GGn1qrDGvUhViB",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Two views of the English fort in Bombay"
+        },
+        "country": {
+          "stringValue": "India"
+        },
+        "year": {
+          "integerValue": "1672"
+        },
+        "height": {
+          "integerValue": "2145"
+        },
+        "width": {
+          "integerValue": "2400"
+        },
+        "name": {
+          "stringValue": "Mumbai"
+        },
+        "file_size": {
+          "doubleValue": 0.7
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/a6/AMH-6748-NA_Two_views_of_the_English_fort_in_Bombay.jpg"
+        }
+      },
+      "createTime": "2025-01-27T10:01:20.388852Z",
+      "updateTime": "2025-01-27T10:01:20.388852Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/1gAhSDxCCw2nye4Ngn1x",
+      "fields": {
+        "country": {
+          "stringValue": "India"
+        },
+        "year": {
+          "integerValue": "1945"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Original description:\"Chowringhee Square. The Mohammddan mosque"
+        },
+        "name": {
+          "stringValue": "Kolkata"
+        },
+        "height": {
+          "integerValue": "726"
+        },
+        "width": {
+          "integerValue": "914"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/4/47/Chowringhee_Square%2C_Calcutta_in_1945.jpg"
+        }
+      },
+      "createTime": "2025-01-27T09:50:33.893521Z",
+      "updateTime": "2025-01-27T09:50:33.893521Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/4m1HHCBADHwokpXkIfzK",
+      "fields": {
+        "title": {
+          "stringValue": "Gates of Palace at Lucknow William Daniell"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1801"
+        },
+        "country": {
+          "stringValue": "India"
+        },
+        "height": {
+          "integerValue": "300"
+        },
+        "width": {
+          "integerValue": "451"
+        },
+        "name": {
+          "stringValue": "Lucknow"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Gates_of_Palace_at_Lucknow_William_Daniell_1801.jpg"
+        }
+      },
+      "createTime": "2025-01-27T09:44:25.485544Z",
+      "updateTime": "2025-01-27T09:44:25.485544Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/5rFjhtH1bzwwkHMiuXR3",
+      "fields": {
+        "year": {
+          "integerValue": "1540"
+        },
+        "country": {
+          "stringValue": "India"
+        },
+        "title": {
+          "stringValue": "Single Indian women. Christians"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "name": {
+          "stringValue": "Goa"
+        },
+        "height": {
+          "integerValue": "1342"
+        },
+        "width": {
+          "integerValue": "1896"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Codice_Casanatense_Portuguese_Nobleman_and_Christian_Indian.jpg"
+        },
+        "file_size": {
+          "doubleValue": 0.6
+        }
+      },
+      "createTime": "2025-01-27T09:59:43.174737Z",
+      "updateTime": "2025-01-27T09:59:43.174737Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/7DlSRNbJToUTId95eNTm",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "San Francisco harbor at Yerba Buena Cove in 1850 or 1851 — with Yerba Buena Island, and Berkeley Hills, in the background."
+        },
+        "country": {
+          "stringValue": "United States of America"
+        },
+        "year": {
+          "integerValue": "1851"
+        },
+        "file_size": {
+          "doubleValue": 1.3
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/4/46/SanFranciscoharbor1851c_sharp.jpg"
+        },
+        "height": {
+          "integerValue": "1727"
+        },
+        "width": {
+          "integerValue": "2574"
+        },
+        "name": {
+          "stringValue": "San Francisco"
+        }
+      },
+      "createTime": "2025-01-24T10:30:23.265703Z",
+      "updateTime": "2025-01-24T10:30:23.265703Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/8Bmxec8WmnNZYAsKEtw2",
+      "fields": {
+        "title": {
+          "stringValue": "Kathmandu Market"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1920"
+        },
+        "country": {
+          "stringValue": "Nepal"
+        },
+        "height": {
+          "integerValue": "231"
+        },
+        "width": {
+          "integerValue": "390"
+        },
+        "name": {
+          "stringValue": "Kathmandu"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/7/77/Kathmandu_Market_1920.jpg"
+        }
+      },
+      "createTime": "2025-01-27T09:35:04.937997Z",
+      "updateTime": "2025-01-27T09:35:04.937997Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/8JBvNcyk3NZTTlJNEMEp",
+      "fields": {
+        "file_size": {
+          "doubleValue": 1.44
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Los_Primeros_Pobladores_de_Montevideo.png"
+        },
+        "name": {
+          "stringValue": "Montevideo"
+        },
+        "width": {
+          "integerValue": "1000"
+        },
+        "height": {
+          "integerValue": "753"
+        },
+        "year": {
+          "integerValue": "1726"
+        },
+        "country": {
+          "stringValue": "Uruguay"
+        },
+        "title": {
+          "stringValue": "Los Primeros Pobladores de Montevideo"
+        },
+        "type": {
+          "stringValue": "png"
+        }
+      },
+      "createTime": "2025-01-24T10:34:27.471264Z",
+      "updateTime": "2025-01-24T10:34:27.471264Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/9ICNu0Dxbs1pBBn9eC3M",
+      "fields": {
+        "file_size": {
+          "doubleValue": 4.94
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Wyld%2C_William_-_Manchester_from_Kersal_Moor%2C_with_rustic_figures_and_goats_-_Google_Art_Project.jpg"
+        },
+        "name": {
+          "stringValue": "Manchester"
+        },
+        "width": {
+          "integerValue": "6133"
+        },
+        "height": {
+          "integerValue": "3931"
+        },
+        "year": {
+          "integerValue": "1852"
+        },
+        "country": {
+          "stringValue": "United Kingdom"
+        },
+        "title": {
+          "stringValue": "Wyld, William - Manchester from Kersal Moor, with rustic figures and goats"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        }
+      },
+      "createTime": "2025-01-23T22:43:29.967467Z",
+      "updateTime": "2025-01-23T22:43:29.967467Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/AB2kSzel4Ac2OmyPLq8U",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Kabul, capitale dell’Afghanistan"
+        },
+        "country": {
+          "stringValue": "Afghanistan"
+        },
+        "year": {
+          "integerValue": "1885"
+        },
+        "file_size": {
+          "doubleValue": 2.64
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Kabul%2C_capitale_dell%E2%80%99Afganistan_a.jpg"
+        },
+        "width": {
+          "integerValue": "1944"
+        },
+        "height": {
+          "integerValue": "2712"
+        },
+        "name": {
+          "stringValue": "Kabul"
+        }
+      },
+      "createTime": "2025-01-27T09:31:00.856076Z",
+      "updateTime": "2025-01-27T09:31:00.856076Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/AInMqUqVrbJRpyr0jXHF",
+      "fields": {
+        "file_size": {
+          "doubleValue": 0.5
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/0/08/Braunius_Odense.jpg"
+        },
+        "height": {
+          "integerValue": "1124"
+        },
+        "width": {
+          "integerValue": "1688"
+        },
+        "name": {
+          "stringValue": "Odense"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Engraving of Odense from Braun & Hogenberg: Civitates Orbis Terrarum 1593."
+        },
+        "country": {
+          "stringValue": "Denmark"
+        },
+        "year": {
+          "integerValue": "1593"
+        }
+      },
+      "createTime": "2025-01-31T08:15:39.684850Z",
+      "updateTime": "2025-01-31T08:15:39.684850Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/AasRZ9MHfWX3avrFwMGT",
+      "fields": {
+        "year": {
+          "integerValue": "1892"
+        },
+        "country": {
+          "stringValue": "Nigeria"
+        },
+        "title": {
+          "stringValue": "Lagos, from 1892 book The Story of Africa and its Explorers"
+        },
+        "type": {
+          "stringValue": "png"
+        },
+        "file_size": {
+          "doubleValue": 1.57
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Lagos%2C_from_1892_book_The_Story_of_Africa_and_its_Explorers.png"
+        },
+        "name": {
+          "stringValue": "Lagos"
+        },
+        "width": {
+          "integerValue": "955"
+        },
+        "height": {
+          "integerValue": "797"
+        }
+      },
+      "createTime": "2025-01-22T10:07:52.931322Z",
+      "updateTime": "2025-01-22T10:07:52.931322Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/BW303kWXn1vXuRM2nJdt",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Shellhuset on fire"
+        },
+        "country": {
+          "stringValue": "Denmark"
+        },
+        "year": {
+          "integerValue": "1945"
+        },
+        "file_size": {
+          "doubleValue": 0.4
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/3/37/Shellhuset_210345.jpg"
+        },
+        "height": {
+          "integerValue": "1300"
+        },
+        "width": {
+          "integerValue": "2000"
+        },
+        "name": {
+          "stringValue": "Copenhagen"
+        }
+      },
+      "createTime": "2025-01-31T08:05:26.384010Z",
+      "updateTime": "2025-01-31T08:05:26.384010Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/CWogM3KStTE6br1WgpkQ",
+      "fields": {
+        "name": {
+          "stringValue": "New Orleans"
+        },
+        "width": {
+          "integerValue": "1879"
+        },
+        "height": {
+          "integerValue": "1197"
+        },
+        "file_size": {
+          "doubleValue": 0.8
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/a1/CanalSt1857BallouKilburn.jpg"
+        },
+        "country": {
+          "stringValue": "United States of America"
+        },
+        "year": {
+          "integerValue": "1857"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "view of Canal Street, looking almost due north from about the intersection with Carondelet and Bourbon Streets"
+        }
+      },
+      "createTime": "2025-01-23T22:44:52.208271Z",
+      "updateTime": "2025-01-23T22:44:52.208271Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/CpA6lbMxiOir5NRXpUZb",
+      "fields": {
+        "file_size": {
+          "doubleValue": 5.43
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/f/fd/George_Street_Sydney_1883.jpg"
+        },
+        "name": {
+          "stringValue": "Sydney"
+        },
+        "width": {
+          "integerValue": "4572"
+        },
+        "height": {
+          "integerValue": "3564"
+        },
+        "country": {
+          "stringValue": "Australia"
+        },
+        "year": {
+          "integerValue": "1883"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "George Street, Sydney, 1883, by Alfred Tischbauer, oil painting, State Library of New South Wales"
+        }
+      },
+      "createTime": "2025-01-23T22:47:28.010861Z",
+      "updateTime": "2025-01-23T22:47:28.010861Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/FLafYEIEXDQD3Rsfe5wZ",
+      "fields": {
+        "name": {
+          "stringValue": "Bogotá"
+        },
+        "width": {
+          "integerValue": "800"
+        },
+        "height": {
+          "integerValue": "616"
+        },
+        "file_size": {
+          "doubleValue": 0.2
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/7/75/Bogot%C3%A1.jpg"
+        },
+        "country": {
+          "stringValue": "Colombia"
+        },
+        "year": {
+          "integerValue": "1887"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Vista de Bogotá"
+        }
+      },
+      "createTime": "2025-01-24T10:33:18.129627Z",
+      "updateTime": "2025-01-24T10:33:18.129627Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/Fzv5KJh5vUGSY3DO3cu3",
+      "fields": {
+        "height": {
+          "integerValue": "445"
+        },
+        "width": {
+          "integerValue": "709"
+        },
+        "name": {
+          "stringValue": "Dhaka"
+        },
+        "file_size": {
+          "doubleValue": 0.6
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/1/1f/DhakaCity1861.png"
+        },
+        "title": {
+          "stringValue": "Dhaka City across Buriganga River"
+        },
+        "type": {
+          "stringValue": "png"
+        },
+        "year": {
+          "integerValue": "1861"
+        },
+        "country": {
+          "stringValue": "Bangladesh"
+        }
+      },
+      "createTime": "2025-01-27T09:39:17.709045Z",
+      "updateTime": "2025-01-27T09:39:17.709045Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/GdmnP3qXDRItrpuku4kN",
+      "fields": {
+        "year": {
+          "integerValue": "1699"
+        },
+        "country": {
+          "stringValue": "Cuba"
+        },
+        "title": {
+          "stringValue": "17th century depiction of Havana."
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "name": {
+          "stringValue": "Havana"
+        },
+        "width": {
+          "integerValue": "5500"
+        },
+        "height": {
+          "integerValue": "4595"
+        },
+        "file_size": {
+          "doubleValue": 5.06
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Panorama_of_La_Habana_%28Amsterdam%2C_17th_century%29.jpg"
+        }
+      },
+      "createTime": "2025-01-24T10:32:21.119593Z",
+      "updateTime": "2025-01-24T10:32:21.119593Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/GseIHTrlevl39VT8PX49",
+      "fields": {
+        "width": {
+          "integerValue": "1916"
+        },
+        "height": {
+          "integerValue": "1343"
+        },
+        "name": {
+          "stringValue": "Varanasi"
+        },
+        "file_size": {
+          "doubleValue": 1.78
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Bathing_Ghat_Banaras_India_1890.jpg"
+        },
+        "title": {
+          "stringValue": "Bathing Ghat Banaras India"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1890"
+        },
+        "country": {
+          "stringValue": "India"
+        }
+      },
+      "createTime": "2025-01-27T09:41:34.168678Z",
+      "updateTime": "2025-01-27T09:41:34.168678Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/HDiiMk65zAhGuM0v80HY",
+      "fields": {
+        "name": {
+          "stringValue": "Dhaka"
+        },
+        "width": {
+          "integerValue": "900"
+        },
+        "height": {
+          "integerValue": "770"
+        },
+        "file_size": {
+          "doubleValue": 0.2
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Zoffany-Lalbagh_Fort.jpg"
+        },
+        "country": {
+          "stringValue": "Bangladesh"
+        },
+        "year": {
+          "integerValue": "1787"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "\"The South Gate of the Lalbagh Fort\" oil on canvas, by the German painter Johan Zoffany"
+        }
+      },
+      "createTime": "2025-01-27T09:37:08.754084Z",
+      "updateTime": "2025-01-27T09:37:08.754084Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/JC8McKIsmJ03OinZDZ0X",
+      "fields": {
+        "width": {
+          "integerValue": "400"
+        },
+        "height": {
+          "integerValue": "300"
+        },
+        "name": {
+          "stringValue": "Karachi"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/af/Karachi04c.jpg"
+        },
+        "title": {
+          "stringValue": "A postcard from 1930 of Elphinstone Street, Karachi."
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1930"
+        },
+        "country": {
+          "stringValue": "Pakistan"
+        }
+      },
+      "createTime": "2025-01-27T09:27:59.683237Z",
+      "updateTime": "2025-01-27T09:27:59.683237Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/JOZfAagjgY3OxWBlkT29",
+      "fields": {
+        "year": {
+          "integerValue": "1910"
+        },
+        "country": {
+          "stringValue": "Pakistan"
+        },
+        "title": {
+          "stringValue": "St Joseph Convent catholic high school, Karachi"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "name": {
+          "stringValue": "Karachi"
+        },
+        "height": {
+          "integerValue": "342"
+        },
+        "width": {
+          "integerValue": "570"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/b/bd/St_Joseph_Convent_School_Karachi_in_1910.jpg"
+        }
+      },
+      "createTime": "2025-01-27T09:28:47.641782Z",
+      "updateTime": "2025-01-27T09:28:47.641782Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/JT2nlgqrTJYOGQrgCdOa",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Illustrasjon hentet fra boken Nordiska taflor av ukjent forfatter og utgitt av Albert Bonnier"
+        },
+        "country": {
+          "stringValue": "Denmark"
+        },
+        "year": {
+          "integerValue": "1865"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/d/df/Staden_Odense_p%C3%A5_Fyen%2C_sedd_fr%C3%A5n_Allerups_Maskinfabrik_-_Nordiska_taflor_-_no-nb_digibok_2014031426011-61.jpg"
+        },
+        "file_size": {
+          "doubleValue": 2.34
+        },
+        "width": {
+          "integerValue": "3862"
+        },
+        "height": {
+          "integerValue": "2819"
+        },
+        "name": {
+          "stringValue": "Odense"
+        }
+      },
+      "createTime": "2025-01-31T08:13:55.738007Z",
+      "updateTime": "2025-01-31T08:13:55.738007Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/LRpBClPm11iDsyl1UaoX",
+      "fields": {
+        "title": {
+          "stringValue": "Bird's eye view of the city of Jaffnapatnam"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1658"
+        },
+        "country": {
+          "stringValue": "Sri Lanka"
+        },
+        "height": {
+          "integerValue": "1669"
+        },
+        "width": {
+          "integerValue": "2400"
+        },
+        "name": {
+          "stringValue": "Jaffna"
+        },
+        "file_size": {
+          "doubleValue": 0.6
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/8/8a/AMH-4491-NA_Bird%27s_eye_view_of_the_city_of_Jaffnapatnam.jpg"
+        }
+      },
+      "createTime": "2025-01-27T10:09:12.812894Z",
+      "updateTime": "2025-01-27T10:09:12.812894Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/RvTVuAyb3QVTWrHFrojy",
+      "fields": {
+        "title": {
+          "stringValue": "Copper engraving, 'De Stadt Colombe' [The Town of Colombo],"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1775"
+        },
+        "country": {
+          "stringValue": "Sri Lanka"
+        },
+        "width": {
+          "integerValue": "973"
+        },
+        "height": {
+          "integerValue": "657"
+        },
+        "name": {
+          "stringValue": "Colombo"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Colombo%2C_after_Kip.jpg"
+        },
+        "file_size": {
+          "doubleValue": 0.2
+        }
+      },
+      "createTime": "2025-01-27T10:06:38.465890Z",
+      "updateTime": "2025-01-27T10:06:38.465890Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/TDDdEUAfZiqEm1PUgxbo",
+      "fields": {
+        "height": {
+          "integerValue": "2098"
+        },
+        "width": {
+          "integerValue": "3057"
+        },
+        "name": {
+          "stringValue": "Durban"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/2/24/AFR_V4_D241_Port_Natal_and_Durban_-_view_taken_from_the_bluff.png"
+        },
+        "file_size": {
+          "doubleValue": 4.34
+        },
+        "type": {
+          "stringValue": "png"
+        },
+        "title": {
+          "stringValue": "Port Natal and Durban - view taken from the bluff"
+        },
+        "country": {
+          "stringValue": "South Africa"
+        },
+        "year": {
+          "integerValue": "1893"
+        }
+      },
+      "createTime": "2025-01-24T10:38:06.934321Z",
+      "updateTime": "2025-01-24T10:38:06.934321Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/TNsFwjkL6WLUAvGFynzM",
+      "fields": {
+        "name": {
+          "stringValue": "Kampala"
+        },
+        "height": {
+          "integerValue": "764"
+        },
+        "width": {
+          "integerValue": "1024"
+        },
+        "file_size": {
+          "doubleValue": 0.2
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Uganda._Kampala._Imperial_Hotel_LOC_matpc.17441.jpg"
+        },
+        "country": {
+          "stringValue": "Uganda"
+        },
+        "year": {
+          "integerValue": "1936"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Uganda. Kampala. Imperial Hotel"
+        }
+      },
+      "createTime": "2025-01-24T10:37:11.540722Z",
+      "updateTime": "2025-01-24T10:37:11.540722Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/Uhmo2ZDUV9x0eBjldrT7",
+      "fields": {
+        "country": {
+          "stringValue": "Madagascar"
+        },
+        "year": {
+          "integerValue": "1885"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Drawing of the tombs of King Radama I and Queen Rasoherina at the Rova of Antananarivo, Madagascar"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Tombs_of_Radama_and_Rasoherina_at_Rova_of_Antananarivo_Madagascar.jpg"
+        },
+        "name": {
+          "stringValue": "Antananarivo"
+        },
+        "width": {
+          "integerValue": "759"
+        },
+        "height": {
+          "integerValue": "449"
+        }
+      },
+      "createTime": "2025-01-24T10:38:57.588990Z",
+      "updateTime": "2025-01-24T10:38:57.588990Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/Z9y0zpzfN9uHf7ga3f19",
+      "fields": {
+        "country": {
+          "stringValue": "Pakistan"
+        },
+        "year": {
+          "integerValue": "1893"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Panjab: The child Maharajah of Lahore, Duleep Singh enters his palace in Lahore"
+        },
+        "name": {
+          "stringValue": "Lahore"
+        },
+        "height": {
+          "integerValue": "2875"
+        },
+        "width": {
+          "integerValue": "4000"
+        },
+        "file_size": {
+          "doubleValue": 3.39
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Maharajah_Duleep_Singh_%281838-1893%29%2C_entering_his_palace_in_Lahore%2C_escorted_by_British_troops.jpg"
+        }
+      },
+      "createTime": "2025-01-27T09:33:24.929784Z",
+      "updateTime": "2025-01-27T09:33:24.929784Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/ZMb8nuDjxetB9GWUcmyJ",
+      "fields": {
+        "name": {
+          "stringValue": "Basra"
+        },
+        "width": {
+          "integerValue": "1200"
+        },
+        "height": {
+          "integerValue": "899"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/0/09/Mss_Eur_F111_33_1492.jpg"
+        },
+        "file_size": {
+          "doubleValue": 0.2
+        },
+        "year": {
+          "integerValue": "1908"
+        },
+        "country": {
+          "stringValue": "Iraq"
+        },
+        "title": {
+          "stringValue": "Black and white print of a photograph of ‘Ashshār creek in Basrah [Basra, Iraq]."
+        },
+        "type": {
+          "stringValue": "jpeg"
+        }
+      },
+      "createTime": "2025-01-27T09:19:53.818536Z",
+      "updateTime": "2025-01-27T09:19:53.818536Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/ZvZrFNxjwvNjBaHNwPOA",
+      "fields": {
+        "file_size": {
+          "doubleValue": 0.7
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/2/24/Shuja_Shah_Durrani_of_Afghanistan_in_1839.jpg"
+        },
+        "width": {
+          "integerValue": "968"
+        },
+        "height": {
+          "integerValue": "712"
+        },
+        "name": {
+          "stringValue": "Kabul"
+        },
+        "title": {
+          "stringValue": "Interior of the palace of Shah Shuja I Molk, the late king of Kabul"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1839"
+        },
+        "country": {
+          "stringValue": "Afghanistan"
+        }
+      },
+      "createTime": "2025-01-27T09:31:55.156165Z",
+      "updateTime": "2025-01-27T09:31:55.156165Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/aRlEuAY3A9pPEVJXrX0P",
+      "fields": {
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/1/19/Ministry_of_Information_First_World_War_Official_Collection_Q25671.jpg"
+        },
+        "name": {
+          "stringValue": "Basra"
+        },
+        "width": {
+          "integerValue": "800"
+        },
+        "height": {
+          "integerValue": "576"
+        },
+        "year": {
+          "integerValue": "1915"
+        },
+        "country": {
+          "stringValue": "Iraq"
+        },
+        "title": {
+          "stringValue": "General view of Ashar Creek and bazaar, native boats in the Creek."
+        },
+        "type": {
+          "stringValue": "jpeg"
+        }
+      },
+      "createTime": "2025-01-27T09:21:34.932040Z",
+      "updateTime": "2025-01-27T09:21:34.932040Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/bHcyrFVmWcPME1NCvu47",
+      "fields": {
+        "country": {
+          "stringValue": "Chile"
+        },
+        "year": {
+          "integerValue": "1821"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "The Cañada, Santiago"
+        },
+        "file_size": {
+          "doubleValue": 0.3
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Schmidtmeyer%2C_Peter_%26_Scharf%2C_G_-_The_Ca%C3%B1ada%2C_Santiago_-JCB_Library_f1_%28cropped%29.jpg"
+        },
+        "name": {
+          "stringValue": "Santiago"
+        },
+        "height": {
+          "integerValue": "511"
+        },
+        "width": {
+          "integerValue": "716"
+        }
+      },
+      "createTime": "2025-01-22T10:06:55.583455Z",
+      "updateTime": "2025-01-22T10:06:55.583455Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/bgVTpzNqA9Idpj5Ss65J",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Kazan by Adam Olearius"
+        },
+        "country": {
+          "stringValue": "Russia"
+        },
+        "year": {
+          "integerValue": "1656"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/4/41/CasanTartarorum_by_Olearius.jpg"
+        },
+        "file_size": {
+          "doubleValue": 0.3
+        },
+        "height": {
+          "integerValue": "743"
+        },
+        "width": {
+          "integerValue": "1024"
+        },
+        "name": {
+          "stringValue": "Kazan"
+        }
+      },
+      "createTime": "2025-01-27T09:27:15.426180Z",
+      "updateTime": "2025-01-27T09:27:15.426180Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/c1taP3DWjGFL3YzGx7MS",
+      "fields": {
+        "name": {
+          "stringValue": "Accra"
+        },
+        "width": {
+          "integerValue": "1469"
+        },
+        "height": {
+          "integerValue": "1079"
+        },
+        "file_size": {
+          "integerValue": "1"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/6/63/Hauptstra%C3%9FeAccra18851908_300dpi.jpg"
+        },
+        "country": {
+          "stringValue": "Ghana"
+        },
+        "year": {
+          "integerValue": "1908"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "The main street of Accra"
+        }
+      },
+      "createTime": "2025-01-24T10:35:26.150090Z",
+      "updateTime": "2025-01-24T10:35:26.150090Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/eat6HUc6dqO4JKOqVZgR",
+      "fields": {
+        "file_size": {
+          "doubleValue": 0.4
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Kazan_University%2C_1832.jpg"
+        },
+        "width": {
+          "integerValue": "1465"
+        },
+        "height": {
+          "integerValue": "926"
+        },
+        "name": {
+          "stringValue": "Kazan"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Kazan University"
+        },
+        "country": {
+          "stringValue": "Russia"
+        },
+        "year": {
+          "integerValue": "1834"
+        }
+      },
+      "createTime": "2025-01-27T09:26:01.574051Z",
+      "updateTime": "2025-01-27T09:26:01.574051Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/egVxoK9oTJLIjoUaKOAE",
+      "fields": {
+        "width": {
+          "integerValue": "3854"
+        },
+        "height": {
+          "integerValue": "3229"
+        },
+        "name": {
+          "stringValue": "Mexico City"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/6/62/5829_Paseo_de_la_Viga_con_la_iglesia_de_Iztacalco.jpg"
+        },
+        "file_size": {
+          "doubleValue": 11.53
+        },
+        "title": {
+          "stringValue": "Canal de la Vida Paseo de la Viga con la iglesia de Iztacalco"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1642"
+        },
+        "country": {
+          "stringValue": "Mexico"
+        }
+      },
+      "createTime": "2025-01-23T22:46:19.858975Z",
+      "updateTime": "2025-01-23T22:46:19.858975Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/ew10GpLUzOE9iKpP2o3J",
+      "fields": {
+        "title": {
+          "stringValue": "Vancouver as seen from Fairview, British Columbia, Canada, 1904"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1904"
+        },
+        "country": {
+          "stringValue": "Canada"
+        },
+        "file_size": {
+          "doubleValue": 0.3
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Vancouver_from_Fairview%2C_BC%2C_1904.jpg"
+        },
+        "height": {
+          "integerValue": "598"
+        },
+        "width": {
+          "integerValue": "768"
+        },
+        "name": {
+          "stringValue": "Vancouver"
+        }
+      },
+      "createTime": "2025-01-24T10:29:14.273877Z",
+      "updateTime": "2025-01-24T10:29:14.273877Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/fOPIEbgzkEHP3s3iFCGy",
+      "fields": {
+        "height": {
+          "integerValue": "481"
+        },
+        "width": {
+          "integerValue": "800"
+        },
+        "name": {
+          "stringValue": "Oslo"
+        },
+        "file_size": {
+          "doubleValue": 0.2
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Christiania_Theater_OB.F02178D.jpg"
+        },
+        "title": {
+          "stringValue": "Christiania Theater"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1860"
+        },
+        "country": {
+          "stringValue": "Norway"
+        }
+      },
+      "createTime": "2025-01-31T08:02:21.340546Z",
+      "updateTime": "2025-01-31T08:02:21.340546Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/gWj8r1BNbJojfekDoidZ",
+      "fields": {
+        "country": {
+          "stringValue": "Pakistan"
+        },
+        "year": {
+          "integerValue": "1890"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Street scene of Lahore"
+        },
+        "file_size": {
+          "doubleValue": 1.52
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Street_scene_of_Lahore%2C_1890s_2.jpg"
+        },
+        "name": {
+          "stringValue": "Lahore"
+        },
+        "width": {
+          "integerValue": "3307"
+        },
+        "height": {
+          "integerValue": "4000"
+        }
+      },
+      "createTime": "2025-01-27T09:34:15.148942Z",
+      "updateTime": "2025-01-27T09:34:15.148942Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/hAy14a5ev3CBNy2TyOl1",
+      "fields": {
+        "width": {
+          "integerValue": "500"
+        },
+        "height": {
+          "integerValue": "332"
+        },
+        "name": {
+          "stringValue": "London"
+        },
+        "file_size": {
+          "doubleValue": 0.02
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Panoramic_view_of_London_in_1751_by_T._Bowles.JPG"
+        },
+        "title": {
+          "stringValue": "A General View of the City of London and the River Thames, plate 2 from 'Views of London', 1794"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1794"
+        },
+        "country": {
+          "stringValue": "United Kingdom"
+        }
+      },
+      "createTime": "2025-01-22T09:36:13.603815Z",
+      "updateTime": "2025-01-22T09:36:13.603815Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/i7EevciEdRZ0e4dhqVjx",
+      "fields": {
+        "file_size": {
+          "doubleValue": 1.77
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/4/4d/%22Plan_de_Goa%22%2C_in_Histoire_g%C3%A9n%C3%A9rale_des_voyages%2C1750.jpg"
+        },
+        "height": {
+          "integerValue": "3339"
+        },
+        "width": {
+          "integerValue": "5707"
+        },
+        "name": {
+          "stringValue": "Goa"
+        },
+        "title": {
+          "stringValue": "Plan de Goa"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1750"
+        },
+        "country": {
+          "stringValue": "India"
+        }
+      },
+      "createTime": "2025-01-27T09:58:47.170133Z",
+      "updateTime": "2025-01-27T09:58:47.170133Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/lRtmuzxeuKTaWbh1TOL1",
+      "fields": {
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/5/59/View_of_Prague_from_the_Castle_Staircase_by_W._M._R._Quick.jpg"
+        },
+        "file_size": {
+          "doubleValue": 1.02
+        },
+        "name": {
+          "stringValue": "Prague"
+        },
+        "height": {
+          "integerValue": "981"
+        },
+        "width": {
+          "integerValue": "1347"
+        },
+        "country": {
+          "stringValue": "Czechia"
+        },
+        "year": {
+          "integerValue": "1882"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "View of Prague from the Castle Staircase by W. M. R. Quick.jpg"
+        }
+      },
+      "createTime": "2025-01-21T10:06:17.085924Z",
+      "updateTime": "2025-01-21T14:44:42.680859Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/leqJEeWAjkBDBcGaeJjG",
+      "fields": {
+        "title": {
+          "stringValue": "Waterfront of Pondicherry, French India."
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1900"
+        },
+        "country": {
+          "stringValue": "India"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/9/91/Pondicherry_waterfront_1900.jpg"
+        },
+        "file_size": {
+          "doubleValue": 0.4
+        },
+        "width": {
+          "integerValue": "1394"
+        },
+        "height": {
+          "integerValue": "958"
+        },
+        "name": {
+          "stringValue": "Pondicherry"
+        }
+      },
+      "createTime": "2025-01-27T10:05:21.161745Z",
+      "updateTime": "2025-01-27T10:05:21.161745Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/mJ1IV4I1BxRSR6kS6AFw",
+      "fields": {
+        "country": {
+          "stringValue": "South Korea"
+        },
+        "year": {
+          "integerValue": "1892"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Street and city gate in old Seoul (late 19th century)"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/7/70/Hauptstrasse_und_Palasttor_in_Seoul.jpg"
+        },
+        "name": {
+          "stringValue": "Seoul"
+        },
+        "width": {
+          "integerValue": "871"
+        },
+        "height": {
+          "integerValue": "545"
+        }
+      },
+      "createTime": "2025-01-22T10:08:57.278128Z",
+      "updateTime": "2025-01-22T10:08:57.278128Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/msnWYinneDPPFWC7etgM",
+      "fields": {
+        "name": {
+          "stringValue": "Baghdad"
+        },
+        "width": {
+          "integerValue": "3845"
+        },
+        "height": {
+          "integerValue": "2718"
+        },
+        "file_size": {
+          "doubleValue": 1.37
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Baghdad_LOC_13186.jpg"
+        },
+        "country": {
+          "stringValue": "Iraq"
+        },
+        "year": {
+          "integerValue": "1932"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Iraq, Baghdad & mosque."
+        }
+      },
+      "createTime": "2025-01-27T09:22:36.061224Z",
+      "updateTime": "2025-01-27T09:22:36.061224Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/p9pT9fAk0dRWOuveOFOb",
+      "fields": {
+        "width": {
+          "integerValue": "1200"
+        },
+        "height": {
+          "integerValue": "876"
+        },
+        "name": {
+          "stringValue": "Kazan"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Capture_of_Kazan_%28Shamshin%2C_1894%29.jpeg"
+        },
+        "file_size": {
+          "doubleValue": 0.2
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Capture of Kazan (Shamshin, 1894)"
+        },
+        "country": {
+          "stringValue": "Russia"
+        },
+        "year": {
+          "integerValue": "1894"
+        }
+      },
+      "createTime": "2025-01-27T09:24:52.949350Z",
+      "updateTime": "2025-01-27T09:24:52.949350Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/pYQoiaNZ0gULY8qbm1bl",
+      "fields": {
+        "country": {
+          "stringValue": "Norway"
+        },
+        "year": {
+          "integerValue": "1813"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "LAMOTTE(1813) p161 CHRISTIANIA (OSLO)"
+        },
+        "file_size": {
+          "doubleValue": 1.75
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/6/63/LAMOTTE%281813%29_p161_CHRISTIANIA_%28OSLO%29.jpg"
+        },
+        "name": {
+          "stringValue": "Oslo"
+        },
+        "width": {
+          "integerValue": "1996"
+        },
+        "height": {
+          "integerValue": "1495"
+        }
+      },
+      "createTime": "2025-01-31T08:01:21.613414Z",
+      "updateTime": "2025-01-31T08:01:21.613414Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/q1nR5B9ORAjBxkpcOlqp",
+      "fields": {
+        "title": {
+          "stringValue": "The old fort (Qasim Fort?) at Karachi, old sketch from the 1830's."
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1830"
+        },
+        "country": {
+          "stringValue": "Pakistan"
+        },
+        "width": {
+          "integerValue": "783"
+        },
+        "height": {
+          "integerValue": "441"
+        },
+        "name": {
+          "stringValue": "Karachi"
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/3/33/Oldkarachi.jpg"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        }
+      },
+      "createTime": "2025-01-27T09:29:56.275698Z",
+      "updateTime": "2025-01-27T09:29:56.275698Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/qMZ1OqbCAJwazqGtIH22",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Christiania tekniske skole"
+        },
+        "country": {
+          "stringValue": "Norway"
+        },
+        "year": {
+          "integerValue": "1900"
+        },
+        "file_size": {
+          "doubleValue": 0.6
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Christiania_tekniske_skole_OB.F14680ai.jpg"
+        },
+        "width": {
+          "integerValue": "1079"
+        },
+        "height": {
+          "integerValue": "804"
+        },
+        "name": {
+          "stringValue": "Oslo"
+        }
+      },
+      "createTime": "2025-01-31T08:03:22.021337Z",
+      "updateTime": "2025-01-31T08:03:22.021337Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/t48IPli0dPBC8zmdR1Xx",
+      "fields": {
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Odense_Aa_Johs_Boesen.jpg"
+        },
+        "file_size": {
+          "doubleValue": 0.8
+        },
+        "name": {
+          "stringValue": "Odense"
+        },
+        "width": {
+          "integerValue": "1481"
+        },
+        "height": {
+          "integerValue": "808"
+        },
+        "country": {
+          "stringValue": "Denmark"
+        },
+        "year": {
+          "integerValue": "1893"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Odense Aa Johs Boesen"
+        }
+      },
+      "createTime": "2025-01-31T08:14:48.696258Z",
+      "updateTime": "2025-01-31T08:14:48.696258Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/tVNfXvCEn2icSUsnfk2w",
+      "fields": {
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/0/01/Kathmandu_Seto_Machindranath_19th_century.jpg"
+        },
+        "width": {
+          "integerValue": "480"
+        },
+        "height": {
+          "integerValue": "630"
+        },
+        "name": {
+          "stringValue": "Kathmandu"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Kathmandu. Seto Machindranath festival"
+        },
+        "country": {
+          "stringValue": "Nepal"
+        },
+        "year": {
+          "integerValue": "1915"
+        }
+      },
+      "createTime": "2025-01-27T09:35:45.905969Z",
+      "updateTime": "2025-01-27T09:35:45.905969Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/tssSR1DXwUCljT3ykDjV",
+      "fields": {
+        "file_size": {
+          "doubleValue": 5.99
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Lambton_Harbour%2C_Wellington%2C_New_Zealand_c_1840.jpg"
+        },
+        "name": {
+          "stringValue": "Wellington"
+        },
+        "height": {
+          "integerValue": "2000"
+        },
+        "width": {
+          "integerValue": "2818"
+        },
+        "year": {
+          "integerValue": "1840"
+        },
+        "country": {
+          "stringValue": "New Zealand"
+        },
+        "title": {
+          "stringValue": "Lambton Harbour, Port Nicholson, Wellington, New Zealand, comprehending about one-third of the water frontage of the town of Wellington, ca. 1840, Charles Heaphy"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        }
+      },
+      "createTime": "2025-01-24T10:41:39.987846Z",
+      "updateTime": "2025-01-24T10:41:39.987846Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/upZfAnObzXhbOpsR0PDy",
+      "fields": {
+        "country": {
+          "stringValue": "India"
+        },
+        "year": {
+          "integerValue": "1832"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Benares A Brahmin placing a garland on the holiest spot in the sacred city by James Prinsep"
+        },
+        "name": {
+          "stringValue": "Varanasi"
+        },
+        "height": {
+          "integerValue": "3108"
+        },
+        "width": {
+          "integerValue": "4000"
+        },
+        "file_size": {
+          "doubleValue": 4.56
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Benares_A_Brahmin_placing_a_garland_on_the_holiest_spot_in_the_sacred_city_by_James_Prinsep_1832.jpg"
+        }
+      },
+      "createTime": "2025-01-27T09:43:26.705487Z",
+      "updateTime": "2025-01-27T09:43:26.705487Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/vOOl9eCHBsA3cKqefe9X",
+      "fields": {
+        "title": {
+          "stringValue": "Victoria Dock at Tanjong Pagar, a naval and commercial base in the British colony of Singapore."
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1890"
+        },
+        "country": {
+          "stringValue": "Singapore"
+        },
+        "width": {
+          "integerValue": "517"
+        },
+        "height": {
+          "integerValue": "400"
+        },
+        "name": {
+          "stringValue": "Singapore"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/6/67/Victoria_Dock%2C_Tanjong_Pagar%2C_in_the_1890s.jpg"
+        }
+      },
+      "createTime": "2025-01-27T10:10:10.978016Z",
+      "updateTime": "2025-01-27T10:10:10.978016Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/wquUYnM6bBs31jPB7JxR",
+      "fields": {
+        "year": {
+          "integerValue": "1950"
+        },
+        "country": {
+          "stringValue": "India"
+        },
+        "title": {
+          "stringValue": "Victoria Terminus in Bombay in late 1930's."
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "name": {
+          "stringValue": "Mumbai"
+        },
+        "height": {
+          "integerValue": "638"
+        },
+        "width": {
+          "integerValue": "800"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Victoria_Terminus%2C_Bombay_in_1950.jpg"
+        }
+      },
+      "createTime": "2025-01-27T10:02:36.749764Z",
+      "updateTime": "2025-01-27T10:02:36.749764Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/x2K3Z1YgyWWaiJPr0Lnd",
+      "fields": {
+        "year": {
+          "integerValue": "1900"
+        },
+        "country": {
+          "stringValue": "Denmark"
+        },
+        "title": {
+          "stringValue": "View of Copenhagen, Denmark"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/c/c1/KBH_1890-1900.jpg"
+        },
+        "name": {
+          "stringValue": "\\Copenhagen"
+        },
+        "height": {
+          "integerValue": "790"
+        },
+        "width": {
+          "integerValue": "1081"
+        }
+      },
+      "createTime": "2025-01-31T08:06:24.821829Z",
+      "updateTime": "2025-01-31T08:06:24.821829Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/x6P9j4zyq06ZouFWdeQX",
+      "fields": {
+        "title": {
+          "stringValue": "On The River Benares"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1883"
+        },
+        "country": {
+          "stringValue": "India"
+        },
+        "height": {
+          "integerValue": "445"
+        },
+        "width": {
+          "integerValue": "590"
+        },
+        "name": {
+          "stringValue": "Varanasi"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/3/3e/On_The_River_Benares_ca_1883.jpg"
+        }
+      },
+      "createTime": "2025-01-27T09:42:22.837749Z",
+      "updateTime": "2025-01-27T09:42:22.837749Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/xHvEOEHRRBtSYTAlH9Cg",
+      "fields": {
+        "title": {
+          "stringValue": "The formal ceremony marking the start of self rule"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1947"
+        },
+        "country": {
+          "stringValue": "Sri Lanka"
+        },
+        "height": {
+          "integerValue": "389"
+        },
+        "width": {
+          "integerValue": "550"
+        },
+        "name": {
+          "stringValue": "Colombo"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/6/63/SL_Independence.jpg"
+        }
+      },
+      "createTime": "2025-01-27T10:07:58.141299Z",
+      "updateTime": "2025-01-27T10:07:58.141299Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/xwZeM3ZIJmLSHjX0bA0o",
+      "fields": {
+        "title": {
+          "stringValue": "View of Bagdad on the Persian side of the Tigris"
+        },
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "year": {
+          "integerValue": "1808"
+        },
+        "country": {
+          "stringValue": "Iraq"
+        },
+        "file_size": {
+          "doubleValue": 2.92
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/1/16/PARSONS%281808%29_p008_View_of_Bagdad_on_the_Persian_side_of_the_Tigris.jpg"
+        },
+        "height": {
+          "integerValue": "1864"
+        },
+        "width": {
+          "integerValue": "2380"
+        },
+        "name": {
+          "stringValue": "Baghdad"
+        }
+      },
+      "createTime": "2025-01-27T09:23:54.418043Z",
+      "updateTime": "2025-01-27T09:23:54.418043Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/zeups1I28b6Bkf8uMQVa",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "Danish soldiers return to Copenhagen, 1849Danish soldiers return to Copenhagen, 1849"
+        },
+        "country": {
+          "stringValue": "Denmark"
+        },
+        "year": {
+          "integerValue": "1849"
+        },
+        "file_size": {
+          "doubleValue": 2.83
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Otto_Bache_-_Soldaternes_hjemkomst_til_K%C3%B8benhavn_i_1849.jpg"
+        },
+        "height": {
+          "integerValue": "3165"
+        },
+        "width": {
+          "integerValue": "4298"
+        },
+        "name": {
+          "stringValue": "Copenhagen"
+        }
+      },
+      "createTime": "2025-01-31T08:07:43.749535Z",
+      "updateTime": "2025-01-31T08:07:43.749535Z"
+    },
+    {
+      "name": "projects/photolocation-54a1d/databases/(default)/documents/cities/zmLNzgXDv5HfLO3lj4db",
+      "fields": {
+        "type": {
+          "stringValue": "jpeg"
+        },
+        "title": {
+          "stringValue": "City of Victoria, Hong Kong"
+        },
+        "country": {
+          "stringValue": "China"
+        },
+        "year": {
+          "integerValue": "1865"
+        },
+        "width": {
+          "integerValue": "955"
+        },
+        "height": {
+          "integerValue": "402"
+        },
+        "name": {
+          "stringValue": "Hong Kong"
+        },
+        "file_size": {
+          "doubleValue": 0.1
+        },
+        "image_url": {
+          "stringValue": "https://upload.wikimedia.org/wikipedia/commons/1/1f/City_of_Victoria.jpg"
+        }
+      },
+      "createTime": "2025-01-23T22:48:21.543808Z",
+      "updateTime": "2025-01-23T22:48:21.543808Z"
+    }
+  ]
+}

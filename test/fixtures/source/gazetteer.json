@@ -1,0 +1,32 @@
+[
+  {
+    "id": "prague-cz",
+    "displayName": "Prague",
+    "country": "Czechia",
+    "countryCode": "CZ",
+    "lat": 50.0755,
+    "lng": 14.4378,
+    "aliases": ["Praha"],
+    "historicalNames": ["Prag"]
+  },
+  {
+    "id": "oslo-no",
+    "displayName": "Oslo",
+    "country": "Norway",
+    "countryCode": "NO",
+    "lat": 59.9139,
+    "lng": 10.7522,
+    "aliases": [],
+    "historicalNames": ["Christiania", "Kristiania"]
+  },
+  {
+    "id": "unused-place-xx",
+    "displayName": "Unused Place",
+    "country": "Nowhere",
+    "countryCode": "XX",
+    "lat": 0,
+    "lng": 0,
+    "aliases": [],
+    "historicalNames": []
+  }
+]

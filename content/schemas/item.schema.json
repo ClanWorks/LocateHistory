@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://photolocation.local/schemas/item.schema.json",
+  "title": "Curator source item",
+  "description": "Editorial source-of-truth record for one photo, painting, or drawing. See plan.md §9.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "workType",
+    "title",
+    "artistOrCreator",
+    "depictedDate",
+    "creationDate",
+    "location",
+    "classification",
+    "clues",
+    "media",
+    "attribution",
+    "context",
+    "contentWarning",
+    "curation",
+    "importSource",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$" },
+    "status": { "enum": ["draft", "approved", "retired"] },
+    "workType": { "enum": ["photo", "painting", "drawing"] },
+    "title": { "type": "string", "minLength": 1 },
+    "artistOrCreator": { "type": ["string", "null"] },
+    "depictedDate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minYear", "maxYear"],
+      "properties": {
+        "minYear": { "type": "integer" },
+        "maxYear": { "type": "integer" }
+      }
+    },
+    "creationDate": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["minYear", "maxYear"],
+          "properties": {
+            "minYear": { "type": "integer" },
+            "maxYear": { "type": "integer" }
+          }
+        }
+      ]
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["placeId", "acceptedPlaceIds"],
+      "properties": {
+        "placeId": { "type": "string", "minLength": 1 },
+        "acceptedPlaceIds": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["region", "difficulty", "landmarkCategory", "tags"],
+      "properties": {
+        "region": { "type": "string", "minLength": 1 },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "landmarkCategory": { "type": ["string", "null"] },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "clues": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["region", "era", "country"],
+      "properties": {
+        "region": { "type": "string", "minLength": 1 },
+        "era": { "type": "string", "minLength": 1 },
+        "country": { "type": "string", "minLength": 1 }
+      }
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["originalPath", "focalPoint"],
+      "properties": {
+        "originalPath": { "type": "string", "minLength": 1 },
+        "focalPoint": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["x", "y"],
+              "properties": {
+                "x": { "type": "number", "minimum": 0, "maximum": 1 },
+                "y": { "type": "number", "minimum": 0, "maximum": 1 }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "license", "sourceUrl", "creditText"],
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "license": { "type": "string" },
+        "sourceUrl": { "type": "string" },
+        "creditText": { "type": ["string", "null"] }
+      }
+    },
+    "context": { "type": "string", "minLength": 1 },
+    "contentWarning": { "type": ["string", "null"] },
+    "curation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approvedBy", "approvedAt", "notes"],
+      "properties": {
+        "approvedBy": { "type": ["string", "null"] },
+        "approvedAt": { "type": ["string", "null"], "format": "date-time" },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "importSource": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}
