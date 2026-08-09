@@ -1,78 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>City Guessing Game</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-      background-color: #f0f0f0;
-    }
-    #output {
-      margin: 20px auto;
-      max-width: 600px;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .question-number, .timer {
-      margin-bottom: 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .options {
-      margin: 15px auto;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-    .options button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      background-color: #007BFF;
-      color: white;
-    }
-    .feedback {
-      margin: 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .next-question {
-      margin-top: 20px;
-    }
-    button:disabled {
-      background-color: #cccccc;
-      cursor: not-allowed;
-    }
-  </style>
-  <script type="module" src="js/app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhotoLocation</title>
+  <meta name="description" content="Guess the city from a historical photograph, painting, or drawing." />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <h1>City Guessing Game</h1>
-  <div class="question-number" id="question-number"></div>
-  <div class="timer" id="timer">Time left: 15s</div>
-  <div id="output">Loading data...</div>
-  <div class="options" id="options-container"></div>
-  <div class="feedback" id="feedback-container"></div>
-  <div class="next-question">
-    <button id="next-question-btn" style="display: none;">Next Question</button>
-  </div>
+  <header>
+    <h1>PhotoLocation</h1>
+  </header>
+  <main id="game-root" aria-live="polite">
+    <!-- Populated entirely by js/app.js, one render function per game state. -->
+  </main>
+  <footer>
+    <p>Historical images are curated from Wikimedia Commons. Source and licence for each image are shown after every round.</p>
+  </footer>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
-
