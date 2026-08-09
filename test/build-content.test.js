@@ -129,6 +129,38 @@ describe("buildManifest (fixture content)", () => {
     assert.deepEqual(ids, ["oslo-no", "prague-cz", "unused-place-xx"]);
   });
 
+  test("contentHash changes when only the gazetteer changes, not just the items", () => {
+    // A curator correcting a city's coordinates changes scoring outcomes
+    // even though no item record was touched. If contentHash only hashed
+    // manifestItems, that correction would silently claim "nothing
+    // changed" to anything comparing hashes to detect a rebuild.
+    const before = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+
+    const tmpSourceDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-gazetteer-change-"));
+    fs.copyFileSync(path.join(fixturesSourceDir, "items.json"), path.join(tmpSourceDir, "items.json"));
+    const gazetteer = JSON.parse(fs.readFileSync(path.join(fixturesSourceDir, "gazetteer.json"), "utf8"));
+    gazetteer[0] = { ...gazetteer[0], lat: gazetteer[0].lat + 1 };
+    fs.writeFileSync(path.join(tmpSourceDir, "gazetteer.json"), JSON.stringify(gazetteer));
+
+    const after = buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+    assert.notEqual(after.manifest.contentHash, before.manifest.contentHash);
+    fs.rmSync(tmpSourceDir, { recursive: true, force: true });
+  });
+
+  test("rejects a duplicate gazetteer id instead of silently collapsing it", () => {
+    const tmpSourceDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-invalid-source-"));
+    fs.copyFileSync(path.join(fixturesSourceDir, "items.json"), path.join(tmpSourceDir, "items.json"));
+    const gazetteer = JSON.parse(fs.readFileSync(path.join(fixturesSourceDir, "gazetteer.json"), "utf8"));
+    gazetteer.push({ ...gazetteer[0] }); // reuse the same id on purpose
+    fs.writeFileSync(path.join(tmpSourceDir, "gazetteer.json"), JSON.stringify(gazetteer));
+
+    assert.throws(
+      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS }),
+      /content validation failed/
+    );
+    fs.rmSync(tmpSourceDir, { recursive: true, force: true });
+  });
+
   test("the production default requires REQUIRED_ROUNDS approved items, not just whatever exists", () => {
     // No minApprovedItems override here — this is the CLI's real default.
     assert.throws(() => buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir }), /need at least 10/);
@@ -272,12 +304,19 @@ describe("build-content.js CLI (atomic build)", () => {
   });
 
   test("a rebuild whose content changed removes assets that are no longer referenced", () => {
+    // This second build is the one that actually exercises the backup
+    // step in main() — the first build had no existing assetsOutDir to
+    // back up, so this is where "rename old aside, swap in new, delete
+    // the backup" runs for real.
     const before = fs.readdirSync(assetsOutDir).sort();
     writeTenItemSource({ swapSecondHalfImage: true });
     runBuild();
     const after = fs.readdirSync(assetsOutDir).sort();
     assert.equal(after.length, 3, "now 3 distinct source images are referenced");
     assert.notDeepEqual(after, before, "asset set must reflect only the current content, old-and-new never accumulate");
+
+    const parentEntries = fs.readdirSync(path.dirname(assetsOutDir));
+    assert.ok(!parentEntries.some((name) => name.startsWith(".assets-backup-")), "backup dir must be cleaned up after a successful swap, not left behind");
   });
 
   test("a failing build leaves content-out and assets-out completely untouched", () => {

@@ -205,6 +205,24 @@ describe("error recovery", () => {
     assert.equal(errored.context.error.recoverTo, Status.PLAYING);
   });
 
+  test("ERROR_OCCURRED accepts an explicit recoverTo override, if it's a real status", () => {
+    const playing = freshPlayingState();
+    const errored = reduce(playing, { type: "ERROR_OCCURRED", payload: { reason: "weird_case", recoverTo: Status.RESULTS } });
+    assert.equal(errored.context.error.recoverTo, Status.RESULTS);
+  });
+
+  test("ERROR_OCCURRED rejects a bogus recoverTo instead of storing it verbatim", () => {
+    // A typo'd or made-up status here would otherwise get written straight
+    // into context.error.recoverTo, and RETRY would transition into a
+    // status no switch case matches, silently soft-locking the reducer.
+    const playing = freshPlayingState();
+    assert.throws(() => reduce(playing, { type: "ERROR_OCCURRED", payload: { reason: "x", recoverTo: "not_a_real_status" } }));
+    // resolving and error are real Status values but must never be valid
+    // recovery targets — nothing should ever "recover into" either one.
+    assert.throws(() => reduce(playing, { type: "ERROR_OCCURRED", payload: { reason: "x", recoverTo: Status.RESOLVING } }), TypeError);
+    assert.throws(() => reduce(playing, { type: "ERROR_OCCURRED", payload: { reason: "x", recoverTo: Status.ERROR } }), TypeError);
+  });
+
   test("RETRY sends the player back to the recorded recovery target", () => {
     const playing = freshPlayingState();
     const errored = reduce(playing, { type: "ERROR_OCCURRED", payload: { reason: "image_load_failed" } });

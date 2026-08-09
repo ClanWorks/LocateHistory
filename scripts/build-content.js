@@ -176,13 +176,17 @@ function buildManifest({ sourceDir, originalsDir, assetsOutDir, minApprovedItems
   const publicGazetteer = gazetteer;
 
   // "Deterministic" applies to contentHash, not the manifest file as a
-  // whole: contentHash is derived only from manifestItems, so the same
-  // source always produces the same hash. generatedAt is deliberately
-  // wall-clock (useful for ops/debugging — "when was this published")
-  // and will differ between two builds of identical content. Compare
-  // contentHash, not the full JSON, when checking whether a rebuild
-  // actually changed anything.
-  const manifestBody = { manifestVersion: 1, items: manifestItems };
+  // whole: contentHash is derived from manifestItems AND the published
+  // gazetteer, so the same source always produces the same hash.
+  // Gazetteer data (coordinates, aliases) directly affects scoring, so a
+  // curator correction there has to change the hash too — hashing only
+  // manifestItems would let a coordinate fix silently change game
+  // results while contentHash claimed nothing had changed. generatedAt
+  // is deliberately wall-clock (useful for ops/debugging — "when was
+  // this published") and will differ between two builds of identical
+  // content. Compare contentHash, not the full JSON, when checking
+  // whether a rebuild actually changed anything.
+  const manifestBody = { manifestVersion: 1, items: manifestItems, gazetteer: publicGazetteer };
   const contentHash = crypto.createHash("sha256").update(JSON.stringify(manifestBody)).digest("hex").slice(0, 16);
   const manifest = { manifestVersion: 1, generatedAt: new Date().toISOString(), contentHash, items: manifestItems };
 
@@ -196,6 +200,25 @@ function buildManifest({ sourceDir, originalsDir, assetsOutDir, minApprovedItems
   return { manifest, gazetteer: publicGazetteer, approvedCount: approved.length, totalCount: items.length };
 }
 
+const STAGING_PREFIX = ".assets-build-";
+const BACKUP_PREFIX = ".assets-backup-";
+
+/**
+ * Removes leftover staging/backup directories from a previous run that
+ * crashed mid-build or mid-swap. Both are always safe to discard here:
+ * a staging dir was never validated as complete, and by the time a
+ * backup dir would still exist, the swap that created it already
+ * finished putting the newer assets in place.
+ */
+function cleanupStaleBuildArtifacts(assetsParentDir) {
+  if (!fs.existsSync(assetsParentDir)) return;
+  for (const name of fs.readdirSync(assetsParentDir)) {
+    if (name.startsWith(STAGING_PREFIX) || name.startsWith(BACKUP_PREFIX)) {
+      fs.rmSync(path.join(assetsParentDir, name), { recursive: true, force: true });
+    }
+  }
+}
+
 /**
  * Builds into a scratch staging directory first, and only touches the
  * real public/ output once everything — validation, every asset, the
@@ -206,10 +229,24 @@ function buildManifest({ sourceDir, originalsDir, assetsOutDir, minApprovedItems
  * assets directory in one rename means a rebuild's output always exactly
  * matches current approved content, with no partial writes and no
  * accumulating orphans.
+ *
+ * The swap itself renames the old assets dir aside (rather than deleting
+ * it) before renaming staging into place, so a rename failure or process
+ * interruption during the swap leaves the previous good assets sitting
+ * in a recoverable backup dir instead of gone outright. This narrows,
+ * but does not eliminate, the failure window — true all-or-nothing
+ * atomicity across three separate resources (assets dir, manifest.json,
+ * gazetteer.json) would need a versioned-directory-plus-pointer scheme,
+ * which is more machinery than a solo-maintained build script warrants
+ * right now.
  */
 function main() {
   const { sourceDir, contentOutDir: outDir, assetsOutDir: finalAssetsDir } = parseArgs(process.argv.slice(2));
-  const stagingAssetsDir = path.join(path.dirname(finalAssetsDir), `.assets-build-${crypto.randomUUID()}`);
+  const assetsParentDir = path.dirname(finalAssetsDir);
+  fs.mkdirSync(assetsParentDir, { recursive: true });
+  cleanupStaleBuildArtifacts(assetsParentDir);
+
+  const stagingAssetsDir = path.join(assetsParentDir, `${STAGING_PREFIX}${crypto.randomUUID()}`);
 
   let result;
   try {
@@ -227,12 +264,20 @@ function main() {
   fs.writeFileSync(manifestTmpPath, JSON.stringify(manifest, null, 2));
   fs.writeFileSync(gazetteerTmpPath, JSON.stringify(gazetteer, null, 2));
 
-  // Everything that can fail has already happened. From here it's just
-  // renames, which are atomic on the same filesystem.
-  fs.rmSync(finalAssetsDir, { recursive: true, force: true });
+  // Everything that can fail on its own merits has already happened.
+  // From here it's renames (atomic per-call on the same filesystem) plus
+  // a backup step so the old assets are never simply deleted.
+  const backupAssetsDir = path.join(assetsParentDir, `${BACKUP_PREFIX}${crypto.randomUUID()}`);
+  const hadExistingAssets = fs.existsSync(finalAssetsDir);
+  if (hadExistingAssets) {
+    fs.renameSync(finalAssetsDir, backupAssetsDir);
+  }
   fs.renameSync(stagingAssetsDir, finalAssetsDir);
   fs.renameSync(manifestTmpPath, path.join(outDir, "manifest.json"));
   fs.renameSync(gazetteerTmpPath, path.join(outDir, "gazetteer.json"));
+  if (hadExistingAssets) {
+    fs.rmSync(backupAssetsDir, { recursive: true, force: true });
+  }
 
   console.log(`Build OK: ${approvedCount}/${totalCount} approved items published, ${gazetteer.length} gazetteer entries.`);
   console.log(`  -> ${path.relative(repoRoot, path.join(outDir, "manifest.json"))}`);

@@ -54,6 +54,21 @@ const RECOVERY_TARGET_BY_STATUS = Object.freeze({
 
 const KNOWN_CLUES = Object.freeze(["region", "era", "country"]);
 
+// The only statuses ERROR_OCCURRED's caller-supplied payload.recoverTo may
+// name — every value that legitimately appears as a RECOVERY_TARGET_BY_STATUS
+// target above. Without this, a typo or a bogus value from the UI layer
+// would get stored verbatim and RETRY would transition into a status no
+// switch case below matches, silently soft-locking the reducer.
+const ALLOWED_RECOVERY_TARGETS = Object.freeze([
+  Status.LOADING,
+  Status.INTRO,
+  Status.SESSION_SETUP,
+  Status.PLAYING,
+  Status.ANSWERED,
+  Status.TIMED_OUT,
+  Status.RESULTS,
+]);
+
 function assertNonEmptyString(value, label) {
   if (typeof value !== "string" || value.length === 0) {
     throw new TypeError(`${label} must be a non-empty string, got ${JSON.stringify(value)}`);
@@ -228,6 +243,9 @@ export function reduce(state, event) {
 
     case "ERROR_OCCURRED": {
       if (state.status === Status.ERROR) return state;
+      if (payload.recoverTo !== undefined && !ALLOWED_RECOVERY_TARGETS.includes(payload.recoverTo)) {
+        throw new TypeError(`ERROR_OCCURRED payload.recoverTo must be one of ${ALLOWED_RECOVERY_TARGETS.join(", ")}, got ${JSON.stringify(payload.recoverTo)}`);
+      }
       return toError(state, payload.reason ?? "unknown_error", payload.recoverTo);
     }
 

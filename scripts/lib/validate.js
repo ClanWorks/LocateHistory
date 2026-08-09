@@ -66,11 +66,26 @@ export function validateSourceCollection(items, gazetteer) {
   const seenIds = new Map();
   const gazetteerIds = new Set(gazetteer.map((g) => g.id));
 
+  const seenGazetteerIds = new Map();
   const gazetteerErrors = [];
   gazetteer.forEach((entry, index) => {
     const errors = validateGazetteerEntry(entry);
+    const label = entry.id ?? `gazetteer[${index}]`;
+
+    // A Set silently collapses duplicate ids, which would leave two
+    // entries claiming the same canonical place with city lookup and
+    // scoring picking one arbitrarily. Track first occurrence, same as
+    // content item ids below, and report the collision instead.
+    if (entry.id) {
+      if (seenGazetteerIds.has(entry.id)) {
+        errors.push({ path: "/id", message: `duplicate gazetteer id, also used at gazetteer[${seenGazetteerIds.get(entry.id)}]` });
+      } else {
+        seenGazetteerIds.set(entry.id, index);
+      }
+    }
+
     if (errors.length) {
-      gazetteerErrors.push({ id: entry.id ?? `gazetteer[${index}]`, errors });
+      gazetteerErrors.push({ id: label, errors });
     }
   });
   if (gazetteerErrors.length) failures.push(...gazetteerErrors);
