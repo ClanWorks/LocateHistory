@@ -3,57 +3,10 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import zlib from "node:zlib";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { buildManifest } from "../scripts/build-content.js";
-
-/** Minimal real (not copied/faked) PNG, for tests that need genuinely
- * distinct image bytes so checksums actually differ. */
-function makeTinyPng(width, height, [r, g, b]) {
-  const table = new Uint32Array(256);
-  for (let n = 0; n < 256; n++) {
-    let c = n;
-    for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
-    table[n] = c >>> 0;
-  }
-  const crc32 = (buf) => {
-    let crc = 0xffffffff;
-    for (let i = 0; i < buf.length; i++) crc = table[(crc ^ buf[i]) & 0xff] ^ (crc >>> 8);
-    return (crc ^ 0xffffffff) >>> 0;
-  };
-  const chunk = (type, data) => {
-    const len = Buffer.alloc(4);
-    len.writeUInt32BE(data.length, 0);
-    const typeBuf = Buffer.from(type, "ascii");
-    const crcBuf = Buffer.alloc(4);
-    crcBuf.writeUInt32BE(crc32(Buffer.concat([typeBuf, data])), 0);
-    return Buffer.concat([len, typeBuf, data, crcBuf]);
-  };
-
-  const sig = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
-  const ihdrData = Buffer.alloc(13);
-  ihdrData.writeUInt32BE(width, 0);
-  ihdrData.writeUInt32BE(height, 4);
-  ihdrData[8] = 8;
-  ihdrData[9] = 2;
-  const ihdr = chunk("IHDR", ihdrData);
-
-  const raw = Buffer.alloc((width * 3 + 1) * height);
-  for (let y = 0; y < height; y++) {
-    const rowStart = y * (width * 3 + 1);
-    raw[rowStart] = 0;
-    for (let x = 0; x < width; x++) {
-      const px = rowStart + 1 + x * 3;
-      raw[px] = r;
-      raw[px + 1] = g;
-      raw[px + 2] = b;
-    }
-  }
-  const idat = chunk("IDAT", zlib.deflateSync(raw));
-  const iend = chunk("IEND", Buffer.alloc(0));
-  return Buffer.concat([sig, ihdr, idat, iend]);
-}
+import { makeTinyPng } from "./helpers/make-tiny-png.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.join(__dirname, "..");
@@ -65,8 +18,14 @@ const buildScript = path.join(repoRoot, "scripts", "build-content.js");
 // below production's REQUIRED_ROUNDS (10) minimum. Every call below opts
 // into that explicitly via minApprovedItems, which is exactly the
 // fixture/test-mode escape hatch: production (the CLI's default) never
-// gets to skip the minimum, only tests that say so on purpose.
+// gets to skip the minimum, only tests that say so on purpose. Likewise
+// the fixture PNGs (400x300, 320x240) are well below production's real
+// MIN_DIMENSION_PX (480) — minDimensionPx opts into a lower bar for the
+// same reason, so fixtures don't need to be regenerated at full size
+// just to exercise the pipeline quickly.
 const FIXTURE_MIN_ITEMS = 2;
+const FIXTURE_MIN_DIMENSION = 100;
+const FIXTURE_OPTS = { minApprovedItems: FIXTURE_MIN_ITEMS, minDimensionPx: FIXTURE_MIN_DIMENSION };
 
 describe("buildManifest (fixture content)", () => {
   let assetsOutDir;
@@ -79,62 +38,65 @@ describe("buildManifest (fixture content)", () => {
     fs.rmSync(assetsOutDir, { recursive: true, force: true });
   });
 
-  test("publishes only approved items, in order", () => {
-    const { manifest, approvedCount, totalCount } = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+  test("publishes only approved items, in order", async () => {
+    const { manifest, approvedCount, totalCount } = await buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, ...FIXTURE_OPTS });
     assert.equal(totalCount, 3, "fixture set has 3 source items");
     assert.equal(approvedCount, 2, "fixture set has 2 approved items");
     assert.equal(manifest.items.length, 2);
     assert.deepEqual(manifest.items.map((i) => i.id), ["prague-castle-1830", "oslo-harbour-1900"]);
   });
 
-  test("excludes draft items from the manifest even with incomplete attribution", () => {
-    const { manifest } = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+  test("excludes draft items from the manifest even with incomplete attribution", async () => {
+    const { manifest } = await buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, ...FIXTURE_OPTS });
     assert.ok(!manifest.items.some((i) => i.id === "prague-unverified-license"));
   });
 
-  test("real image dimensions are read from the PNG, not hardcoded", () => {
-    const { manifest } = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+  test("real image dimensions are read from the source, not hardcoded", async () => {
+    const { manifest } = await buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, ...FIXTURE_OPTS });
     const prague = manifest.items.find((i) => i.id === "prague-castle-1830");
     const oslo = manifest.items.find((i) => i.id === "oslo-harbour-1900");
+    // Both fixtures are narrower than the smallest responsive target
+    // (480px), so each produces exactly one variant at its native size —
+    // never upscaled.
     assert.deepEqual([prague.image.width, prague.image.height], [400, 300]);
     assert.deepEqual([oslo.image.width, oslo.image.height], [320, 240]);
   });
 
-  test("asset filenames are opaque (checksum-derived), not the original filename", () => {
-    const { manifest } = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+  test("asset filenames are opaque (checksum-derived), not the original filename", async () => {
+    const { manifest } = await buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, ...FIXTURE_OPTS });
     for (const item of manifest.items) {
       const basename = path.basename(item.image.src);
       assert.doesNotMatch(basename, /prague|oslo|castle|harbour/i, "asset name must not leak the source filename");
-      assert.match(basename, /^[0-9a-f]{16}\.png$/, "asset name must be a 16-char hex checksum + extension");
+      assert.match(basename, /^[0-9a-f]{16}-\d+w\.jpg$/, "asset name must be a 16-char hex checksum + width suffix + extension");
       assert.ok(fs.existsSync(path.join(assetsOutDir, basename)), "asset must actually be written to the output dir");
     }
   });
 
-  test("is deterministic: rebuilding from the same source produces the same contentHash", () => {
-    const first = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
-    const second = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+  test("is deterministic: rebuilding from the same source produces the same contentHash", async () => {
+    const first = await buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, ...FIXTURE_OPTS });
+    const second = await buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, ...FIXTURE_OPTS });
     assert.equal(first.manifest.contentHash, second.manifest.contentHash);
     // generatedAt is deliberately wall-clock, not part of the determinism
     // contract — assert it's present and ISO-shaped, not that it's stable.
     assert.match(first.manifest.generatedAt, /^\d{4}-\d{2}-\d{2}T/);
   });
 
-  test("public gazetteer is the full guess pool, not filtered down to answer cities", () => {
+  test("public gazetteer is the full guess pool, not filtered down to answer cities", async () => {
     // If the selector only ever offered the cities that happen to be
     // correct answers, the game would get easier every round by process
     // of elimination. unused-place-xx isn't the answer to anything in
     // the fixture set and must still appear as a guessable option.
-    const { gazetteer } = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+    const { gazetteer } = await buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, ...FIXTURE_OPTS });
     const ids = gazetteer.map((g) => g.id).sort();
     assert.deepEqual(ids, ["oslo-no", "prague-cz", "unused-place-xx"]);
   });
 
-  test("contentHash changes when only the gazetteer changes, not just the items", () => {
+  test("contentHash changes when only the gazetteer changes, not just the items", async () => {
     // A curator correcting a city's coordinates changes scoring outcomes
     // even though no item record was touched. If contentHash only hashed
     // manifestItems, that correction would silently claim "nothing
     // changed" to anything comparing hashes to detect a rebuild.
-    const before = buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+    const before = await buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, ...FIXTURE_OPTS });
 
     const tmpSourceDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-gazetteer-change-"));
     fs.copyFileSync(path.join(fixturesSourceDir, "items.json"), path.join(tmpSourceDir, "items.json"));
@@ -142,81 +104,90 @@ describe("buildManifest (fixture content)", () => {
     gazetteer[0] = { ...gazetteer[0], lat: gazetteer[0].lat + 1 };
     fs.writeFileSync(path.join(tmpSourceDir, "gazetteer.json"), JSON.stringify(gazetteer));
 
-    const after = buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS });
+    const after = await buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, ...FIXTURE_OPTS });
     assert.notEqual(after.manifest.contentHash, before.manifest.contentHash);
     fs.rmSync(tmpSourceDir, { recursive: true, force: true });
   });
 
-  test("rejects a duplicate gazetteer id instead of silently collapsing it", () => {
+  test("rejects a duplicate gazetteer id instead of silently collapsing it", async () => {
     const tmpSourceDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-invalid-source-"));
     fs.copyFileSync(path.join(fixturesSourceDir, "items.json"), path.join(tmpSourceDir, "items.json"));
     const gazetteer = JSON.parse(fs.readFileSync(path.join(fixturesSourceDir, "gazetteer.json"), "utf8"));
     gazetteer.push({ ...gazetteer[0] }); // reuse the same id on purpose
     fs.writeFileSync(path.join(tmpSourceDir, "gazetteer.json"), JSON.stringify(gazetteer));
 
-    assert.throws(
-      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS }),
+    await assert.rejects(
+      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, ...FIXTURE_OPTS }),
       /content validation failed/
     );
     fs.rmSync(tmpSourceDir, { recursive: true, force: true });
   });
 
-  test("the production default requires REQUIRED_ROUNDS approved items, not just whatever exists", () => {
+  test("the production default requires REQUIRED_ROUNDS approved items, not just whatever exists", async () => {
     // No minApprovedItems override here — this is the CLI's real default.
-    assert.throws(() => buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir }), /need at least 10/);
+    await assert.rejects(() => buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minDimensionPx: FIXTURE_MIN_DIMENSION }), /need at least 10/);
   });
 
-  test("rejects a media path that escapes the originals directory", () => {
+  test("rejects an image below the minimum dimension", async () => {
+    // No minDimensionPx override — production's real 480px minimum
+    // applies, and both fixtures (400x300, 320x240) fall under it.
+    await assert.rejects(
+      () => buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS }),
+      /below the 480px minimum/
+    );
+  });
+
+  test("rejects a media path that escapes the originals directory", async () => {
     const tmpSourceDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-invalid-source-"));
     const items = JSON.parse(fs.readFileSync(path.join(fixturesSourceDir, "items.json"), "utf8"));
     items[0] = { ...items[0], media: { ...items[0].media, originalPath: "../../../../../etc/passwd" } };
     fs.writeFileSync(path.join(tmpSourceDir, "items.json"), JSON.stringify(items));
     fs.copyFileSync(path.join(fixturesSourceDir, "gazetteer.json"), path.join(tmpSourceDir, "gazetteer.json"));
 
-    assert.throws(
-      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS }),
+    await assert.rejects(
+      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, ...FIXTURE_OPTS }),
       /unsafe media path/
     );
     fs.rmSync(tmpSourceDir, { recursive: true, force: true });
   });
 
-  test("fails the whole build on a duplicate content id", () => {
+  test("fails the whole build on a duplicate content id", async () => {
     const tmpSourceDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-invalid-source-"));
     const items = JSON.parse(fs.readFileSync(path.join(fixturesSourceDir, "items.json"), "utf8"));
     const duplicated = [...items, { ...items[0] }]; // reuse the same id on purpose
     fs.writeFileSync(path.join(tmpSourceDir, "items.json"), JSON.stringify(duplicated));
     fs.copyFileSync(path.join(fixturesSourceDir, "gazetteer.json"), path.join(tmpSourceDir, "gazetteer.json"));
 
-    assert.throws(
-      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS }),
+    await assert.rejects(
+      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, ...FIXTURE_OPTS }),
       /content validation failed/
     );
     fs.rmSync(tmpSourceDir, { recursive: true, force: true });
   });
 
-  test("fails the whole build when an item references an unresolved gazetteer id", () => {
+  test("fails the whole build when an item references an unresolved gazetteer id", async () => {
     const tmpSourceDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-invalid-source-"));
     const items = JSON.parse(fs.readFileSync(path.join(fixturesSourceDir, "items.json"), "utf8"));
     items[0] = { ...items[0], location: { placeId: "nowhere-that-exists", acceptedPlaceIds: [] } };
     fs.writeFileSync(path.join(tmpSourceDir, "items.json"), JSON.stringify(items));
     fs.copyFileSync(path.join(fixturesSourceDir, "gazetteer.json"), path.join(tmpSourceDir, "gazetteer.json"));
 
-    assert.throws(
-      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS }),
+    await assert.rejects(
+      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, ...FIXTURE_OPTS }),
       /content validation failed/
     );
     fs.rmSync(tmpSourceDir, { recursive: true, force: true });
   });
 
-  test("fails the whole build when an approved item has no license", () => {
+  test("fails the whole build when an approved item has no license", async () => {
     const tmpSourceDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-invalid-source-"));
     const items = JSON.parse(fs.readFileSync(path.join(fixturesSourceDir, "items.json"), "utf8"));
     items[0] = { ...items[0], attribution: { ...items[0].attribution, license: "" } };
     fs.writeFileSync(path.join(tmpSourceDir, "items.json"), JSON.stringify(items));
     fs.copyFileSync(path.join(fixturesSourceDir, "gazetteer.json"), path.join(tmpSourceDir, "gazetteer.json"));
 
-    assert.throws(
-      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, minApprovedItems: FIXTURE_MIN_ITEMS }),
+    await assert.rejects(
+      () => buildManifest({ sourceDir: tmpSourceDir, originalsDir: fixturesOriginalsDir, assetsOutDir, ...FIXTURE_OPTS }),
       /content validation failed/
     );
     fs.rmSync(tmpSourceDir, { recursive: true, force: true });
@@ -230,6 +201,7 @@ describe("buildManifest (fixture content)", () => {
  * --content-out/--assets-out redirected well away from the real public/
  * directory, and satisfy the production REQUIRED_ROUNDS minimum with a
  * full 10-item source generated from the two real fixture PNGs.
+ * --min-dimension is passed to accommodate the tiny fixture images.
  */
 describe("build-content.js CLI (atomic build)", () => {
   let workDir;
@@ -260,7 +232,7 @@ describe("build-content.js CLI (atomic build)", () => {
   function runBuild() {
     return execFileSync(
       process.execPath,
-      [buildScript, "--source", sourceDir, "--content-out", contentOutDir, "--assets-out", assetsOutDir],
+      [buildScript, "--source", sourceDir, "--content-out", contentOutDir, "--assets-out", assetsOutDir, "--min-dimension", String(FIXTURE_MIN_DIMENSION)],
       { encoding: "utf8" }
     );
   }

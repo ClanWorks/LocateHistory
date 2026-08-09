@@ -1,0 +1,22 @@
+[
+  { "id": "kolkata-in", "displayName": "Kolkata", "country": "India", "countryCode": "IN", "lat": 22.5726, "lng": 88.3639, "aliases": ["Calcutta"], "historicalNames": ["Calcutta"] },
+  { "id": "san-francisco-us", "displayName": "San Francisco", "country": "United States", "countryCode": "US", "lat": 37.7749, "lng": -122.4194, "aliases": ["SF"], "historicalNames": [] },
+  { "id": "manchester-gb", "displayName": "Manchester", "country": "United Kingdom", "countryCode": "GB", "lat": 53.4808, "lng": -2.2426, "aliases": [], "historicalNames": [] },
+  { "id": "odense-dk", "displayName": "Odense", "country": "Denmark", "countryCode": "DK", "lat": 55.4038, "lng": 10.4024, "aliases": [], "historicalNames": [] },
+  { "id": "sydney-au", "displayName": "Sydney", "country": "Australia", "countryCode": "AU", "lat": -33.8688, "lng": 151.2093, "aliases": [], "historicalNames": [] },
+  { "id": "havana-cu", "displayName": "Havana", "country": "Cuba", "countryCode": "CU", "lat": 23.1136, "lng": -82.3666, "aliases": ["La Habana"], "historicalNames": [] },
+  { "id": "varanasi-in", "displayName": "Varanasi", "country": "India", "countryCode": "IN", "lat": 25.3176, "lng": 82.9739, "aliases": ["Benares", "Kashi"], "historicalNames": ["Benares"] },
+  { "id": "kazan-ru", "displayName": "Kazan", "country": "Russia", "countryCode": "RU", "lat": 55.8304, "lng": 49.0661, "aliases": [], "historicalNames": [] },
+  { "id": "baghdad-iq", "displayName": "Baghdad", "country": "Iraq", "countryCode": "IQ", "lat": 33.3152, "lng": 44.3661, "aliases": [], "historicalNames": [] },
+  { "id": "wellington-nz", "displayName": "Wellington", "country": "New Zealand", "countryCode": "NZ", "lat": -41.2865, "lng": 174.7762, "aliases": [], "historicalNames": [] },
+  { "id": "lahore-pk", "displayName": "Lahore", "country": "Pakistan", "countryCode": "PK", "lat": 31.5497, "lng": 74.3436, "aliases": [], "historicalNames": [] },
+  { "id": "prague-cz", "displayName": "Prague", "country": "Czechia", "countryCode": "CZ", "lat": 50.0755, "lng": 14.4378, "aliases": ["Praha"], "historicalNames": ["Prag"] },
+  { "id": "accra-gh", "displayName": "Accra", "country": "Ghana", "countryCode": "GH", "lat": 5.6037, "lng": -0.187, "aliases": [], "historicalNames": [] },
+  { "id": "kampala-ug", "displayName": "Kampala", "country": "Uganda", "countryCode": "UG", "lat": 0.3476, "lng": 32.5825, "aliases": [], "historicalNames": [] },
+  { "id": "bogota-co", "displayName": "Bogotá", "country": "Colombia", "countryCode": "CO", "lat": 4.711, "lng": -74.0721, "aliases": ["Bogota"], "historicalNames": ["Santa Fe de Bogotá"] },
+  { "id": "durban-za", "displayName": "Durban", "country": "South Africa", "countryCode": "ZA", "lat": -29.8587, "lng": 31.0218, "aliases": [], "historicalNames": ["Port Natal"] },
+  { "id": "vancouver-ca", "displayName": "Vancouver", "country": "Canada", "countryCode": "CA", "lat": 49.2827, "lng": -123.1207, "aliases": [], "historicalNames": [] },
+  { "id": "montevideo-uy", "displayName": "Montevideo", "country": "Uruguay", "countryCode": "UY", "lat": -34.9011, "lng": -56.1645, "aliases": [], "historicalNames": [] },
+  { "id": "seoul-kr", "displayName": "Seoul", "country": "South Korea", "countryCode": "KR", "lat": 37.5665, "lng": 126.978, "aliases": [], "historicalNames": ["Hanseong", "Keijō"] },
+  { "id": "goa-in", "displayName": "Old Goa", "country": "India", "countryCode": "IN", "lat": 15.5007, "lng": 73.9114, "aliases": ["Velha Goa", "Goa"], "historicalNames": ["Velha Goa"] }
+]

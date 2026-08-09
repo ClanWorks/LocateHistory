@@ -74,3 +74,9 @@ node_modules/
 
 # OS files
 .DS_Store
+
+# Curated originals stay local — raw historical scans (tens of MB) don't
+# belong permanently in git history. The build pipeline generates the
+# actual deployable assets from these into public/assets/, which IS
+# committed. See plan.md §8 and content/source/CURATION_NOTES.md.
+content/originals/

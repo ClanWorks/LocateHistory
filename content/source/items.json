@@ -1,0 +1,1083 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "fs-0mdvrwolpwuvp64rm7xt",
+    "status": "approved",
+    "workType": "painting",
+    "title": "View of Fort William done after the painting in the Court Room of the Company's house in Leaden Hall Street",
+    "artistOrCreator": "Elisha Kirkall",
+    "depictedDate": {
+      "minYear": 1735,
+      "maxYear": 1735
+    },
+    "creationDate": {
+      "minYear": 1735,
+      "maxYear": 1735
+    },
+    "location": {
+      "placeId": "kolkata-in",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "South Asia",
+      "difficulty": 3,
+      "landmarkCategory": "fort",
+      "tags": [
+        "colonial",
+        "river",
+        "fort"
+      ]
+    },
+    "clues": {
+      "region": "South Asia",
+      "era": "1730s",
+      "country": "India"
+    },
+    "media": {
+      "originalPath": "kolkata-fort-william-1735.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (PD-old-100 — faithful reproduction of a 2D public-domain artwork by Elisha Kirkall, c.1682-1742)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fort_William%2C_Calcutta%2C_1735.jpg",
+      "creditText": "British Library"
+    },
+    "context": "Fort William was the East India Company's stronghold on the Hooghly River, around which colonial Calcutta (now Kolkata) grew.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:0MDvrWOLpWuvP64Rm7xT",
+    "createdAt": "2025-01-27T09:57:55.097987Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-7dlsrnbjtoutid95entm",
+    "status": "approved",
+    "workType": "photo",
+    "title": "San Francisco harbor at Yerba Buena Cove in 1850 or 1851 — with Yerba Buena Island, and Berkeley Hills, in the background.",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1851,
+      "maxYear": 1851
+    },
+    "creationDate": {
+      "minYear": 1850,
+      "maxYear": 1851
+    },
+    "location": {
+      "placeId": "san-francisco-us",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "North America",
+      "difficulty": 2,
+      "landmarkCategory": "harbour",
+      "tags": [
+        "gold-rush",
+        "harbour",
+        "daguerreotype"
+      ]
+    },
+    "clues": {
+      "region": "North America",
+      "era": "1850s",
+      "country": "United States of America"
+    },
+    "media": {
+      "originalPath": "san-francisco-harbor-1851.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (US — pre-1931 publication)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:SanFranciscoharbor1851c_sharp.jpg",
+      "creditText": "Library of Congress"
+    },
+    "context": "A daguerreotype of Yerba Buena Cove during the California Gold Rush, when San Francisco's harbour filled with abandoned ships.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:7DlSRNbJToUTId95eNTm",
+    "createdAt": "2025-01-24T10:30:23.265703Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-9icnu0dxbs1pbbn9ec3m",
+    "status": "approved",
+    "workType": "painting",
+    "title": "Wyld, William - Manchester from Kersal Moor, with rustic figures and goats",
+    "artistOrCreator": "William Wyld",
+    "depictedDate": {
+      "minYear": 1852,
+      "maxYear": 1852
+    },
+    "creationDate": {
+      "minYear": 1852,
+      "maxYear": 1852
+    },
+    "location": {
+      "placeId": "manchester-gb",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Western Europe",
+      "difficulty": 2,
+      "landmarkCategory": null,
+      "tags": [
+        "industrial",
+        "skyline"
+      ]
+    },
+    "clues": {
+      "region": "Western Europe",
+      "era": "1850s",
+      "country": "United Kingdom"
+    },
+    "media": {
+      "originalPath": "manchester-kersal-moor-1852.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (PD-old-100-expired — William Wyld, 1806-1889)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wyld%2C_William_-_Manchester_from_Kersal_Moor%2C_with_rustic_figures_and_goats_-_Google_Art_Project.jpg",
+      "creditText": null
+    },
+    "context": "William Wyld's view from Kersal Moor shows Manchester's smoking mill chimneys at the height of the Industrial Revolution.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:9ICNu0Dxbs1pBBn9eC3M",
+    "createdAt": "2025-01-23T22:43:29.967467Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-ainmquqvrbjrpyr0jxhf",
+    "status": "approved",
+    "workType": "drawing",
+    "title": "Engraving of Odense from Braun & Hogenberg: Civitates Orbis Terrarum 1593.",
+    "artistOrCreator": "Georg Braun & Frans Hogenberg",
+    "depictedDate": {
+      "minYear": 1593,
+      "maxYear": 1593
+    },
+    "creationDate": {
+      "minYear": 1593,
+      "maxYear": 1593
+    },
+    "location": {
+      "placeId": "odense-dk",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Northern Europe",
+      "difficulty": 4,
+      "landmarkCategory": null,
+      "tags": [
+        "16th-century",
+        "engraving",
+        "city-view"
+      ]
+    },
+    "clues": {
+      "region": "Northern Europe",
+      "era": "1590s",
+      "country": "Denmark"
+    },
+    "media": {
+      "originalPath": "odense-braun-hogenberg-1593.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (PD-old-100)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Braunius_Odense.jpg",
+      "creditText": null
+    },
+    "context": "A bird's-eye engraving from Braun & Hogenberg's Civitates Orbis Terrarum, the great 16th-century atlas of the world's cities.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:AInMqUqVrbJRpyr0jXHF",
+    "createdAt": "2025-01-31T08:15:39.684850Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-cpa6lbmxioir5nrxpuzb",
+    "status": "approved",
+    "workType": "painting",
+    "title": "George Street, Sydney, 1883, by Alfred Tischbauer, oil painting, State Library of New South Wales",
+    "artistOrCreator": "Alfred Tischbauer",
+    "depictedDate": {
+      "minYear": 1883,
+      "maxYear": 1883
+    },
+    "creationDate": {
+      "minYear": 1883,
+      "maxYear": 1883
+    },
+    "location": {
+      "placeId": "sydney-au",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Oceania",
+      "difficulty": 2,
+      "landmarkCategory": "street",
+      "tags": [
+        "street",
+        "colonial"
+      ]
+    },
+    "clues": {
+      "region": "Oceania",
+      "era": "1880s",
+      "country": "Australia"
+    },
+    "media": {
+      "originalPath": "sydney-george-street-1883.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0 AU (underlying 1883 artwork is public domain in Australia; this digital reproduction by SLNSW is CC BY-SA)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:George_Street_Sydney_1883.jpg",
+      "creditText": "State Library of New South Wales"
+    },
+    "context": "Alfred Tischbauer's oil painting of George Street, Sydney's oldest thoroughfare, dating to the early colonial period.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:CpA6lbMxiOir5NRXpUZb",
+    "createdAt": "2025-01-23T22:47:28.010861Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-gdmnp3qxdritrpuku4kn",
+    "status": "approved",
+    "workType": "drawing",
+    "title": "17th century depiction of Havana.",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1699,
+      "maxYear": 1699
+    },
+    "creationDate": null,
+    "location": {
+      "placeId": "havana-cu",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Caribbean",
+      "difficulty": 4,
+      "landmarkCategory": "harbour",
+      "tags": [
+        "17th-century",
+        "panorama",
+        "harbour"
+      ]
+    },
+    "clues": {
+      "region": "Caribbean",
+      "era": "1690s",
+      "country": "Cuba"
+    },
+    "media": {
+      "originalPath": "havana-panorama-17th-century.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (life+70 or fewer; 17th-century work, Atlas Beudeker)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_of_La_Habana_%28Amsterdam%2C_17th_century%29.jpg",
+      "creditText": "British Library"
+    },
+    "context": "A panoramic depiction of Havana's harbour, already one of the Spanish empire's most fortified Caribbean ports by this period.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:GdmnP3qXDRItrpuku4kN",
+    "createdAt": "2025-01-24T10:32:21.119593Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-gseihtrlevl39vt8px49",
+    "status": "approved",
+    "workType": "photo",
+    "title": "Bathing Ghat Banaras India",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1890,
+      "maxYear": 1890
+    },
+    "creationDate": {
+      "minYear": 1890,
+      "maxYear": 1890
+    },
+    "location": {
+      "placeId": "varanasi-in",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "South Asia",
+      "difficulty": 3,
+      "landmarkCategory": "ghat",
+      "tags": [
+        "river",
+        "ghat",
+        "religious"
+      ]
+    },
+    "clues": {
+      "region": "South Asia",
+      "era": "1890s",
+      "country": "India"
+    },
+    "media": {
+      "originalPath": "varanasi-bathing-ghat-1890.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "No known copyright restrictions (British Library, Flickr Commons)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bathing_Ghat_Banaras_India_1890.jpg",
+      "creditText": "British Library"
+    },
+    "context": "Pilgrims bathing at one of Varanasi's ghats on the Ganges, from a European travellers' handbook to India.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:GseIHTrlevl39VT8PX49",
+    "createdAt": "2025-01-27T09:41:34.168678Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-bgvtpznqa9idpj5ss65j",
+    "status": "approved",
+    "workType": "drawing",
+    "title": "Kazan by Adam Olearius",
+    "artistOrCreator": "Adam Olearius",
+    "depictedDate": {
+      "minYear": 1656,
+      "maxYear": 1656
+    },
+    "creationDate": null,
+    "location": {
+      "placeId": "kazan-ru",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Eastern Europe",
+      "difficulty": 4,
+      "landmarkCategory": null,
+      "tags": [
+        "17th-century",
+        "engraving"
+      ]
+    },
+    "clues": {
+      "region": "Eastern Europe",
+      "era": "1650s",
+      "country": "Russia"
+    },
+    "media": {
+      "originalPath": "kazan-olearius-1656.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (PD-old-100-expired — mechanical scan of a public domain original by Adam Olearius, 1599-1671)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:CasanTartarorum_by_Olearius.jpg",
+      "creditText": null
+    },
+    "context": "An engraving from Adam Olearius's account of his embassy travels through Muscovy and Persia.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:bgVTpzNqA9Idpj5Ss65J",
+    "createdAt": "2025-01-27T09:27:15.426180Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-msnwyinnedppfwc7etgm",
+    "status": "approved",
+    "workType": "photo",
+    "title": "Iraq, Baghdad & mosque.",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1932,
+      "maxYear": 1932
+    },
+    "creationDate": {
+      "minYear": 1932,
+      "maxYear": 1932
+    },
+    "location": {
+      "placeId": "baghdad-iq",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Middle East",
+      "difficulty": 3,
+      "landmarkCategory": "mosque",
+      "tags": [
+        "mosque",
+        "riverside"
+      ]
+    },
+    "clues": {
+      "region": "Middle East",
+      "era": "1930s",
+      "country": "Iraq"
+    },
+    "media": {
+      "originalPath": "baghdad-mosque-1932.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (no known restrictions — Library of Congress, Matson Collection)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baghdad_LOC_13186.jpg",
+      "creditText": "Library of Congress, Matson Photograph Collection"
+    },
+    "context": "A view of Baghdad and one of its mosques, photographed by the American Colony's Matson studio in the early 1930s.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:msnWYinneDPPFWC7etgM",
+    "createdAt": "2025-01-27T09:22:36.061224Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-tsssr1dxwucljt3ykdjv",
+    "status": "approved",
+    "workType": "painting",
+    "title": "Lambton Harbour, Port Nicholson, Wellington, New Zealand, comprehending about one-third of the water frontage of the town of Wellington, ca. 1840, Charles Heaphy",
+    "artistOrCreator": "Charles Heaphy",
+    "depictedDate": {
+      "minYear": 1840,
+      "maxYear": 1840
+    },
+    "creationDate": {
+      "minYear": 1840,
+      "maxYear": 1840
+    },
+    "location": {
+      "placeId": "wellington-nz",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Oceania",
+      "difficulty": 4,
+      "landmarkCategory": "harbour",
+      "tags": [
+        "harbour",
+        "colonial",
+        "founding-era"
+      ]
+    },
+    "clues": {
+      "region": "Oceania",
+      "era": "1840s",
+      "country": "New Zealand"
+    },
+    "media": {
+      "originalPath": "wellington-lambton-harbour-1840.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (PD-Australia and PD-1923 US)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lambton_Harbour%2C_Wellington%2C_New_Zealand_c_1840.jpg",
+      "creditText": "Mitchell Library, State Library of New South Wales"
+    },
+    "context": "Charles Heaphy's view of Lambton Harbour dates to the very founding year of the Wellington settlement.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:tssSR1DXwUCljT3ykDjV",
+    "createdAt": "2025-01-24T10:41:39.987846Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-gwj8r1bnbjojfekdoidz",
+    "status": "approved",
+    "workType": "photo",
+    "title": "Street scene of Lahore",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1890,
+      "maxYear": 1890
+    },
+    "creationDate": {
+      "minYear": 1890,
+      "maxYear": 1890
+    },
+    "location": {
+      "placeId": "lahore-pk",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "South Asia",
+      "difficulty": 4,
+      "landmarkCategory": "street",
+      "tags": [
+        "street",
+        "colonial"
+      ]
+    },
+    "clues": {
+      "region": "South Asia",
+      "era": "1890s",
+      "country": "Pakistan"
+    },
+    "media": {
+      "originalPath": "lahore-street-scene-1890s.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (Pakistani copyright term expired)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Street_scene_of_Lahore%2C_1890s_2.jpg",
+      "creditText": "British Library"
+    },
+    "context": "A street scene from Lahore, then a major city of British Punjab, photographed in the 1890s.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:gWj8r1BNbJojfekDoidZ",
+    "createdAt": "2025-01-27T09:34:15.148942Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-lrtmuzxeuktawbh1tol1",
+    "status": "approved",
+    "workType": "drawing",
+    "title": "View of Prague from the Castle Staircase by W. M. R. Quick.jpg",
+    "artistOrCreator": "W. M. R. Quick",
+    "depictedDate": {
+      "minYear": 1882,
+      "maxYear": 1882
+    },
+    "creationDate": {
+      "minYear": 1882,
+      "maxYear": 1882
+    },
+    "location": {
+      "placeId": "prague-cz",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Central Europe",
+      "difficulty": 2,
+      "landmarkCategory": "castle",
+      "tags": [
+        "river",
+        "hilltop",
+        "castle"
+      ]
+    },
+    "clues": {
+      "region": "Central Europe",
+      "era": "1880s",
+      "country": "Czechia"
+    },
+    "media": {
+      "originalPath": "prague-castle-staircase-1882.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (PD-old-70-expired)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Prague_from_the_Castle_Staircase_by_W._M._R._Quick.jpg",
+      "creditText": null
+    },
+    "context": "An illustration from Glimpses of Bohemia, looking down from Prague Castle over the Vltava and the Old Town.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:lRtmuzxeuKTaWbh1TOL1",
+    "createdAt": "2025-01-21T10:06:17.085924Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-c1tap3dwjgfl3yzgx7ms",
+    "status": "approved",
+    "workType": "photo",
+    "title": "The main street of Accra",
+    "artistOrCreator": "Rudolf Fisch",
+    "depictedDate": {
+      "minYear": 1908,
+      "maxYear": 1908
+    },
+    "creationDate": {
+      "minYear": 1885,
+      "maxYear": 1908
+    },
+    "location": {
+      "placeId": "accra-gh",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "West Africa",
+      "difficulty": 4,
+      "landmarkCategory": "street",
+      "tags": [
+        "street",
+        "colonial"
+      ]
+    },
+    "clues": {
+      "region": "West Africa",
+      "era": "1900s",
+      "country": "Ghana"
+    },
+    "media": {
+      "originalPath": "accra-main-street-1908.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (life+70 or fewer)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hauptstra%C3%9FeAccra18851908_300dpi.jpg",
+      "creditText": null
+    },
+    "context": "The main street of Accra during the era of the Gold Coast colony, before the city's later expansion.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:c1taP3DWjGFL3YzGx7MS",
+    "createdAt": "2025-01-24T10:35:26.150090Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-tnsfwjkl6wluavgfynzm",
+    "status": "approved",
+    "workType": "photo",
+    "title": "Uganda. Kampala. Imperial Hotel",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1936,
+      "maxYear": 1936
+    },
+    "creationDate": {
+      "minYear": 1936,
+      "maxYear": 1936
+    },
+    "location": {
+      "placeId": "kampala-ug",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "East Africa",
+      "difficulty": 4,
+      "landmarkCategory": "hotel",
+      "tags": [
+        "colonial",
+        "hotel"
+      ]
+    },
+    "clues": {
+      "region": "East Africa",
+      "era": "1930s",
+      "country": "Uganda"
+    },
+    "media": {
+      "originalPath": "kampala-imperial-hotel-1936.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (no known restrictions — Library of Congress, Matson Collection)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Uganda._Kampala._Imperial_Hotel_LOC_matpc.17441.jpg",
+      "creditText": "Library of Congress, Matson Photograph Collection"
+    },
+    "context": "The Imperial Hotel in colonial-era Kampala, then the administrative centre of the Uganda Protectorate.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:TNsFwjkL6WLUAvGFynzM",
+    "createdAt": "2025-01-24T10:37:11.540722Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-flafyeiexdqd3rsfe5wz",
+    "status": "approved",
+    "workType": "drawing",
+    "title": "Vista de Bogotá",
+    "artistOrCreator": "Fergon",
+    "depictedDate": {
+      "minYear": 1887,
+      "maxYear": 1887
+    },
+    "creationDate": {
+      "minYear": 1887,
+      "maxYear": 1887
+    },
+    "location": {
+      "placeId": "bogota-co",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "South America",
+      "difficulty": 3,
+      "landmarkCategory": null,
+      "tags": [
+        "cityscape",
+        "andes"
+      ]
+    },
+    "clues": {
+      "region": "South America",
+      "era": "1880s",
+      "country": "Colombia"
+    },
+    "media": {
+      "originalPath": "bogota-vista-1887.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (life+100 or fewer)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bogot%C3%A1.jpg",
+      "creditText": null
+    },
+    "context": "A view of Bogotá from a Spanish-language geography text, showing the city set against the eastern Andean hills.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:FLafYEIEXDQD3Rsfe5wZ",
+    "createdAt": "2025-01-24T10:33:18.129627Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-tdddeuafziqem1pugxbo",
+    "status": "approved",
+    "workType": "drawing",
+    "title": "Port Natal and Durban - view taken from the bluff",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1893,
+      "maxYear": 1893
+    },
+    "creationDate": {
+      "minYear": 1893,
+      "maxYear": 1893
+    },
+    "location": {
+      "placeId": "durban-za",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Southern Africa",
+      "difficulty": 4,
+      "landmarkCategory": "harbour",
+      "tags": [
+        "harbour",
+        "colonial"
+      ]
+    },
+    "clues": {
+      "region": "Southern Africa",
+      "era": "1890s",
+      "country": "South Africa"
+    },
+    "media": {
+      "originalPath": "durban-port-natal-1893.png",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (US — pre-1931 publication)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:AFR_V4_D241_Port_Natal_and_Durban_-_view_taken_from_the_bluff.png",
+      "creditText": null
+    },
+    "context": "Port Natal and Durban seen from the bluff, from Élisée Reclus's geographical survey The Earth and Its Inhabitants.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:TDDdEUAfZiqEm1PUgxbo",
+    "createdAt": "2025-01-24T10:38:06.934321Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-ew10gpluzoe9ikpp2o3j",
+    "status": "approved",
+    "workType": "photo",
+    "title": "Vancouver as seen from Fairview, British Columbia, Canada, 1904",
+    "artistOrCreator": "William McFarlane Notman",
+    "depictedDate": {
+      "minYear": 1904,
+      "maxYear": 1904
+    },
+    "creationDate": {
+      "minYear": 1904,
+      "maxYear": 1904
+    },
+    "location": {
+      "placeId": "vancouver-ca",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "North America",
+      "difficulty": 3,
+      "landmarkCategory": null,
+      "tags": [
+        "cityscape"
+      ]
+    },
+    "clues": {
+      "region": "North America",
+      "era": "1900s",
+      "country": "Canada"
+    },
+    "media": {
+      "originalPath": "vancouver-fairview-1904.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (Canada & US)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vancouver_from_Fairview%2C_BC%2C_1904.jpg",
+      "creditText": "McCord Stewart Museum"
+    },
+    "context": "Vancouver photographed from the Fairview neighbourhood, only a couple of decades after the city's incorporation.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:ew10GpLUzOE9iKpP2o3J",
+    "createdAt": "2025-01-24T10:29:14.273877Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-8jbvncyk3nzttljnemep",
+    "status": "approved",
+    "workType": "painting",
+    "title": "Los Primeros Pobladores de Montevideo",
+    "artistOrCreator": "Eduardo Amézaga",
+    "depictedDate": {
+      "minYear": 1726,
+      "maxYear": 1726
+    },
+    "creationDate": {
+      "minYear": 1900,
+      "maxYear": 1900
+    },
+    "location": {
+      "placeId": "montevideo-uy",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "South America",
+      "difficulty": 4,
+      "landmarkCategory": null,
+      "tags": [
+        "founding-era",
+        "painting"
+      ]
+    },
+    "clues": {
+      "region": "South America",
+      "era": "1720s",
+      "country": "Uruguay"
+    },
+    "media": {
+      "originalPath": "montevideo-primeros-pobladores.png",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (life+70 or fewer)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Los_Primeros_Pobladores_de_Montevideo.png",
+      "creditText": null
+    },
+    "context": "Eduardo Amézaga's painting imagines Montevideo's first settlers arriving in 1726, though the canvas itself was painted around 1900.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:8JBvNcyk3NZTTlJNEMEp",
+    "createdAt": "2025-01-24T10:34:27.471264Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-mj1iv4i1bxrsr6ks6afw",
+    "status": "approved",
+    "workType": "drawing",
+    "title": "Street and city gate in old Seoul (late 19th century)",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1892,
+      "maxYear": 1892
+    },
+    "creationDate": {
+      "minYear": 1896,
+      "maxYear": 1896
+    },
+    "location": {
+      "placeId": "seoul-kr",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "East Asia",
+      "difficulty": 3,
+      "landmarkCategory": "gate",
+      "tags": [
+        "city-gate",
+        "street"
+      ]
+    },
+    "clues": {
+      "region": "East Asia",
+      "era": "1890s",
+      "country": "South Korea"
+    },
+    "media": {
+      "originalPath": "seoul-street-city-gate-1892.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (life+100 or fewer; pre-1931 US publication)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hauptstrasse_und_Palasttor_in_Seoul.jpg",
+      "creditText": null
+    },
+    "context": "A street and city gate in old Seoul, illustrated in Otto Ehrenfried Ehler's German account of travels in East Asia.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:mJ1IV4I1BxRSR6kS6AFw",
+    "createdAt": "2025-01-22T10:08:57.278128Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fs-i7eevciedrz0e4dhqvjx",
+    "status": "approved",
+    "workType": "drawing",
+    "title": "Plan de Goa",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1750,
+      "maxYear": 1750
+    },
+    "creationDate": {
+      "minYear": 1750,
+      "maxYear": 1750
+    },
+    "location": {
+      "placeId": "goa-in",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "South Asia",
+      "difficulty": 4,
+      "landmarkCategory": "map",
+      "tags": [
+        "map",
+        "colonial",
+        "18th-century"
+      ]
+    },
+    "clues": {
+      "region": "South Asia",
+      "era": "1750s",
+      "country": "India"
+    },
+    "media": {
+      "originalPath": "goa-plan-de-goa-1750.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (uploader-released, worldwide)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%22Plan_de_Goa%22%2C_in_Histoire_g%C3%A9n%C3%A9rale_des_voyages%2C1750.jpg",
+      "creditText": null
+    },
+    "context": "A plan of Goa from Histoire générale des voyages, mapping the Portuguese colonial capital on India's west coast.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-09T00:00:00.000Z",
+      "notes": "M2 seed batch; license verified against Commons file page before approval."
+    },
+    "importSource": "firestore:i7EevciEdRZ0e4dhqVjx",
+    "createdAt": "2025-01-27T09:58:47.170133Z",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  }
+]
