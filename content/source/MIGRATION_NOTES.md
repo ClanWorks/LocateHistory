@@ -13,7 +13,7 @@
 ## Credential audit
 
 - `config/photolocation-54a1d-firebase-adminsdk-fbsvc-c654c3cd30.json` is gitignored and not present in any reachable git history. `.git/filter-repo/` confirms a history rewrite already ran (2025-01-21), consistent with this cleanup having already happened once.
-- Conclusion: no rotation required. Key stays local, used only for the one-off Firestore export below, and should be deleted once the schema-mapped v1 content library (M2) is verified against it.
+- Conclusion: no evidence of exposure in this repository's history. Git history alone can't prove the key was never copied or shared outside this repo, so this isn't a guarantee of safety, only an absence of a specific kind of evidence — if there's any independent reason to think the key leaked elsewhere, rotate it regardless of what's written here. On the evidence available, rotation isn't required on that basis. Key stays local, used only for the one-off Firestore export below, and should be deleted once the schema-mapped v1 content library (M2) is verified against it.
 
 ## Firestore export
 

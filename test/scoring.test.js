@@ -56,6 +56,15 @@ describe("calculateAccuracy", () => {
   test("never goes negative for very large distances", () => {
     assert.equal(calculateAccuracy(20000), 0);
   });
+
+  test("rejects NaN/undefined instead of silently returning full credit", () => {
+    assert.throws(() => calculateAccuracy(undefined), TypeError);
+    assert.throws(() => calculateAccuracy(NaN), TypeError);
+  });
+
+  test("rejects a negative distance instead of treating it as full credit", () => {
+    assert.throws(() => calculateAccuracy(-5), RangeError);
+  });
 });
 
 describe("calculateTimeBonus", () => {
@@ -78,6 +87,16 @@ describe("calculateTimeBonus", () => {
   test("clamps remaining time above the round duration to the max", () => {
     assert.equal(calculateTimeBonus(ROUND_DURATION_MS * 2), 200);
   });
+
+  test("rejects a non-numeric remainingMs", () => {
+    assert.throws(() => calculateTimeBonus(undefined), TypeError);
+    assert.throws(() => calculateTimeBonus(NaN), TypeError);
+  });
+
+  test("rejects a zero or negative round duration instead of dividing by it", () => {
+    assert.throws(() => calculateTimeBonus(1000, 0), RangeError);
+    assert.throws(() => calculateTimeBonus(1000, -30000), RangeError);
+  });
 });
 
 describe("calculateCluePenalty", () => {
@@ -95,6 +114,11 @@ describe("calculateCluePenalty", () => {
 
   test("ignores unknown clue names rather than throwing", () => {
     assert.equal(calculateCluePenalty(["not-a-real-clue"]), 0);
+  });
+
+  test("rejects a non-array cluesUsed", () => {
+    assert.throws(() => calculateCluePenalty(undefined), TypeError);
+    assert.throws(() => calculateCluePenalty("region"), TypeError);
   });
 });
 
@@ -117,5 +141,10 @@ describe("calculateRoundScore", () => {
   test("identical inputs produce identical outputs", () => {
     const input = { timedOut: false, distanceKm: 452.3, remainingMs: 12345, cluesUsed: ["region"] };
     assert.deepEqual(calculateRoundScore(input), calculateRoundScore({ ...input }));
+  });
+
+  test("propagates the underlying validation error instead of returning NaN for a non-timeout round", () => {
+    assert.throws(() => calculateRoundScore({ timedOut: false, distanceKm: undefined, remainingMs: 1000, cluesUsed: [] }), TypeError);
+    assert.throws(() => calculateRoundScore({ timedOut: false, distanceKm: 100, remainingMs: NaN, cluesUsed: [] }), TypeError);
   });
 });

@@ -52,6 +52,13 @@ describe("session setup", () => {
     assert.throws(() => reduce(setup, { type: "SESSION_READY", payload: { roundItemIds: ["only-one"] } }));
   });
 
+  test("SESSION_READY rejects duplicate round item ids", () => {
+    const setup = reduce(reduce(createInitialState({ hasSeenIntro: true }), { type: "BOOT_COMPLETE" }), { type: "MANIFEST_LOADED" });
+    const ids = tenIds();
+    ids[9] = ids[0]; // duplicate the first id into the last slot
+    assert.throws(() => reduce(setup, { type: "SESSION_READY", payload: { roundItemIds: ids } }));
+  });
+
   test("SESSION_READY initializes round zero", () => {
     const setup = reduce(reduce(createInitialState({ hasSeenIntro: true }), { type: "BOOT_COMPLETE" }), { type: "MANIFEST_LOADED" });
     const playing = playSession(setup);
@@ -88,12 +95,23 @@ describe("playing", () => {
     assert.equal(twice, once, "second identical clue request must not produce a new state");
   });
 
+  test("requesting an unknown clue throws instead of silently polluting cluesUsed", () => {
+    const playing = freshPlayingState();
+    assert.throws(() => reduce(playing, { type: "CLUE_REQUESTED", payload: { clue: "not-a-real-clue" } }));
+  });
+
   test("a guess moves to resolving with the guess recorded", () => {
     const playing = freshPlayingState();
     const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
     assert.equal(resolving.status, Status.RESOLVING);
     assert.equal(resolving.context.currentRound.guessPlaceId, "paris");
     assert.equal(resolving.context.currentRound.reason, "guess");
+  });
+
+  test("a guess with no guessPlaceId throws instead of silently locking in null", () => {
+    const playing = freshPlayingState();
+    assert.throws(() => reduce(playing, { type: "GUESS_SUBMITTED", payload: {} }));
+    assert.throws(() => reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "" } }));
   });
 
   test("a timer expiry moves to resolving with no guess and reason timeout", () => {
@@ -132,6 +150,14 @@ describe("resolving -> answered/timed_out -> results", () => {
     assert.equal(answered.context.roundResults.length, 1);
     assert.equal(answered.context.roundResults[0].roundScore, 950);
     assert.ok(Object.isFrozen(answered.context.roundResults[0]), "completed round record must be frozen");
+  });
+
+  test("RESOLUTION_COMPUTED rejects a non-numeric score payload instead of storing garbage", () => {
+    const playing = freshPlayingState();
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    assert.throws(() => reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: undefined, accuracy: 800, timeBonus: 150, cluePenalty: 0 } }));
+    assert.throws(() => reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: NaN, accuracy: 800, timeBonus: 150, cluePenalty: 0 } }));
+    assert.throws(() => reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: 950, accuracy: 800, timeBonus: 150, cluePenalty: 0, distanceKm: "close" } }));
   });
 
   test("RESOLUTION_COMPUTED after a timeout produces a timed_out round", () => {
@@ -190,6 +216,50 @@ describe("error recovery", () => {
   test("RETRY outside error state is a no-op", () => {
     const playing = freshPlayingState();
     assert.equal(reduce(playing, { type: "RETRY" }), playing);
+  });
+
+  test("an error during the reveal (answered) recovers back to answered, not playing", () => {
+    // Regression test: answered has currentRound === null. Recovering
+    // straight to playing would leave currentRound null, and the next
+    // CLUE_REQUESTED or GUESS_SUBMITTED would crash trying to read it.
+    const playing = freshPlayingState();
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const answered = reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: 950, accuracy: 800, timeBonus: 150, cluePenalty: 0, distanceKm: 3 } });
+    const errored = reduce(answered, { type: "ERROR_OCCURRED", payload: { reason: "map_load_failed" } });
+    assert.equal(errored.context.error.recoverTo, Status.ANSWERED);
+
+    const retried = reduce(errored, { type: "RETRY" });
+    assert.equal(retried.status, Status.ANSWERED);
+    assert.equal(retried.context.currentRound, null, "answered legitimately has no currentRound");
+
+    // Confirm no crash: an event that only makes sense in PLAYING must
+    // stay a safe no-op here, not throw on a null currentRound.
+    assert.equal(reduce(retried, { type: "CLUE_REQUESTED", payload: { clue: "region" } }), retried);
+  });
+
+  test("an error during a timeout reveal recovers back to timed_out, not playing", () => {
+    const playing = freshPlayingState();
+    const resolving = reduce(playing, { type: "TIMER_EXPIRED" });
+    const timedOut = reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: 0, accuracy: 0, timeBonus: 0, cluePenalty: 0 } });
+    const errored = reduce(timedOut, { type: "ERROR_OCCURRED", payload: { reason: "map_load_failed" } });
+    assert.equal(errored.context.error.recoverTo, Status.TIMED_OUT);
+    assert.equal(reduce(errored, { type: "RETRY" }).status, Status.TIMED_OUT);
+  });
+
+  test("an error while resolving recovers to playing with the in-flight guess cleared for resubmission", () => {
+    const playing = freshPlayingState();
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const errored = reduce(resolving, { type: "ERROR_OCCURRED", payload: { reason: "scoring_failed" } });
+    assert.equal(errored.context.error.recoverTo, Status.PLAYING);
+
+    const retried = reduce(errored, { type: "RETRY" });
+    assert.equal(retried.status, Status.PLAYING);
+    assert.equal(retried.context.currentRound.guessPlaceId, null, "stale guess must be cleared, not resurrected");
+    assert.equal(retried.context.currentRound.reason, null);
+
+    // A fresh guess after recovery must work normally.
+    const resolvingAgain = reduce(retried, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "london" } });
+    assert.equal(resolvingAgain.status, Status.RESOLVING);
   });
 });
 

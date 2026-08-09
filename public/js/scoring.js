@@ -21,6 +21,12 @@ function toRadians(deg) {
   return (deg * Math.PI) / 180;
 }
 
+function assertFiniteNumber(value, label) {
+  if (typeof value !== "number" || !Number.isFinite(value)) {
+    throw new TypeError(`${label} must be a finite number, got ${JSON.stringify(value)}`);
+  }
+}
+
 /**
  * Great-circle distance between two {lat, lng} points, in kilometres.
  */
@@ -43,6 +49,9 @@ export function haversineDistanceKm(a, b) {
  * @param {string[]} cluesUsed
  */
 export function calculateCluePenalty(cluesUsed) {
+  if (!Array.isArray(cluesUsed)) {
+    throw new TypeError(`cluesUsed must be an array, got ${JSON.stringify(cluesUsed)}`);
+  }
   const unique = new Set(cluesUsed);
   let total = 0;
   for (const clue of unique) {
@@ -57,6 +66,10 @@ export function calculateCluePenalty(cluesUsed) {
  *   exponential decay.
  */
 export function calculateAccuracy(distanceKm) {
+  assertFiniteNumber(distanceKm, "distanceKm");
+  if (distanceKm < 0) {
+    throw new RangeError(`distanceKm must not be negative, got ${distanceKm}`);
+  }
   if (distanceKm <= DISTANCE_FULL_CREDIT_KM) return ACCURACY_MAX;
   const raw = ACCURACY_MAX * Math.exp(-(distanceKm - DISTANCE_FULL_CREDIT_KM) / DISTANCE_DECAY_KM);
   return Math.min(ACCURACY_MAX, Math.max(0, Math.round(raw)));
@@ -68,6 +81,11 @@ export function calculateAccuracy(distanceKm) {
  * @returns {number} 0-200
  */
 export function calculateTimeBonus(remainingMs, roundDurationMs = ROUND_DURATION_MS) {
+  assertFiniteNumber(remainingMs, "remainingMs");
+  assertFiniteNumber(roundDurationMs, "roundDurationMs");
+  if (roundDurationMs <= 0) {
+    throw new RangeError(`roundDurationMs must be greater than zero, got ${roundDurationMs}`);
+  }
   const clampedRemaining = Math.min(roundDurationMs, Math.max(0, remainingMs));
   const raw = TIME_BONUS_MAX * (clampedRemaining / roundDurationMs);
   return Math.min(TIME_BONUS_MAX, Math.max(0, Math.round(raw)));

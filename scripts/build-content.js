@@ -10,23 +10,36 @@
 // it exists. For now, approved items' original assets are copied through
 // unchanged under an opaque, checksum-derived name.
 //
-// Usage: node scripts/build-content.js [--source <dir>]
-// The build fails loudly rather than publishing partial or invalid data.
+// Usage: node scripts/build-content.js [--source <dir>] [--content-out <dir>] [--assets-out <dir>]
+// The build fails loudly rather than publishing partial or invalid data,
+// and never touches the real output directories until a full build
+// (validation + every asset + manifest + gazetteer) has already succeeded.
 
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { validateSourceCollection, validateManifest } from "./lib/validate.js";
+import { REQUIRED_ROUNDS } from "../public/js/state-machine.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.join(__dirname, "..");
 
 function parseArgs(argv) {
-  const args = { sourceDir: path.join(repoRoot, "content", "source") };
+  const args = {
+    sourceDir: path.join(repoRoot, "content", "source"),
+    contentOutDir: path.join(repoRoot, "public", "content"),
+    assetsOutDir: path.join(repoRoot, "public", "assets"),
+  };
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === "--source" && argv[i + 1]) {
       args.sourceDir = path.resolve(argv[i + 1]);
+      i++;
+    } else if (argv[i] === "--content-out" && argv[i + 1]) {
+      args.contentOutDir = path.resolve(argv[i + 1]);
+      i++;
+    } else if (argv[i] === "--assets-out" && argv[i + 1]) {
+      args.assetsOutDir = path.resolve(argv[i + 1]);
       i++;
     }
   }
@@ -37,9 +50,19 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
-function deriveEra(minYear) {
-  const decade = Math.floor(minYear / 10) * 10;
-  return `${decade}s`;
+/**
+ * Resolves item.media.originalPath against originalsDir and rejects any
+ * result that escapes it (e.g. "../../../etc/passwd" or an absolute
+ * path). See plan.md §13 step 12 ("fail on ... unsafe paths").
+ */
+function resolveConfinedPath(baseDir, relativePath) {
+  const resolvedBase = path.resolve(baseDir);
+  const resolvedPath = path.resolve(resolvedBase, relativePath);
+  const isInside = resolvedPath === resolvedBase || resolvedPath.startsWith(resolvedBase + path.sep);
+  if (!isInside) {
+    throw new Error(`unsafe media path escapes originals directory: "${relativePath}"`);
+  }
+  return resolvedPath;
 }
 
 /**
@@ -64,7 +87,7 @@ function readPngDimensions(bytes) {
  * steps 6-9).
  */
 function processMediaPlaceholder(item, { originalsDir, assetsOutDir }) {
-  const originalPath = path.join(originalsDir, item.media.originalPath);
+  const originalPath = resolveConfinedPath(originalsDir, item.media.originalPath);
   if (!fs.existsSync(originalPath)) {
     throw new Error(`missing original asset for "${item.id}": ${originalPath}`);
   }
@@ -80,7 +103,18 @@ function processMediaPlaceholder(item, { originalsDir, assetsOutDir }) {
   return { src: `assets/${assetName}`, srcset: `assets/${assetName} 1x`, placeholder: null, width, height };
 }
 
-function buildManifest({ sourceDir, originalsDir, assetsOutDir }) {
+/**
+ * @param {object} options
+ * @param {string} options.sourceDir
+ * @param {string} [options.originalsDir]
+ * @param {string} [options.assetsOutDir]
+ * @param {number} [options.minApprovedItems] Production builds need at
+ *   least REQUIRED_ROUNDS approved items to run one full session — this
+ *   defaults to that. Tests pass a smaller explicit value so small,
+ *   fast fixture sets don't have to fake ten items just to exercise the
+ *   pipeline.
+ */
+function buildManifest({ sourceDir, originalsDir, assetsOutDir, minApprovedItems = REQUIRED_ROUNDS }) {
   const items = readJson(path.join(sourceDir, "items.json"));
   const gazetteer = readJson(path.join(sourceDir, "gazetteer.json"));
 
@@ -95,6 +129,12 @@ function buildManifest({ sourceDir, originalsDir, assetsOutDir }) {
   }
 
   const approved = items.filter((item) => item.status === "approved");
+  if (approved.length < minApprovedItems) {
+    throw new Error(
+      `only ${approved.length} approved item(s) in ${sourceDir}, need at least ${minApprovedItems} for a full session ` +
+        `(pass a smaller minApprovedItems explicitly for test/fixture builds)`
+    );
+  }
   const resolvedOriginalsDir = originalsDir ?? path.join(sourceDir, "..", "originals");
   const resolvedAssetsOutDir = assetsOutDir ?? path.join(repoRoot, "public", "assets");
 
@@ -126,13 +166,22 @@ function buildManifest({ sourceDir, originalsDir, assetsOutDir }) {
     };
   });
 
-  const usedPlaceIds = new Set();
-  for (const item of approved) {
-    usedPlaceIds.add(item.location.placeId);
-    for (const id of item.location.acceptedPlaceIds) usedPlaceIds.add(id);
-  }
-  const publicGazetteer = gazetteer.filter((entry) => usedPlaceIds.has(entry.id));
+  // The public gazetteer is the whole curated guess pool, not just the
+  // cities that happen to be correct answers in this content batch — if
+  // it were filtered to answers-only, the searchable city selector would
+  // list exactly the ten correct cities and get easier every round.
+  // validateSourceCollection already guarantees every item's placeId and
+  // acceptedPlaceIds resolve somewhere in this list, so no further
+  // filtering or re-checking is needed here.
+  const publicGazetteer = gazetteer;
 
+  // "Deterministic" applies to contentHash, not the manifest file as a
+  // whole: contentHash is derived only from manifestItems, so the same
+  // source always produces the same hash. generatedAt is deliberately
+  // wall-clock (useful for ops/debugging — "when was this published")
+  // and will differ between two builds of identical content. Compare
+  // contentHash, not the full JSON, when checking whether a rebuild
+  // actually changed anything.
   const manifestBody = { manifestVersion: 1, items: manifestItems };
   const contentHash = crypto.createHash("sha256").update(JSON.stringify(manifestBody)).digest("hex").slice(0, 16);
   const manifest = { manifestVersion: 1, generatedAt: new Date().toISOString(), contentHash, items: manifestItems };
@@ -147,15 +196,43 @@ function buildManifest({ sourceDir, originalsDir, assetsOutDir }) {
   return { manifest, gazetteer: publicGazetteer, approvedCount: approved.length, totalCount: items.length };
 }
 
+/**
+ * Builds into a scratch staging directory first, and only touches the
+ * real public/ output once everything — validation, every asset, the
+ * manifest, the gazetteer — has succeeded. A mid-build failure with the
+ * old single-pass version left whichever assets had already been written
+ * sitting in public/assets alongside no manifest update at all, and old
+ * assets for retired content were never cleaned up. Swapping the whole
+ * assets directory in one rename means a rebuild's output always exactly
+ * matches current approved content, with no partial writes and no
+ * accumulating orphans.
+ */
 function main() {
-  const { sourceDir } = parseArgs(process.argv.slice(2));
-  const outDir = path.join(repoRoot, "public", "content");
+  const { sourceDir, contentOutDir: outDir, assetsOutDir: finalAssetsDir } = parseArgs(process.argv.slice(2));
+  const stagingAssetsDir = path.join(path.dirname(finalAssetsDir), `.assets-build-${crypto.randomUUID()}`);
 
-  const { manifest, gazetteer, approvedCount, totalCount } = buildManifest({ sourceDir });
+  let result;
+  try {
+    result = buildManifest({ sourceDir, assetsOutDir: stagingAssetsDir });
+  } catch (err) {
+    fs.rmSync(stagingAssetsDir, { recursive: true, force: true });
+    throw err;
+  }
+
+  const { manifest, gazetteer, approvedCount, totalCount } = result;
 
   fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, "manifest.json"), JSON.stringify(manifest, null, 2));
-  fs.writeFileSync(path.join(outDir, "gazetteer.json"), JSON.stringify(gazetteer, null, 2));
+  const manifestTmpPath = path.join(outDir, `.manifest.json.tmp-${crypto.randomUUID()}`);
+  const gazetteerTmpPath = path.join(outDir, `.gazetteer.json.tmp-${crypto.randomUUID()}`);
+  fs.writeFileSync(manifestTmpPath, JSON.stringify(manifest, null, 2));
+  fs.writeFileSync(gazetteerTmpPath, JSON.stringify(gazetteer, null, 2));
+
+  // Everything that can fail has already happened. From here it's just
+  // renames, which are atomic on the same filesystem.
+  fs.rmSync(finalAssetsDir, { recursive: true, force: true });
+  fs.renameSync(stagingAssetsDir, finalAssetsDir);
+  fs.renameSync(manifestTmpPath, path.join(outDir, "manifest.json"));
+  fs.renameSync(gazetteerTmpPath, path.join(outDir, "gazetteer.json"));
 
   console.log(`Build OK: ${approvedCount}/${totalCount} approved items published, ${gazetteer.length} gazetteer entries.`);
   console.log(`  -> ${path.relative(repoRoot, path.join(outDir, "manifest.json"))}`);

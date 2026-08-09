@@ -33,16 +33,38 @@ export const Status = Object.freeze({
   RESULTS: "results",
 });
 
+// Recovery target for each originating status. ANSWERED and TIMED_OUT
+// recover back to themselves, not to PLAYING: those states don't depend
+// on currentRound (it's already null by the time a round is complete),
+// but PLAYING requires a non-null currentRound, and recovering there
+// without reconstructing one would let a later CLUE_REQUESTED or similar
+// event dereference a null currentRound and crash. RESOLVING recovers to
+// PLAYING because currentRound is still populated at that point — RETRY
+// resets its guess/reason fields so the player can resubmit cleanly.
 const RECOVERY_TARGET_BY_STATUS = Object.freeze({
   [Status.LOADING]: Status.LOADING,
-  [Status.INTRO]: Status.LOADING,
-  [Status.SESSION_SETUP]: Status.LOADING,
+  [Status.INTRO]: Status.INTRO,
+  [Status.SESSION_SETUP]: Status.SESSION_SETUP,
   [Status.PLAYING]: Status.PLAYING,
   [Status.RESOLVING]: Status.PLAYING,
-  [Status.ANSWERED]: Status.PLAYING,
-  [Status.TIMED_OUT]: Status.PLAYING,
+  [Status.ANSWERED]: Status.ANSWERED,
+  [Status.TIMED_OUT]: Status.TIMED_OUT,
   [Status.RESULTS]: Status.RESULTS,
 });
+
+const KNOWN_CLUES = Object.freeze(["region", "era", "country"]);
+
+function assertNonEmptyString(value, label) {
+  if (typeof value !== "string" || value.length === 0) {
+    throw new TypeError(`${label} must be a non-empty string, got ${JSON.stringify(value)}`);
+  }
+}
+
+function assertFiniteNumber(value, label) {
+  if (typeof value !== "number" || !Number.isFinite(value)) {
+    throw new TypeError(`${label} must be a finite number, got ${JSON.stringify(value)}`);
+  }
+}
 
 /** @param {{ hasSeenIntro?: boolean }} [options] */
 export function createInitialState(options = {}) {
@@ -113,6 +135,9 @@ export function reduce(state, event) {
       if (roundItemIds.length !== REQUIRED_ROUNDS) {
         throw new Error(`SESSION_READY requires exactly ${REQUIRED_ROUNDS} round item ids, got ${roundItemIds.length}`);
       }
+      if (new Set(roundItemIds).size !== roundItemIds.length) {
+        throw new Error("SESSION_READY round item ids must not contain duplicates");
+      }
       return toStatus(state, Status.PLAYING, {
         roundItemIds: Object.freeze([...roundItemIds]),
         roundIndex: 0,
@@ -129,8 +154,11 @@ export function reduce(state, event) {
     case "CLUE_REQUESTED": {
       if (state.status !== Status.PLAYING) return state;
       const clue = payload.clue;
+      if (!KNOWN_CLUES.includes(clue)) {
+        throw new TypeError(`CLUE_REQUESTED requires one of ${KNOWN_CLUES.join(", ")}, got ${JSON.stringify(clue)}`);
+      }
       const current = state.context.currentRound;
-      if (!clue || current.cluesUsed.includes(clue)) return state;
+      if (current.cluesUsed.includes(clue)) return state;
       return withContext(state, {
         currentRound: Object.freeze({ ...current, cluesUsed: Object.freeze([...current.cluesUsed, clue]) }),
       });
@@ -138,9 +166,10 @@ export function reduce(state, event) {
 
     case "GUESS_SUBMITTED": {
       if (state.status !== Status.PLAYING) return state;
+      assertNonEmptyString(payload.guessPlaceId, "GUESS_SUBMITTED payload.guessPlaceId");
       const current = state.context.currentRound;
       return toStatus(state, Status.RESOLVING, {
-        currentRound: Object.freeze({ ...current, guessPlaceId: payload.guessPlaceId ?? null, reason: "guess" }),
+        currentRound: Object.freeze({ ...current, guessPlaceId: payload.guessPlaceId, reason: "guess" }),
       });
     }
 
@@ -154,6 +183,13 @@ export function reduce(state, event) {
 
     case "RESOLUTION_COMPUTED": {
       if (state.status !== Status.RESOLVING) return state;
+      assertFiniteNumber(payload.roundScore, "RESOLUTION_COMPUTED payload.roundScore");
+      assertFiniteNumber(payload.accuracy, "RESOLUTION_COMPUTED payload.accuracy");
+      assertFiniteNumber(payload.timeBonus, "RESOLUTION_COMPUTED payload.timeBonus");
+      assertFiniteNumber(payload.cluePenalty, "RESOLUTION_COMPUTED payload.cluePenalty");
+      if (payload.distanceKm !== null && payload.distanceKm !== undefined) {
+        assertFiniteNumber(payload.distanceKm, "RESOLUTION_COMPUTED payload.distanceKm");
+      }
       const current = state.context.currentRound;
       const completed = Object.freeze({
         itemId: current.itemId,
@@ -198,7 +234,15 @@ export function reduce(state, event) {
     case "RETRY": {
       if (state.status !== Status.ERROR || !state.context.error) return state;
       const target = state.context.error.recoverTo;
-      return toStatus(withContext(state, { error: null }), target);
+      // Recovering into PLAYING can come from RESOLVING, where a guess or
+      // timeout was already locked in before the error hit. Clear it so
+      // the player gets a clean resubmission rather than resuming with a
+      // half-resolved round sitting in context.
+      const contextPatch = { error: null };
+      if (target === Status.PLAYING && state.context.currentRound) {
+        contextPatch.currentRound = Object.freeze({ ...state.context.currentRound, guessPlaceId: null, reason: null });
+      }
+      return toStatus(withContext(state, contextPatch), target);
     }
 
     case "REPLAY_REQUESTED": {
