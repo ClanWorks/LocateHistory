@@ -158,17 +158,47 @@ const BACKUP_PREFIX = ".assets-backup-";
 
 /**
  * Removes leftover staging/backup directories from a previous run that
- * crashed mid-build or mid-swap. Both are always safe to discard here:
- * a staging dir was never validated as complete, and by the time a
- * backup dir would still exist, the swap that created it already
- * finished putting the newer assets in place.
+ * crashed mid-build or mid-swap.
+ *
+ * Staging dirs are always safe to discard — they're never validated as
+ * complete until the swap step. Backup dirs are NOT always safe to
+ * discard: if a previous run crashed between "rename final aside to
+ * backup" and "rename staging into final", finalAssetsDir doesn't exist
+ * and the backup is the only good copy of the assets. Blindly deleting
+ * every backup dir on startup — the original version of this function —
+ * would destroy that copy outright, and if the resulting build then
+ * also failed for any reason, finalAssetsDir would be left completely
+ * empty with nothing left to recover from.
+ *
+ * So: if finalAssetsDir is missing and a backup exists, restore the most
+ * recently modified one (there should only ever be one, but pick by
+ * mtime defensively) before doing anything else, and only then clean up
+ * any other stale backups. If finalAssetsDir already exists, every
+ * backup dir found is a confirmed orphan from an already-completed swap
+ * and is safe to delete.
  */
-function cleanupStaleBuildArtifacts(assetsParentDir) {
+function cleanupStaleBuildArtifacts(assetsParentDir, finalAssetsDir) {
   if (!fs.existsSync(assetsParentDir)) return;
-  for (const name of fs.readdirSync(assetsParentDir)) {
-    if (name.startsWith(STAGING_PREFIX) || name.startsWith(BACKUP_PREFIX)) {
+
+  const entries = fs.readdirSync(assetsParentDir);
+  for (const name of entries) {
+    if (name.startsWith(STAGING_PREFIX)) {
       fs.rmSync(path.join(assetsParentDir, name), { recursive: true, force: true });
     }
+  }
+
+  const backupDirs = entries.filter((name) => name.startsWith(BACKUP_PREFIX));
+  if (backupDirs.length === 0) return;
+
+  if (!fs.existsSync(finalAssetsDir)) {
+    const withMtime = backupDirs.map((name) => ({ name, mtime: fs.statSync(path.join(assetsParentDir, name)).mtime }));
+    withMtime.sort((a, b) => b.mtime - a.mtime);
+    const [mostRecent, ...stale] = withMtime;
+    console.error(`recovering from an interrupted build: restoring ${mostRecent.name} to ${path.basename(finalAssetsDir)}`);
+    fs.renameSync(path.join(assetsParentDir, mostRecent.name), finalAssetsDir);
+    for (const { name } of stale) fs.rmSync(path.join(assetsParentDir, name), { recursive: true, force: true });
+  } else {
+    for (const name of backupDirs) fs.rmSync(path.join(assetsParentDir, name), { recursive: true, force: true });
   }
 }
 
@@ -197,7 +227,7 @@ async function main() {
   const { sourceDir, contentOutDir: outDir, assetsOutDir: finalAssetsDir, minDimensionPx } = parseArgs(process.argv.slice(2));
   const assetsParentDir = path.dirname(finalAssetsDir);
   fs.mkdirSync(assetsParentDir, { recursive: true });
-  cleanupStaleBuildArtifacts(assetsParentDir);
+  cleanupStaleBuildArtifacts(assetsParentDir, finalAssetsDir);
 
   const stagingAssetsDir = path.join(assetsParentDir, `${STAGING_PREFIX}${crypto.randomUUID()}`);
 
@@ -247,4 +277,4 @@ if (isMain) {
   });
 }
 
-export { buildManifest };
+export { buildManifest, cleanupStaleBuildArtifacts, STAGING_PREFIX, BACKUP_PREFIX };

@@ -5,7 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { buildManifest } from "../scripts/build-content.js";
+import { buildManifest, cleanupStaleBuildArtifacts, BACKUP_PREFIX, STAGING_PREFIX } from "../scripts/build-content.js";
 import { makeTinyPng } from "./helpers/make-tiny-png.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -312,5 +312,81 @@ describe("build-content.js CLI (atomic build)", () => {
 
     const parentEntries = fs.readdirSync(path.dirname(assetsOutDir));
     assert.ok(!parentEntries.some((name) => name.startsWith(".assets-build-")), "failed build's staging dir must be cleaned up, not left behind");
+  });
+});
+
+/**
+ * Unit tests for cleanupStaleBuildArtifacts in isolation, covering the
+ * scenario a real end-to-end CLI test can't easily reach: a process that
+ * was interrupted between "rename final assets aside as backup" and
+ * "rename staging into final", leaving finalAssetsDir missing and the
+ * backup as the only good copy. The original version of this function
+ * deleted every backup dir unconditionally on startup, which would have
+ * destroyed that copy.
+ */
+describe("cleanupStaleBuildArtifacts", () => {
+  let parentDir;
+  let finalAssetsDir;
+
+  before(() => {
+    parentDir = fs.mkdtempSync(path.join(os.tmpdir(), "photolocation-cleanup-test-"));
+    finalAssetsDir = path.join(parentDir, "assets");
+  });
+
+  after(() => {
+    fs.rmSync(parentDir, { recursive: true, force: true });
+  });
+
+  function makeBackupDir(name, fileContent) {
+    const dir = path.join(parentDir, name);
+    fs.mkdirSync(dir);
+    fs.writeFileSync(path.join(dir, "some-asset.jpg"), fileContent);
+    return dir;
+  }
+
+  test("restores the backup when finalAssetsDir is missing (interrupted swap)", () => {
+    fs.rmSync(finalAssetsDir, { recursive: true, force: true });
+    makeBackupDir(`${BACKUP_PREFIX}only-one`, "the-only-good-copy");
+
+    cleanupStaleBuildArtifacts(parentDir, finalAssetsDir);
+
+    assert.ok(fs.existsSync(finalAssetsDir), "finalAssetsDir must be restored from the backup, not left missing");
+    assert.equal(fs.readFileSync(path.join(finalAssetsDir, "some-asset.jpg"), "utf8"), "the-only-good-copy");
+    assert.ok(!fs.existsSync(path.join(parentDir, `${BACKUP_PREFIX}only-one`)), "the backup dir must be gone once restored (renamed, not copied)");
+  });
+
+  test("does not touch finalAssetsDir when it already exists — backups are just cleaned up", () => {
+    fs.rmSync(finalAssetsDir, { recursive: true, force: true });
+    fs.mkdirSync(finalAssetsDir);
+    fs.writeFileSync(path.join(finalAssetsDir, "current-asset.jpg"), "the-current-good-build");
+    makeBackupDir(`${BACKUP_PREFIX}orphaned`, "stale-orphaned-backup");
+
+    cleanupStaleBuildArtifacts(parentDir, finalAssetsDir);
+
+    assert.equal(fs.readFileSync(path.join(finalAssetsDir, "current-asset.jpg"), "utf8"), "the-current-good-build", "existing final assets must be untouched");
+    assert.ok(!fs.existsSync(path.join(parentDir, `${BACKUP_PREFIX}orphaned`)), "orphaned backup must be cleaned up");
+  });
+
+  test("with multiple stale backups and no final dir, restores only the most recently modified one", async () => {
+    fs.rmSync(finalAssetsDir, { recursive: true, force: true });
+    makeBackupDir(`${BACKUP_PREFIX}older`, "older-backup");
+    await new Promise((resolve) => setTimeout(resolve, 10)); // ensure a distinct mtime
+    makeBackupDir(`${BACKUP_PREFIX}newer`, "newer-backup");
+
+    cleanupStaleBuildArtifacts(parentDir, finalAssetsDir);
+
+    assert.equal(fs.readFileSync(path.join(finalAssetsDir, "some-asset.jpg"), "utf8"), "newer-backup", "the most recently modified backup must be the one restored");
+    assert.ok(!fs.existsSync(path.join(parentDir, `${BACKUP_PREFIX}older`)), "the older, unused backup must still be cleaned up");
+  });
+
+  test("always removes staging dirs regardless of backup/final state", () => {
+    fs.rmSync(finalAssetsDir, { recursive: true, force: true });
+    fs.mkdirSync(finalAssetsDir);
+    const stagingDir = path.join(parentDir, `${STAGING_PREFIX}leftover`);
+    fs.mkdirSync(stagingDir);
+
+    cleanupStaleBuildArtifacts(parentDir, finalAssetsDir);
+
+    assert.ok(!fs.existsSync(stagingDir), "leftover staging dirs are never validated as complete and must always be discarded");
   });
 });
