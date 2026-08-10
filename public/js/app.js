@@ -251,6 +251,7 @@ function renderPlaying() {
       <img src="${item.image.src}" srcset="${item.image.srcset}" sizes="(max-width: 700px) 100vw, 700px"
            width="${item.image.width}" height="${item.image.height}"
            alt="Historical image to identify" id="round-image" />
+      <figcaption id="image-loading-note">Loading image&hellip;</figcaption>
     </figure>
     <div id="clue-panel">
       <p>Clues:</p>
@@ -261,17 +262,42 @@ function renderPlaying() {
       <label for="city-search-input">Guess the city</label>
       <input type="text" id="city-search-input" autocomplete="off" aria-describedby="city-search-help" />
       <p id="city-search-help">Type to search, then choose from the list.</p>
-      <ul id="city-search-results" role="listbox" aria-label="City search results"></ul>
+      <!-- Deliberately a plain list of real <button> elements, not an
+           ARIA listbox/combobox: role="listbox" previously claimed
+           semantics (aria-activedescendant, option children, arrow-key
+           navigation) that nothing here implemented. A real combobox
+           pattern is more machinery than this v1 search needs — plain
+           buttons are natively Tab/Enter accessible with no ARIA at
+           all, which is what's actually true of this UI. -->
+      <ul id="city-search-results" aria-label="City search results"></ul>
       <p id="selected-city" aria-live="polite"></p>
       <button type="button" id="submit-guess-btn" disabled>Submit guess</button>
     </div>
   `;
   focusHeading();
 
-  document.getElementById("round-image").addEventListener("error", () => {
-    stopTimer();
+  // The timer only starts once the image has actually finished loading
+  // (or failed) — starting it immediately on insertion would cut into
+  // real guessing time while the image is still downloading, worse on
+  // a slow connection. img.complete can already be true here for a
+  // cached image, in which case `load` will never fire, so that case is
+  // checked explicitly rather than only listening for the event.
+  const roundImage = document.getElementById("round-image");
+  const loadingNote = document.getElementById("image-loading-note");
+  function onImageReady() {
+    loadingNote.remove();
+    startTimer();
+  }
+  function onImageFailed() {
     dispatch({ type: "ERROR_OCCURRED", payload: { reason: "image_load_failed" } });
-  });
+  }
+  if (roundImage.complete) {
+    if (roundImage.naturalWidth > 0) onImageReady();
+    else onImageFailed();
+  } else {
+    roundImage.addEventListener("load", onImageReady, { once: true });
+    roundImage.addEventListener("error", onImageFailed, { once: true });
+  }
 
   const clueButtonsEl = document.getElementById("clue-buttons");
   for (const clue of Object.keys(CLUE_COSTS)) {
@@ -292,7 +318,6 @@ function renderPlaying() {
   }
 
   wireCitySelector(item);
-  startTimer();
 }
 
 function requestClue(clue, item) {
@@ -316,6 +341,15 @@ function wireCitySelector(item) {
   pendingGuessId = null;
 
   input.addEventListener("input", () => {
+    // Any real edit invalidates a prior selection — otherwise a player
+    // could select San Francisco, retype "London", and still submit
+    // San Francisco because pendingGuessId was never cleared. Setting
+    // .value programmatically (below, on selection) does not itself
+    // fire this handler, so this can't immediately undo that assignment.
+    pendingGuessId = null;
+    selectedEl.textContent = "";
+    submitBtn.disabled = true;
+
     const matches = searchGazetteer(gazetteer, input.value);
     resultsEl.innerHTML = "";
     for (const place of matches) {
@@ -367,7 +401,8 @@ function renderReveal() {
     <img src="${item.image.src}" alt="${item.title}" width="200" />
     <p>${item.title}${item.artistOrCreator ? ` — ${item.artistOrCreator}` : ""}, ${item.depictedDate.minYear}${item.depictedDate.minYear !== item.depictedDate.maxYear ? `–${item.depictedDate.maxYear}` : ""}</p>
     <p>${item.context}</p>
-    <p class="attribution">Source: ${item.attribution.source}${item.attribution.creditText ? ` (${item.attribution.creditText})` : ""}, ${item.attribution.license}.</p>
+    <p class="attribution">Source: ${item.attribution.source}${item.attribution.creditText ? ` (${item.attribution.creditText})` : ""}, ${item.attribution.license}.
+      <a href="${item.attribution.sourceUrl}" target="_blank" rel="noopener noreferrer">View source</a></p>
     <button type="button" id="next-btn">${isLastRound ? "See results" : "Next round"}</button>
   `;
   focusHeading();

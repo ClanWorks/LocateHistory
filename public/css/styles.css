@@ -98,6 +98,10 @@ figure img, #round-image {
   height: auto;
   border-radius: 8px;
 }
+#image-loading-note {
+  font-size: 0.9rem;
+  color: #555;
+}
 
 .attribution {
   font-size: 0.85rem;
