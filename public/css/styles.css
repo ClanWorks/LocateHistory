@@ -75,7 +75,7 @@ input[type="text"]:focus-visible {
 }
 input[type="text"]:disabled {
   background: #eee;
-  color: #777;
+  color: #666; /* 4.95:1 on #eee — WCAG AA doesn't require disabled controls to meet contrast, but no reason not to */
 }
 
 #city-search-results {

@@ -438,6 +438,13 @@ function renderReveal() {
   document.getElementById("next-btn").addEventListener("click", () => dispatch({ type: "ROUND_ADVANCED" }));
 }
 
+// No map-error state/transition: unlike the manifest and image fetches,
+// nothing here can fail at runtime the way a network request can.
+// project()/graticuleLines() are pure math over already-validated
+// numbers, and answerPlace/guessPlace are always real gazetteer entries
+// by construction — validateSourceCollection rejects any item whose
+// placeId doesn't resolve in the published gazetteer at build time, so
+// there's no "missing place" case left to handle here at runtime.
 function renderRevealMap(answerPlace, guessPlace) {
   const container = document.getElementById("reveal-map");
   const width = 500;
