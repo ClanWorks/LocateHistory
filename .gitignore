@@ -80,3 +80,9 @@ node_modules/
 # actual deployable assets from these into public/assets/, which IS
 # committed. See plan.md §8 and content/source/CURATION_NOTES.md.
 content/originals/
+
+# Playwright E2E test output
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

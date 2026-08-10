@@ -106,7 +106,7 @@ Do not start v2 until v1 has been played repeatedly and evaluated. Do not build 
 8. **Timed out:** lock input and reveal the answer with zero points through its own state transition.
 9. **Transition:** continue after deliberate player input.
 10. **Results:** show total score, local best, per-round results, replay, and exit.
-11. **Error:** provide retry or safe exit for manifest, image, map, and local-storage failures.
+11. **Error:** provide retry or safe exit for manifest, image, and local-storage failures. (No separate map failure mode — see §16.)
 
 The client prevents double submission and score mutation after a round resolves.
 
@@ -325,7 +325,9 @@ These are v1 foundations, not deferred polish.
 
 ## 16. Failure handling and diagnostics
 
-Distinguish manifest, schema-version, image, gazetteer, map, and local-storage failures. Recoverable operations offer retry; a broken item can be skipped without mutating completed scores. If fewer than ten valid items remain, the session does not start and explains the content problem.
+Distinguish manifest, schema-version, image, gazetteer, and local-storage failures. Recoverable operations offer retry; a broken item can be skipped without mutating completed scores. If fewer than ten valid items remain, the session does not start and explains the content problem.
+
+**No separate map-load failure mode (added post-M3, during M4 review).** The original plan listed "map" alongside manifest/image/local-storage as a distinguishable failure category. In the shipped implementation the reveal map is synchronous, local SVG rendering — `project()`/`graticuleLines()` are pure coordinate math over numbers already validated at build time, and `answerPlace`/`guessPlace` are always real gazetteer entries by construction, because `validateSourceCollection` rejects any item whose `placeId` doesn't resolve in the published gazetteer before the manifest is ever generated. There is no network request, no async operation, and no "missing place" case left over at runtime for a map failure to represent — unlike manifest/image (real fetches that can fail) or local-storage (a real browser API that can throw), there's nothing left to catch. Building a map-error UI path and a test for it would be handling a failure that cannot occur, not closing a real gap. §6, §17, and §18 have been updated to match; this paragraph is the recorded rationale those sections point back to.
 
 Development builds log actionable validation details. Production errors avoid exposing local curator paths. v1 requires no analytics service; play-test observations can be recorded manually. Privacy-conscious aggregate analytics may be considered later.
 
@@ -338,14 +340,16 @@ Automated tests cover:
 - Double-submit protection and immutable resolved rounds.
 - Distance calculation and scoring boundaries.
 - Clue penalties and timer behavior.
-- Seeded, nonduplicated session selection.
+- Nonduplicated session selection. (Seeding for reproducible sessions was left as the optional part of §6 step 3 it was always specified as — no seed exists in the shipped client, and nothing tests one.)
 - Source-schema and gazetteer validation.
 - Public-manifest sanitization.
 - Metadata removal and opaque asset naming.
 - Draft exclusion, missing images, and undersized libraries.
-- Image-load, map-load, and local-storage failure behavior.
+- Image-load and local-storage failure behavior. (No map-load failure — see §16.)
 
-Add one end-to-end complete-session test and one timeout plus recoverable asset-failure test. The content build runs in continuous integration before deployment.
+`e2e/complete-session.spec.js` and `e2e/timeout-and-recoverable-failure.spec.js` (Playwright, against the real built site) cover the end-to-end complete-session case and the timeout/recoverable-asset-failure case respectively — added during M4 review, run via `npm run test:e2e`.
+
+Content validation runs in CI (`.github/workflows/ci.yml`) before every deploy, but as schema/cross-reference validation against the real `content/source/*.json` (`npm run validate:content`), not a full image-processing rebuild — CI has no access to `content/originals/`, which is deliberately gitignored (§8) and therefore no more present in a CI checkout than in a fresh local clone. The full build-content.js/media.js pipeline, including real sharp image processing, does still run in CI — via `npm test`, against the small synthetic fixtures in `test/fixtures/`, not the real curated originals.
 
 ## 18. v1 acceptance criteria
 
@@ -356,7 +360,7 @@ v1 is complete only when:
 - The application performs no Firestore, database, or application-backend requests.
 - The public build contains no credentials, curator notes, original paths, or embedded image metadata.
 - Pre-answer UI and image filenames do not casually reveal answers; documentation clearly states that public data remains inspectable.
-- Guess, timeout, clue, image-error, manifest-error, and map-error transitions work correctly.
+- Guess, timeout, clue, image-error, and manifest-error transitions work correctly. (No map-error transition exists or is required — see §16.)
 - Repeated UI events cannot award or alter points twice.
 - Scoring is deterministic and boundary-tested.
 - Every published item has a valid optimized image, canonical place, context, and verified attribution fields.

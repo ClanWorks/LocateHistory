@@ -2,11 +2,16 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "build:content": "node scripts/build-content.js"
+    "test:e2e": "playwright test",
+    "build:content": "node scripts/build-content.js",
+    "validate:content": "node scripts/ci-validate-content.js"
   },
   "dependencies": {
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
   }
 }

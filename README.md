@@ -103,20 +103,40 @@ test suite to build tiny fixtures without touching the real output).
 ## Testing
 
 ```bash
-npm test
+npm test          # unit tests (node:test)
+npm run test:e2e  # end-to-end tests (Playwright, against the real built site)
+npm run validate:content  # schema/cross-reference check of the real curated content
 ```
 
-Runs the full `node:test` suite: the state machine and scoring
-functions (pure, exhaustively boundary-tested), the content build
-pipeline (including subprocess-level tests of the atomic asset swap and
-failure rollback against real file system state), the media pipeline
-(real image processing via `sharp`, including a test that actually
-embeds EXIF into a fixture and confirms it's stripped, not just
-asserted), and the client's pure helper modules (city search, map
-projection, local storage). UI/timing behavior (the round timer, image
-load gating, keyboard navigation, the full session flow) was verified
-against a real headless-browser session during development rather than
-unit-tested — see the commit history on `v1-static-redesign` for that.
+`npm test` runs the full `node:test` suite: the state machine and
+scoring functions (pure, exhaustively boundary-tested), the content
+build pipeline (including subprocess-level tests of the atomic asset
+swap and failure rollback against real file system state), the media
+pipeline (real image processing via `sharp`, including a test that
+actually embeds EXIF into a fixture and confirms it's stripped, not
+just asserted), and the client's pure helper modules (city search, map
+projection, local storage).
+
+`npm run test:e2e` drives a real headless Chromium against
+`public/` (via `scripts/serve-static.js`, a minimal zero-dependency
+static server used only for this): a full ten-round session through
+Results and Replay, a round genuinely timing out (waits out the real
+30s), and a broken image load followed by a confirmed Retry recovery.
+This is what actually caught the integration bugs unit tests structurally
+can't — stale city selection surviving an edited search, the round
+timer starting before the image was ready, and an orphaned image
+callback able to hijack a later round's timer — all now regression-
+tested here instead of only verified ad hoc during development.
+
+All of the above runs in CI on every push (`.github/workflows/ci.yml`).
+`validate:content` checks the real `content/source/items.json` and
+`gazetteer.json` (schema + cross-references — duplicate/unresolved IDs,
+license presence, date sanity); it does not run a full image rebuild in
+CI, since that needs `content/originals/`, which CI doesn't have any
+more than a fresh clone does (see "Content curation" above). The real
+image-processing code path (`sharp`, EXIF stripping, opaque naming) is
+still exercised in CI, just via `npm test`'s fixture-based build tests
+rather than the real curated originals.
 
 ## Deployment
 
@@ -143,18 +163,40 @@ deployment (`https://<deployment-id>.photolocation.pages.dev`); the
 most recent deploy to the production branch automatically becomes the
 live `photolocation.pages.dev` alias.
 
-**Rollback:** every deployment is kept and independently accessible.
+**Rollback (preferred): the Cloudflare dashboard.** Pages → the
+`photolocation` project → Deployments tab → find the last-known-good
+deployment → "Rollback to this deployment". Instant, no local checkout,
+no CLI. One real constraint: [Cloudflare only allows rolling back to a
+previously-successful **production** deployment](https://developers.cloudflare.com/pages/configuration/rollbacks/) —
+preview deployments aren't valid rollback targets. Since this project
+deploys straight to production on every `wrangler pages deploy` (no
+preview/branch step in between), that's not a practical limitation here,
+but it's worth knowing if that changes later.
+
+**Rollback via CLI**, if you need it scripted or the dashboard isn't
+available:
 
 ```bash
 npx wrangler pages deployment list --project-name=photolocation
 ```
 
-lists them with their commit hash. To roll back, either redeploy the
-last-known-good commit (`git checkout <sha> -- public && npx wrangler
-pages deploy public --project-name=photolocation`, then revert the
-checkout) or use the Cloudflare dashboard's one-click rollback on any
-prior deployment in that list — no rebuild needed, since Pages keeps
-the actual uploaded files for every past deployment.
+lists every past deployment with its commit hash — pick the
+last-known-good one. Redeploying that commit's `public/` must not touch
+your current working tree (`git checkout <sha> -- public` stages that
+old version into your live working directory, silently discarding any
+uncommitted changes to `public/` you might have — a real risk, not a
+hypothetical one). Use an isolated worktree instead:
+
+```bash
+git worktree add /tmp/photolocation-rollback <sha>
+npx wrangler pages deploy /tmp/photolocation-rollback/public --project-name=photolocation
+git worktree remove /tmp/photolocation-rollback
+```
+
+Nothing in your actual working directory is touched at any point. No
+rebuild is needed either way — Pages keeps the real uploaded files for
+every past deployment, so this is just re-pointing production at a
+known-good commit's snapshot, not a fresh build.
 
 ## Local storage
 
