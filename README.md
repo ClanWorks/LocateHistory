@@ -121,12 +121,40 @@ unit-tested — see the commit history on `v1-static-redesign` for that.
 ## Deployment
 
 `public/` is a complete, self-contained static site — no build step
-needed to serve what's already committed. Point any static host at it:
+needed to serve what's already committed. Nothing in the client depends
+on provider-specific runtime features, so any static host works:
 GitHub Pages, Cloudflare Pages, Netlify, Firebase Hosting (this repo
 still has `firebase.json`/`.firebaserc` from the project's earlier
 Firestore-based version, which work fine for pure static hosting too),
-or a plain file server. Nothing in the client depends on
-provider-specific runtime features.
+or a plain file server.
+
+**Live v1 deployment:** [photolocation.pages.dev](https://photolocation.pages.dev)
+(Cloudflare Pages, project name `photolocation`).
+
+To deploy a new version after changing `public/`:
+
+```bash
+npx wrangler pages deploy public --project-name=photolocation
+```
+
+This requires being logged in (`wrangler login`) with a token that has
+Pages write access. Each deploy is a new, independently-addressable
+deployment (`https://<deployment-id>.photolocation.pages.dev`); the
+most recent deploy to the production branch automatically becomes the
+live `photolocation.pages.dev` alias.
+
+**Rollback:** every deployment is kept and independently accessible.
+
+```bash
+npx wrangler pages deployment list --project-name=photolocation
+```
+
+lists them with their commit hash. To roll back, either redeploy the
+last-known-good commit (`git checkout <sha> -- public && npx wrangler
+pages deploy public --project-name=photolocation`, then revert the
+checkout) or use the Cloudflare dashboard's one-click rollback on any
+prior deployment in that list — no rebuild needed, since Pages keeps
+the actual uploaded files for every past deployment.
 
 ## Local storage
 
