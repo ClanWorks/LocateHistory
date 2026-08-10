@@ -20,6 +20,7 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { validateSourceCollection, validateManifest } from "./lib/validate.js";
 import { processMedia } from "./lib/media.js";
+import { toManifestItemNonImageFields } from "./lib/manifest-mapping.js";
 import { REQUIRED_ROUNDS } from "../public/js/state-machine.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -93,9 +94,17 @@ async function buildManifest({ sourceDir, originalsDir, assetsOutDir, minApprove
     const mediaOptions = { originalsDir: resolvedOriginalsDir, assetsOutDir: resolvedAssetsOutDir };
     if (minDimensionPx !== undefined) mediaOptions.minDimensionPx = minDimensionPx;
     const image = await processMedia(item, mediaOptions);
+    const fields = toManifestItemNonImageFields(item);
+    // Key order here is deliberate, not incidental: contentHash is a
+    // hash of this object's JSON.stringify output, and
+    // ci-validate-content.js recomputes that hash straight from the
+    // already-published manifest.json to confirm public/ wasn't hand-
+    // edited or left stale — so this order has to keep matching
+    // whatever's already committed there. Don't reorder without
+    // checking public/content/manifest.json's current key order first.
     manifestItems.push({
-      id: item.id,
-      workType: item.workType,
+      id: fields.id,
+      workType: fields.workType,
       image: {
         src: image.src,
         srcset: image.srcset,
@@ -103,19 +112,15 @@ async function buildManifest({ sourceDir, originalsDir, assetsOutDir, minApprove
         height: image.height,
         placeholder: image.placeholder,
       },
-      location: item.location,
-      depictedDate: item.depictedDate,
-      creationDate: item.creationDate,
-      classification: {
-        region: item.classification.region,
-        difficulty: item.classification.difficulty,
-        tags: item.classification.tags,
-      },
-      clues: item.clues,
-      title: item.title,
-      artistOrCreator: item.artistOrCreator,
-      context: item.context,
-      attribution: item.attribution,
+      location: fields.location,
+      depictedDate: fields.depictedDate,
+      creationDate: fields.creationDate,
+      classification: fields.classification,
+      clues: fields.clues,
+      title: fields.title,
+      artistOrCreator: fields.artistOrCreator,
+      context: fields.context,
+      attribution: fields.attribution,
     });
   }
 
