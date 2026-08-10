@@ -73,6 +73,10 @@ input[type="text"]:focus-visible {
   outline: 3px solid #1a5fb4;
   outline-offset: 1px;
 }
+input[type="text"]:disabled {
+  background: #eee;
+  color: #777;
+}
 
 #city-search-results {
   list-style: none;

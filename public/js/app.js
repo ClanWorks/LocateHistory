@@ -276,35 +276,14 @@ function renderPlaying() {
   `;
   focusHeading();
 
-  // The timer only starts once the image has actually finished loading
-  // (or failed) — starting it immediately on insertion would cut into
-  // real guessing time while the image is still downloading, worse on
-  // a slow connection. img.complete can already be true here for a
-  // cached image, in which case `load` will never fire, so that case is
-  // checked explicitly rather than only listening for the event.
-  const roundImage = document.getElementById("round-image");
-  const loadingNote = document.getElementById("image-loading-note");
-  function onImageReady() {
-    loadingNote.remove();
-    startTimer();
-  }
-  function onImageFailed() {
-    dispatch({ type: "ERROR_OCCURRED", payload: { reason: "image_load_failed" } });
-  }
-  if (roundImage.complete) {
-    if (roundImage.naturalWidth > 0) onImageReady();
-    else onImageFailed();
-  } else {
-    roundImage.addEventListener("load", onImageReady, { once: true });
-    roundImage.addEventListener("error", onImageFailed, { once: true });
-  }
-
+  // Build every control locked (disabled) first, THEN wire image
+  // readiness — see below for why the order matters.
   const clueButtonsEl = document.getElementById("clue-buttons");
   for (const clue of Object.keys(CLUE_COSTS)) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.textContent = `${clue} (−${CLUE_COSTS[clue]} pts)`;
-    btn.disabled = round.cluesUsed.includes(clue);
+    btn.disabled = true; // locked until the image is ready; see onImageReady below
     btn.dataset.clue = clue;
     // Deliberately not routed through dispatch()/render(): a clue
     // request doesn't change state.status (still PLAYING), and a full
@@ -318,6 +297,55 @@ function renderPlaying() {
   }
 
   wireCitySelector(item);
+  const searchInput = document.getElementById("city-search-input");
+  searchInput.disabled = true; // locked until the image is ready; see onImageReady below
+
+  // The timer only starts once the image has actually finished loading
+  // (or failed) — starting it immediately on insertion would cut into
+  // real guessing time while the image is still downloading, worse on
+  // a slow connection. img.complete can already be true here for a
+  // cached image, in which case `load` will never fire, so that case is
+  // checked explicitly rather than only listening for the event.
+  //
+  // Everything that leads to resolveRound() (clue buttons, search,
+  // submit) stays disabled until then too: submitting before startTimer()
+  // has run would score against roundDeadline from whatever the
+  // *previous* round left behind (or null, on the very first round),
+  // not this round's real deadline.
+  //
+  // Both callbacks are guarded by isStillThisRound(): gameRoot's
+  // innerHTML gets replaced the moment a round resolves, but a slow
+  // image request from an abandoned round can still fire load/error
+  // later against the now-detached <img> element. Without the guard,
+  // a late onImageReady would call startTimer() — which calls
+  // stopTimer() first — and silently cancel and replace whatever
+  // timer is running for the round the player has since moved into.
+  const roundImage = document.getElementById("round-image");
+  const loadingNote = document.getElementById("image-loading-note");
+  const roundItemId = item.id;
+  function isStillThisRound() {
+    return state.status === Status.PLAYING && state.context.currentRound?.itemId === roundItemId;
+  }
+  function onImageReady() {
+    if (!isStillThisRound()) return;
+    loadingNote.remove();
+    searchInput.disabled = false;
+    for (const btn of clueButtonsEl.querySelectorAll("button")) {
+      btn.disabled = round.cluesUsed.includes(btn.dataset.clue);
+    }
+    startTimer();
+  }
+  function onImageFailed() {
+    if (!isStillThisRound()) return;
+    dispatch({ type: "ERROR_OCCURRED", payload: { reason: "image_load_failed" } });
+  }
+  if (roundImage.complete) {
+    if (roundImage.naturalWidth > 0) onImageReady();
+    else onImageFailed();
+  } else {
+    roundImage.addEventListener("load", onImageReady, { once: true });
+    roundImage.addEventListener("error", onImageFailed, { once: true });
+  }
 }
 
 function requestClue(clue, item) {
