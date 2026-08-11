@@ -1793,5 +1793,49 @@
     "lng": 147.1803,
     "aliases": [],
     "historicalNames": []
+  },
+  {
+    "id": "lucknow-in",
+    "displayName": "Lucknow",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 26.8467,
+    "lng": 80.9462,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kabul-af",
+    "displayName": "Kabul",
+    "country": "Afghanistan",
+    "countryCode": "AF",
+    "lat": 34.5553,
+    "lng": 69.2075,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "antananarivo-mg",
+    "displayName": "Antananarivo",
+    "country": "Madagascar",
+    "countryCode": "MG",
+    "lat": -18.8792,
+    "lng": 47.5079,
+    "aliases": [],
+    "historicalNames": [
+      "Tananarive"
+    ]
+  },
+  {
+    "id": "pondicherry-in",
+    "displayName": "Pondicherry",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 11.9416,
+    "lng": 79.8083,
+    "aliases": [
+      "Puducherry"
+    ],
+    "historicalNames": []
   }
 ]

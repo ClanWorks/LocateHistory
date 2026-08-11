@@ -1,0 +1,407 @@
+// Tier 1 follow-up: append curator source items for the 28 candidates
+// that passed both real Commons license verification AND a direct
+// visual inspection for baked-in spoiler text (see the M5 play-test
+// finding on goa-plan-de-goa-1750.jpg / bogota-vista-1887.jpg — this
+// batch was checked deliberately, item by item, not by luck).
+//
+// 13 other license-cleared candidates from the same batch were
+// rejected for a caption/title printed directly on the image (the
+// exact Goa/Bogotá pattern); 1 for graphic violence content; 1 was
+// never downloaded (incomplete license only — PD-India tag with no US
+// PD tag and an ambiguous date). None of those are represented here.
+//
+// Run once, from the repo root: node scripts/migrate-build-seed-items-tier1.js
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const itemsPath = path.join(__dirname, "..", "content", "source", "items.json");
+const gazetteerPath = path.join(__dirname, "..", "content", "source", "gazetteer.json");
+
+const APPROVED_AT = "2026-08-11T00:00:00.000Z";
+const NOTES = "Tier 1 follow-up (post-M5 play-test); license verified against Commons file page and image visually inspected for baked-in spoiler text before approval.";
+
+const SEED = [
+  {
+    firestoreId: "1gAhSDxCCw2nye4Ngn1x", createdAt: "2025-01-27T09:50:33.893521Z",
+    localName: "kolkata-chowringhee-1945.jpg", workType: "photo",
+    title: "Chowringhee Square, Calcutta in 1945", artistOrCreator: "Clyde Waddell",
+    depictedDate: { minYear: 1945, maxYear: 1945 }, creationDate: { minYear: 1945, maxYear: 1945 },
+    placeId: "kolkata-in", region: "South Asia", difficulty: 3, landmarkCategory: "street",
+    tags: ["street", "colonial", "traffic"], era: "1940s",
+    license: "Public Domain (US federal government work, photographer Clyde Waddell, 1945)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Chowringhee_Square%2C_Calcutta_in_1945.jpg", creditText: "US federal government (public domain)",
+    context: "Chowringhee Road was colonial Calcutta's principal thoroughfare, lined with grand institutional buildings and a hub of traffic by the 1940s.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "4m1HHCBADHwokpXkIfzK", createdAt: "2025-01-27T09:44:25.485544Z",
+    localName: "lucknow-palace-gates-1801.jpg", workType: "painting",
+    title: "Gates of Palace at Lucknow", artistOrCreator: "William Daniell",
+    depictedDate: { minYear: 1801, maxYear: 1801 }, creationDate: { minYear: 1801, maxYear: 1801 },
+    placeId: "lucknow-in", region: "South Asia", difficulty: 3, landmarkCategory: "palace",
+    tags: ["palace", "gateway", "procession"], era: "1800s",
+    license: "Public Domain (William Daniell, 1769–1837; life+70 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Gates_of_Palace_at_Lucknow_William_Daniell_1801.jpg", creditText: "William Daniell",
+    context: "Lucknow's Nawabi-era palace gateways were a favorite subject for British topographical painters touring Awadh in the early 1800s.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "5rFjhtH1bzwwkHMiuXR3", createdAt: "2025-01-27T09:59:43.174737Z",
+    localName: "goa-codice-casanatense-1540.jpg", workType: "drawing",
+    title: "Portuguese Nobleman and Christian Indian Women, Codice Casanatense", artistOrCreator: null,
+    depictedDate: { minYear: 1530, maxYear: 1550 }, creationDate: { minYear: 1530, maxYear: 1550 },
+    placeId: "goa-in", region: "South Asia", difficulty: 5, landmarkCategory: null,
+    tags: ["costume", "colonial", "genre-scene"], era: "1500s",
+    license: "CC0 (public domain, unknown author, c.1540)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Codice_Casanatense_Portuguese_Nobleman_and_Christian_Indian.jpg", creditText: "Codice Casanatense 1889 (Biblioteca Casanatense)",
+    context: "This costume study from the Codice Casanatense depicts a Portuguese nobleman and Christian Goan women — a rare visual record of everyday life in 16th-century Portuguese Goa, though it shows no architecture or landscape.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "8Bmxec8WmnNZYAsKEtw2", createdAt: "2025-01-27T09:35:04.937997Z",
+    localName: "kathmandu-market-1920.jpg", workType: "photo",
+    title: "Kathmandu Market, 1920", artistOrCreator: null,
+    depictedDate: { minYear: 1920, maxYear: 1920 }, creationDate: { minYear: 1920, maxYear: 1920 },
+    placeId: "kathmandu-np", region: "South Asia", difficulty: 3, landmarkCategory: "market",
+    tags: ["market", "pagoda", "street-life"], era: "1920s",
+    license: "Public Domain (published before 1931 in the US; National Geographic, October 1920)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kathmandu_Market_1920.jpg", creditText: "National Geographic Magazine",
+    context: "Newari pagoda-roofed architecture, still Kathmandu's defining streetscape feature today, frames this crowded market scene.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "AB2kSzel4Ac2OmyPLq8U", createdAt: "2025-01-27T09:31:00.856076Z",
+    localName: "kabul-capitale-1885.jpg", workType: "drawing",
+    title: "Kabul, capitale dell'Afganistan", artistOrCreator: null,
+    depictedDate: { minYear: 1885, maxYear: 1885 }, creationDate: { minYear: 1885, maxYear: 1885 },
+    placeId: "kabul-af", region: "Central Asia", difficulty: 4, landmarkCategory: null,
+    tags: ["engraving", "citadel", "mountains"], era: "1880s",
+    license: "Public Domain (1885; life+70 expired, author illegible on source page)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kabul,_capitale_dell%E2%80%99Afganistan_a.jpg", creditText: "Wikimedia Commons",
+    context: "Kabul's Bala Hissar citadel sits on the fortified hilltop overlooking the city in this 1885 engraving, made not long after the Second Anglo-Afghan War.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "BW303kWXn1vXuRM2nJdt", createdAt: "2025-01-31T08:05:26.384010Z",
+    localName: "copenhagen-shellhuset-1945.jpg", workType: "photo",
+    title: "Shellhuset, 21 March 1945", artistOrCreator: null,
+    depictedDate: { minYear: 1945, maxYear: 1945 }, creationDate: { minYear: 1945, maxYear: 1945 },
+    placeId: "copenhagen-dk", region: "Northern Europe", difficulty: 5, landmarkCategory: null,
+    tags: ["wwii", "fire", "aftermath"], era: "1940s",
+    license: "Public Domain (Danish 1970 photo-protection term expired; also expired under URAA)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Shellhuset_210345.jpg", creditText: "Wikimedia Commons",
+    context: "Shellhuset, the Gestapo's Copenhagen headquarters, burns after the RAF's Operation Carthage low-level bombing raid on 21 March 1945 — a mission meant to destroy Gestapo records and free Resistance prisoners.",
+    contentWarning: "Depicts wartime destruction (a building on fire following a WWII bombing raid); no visible casualties.",
+  },
+  {
+    firestoreId: "CWogM3KStTE6br1WgpkQ", createdAt: "2025-01-23T22:44:52.208271Z",
+    localName: "new-orleans-canal-st-1857.jpg", workType: "drawing",
+    title: "Canal Street, New Orleans, 1857", artistOrCreator: null,
+    depictedDate: { minYear: 1857, maxYear: 1857 }, creationDate: { minYear: 1857, maxYear: 1857 },
+    placeId: "new-orleans-us", region: "North America", difficulty: 3, landmarkCategory: "street",
+    tags: ["street", "storefronts", "carriages"], era: "1850s",
+    license: "Public Domain (published before 1931 in the US; Ballou's Pictorial, 1857)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:CanalSt1857BallouKilburn.jpg", creditText: "Ballou's Pictorial Drawing-Room Companion",
+    context: "Canal Street's cast-iron-galleried storefronts and streetcars made it antebellum New Orleans' commercial spine.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "Fzv5KJh5vUGSY3DO3cu3", createdAt: "2025-01-27T09:39:17.709045Z",
+    localName: "dhaka-city-1861.png", workType: "painting",
+    title: "Dhaka City, 1861", artistOrCreator: "de Fabeck",
+    depictedDate: { minYear: 1861, maxYear: 1861 }, creationDate: { minYear: 1861, maxYear: 1861 },
+    placeId: "dhaka-bd", region: "South Asia", difficulty: 4, landmarkCategory: null,
+    tags: ["riverside", "boats", "colonial"], era: "1860s",
+    license: "Public Domain (de Fabeck, d. 1912; life+70 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:DhakaCity1861.png", creditText: "de Fabeck",
+    context: "The Buriganga riverfront, still Dhaka's main artery for river trade today, appears here with its mix of colonial and Mughal-era buildings.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "HDiiMk65zAhGuM0v80HY", createdAt: "2025-01-27T09:37:08.754084Z",
+    localName: "dhaka-lalbagh-fort-1787.jpg", workType: "painting",
+    title: "Lalbagh Fort, Dhaka", artistOrCreator: "Johann Zoffany",
+    depictedDate: { minYear: 1787, maxYear: 1787 }, creationDate: { minYear: 1787, maxYear: 1787 },
+    placeId: "dhaka-bd", region: "South Asia", difficulty: 3, landmarkCategory: "fort",
+    tags: ["fort", "mughal", "ruins"], era: "1780s",
+    license: "Public Domain (Johann Zoffany, 1733–1810; life+70 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Zoffany-Lalbagh_Fort.jpg", creditText: "Johann Zoffany",
+    context: "Lalbagh Fort's unfinished Mughal gateway, already picturesquely overgrown by the late 18th century, is one of Dhaka's oldest surviving landmarks.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "JC8McKIsmJ03OinZDZ0X", createdAt: "2025-01-27T09:27:59.683237Z",
+    localName: "karachi-04c-1930.jpg", workType: "photo",
+    title: "Karachi street scene, c.1930", artistOrCreator: null,
+    depictedDate: { minYear: 1930, maxYear: 1930 }, creationDate: { minYear: 1930, maxYear: 1930 },
+    placeId: "karachi-pk", region: "South Asia", difficulty: 4, landmarkCategory: "street",
+    tags: ["street", "colonial", "traffic"], era: "1930s",
+    license: "Public Domain (PD-Pakistan)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Karachi04c.jpg", creditText: "Wikimedia Commons",
+    context: "Colonial-era Karachi's arcaded shopfronts and mixed motor/horse traffic, typical of the port city's rapid early-20th-century growth.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "JOZfAagjgY3OxWBlkT29", createdAt: "2025-01-27T09:28:47.641782Z",
+    localName: "karachi-st-joseph-1910.jpg", workType: "photo",
+    title: "St Joseph Convent School, Karachi, 1910", artistOrCreator: null,
+    depictedDate: { minYear: 1910, maxYear: 1910 }, creationDate: { minYear: 1910, maxYear: 1910 },
+    placeId: "karachi-pk", region: "South Asia", difficulty: 4, landmarkCategory: "school",
+    tags: ["school", "colonial", "crowd"], era: "1910s",
+    license: "Public Domain (PD-Pakistan)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:St_Joseph_Convent_School_Karachi_in_1910.jpg", creditText: "Wikimedia Commons",
+    context: "Convent schools like St Joseph's were part of the wave of institutional building in Karachi as it grew into British India's main Arabian Sea port.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "Uhmo2ZDUV9x0eBjldrT7", createdAt: "2025-01-24T10:38:57.588990Z",
+    localName: "antananarivo-tombs-1885.jpg", workType: "drawing",
+    title: "Tombs of Radama and Rasoherina at the Rova of Antananarivo", artistOrCreator: "George A. Shaw",
+    depictedDate: { minYear: 1885, maxYear: 1885 }, creationDate: { minYear: 1885, maxYear: 1885 },
+    placeId: "antananarivo-mg", region: "East Africa", difficulty: 5, landmarkCategory: "tomb",
+    tags: ["tomb", "royal", "engraving"], era: "1880s",
+    license: "Public Domain (George A. Shaw, life+70 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Tombs_of_Radama_and_Rasoherina_at_Rova_of_Antananarivo_Madagascar.jpg", creditText: "George A. Shaw, Madagascar and France (1885)",
+    context: "The royal tombs stood within the Rova, the fortified hilltop compound of the Merina monarchy that gave Antananarivo (\"city of a thousand\") its name and its skyline.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "Z9y0zpzfN9uHf7ga3f19", createdAt: "2025-01-27T09:33:24.929784Z",
+    localName: "lahore-duleep-singh-1893.jpg", workType: "drawing",
+    title: "Maharajah Duleep Singh entering his palace in Lahore, escorted by British troops", artistOrCreator: "James Duffield Harding",
+    depictedDate: { minYear: 1847, maxYear: 1847 }, creationDate: { minYear: 1847, maxYear: 1847 },
+    placeId: "lahore-pk", region: "South Asia", difficulty: 4, landmarkCategory: "palace",
+    tags: ["palace", "procession", "mughal"], era: "1840s",
+    license: "Public Domain (James Duffield Harding, 1798–1863; life+100 expired; published before 1931 in the US)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Maharajah_Duleep_Singh_%281838-1893%29%2C_entering_his_palace_in_Lahore%2C_escorted_by_British_troops.jpg", creditText: "James Duffield Harding, British Library",
+    context: "The young Maharajah Duleep Singh, last ruler of the Sikh Empire, is escorted into his Lahore palace following the First Anglo-Sikh War.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "aRlEuAY3A9pPEVJXrX0P", createdAt: "2025-01-27T09:21:34.932040Z",
+    localName: "basra-wwi-1915.jpg", workType: "photo",
+    title: "River scene, Basra, First World War", artistOrCreator: null,
+    depictedDate: { minYear: 1915, maxYear: 1915 }, creationDate: { minYear: 1915, maxYear: 1915 },
+    placeId: "basra-iq", region: "Middle East", difficulty: 3, landmarkCategory: "riverside",
+    tags: ["river", "boats", "shanashil"], era: "1910s",
+    license: "Public Domain (PD-UKGov; UK Ministry of Information WWI Official Collection)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Ministry_of_Information_First_World_War_Official_Collection_Q25671.jpg", creditText: "Imperial War Museums",
+    context: "Basra's distinctive wooden shanashil balconies line a creek crowded with river boats during the WWI Mesopotamian campaign.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "ZvZrFNxjwvNjBaHNwPOA", createdAt: "2025-01-27T09:31:55.156165Z",
+    localName: "kabul-shuja-shah-1839.jpg", workType: "painting",
+    title: "Shuja Shah Durrani of Afghanistan in 1839", artistOrCreator: "James Rattray",
+    depictedDate: { minYear: 1839, maxYear: 1839 }, creationDate: { minYear: 1848, maxYear: 1848 },
+    placeId: "kabul-af", region: "Central Asia", difficulty: 5, landmarkCategory: null,
+    tags: ["court", "portrait", "interior"], era: "1830s",
+    license: "Public Domain (James Rattray, 1818–1854; life+70 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Shuja_Shah_Durrani_of_Afghanistan_in_1839.jpg", creditText: "James Rattray, British Library",
+    context: "Shah Shuja Durrani, reinstalled as Emir of Afghanistan by the British in 1839, is shown receiving courtiers in an ornately decorated audience hall.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "bHcyrFVmWcPME1NCvu47", createdAt: "2025-01-22T10:06:55.583455Z",
+    localName: "santiago-canada-1821.jpg", workType: "drawing",
+    title: "The Cañada, Santiago", artistOrCreator: "Peter Schmidtmeyer",
+    depictedDate: { minYear: 1821, maxYear: 1821 }, creationDate: { minYear: 1821, maxYear: 1821 },
+    placeId: "santiago-cl", region: "South America", difficulty: 2, landmarkCategory: "street",
+    tags: ["street", "mountains", "market"], era: "1820s",
+    license: "Public Domain (published before 1931 in the US; faithful reproduction of a 2D public domain work)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Schmidtmeyer,_Peter_%26_Scharf,_G_-_The_Ca%C3%B1ada,_Santiago_-JCB_Library_f1_%28cropped%29.jpg", creditText: "Peter Schmidtmeyer",
+    context: "The snow-capped Andes rise directly behind Santiago's Cañada promenade, the defining backdrop that still identifies the city today.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "eat6HUc6dqO4JKOqVZgR", createdAt: "2025-01-27T09:26:01.574051Z",
+    localName: "kazan-university-1834.jpg", workType: "drawing",
+    title: "Kazan University, 1834", artistOrCreator: "V. S. Turin",
+    depictedDate: { minYear: 1834, maxYear: 1834 }, creationDate: { minYear: 1834, maxYear: 1834 },
+    placeId: "kazan-ru", region: "Eastern Europe", difficulty: 4, landmarkCategory: "university",
+    tags: ["university", "neoclassical", "street"], era: "1830s",
+    license: "Public Domain (V. S. Turin, life+70 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kazan_University%2C_1832.jpg", creditText: "V. S. Turin",
+    context: "Kazan University's neoclassical main building, completed in 1825, was one of the Russian Empire's leading centers of scholarship.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "egVxoK9oTJLIjoUaKOAE", createdAt: "2025-01-23T22:46:19.858975Z",
+    localName: "mexico-city-paseo-viga-1642.jpg", workType: "painting",
+    title: "Paseo del virrey duque de Alburquerque por el Canal de la Viga", artistOrCreator: "Pedro de Villegas Marmolejo",
+    depictedDate: { minYear: 1638, maxYear: 1642 }, creationDate: { minYear: 1638, maxYear: 1642 },
+    placeId: "mexico-city-mx", region: "North America", difficulty: 4, landmarkCategory: "canal",
+    tags: ["canal", "procession", "colonial"], era: "1640s",
+    license: "CC BY-SA 4.0 (donated by Museo Soumaya to Wikimedia Commons)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:5829_Paseo_de_la_Viga_con_la_iglesia_de_Iztacalco.jpg", creditText: "Pedro de Villegas Marmolejo, Museo Soumaya (CC BY-SA 4.0)",
+    context: "A viceregal procession travels the Canal de la Viga, once colonial Mexico City's main waterway link to the southern chinampa farmlands.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "fOPIEbgzkEHP3s3iFCGy", createdAt: "2025-01-31T08:02:21.340546Z",
+    localName: "oslo-christiania-theater-1860.jpg", workType: "photo",
+    title: "Christiania Theater, 1860", artistOrCreator: "Per Adolf Thorén",
+    depictedDate: { minYear: 1860, maxYear: 1860 }, creationDate: { minYear: 1860, maxYear: 1860 },
+    placeId: "oslo-no", region: "Northern Europe", difficulty: 4, landmarkCategory: null,
+    tags: ["theatre", "street", "carriages"], era: "1860s",
+    license: "Public Domain (Per Adolf Thorén, 1830–1909; published before 1931 in the US; PD-old-100)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Christiania_Theater_OB.F02178D.jpg", creditText: "Per Adolf Thorén, Oslo Museum",
+    context: "Christiania (Oslo's name until 1925) had a lively theatre district by the mid-1800s, as the city rapidly urbanized under Swedish-Norwegian union rule.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "leqJEeWAjkBDBcGaeJjG", createdAt: "2025-01-27T10:05:21.161745Z",
+    localName: "pondicherry-waterfront-1900.jpg", workType: "photo",
+    title: "Pondicherry waterfront, c.1900", artistOrCreator: "Bourne & Shepherd",
+    depictedDate: { minYear: 1890, maxYear: 1890 }, creationDate: { minYear: 1890, maxYear: 1903 },
+    placeId: "pondicherry-in", region: "South Asia", difficulty: 3, landmarkCategory: "promenade",
+    tags: ["promenade", "colonial", "seafront"], era: "1890s",
+    license: "Public Domain (published before 1931 in the US; life+100 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Pondicherry_waterfront_1900.jpg", creditText: "Bourne & Shepherd Studio",
+    context: "Pondicherry's French colonial promenade, with its seafront statuary and formal gardens, still gives the city its distinct Franco-Tamil character.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "q1nR5B9ORAjBxkpcOlqp", createdAt: "2025-01-27T09:29:56.275698Z",
+    localName: "karachi-old-1830.jpg", workType: "drawing",
+    title: "Old Karachi, 1830s", artistOrCreator: null,
+    depictedDate: { minYear: 1830, maxYear: 1839 }, creationDate: { minYear: 1830, maxYear: 1839 },
+    placeId: "karachi-pk", region: "South Asia", difficulty: 4, landmarkCategory: "fort",
+    tags: ["fort", "walled-town", "sketch"], era: "1830s",
+    license: "Public Domain (PD-Art/PD-US; author unrecorded)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Oldkarachi.jpg", creditText: "Wikimedia Commons",
+    context: "Before British annexation in 1839, Karachi was a small fortified Talpur-era trading town on the Arabian Sea coast, shown here as a walled settlement.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "t48IPli0dPBC8zmdR1Xx", createdAt: "2025-01-31T08:14:48.696258Z",
+    localName: "odense-aa-1893.jpg", workType: "drawing",
+    title: "Odense Å, 1893", artistOrCreator: "Johannes Boesen",
+    depictedDate: { minYear: 1893, maxYear: 1893 }, creationDate: { minYear: 1893, maxYear: 1893 },
+    placeId: "odense-dk", region: "Northern Europe", difficulty: 4, landmarkCategory: "river",
+    tags: ["river", "church", "sketch"], era: "1890s",
+    license: "Public Domain (Johannes Boesen, 1847–1916; life+70 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Odense_Aa_Johs_Boesen.jpg", creditText: "Johannes Boesen",
+    context: "The Odense Å river winds through the city past St Canute's Cathedral, whose spire has marked the skyline since the Middle Ages.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "tVNfXvCEn2icSUsnfk2w", createdAt: "2025-01-27T09:35:45.905969Z",
+    localName: "kathmandu-seto-machindranath-1915.jpg", workType: "photo",
+    title: "Seto Machindranath festival, Kathmandu, c.1915", artistOrCreator: "Dirga Man Chitrakar",
+    depictedDate: { minYear: 1915, maxYear: 1915 }, creationDate: { minYear: 1915, maxYear: 1915 },
+    placeId: "kathmandu-np", region: "South Asia", difficulty: 3, landmarkCategory: "temple",
+    tags: ["festival", "pagoda", "crowd"], era: "1910s",
+    license: "Public Domain (life+70 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kathmandu_Seto_Machindranath_19th_century.jpg", creditText: "Dirga Man Chitrakar",
+    context: "A towering ceremonial pole rises above the crowd during the Seto Machindranath chariot festival, one of Kathmandu Valley's oldest Newari traditions.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "vOOl9eCHBsA3cKqefe9X", createdAt: "2025-01-27T10:10:10.978016Z",
+    localName: "singapore-victoria-dock-1890.jpg", workType: "photo",
+    title: "Victoria Dock, Tanjong Pagar, 1890s", artistOrCreator: null,
+    depictedDate: { minYear: 1890, maxYear: 1899 }, creationDate: { minYear: 1890, maxYear: 1899 },
+    placeId: "singapore-sg", region: "Southeast Asia", difficulty: 4, landmarkCategory: "dock",
+    tags: ["dock", "ships", "harbour"], era: "1890s",
+    license: "Public Domain (PD-SG-photo / PD-BritishGov / PD-1923)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Victoria_Dock%2C_Tanjong_Pagar%2C_in_the_1890s.jpg", creditText: "Wikimedia Commons",
+    context: "Tanjong Pagar's Victoria Dock handled the tall ships that made Singapore one of the busiest entrepôt ports of the British Empire.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "x6P9j4zyq06ZouFWdeQX", createdAt: "2025-01-27T09:42:22.837749Z",
+    localName: "varanasi-river-1883.jpg", workType: "painting",
+    title: "On The River, Benares", artistOrCreator: "Edwin Lord Weeks",
+    depictedDate: { minYear: 1883, maxYear: 1883 }, creationDate: { minYear: 1883, maxYear: 1883 },
+    placeId: "varanasi-in", region: "South Asia", difficulty: 3, landmarkCategory: "ghat",
+    tags: ["ghat", "river", "boats"], era: "1880s",
+    license: "Public Domain (Edwin Lord Weeks, d. 1903; life+100 expired)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:On_The_River_Benares_ca_1883.jpg", creditText: "Edwin Lord Weeks",
+    context: "Varanasi's ghats — the stepped riverfront terraces lining the Ganges — have drawn pilgrims and painters alike for centuries.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "xHvEOEHRRBtSYTAlH9Cg", createdAt: "2025-01-27T10:07:58.141299Z",
+    localName: "colombo-independence-1947.jpg", workType: "photo",
+    title: "Ceylon's independence ceremony, 2 October 1947", artistOrCreator: null,
+    depictedDate: { minYear: 1947, maxYear: 1947 }, creationDate: { minYear: 1947, maxYear: 1947 },
+    placeId: "colombo-lk", region: "South Asia", difficulty: 4, landmarkCategory: null,
+    tags: ["ceremony", "independence", "interior"], era: "1940s",
+    license: "Public Domain (PD-BritishGov; Crown Copyright expiry applies worldwide)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:SL_Independence.jpg", creditText: "UK Government (public domain)",
+    context: "Prince Henry, Duke of Gloucester, opens Ceylon's first parliament with Prime Minister D. S. Senanayake at this Colombo ceremony marking the island's independence.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "zeups1I28b6Bkf8uMQVa", createdAt: "2025-01-31T08:07:43.749535Z",
+    localName: "copenhagen-soldiers-return-1849.jpg", workType: "painting",
+    title: "Soldaternes hjemkomst til København i 1849", artistOrCreator: "Otto Bache",
+    depictedDate: { minYear: 1849, maxYear: 1849 }, creationDate: { minYear: 1860, maxYear: 1865 },
+    placeId: "copenhagen-dk", region: "Northern Europe", difficulty: 3, landmarkCategory: "street",
+    tags: ["parade", "flags", "crowd"], era: "1840s",
+    license: "Public Domain (Otto Bache, 1839–1927; life+95 expired; published before 1931 in the US)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Otto_Bache_-_Soldaternes_hjemkomst_til_K%C3%B8benhavn_i_1849.jpg", creditText: "Otto Bache, Peabody Essex Museum",
+    context: "Soldiers return to a jubilant, flag-draped Copenhagen after the First Schleswig War of 1848–1850, Denmark's first war fought as a modern nation-state.",
+    contentWarning: null,
+  },
+  {
+    firestoreId: "zmLNzgXDv5HfLO3lj4db", createdAt: "2025-01-23T22:48:21.543808Z",
+    localName: "hong-kong-city-of-victoria-1865.jpg", workType: "painting",
+    title: "City of Victoria, Hong Kong", artistOrCreator: null,
+    depictedDate: { minYear: 1860, maxYear: 1865 }, creationDate: { minYear: 1860, maxYear: 1865 },
+    placeId: "hong-kong-hk", region: "East Asia", difficulty: 2, landmarkCategory: "harbour",
+    tags: ["harbour", "ships", "mountains"], era: "1860s",
+    license: "Public Domain (published before 1931 in the US; PD-1923)",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:City_of_Victoria.jpg", creditText: "Peabody Essex Museum",
+    context: "The City of Victoria grew along Hong Kong Island's harbour beneath the Peak, its silhouette already recognizable in this early colonial-era gouache.",
+    contentWarning: null,
+  },
+];
+
+function main() {
+  const items = JSON.parse(fs.readFileSync(itemsPath, "utf8"));
+  const gazetteer = JSON.parse(fs.readFileSync(gazetteerPath, "utf8"));
+  const countryByPlaceId = new Map(gazetteer.map((g) => [g.id, g.country]));
+  const existingIds = new Set(items.map((i) => i.id));
+  let added = 0;
+
+  for (const s of SEED) {
+    const id = `fs-${s.firestoreId.toLowerCase()}`;
+    if (existingIds.has(id)) {
+      console.log(`skip (already present): ${id}`);
+      continue;
+    }
+    const country = countryByPlaceId.get(s.placeId);
+    if (!country) throw new Error(`no gazetteer entry for placeId ${s.placeId}`);
+    items.push({
+      schemaVersion: 1,
+      id,
+      status: "approved",
+      workType: s.workType,
+      title: s.title,
+      artistOrCreator: s.artistOrCreator,
+      depictedDate: s.depictedDate,
+      creationDate: s.creationDate,
+      location: { placeId: s.placeId, acceptedPlaceIds: [] },
+      classification: { region: s.region, difficulty: s.difficulty, landmarkCategory: s.landmarkCategory, tags: s.tags },
+      clues: { region: s.region, era: s.era, country },
+      media: { originalPath: s.localName, focalPoint: null },
+      attribution: { source: "Wikimedia Commons", license: s.license, sourceUrl: s.sourceUrl, creditText: s.creditText },
+      context: s.context,
+      contentWarning: s.contentWarning,
+      curation: { approvedBy: "andrew", approvedAt: APPROVED_AT, notes: NOTES },
+      importSource: `firestore:${s.firestoreId}`,
+      createdAt: s.createdAt,
+      updatedAt: APPROVED_AT,
+    });
+    added++;
+  }
+
+  fs.writeFileSync(itemsPath, JSON.stringify(items, null, 2) + "\n");
+  console.log(`\n${added} item(s) added; ${items.length} total in items.json`);
+}
+
+main();
