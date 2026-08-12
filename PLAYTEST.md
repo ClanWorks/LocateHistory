@@ -1,10 +1,19 @@
 # M5 play-test log
 
-plan.md §19: five complete, human-played sessions at
+plan.md §19 called for five complete, human-played sessions at
 [photolocation.pages.dev](https://photolocation.pages.dev), recording
 interaction problems, content quality, score distribution, clue use,
-and replay motivation. Deliverable: a written decision — tune v1
-further, or begin v2 — plus prioritized follow-up work.
+and replay motivation, with a written decision — tune v1 further, or
+begin v2 — plus prioritized follow-up work as the deliverable.
+
+**Actual outcome:** 3 sessions were completed; sessions 4 and 5 were
+intentionally skipped because replay motivation had already dropped to
+zero by session 3 — itself the single most important finding this gate
+was designed to surface, and further sessions would only have repeated
+it. That's treated as a valid, sufficient result rather than an
+incomplete gate: the five-session count in §19 was a means to get
+enough signal, not an end in itself, and 3 sessions already produced a
+clear, actionable decision (below). M5 is closed on that basis.
 
 Automated E2E coverage (M4) already confirms the mechanics work
 (timer, scoring, reveal, results, error/retry). This log is for
@@ -41,7 +50,7 @@ A clickable map would be a big benifit over the current input method.
 
 ---
 
-## Session 2 — DATE
+## Session 2 — 11 August 2026
 
 **Interaction problems**:
 Same issues as the previous session
@@ -65,7 +74,7 @@ As above.
 
 ---
 
-## Session 3 — DATE
+## Session 3 — 11 August 2026
 
 **Interaction problems**:
 As above.
@@ -87,13 +96,13 @@ On the results screen, the display reads "4. Round 4:", this makes no sense.
 
 ---
 
-## Session 4 — DATE
+## Session 4 — not played
 
 Skipped due to repetition
 
 ---
 
-## Session 5 — DATE
+## Session 5 — not played
 
 Skipped due to repetition
 
@@ -101,7 +110,8 @@ Skipped due to repetition
 
 ## Overall decision
 
-**Score distribution across sessions** (fill in once all 5 are done —
+**Score distribution across sessions** (3 sessions completed; 4-5
+intentionally skipped, see above —
 e.g. did scores cluster, trend up as you learned the game, swing
 wildly by luck of the draw): Scores improved as i learned the images.
 

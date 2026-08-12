@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
-  "generatedAt": "2026-08-11T11:43:31.914Z",
-  "contentHash": "e55543e91432ae21",
+  "generatedAt": "2026-08-12T06:39:21.285Z",
+  "contentHash": "a60b2f446faed5ca",
   "items": [
     {
       "id": "fs-0mdvrwolpwuvp64rm7xt",
@@ -635,51 +635,6 @@
       }
     },
     {
-      "id": "fs-flafyeiexdqd3rsfe5wz",
-      "workType": "drawing",
-      "image": {
-        "src": "assets/67119f68d9fa1155-800w.jpg",
-        "srcset": "assets/67119f68d9fa1155-480w.jpg 480w, assets/67119f68d9fa1155-800w.jpg 800w",
-        "width": 800,
-        "height": 616,
-        "placeholder": null
-      },
-      "location": {
-        "placeId": "bogota-co",
-        "acceptedPlaceIds": []
-      },
-      "depictedDate": {
-        "minYear": 1887,
-        "maxYear": 1887
-      },
-      "creationDate": {
-        "minYear": 1887,
-        "maxYear": 1887
-      },
-      "classification": {
-        "region": "South America",
-        "difficulty": 3,
-        "tags": [
-          "cityscape",
-          "andes"
-        ]
-      },
-      "clues": {
-        "region": "South America",
-        "era": "1880s",
-        "country": "Colombia"
-      },
-      "title": "Vista de Bogotá",
-      "artistOrCreator": "Fergon",
-      "context": "A view of Bogotá from a Spanish-language geography text, showing the city set against the eastern Andean hills.",
-      "attribution": {
-        "source": "Wikimedia Commons",
-        "license": "Public Domain (life+100 or fewer)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bogot%C3%A1.jpg",
-        "creditText": null
-      }
-    },
-    {
       "id": "fs-tdddeuafziqem1pugxbo",
       "workType": "drawing",
       "image": {
@@ -859,52 +814,6 @@
       }
     },
     {
-      "id": "fs-i7eevciedrz0e4dhqvjx",
-      "workType": "drawing",
-      "image": {
-        "src": "assets/87e55583fd60c67c-1600w.jpg",
-        "srcset": "assets/87e55583fd60c67c-480w.jpg 480w, assets/87e55583fd60c67c-960w.jpg 960w, assets/87e55583fd60c67c-1600w.jpg 1600w",
-        "width": 1600,
-        "height": 936,
-        "placeholder": null
-      },
-      "location": {
-        "placeId": "goa-in",
-        "acceptedPlaceIds": []
-      },
-      "depictedDate": {
-        "minYear": 1750,
-        "maxYear": 1750
-      },
-      "creationDate": {
-        "minYear": 1750,
-        "maxYear": 1750
-      },
-      "classification": {
-        "region": "South Asia",
-        "difficulty": 4,
-        "tags": [
-          "map",
-          "colonial",
-          "18th-century"
-        ]
-      },
-      "clues": {
-        "region": "South Asia",
-        "era": "1750s",
-        "country": "India"
-      },
-      "title": "Plan de Goa",
-      "artistOrCreator": null,
-      "context": "A plan of Goa from Histoire générale des voyages, mapping the Portuguese colonial capital on India's west coast.",
-      "attribution": {
-        "source": "Wikimedia Commons",
-        "license": "Public Domain (uploader-released, worldwide)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%22Plan_de_Goa%22%2C_in_Histoire_g%C3%A9n%C3%A9rale_des_voyages%2C1750.jpg",
-        "creditText": null
-      }
-    },
-    {
       "id": "fs-1gahsdxccw2nye4ngn1x",
       "workType": "photo",
       "image": {
@@ -948,52 +857,6 @@
         "license": "Public Domain (US federal government work, photographer Clyde Waddell, 1945)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chowringhee_Square%2C_Calcutta_in_1945.jpg",
         "creditText": "US federal government (public domain)"
-      }
-    },
-    {
-      "id": "fs-5rfjhth1bzwwkhmiuxr3",
-      "workType": "drawing",
-      "image": {
-        "src": "assets/c878b8d75cdc1bdb-1600w.jpg",
-        "srcset": "assets/c878b8d75cdc1bdb-480w.jpg 480w, assets/c878b8d75cdc1bdb-960w.jpg 960w, assets/c878b8d75cdc1bdb-1600w.jpg 1600w",
-        "width": 1600,
-        "height": 1132,
-        "placeholder": null
-      },
-      "location": {
-        "placeId": "goa-in",
-        "acceptedPlaceIds": []
-      },
-      "depictedDate": {
-        "minYear": 1530,
-        "maxYear": 1550
-      },
-      "creationDate": {
-        "minYear": 1530,
-        "maxYear": 1550
-      },
-      "classification": {
-        "region": "South Asia",
-        "difficulty": 5,
-        "tags": [
-          "costume",
-          "colonial",
-          "genre-scene"
-        ]
-      },
-      "clues": {
-        "region": "South Asia",
-        "era": "1500s",
-        "country": "India"
-      },
-      "title": "Portuguese Nobleman and Christian Indian Women, Codice Casanatense",
-      "artistOrCreator": null,
-      "context": "This costume study from the Codice Casanatense depicts a Portuguese nobleman and Christian Goan women — a rare visual record of everyday life in 16th-century Portuguese Goa, though it shows no architecture or landscape.",
-      "attribution": {
-        "source": "Wikimedia Commons",
-        "license": "CC0 (public domain, unknown author, c.1540)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Codice_Casanatense_Portuguese_Nobleman_and_Christian_Indian.jpg",
-        "creditText": "Codice Casanatense 1889 (Biblioteca Casanatense)"
       }
     },
     {

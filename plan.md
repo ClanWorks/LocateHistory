@@ -229,7 +229,7 @@ Only approved records enter the manifest:
 }
 ```
 
-This data is public even if the interface reveals some fields only after guessing. The build removes curator notes, local paths, import provenance, original filenames, and administrative fields.
+This data is public even if the interface reveals some fields only after guessing. The build removes curator notes, local paths, import provenance, original filenames, administrative fields, and `contentWarning` — the last is curator-only editorial metadata for content-selection judgment calls (e.g. flagging wartime imagery), not a player-facing feature; v1 has no content-filtering or warning-display UI.
 
 ## 11. Gazetteer
 

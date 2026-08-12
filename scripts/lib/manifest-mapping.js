@@ -7,6 +7,11 @@
 // ci-validate-content.js can use it to check that public/content/manifest.json
 // actually matches content/source/items.json, without CI needing the
 // real originals.
+//
+// item.contentWarning is intentionally NOT copied here: per plan.md §10
+// it's curator-only editorial metadata (a content-selection judgment
+// call, e.g. flagging wartime imagery), not a player-facing field — v1
+// has no content-filtering or warning-display UI to show it in.
 export function toManifestItemNonImageFields(item) {
   return {
     id: item.id,
