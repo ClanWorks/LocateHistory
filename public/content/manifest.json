@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
-  "generatedAt": "2026-08-20T05:34:02.205Z",
-  "contentHash": "d5ce7bc49ed47752",
+  "generatedAt": "2026-08-20T08:10:43.631Z",
+  "contentHash": "f22dbfd783347c90",
   "items": [
     {
       "id": "fs-0mdvrwolpwuvp64rm7xt",
@@ -1372,6 +1372,604 @@
         "license": "Public Domain (Otto Bache, 1839–1927; life+95 expired; published before 1931 in the US)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Otto_Bache_-_Soldaternes_hjemkomst_til_K%C3%B8benhavn_i_1849.jpg",
         "creditText": "Otto Bache, Peabody Essex Museum"
+      }
+    },
+    {
+      "id": "commons-rome-piazza-venezia-1895",
+      "workType": "photo",
+      "image": {
+        "src": "assets/e93f0c177cb739e0-1600w.jpg",
+        "srcset": "assets/e93f0c177cb739e0-480w.jpg 480w, assets/e93f0c177cb739e0-960w.jpg 960w, assets/e93f0c177cb739e0-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1158,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "rome-it",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1895,
+        "maxYear": 1895
+      },
+      "creationDate": {
+        "minYear": 1890,
+        "maxYear": 1900
+      },
+      "classification": {
+        "region": "Southern Europe",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "shops",
+          "tram"
+        ]
+      },
+      "clues": {
+        "region": "Southern Europe",
+        "era": "1890s",
+        "country": "Italy"
+      },
+      "title": "Piazza Venezia, Rome, ca. 1895",
+      "artistOrCreator": null,
+      "context": "Piazza Venezia's arcaded shopfronts and horse-drawn omnibuses, photographed not long before the Vittoriano monument rose over the square's eastern side.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC BY 2.0 (Photochrom print, Photoglob Zürich, via Library of Congress Photochrom Collection; Flickr Commons upload)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flickr_-_%E2%80%A6trialsanderrors_-_Piazza_Venezia,_Rome,_Italy,_ca._1895.jpg",
+        "creditText": "Photoglob Zürich / Library of Congress"
+      }
+    },
+    {
+      "id": "commons-cairo-vue-du-caire",
+      "workType": "painting",
+      "image": {
+        "src": "assets/4257e812ad188e77-1600w.jpg",
+        "srcset": "assets/4257e812ad188e77-480w.jpg 480w, assets/4257e812ad188e77-960w.jpg 960w, assets/4257e812ad188e77-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1204,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "cairo-eg",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1850,
+        "maxYear": 1888
+      },
+      "creationDate": {
+        "minYear": 1850,
+        "maxYear": 1888
+      },
+      "classification": {
+        "region": "North Africa",
+        "difficulty": 5,
+        "tags": [
+          "caravan",
+          "desert",
+          "painting"
+        ]
+      },
+      "clues": {
+        "region": "North Africa",
+        "era": "mid-1800s",
+        "country": "Egypt"
+      },
+      "title": "Vue du Caire",
+      "artistOrCreator": "Charles-Théodore Frère",
+      "context": "Orientalist painter Charles-Théodore Frère spent decades based in Cairo; this caravan resting outside a domed gateway is one of his many studies of the city's outskirts.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC BY-SA 4.0 (photograph of a public domain painting; Charles-Théodore Frère, 1814–1888, life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charles-Th%C3%A9odore_Fr%C3%A8re_-_Vue_du_Caire_01.jpg",
+        "creditText": "Charles-Théodore Frère"
+      }
+    },
+    {
+      "id": "commons-bangkok-wat-arun-1865",
+      "workType": "photo",
+      "image": {
+        "src": "assets/e69d510e1a08ba49-1600w.jpg",
+        "srcset": "assets/e69d510e1a08ba49-480w.jpg 480w, assets/e69d510e1a08ba49-960w.jpg 960w, assets/e69d510e1a08ba49-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 420,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "bangkok-th",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1865,
+        "maxYear": 1865
+      },
+      "creationDate": {
+        "minYear": 1865,
+        "maxYear": 1865
+      },
+      "classification": {
+        "region": "Southeast Asia",
+        "difficulty": 2,
+        "tags": [
+          "temple",
+          "river",
+          "panorama"
+        ]
+      },
+      "clues": {
+        "region": "Southeast Asia",
+        "era": "1860s",
+        "country": "Thailand"
+      },
+      "title": "Bangkok Panorama from Wat Arun",
+      "artistOrCreator": "John Thomson",
+      "context": "Pioneering photographer John Thomson captured the Chao Phraya River and the Grand Palace's temple roofs from atop Wat Arun, one of the earliest photographic panoramas of Bangkok.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (John Thomson, 1837–1921; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bangkok_Panorama_from_Wat_Arun_by_John_Thomson_1865.jpg",
+        "creditText": "John Thomson"
+      }
+    },
+    {
+      "id": "commons-shanghai-the-bund-1890",
+      "workType": "photo",
+      "image": {
+        "src": "assets/2b2f62f6cf3610d4-777w.jpg",
+        "srcset": "assets/2b2f62f6cf3610d4-480w.jpg 480w, assets/2b2f62f6cf3610d4-777w.jpg 777w",
+        "width": 777,
+        "height": 610,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "shanghai-cn",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1890,
+        "maxYear": 1899
+      },
+      "creationDate": {
+        "minYear": 1890,
+        "maxYear": 1899
+      },
+      "classification": {
+        "region": "East Asia",
+        "difficulty": 3,
+        "tags": [
+          "waterfront",
+          "colonial",
+          "boats"
+        ]
+      },
+      "clues": {
+        "region": "East Asia",
+        "era": "1890s",
+        "country": "China"
+      },
+      "title": "The Bund, Shanghai, c.1890s",
+      "artistOrCreator": null,
+      "context": "The Bund's row of foreign trading-house buildings along the Huangpu River made it the commercial face of treaty-port Shanghai.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Bund,_Shanghai,_c1890s.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-stockholm-drottninggatan",
+      "workType": "photo",
+      "image": {
+        "src": "assets/52ac62f9f71a79f0-1600w.jpg",
+        "srcset": "assets/52ac62f9f71a79f0-480w.jpg 480w, assets/52ac62f9f71a79f0-960w.jpg 960w, assets/52ac62f9f71a79f0-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1703,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "stockholm-se",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1860,
+        "maxYear": 1883
+      },
+      "creationDate": {
+        "minYear": 1860,
+        "maxYear": 1883
+      },
+      "classification": {
+        "region": "Northern Europe",
+        "difficulty": 4,
+        "tags": [
+          "street",
+          "waterfront",
+          "shops"
+        ]
+      },
+      "clues": {
+        "region": "Northern Europe",
+        "era": "1870s",
+        "country": "Sweden"
+      },
+      "title": "Drottninggatan, Stockholm",
+      "artistOrCreator": "Ole Tobias Olsen",
+      "context": "Antiquities dealers and tailors' shops line a waterside stretch of Drottninggatan, one of central Stockholm's oldest streets.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (PD-Norway50; Ole Tobias Olsen, 1830–1924)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:341._Stockholm._Parti_av_Drottninggatan_%28retouched%29.jpg",
+        "creditText": "Ole Tobias Olsen, National Library of Norway"
+      }
+    },
+    {
+      "id": "commons-istanbul-galata-bridge",
+      "workType": "photo",
+      "image": {
+        "src": "assets/05c169101885ee54-967w.jpg",
+        "srcset": "assets/05c169101885ee54-480w.jpg 480w, assets/05c169101885ee54-960w.jpg 960w, assets/05c169101885ee54-967w.jpg 967w",
+        "width": 967,
+        "height": 784,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "istanbul-tr",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1880,
+        "maxYear": 1893
+      },
+      "creationDate": {
+        "minYear": 1880,
+        "maxYear": 1893
+      },
+      "classification": {
+        "region": "Middle East",
+        "difficulty": 2,
+        "tags": [
+          "bridge",
+          "tower",
+          "harbour"
+        ]
+      },
+      "clues": {
+        "region": "Middle East",
+        "era": "1880s",
+        "country": "Turkey"
+      },
+      "title": "Bridge and Galata Area, Istanbul",
+      "artistOrCreator": "Abdullah Frères",
+      "context": "The medieval Galata Tower rises over the Golden Horn beyond the crowded Galata Bridge, a crossing point between old Constantinople and its European quarter.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Abdul Hamid II Collection, Library of Congress; no known copyright restrictions)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bridge_and_Galata_Area,_Istanbul,_Turkey_by_Abdullah_Fr%C3%A8res,_ca._1880-1893_(LOC).jpg",
+        "creditText": "Abdullah Frères, Library of Congress"
+      }
+    },
+    {
+      "id": "commons-cape-town-adderley-street",
+      "workType": "photo",
+      "image": {
+        "src": "assets/de93f24c25e6b938-1000w.jpg",
+        "srcset": "assets/de93f24c25e6b938-480w.jpg 480w, assets/de93f24c25e6b938-960w.jpg 960w, assets/de93f24c25e6b938-1000w.jpg 1000w",
+        "width": 1000,
+        "height": 740,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "cape-town-za",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1897,
+        "maxYear": 1897
+      },
+      "creationDate": {
+        "minYear": 1897,
+        "maxYear": 1897
+      },
+      "classification": {
+        "region": "Southern Africa",
+        "difficulty": 4,
+        "tags": [
+          "street",
+          "colonial",
+          "shops"
+        ]
+      },
+      "clues": {
+        "region": "Southern Africa",
+        "era": "1890s",
+        "country": "South Africa"
+      },
+      "title": "Adderley Street, Cape Town, looking NE, ca. 1897",
+      "artistOrCreator": null,
+      "context": "Adderley Street, Cape Town's main commercial thoroughfare since Dutch colonial times, crowded with carriages and department-store awnings by the 1890s.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (South African Copyright Act No. 98 of 1978)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adderley_Street,_Cape_Town,_looking_NE_-_ca._1897.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-vienna-naschmarkt-1898",
+      "workType": "photo",
+      "image": {
+        "src": "assets/d5fbd028b4d8e45e-1397w.jpg",
+        "srcset": "assets/d5fbd028b4d8e45e-480w.jpg 480w, assets/d5fbd028b4d8e45e-960w.jpg 960w, assets/d5fbd028b4d8e45e-1397w.jpg 1397w",
+        "width": 1397,
+        "height": 1093,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "vienna-at",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1898,
+        "maxYear": 1898
+      },
+      "creationDate": {
+        "minYear": 1898,
+        "maxYear": 1898
+      },
+      "classification": {
+        "region": "Central Europe",
+        "difficulty": 3,
+        "tags": [
+          "market",
+          "street",
+          "tram"
+        ]
+      },
+      "clues": {
+        "region": "Central Europe",
+        "era": "1890s",
+        "country": "Austria"
+      },
+      "title": "Naschmarkt, Vienna, c.1898",
+      "artistOrCreator": "August Stauda",
+      "context": "Vienna's Naschmarkt, still the city's best-known market today, already stretched along the Wienfluss under a sea of vendor umbrellas by the 1890s.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (August Stauda, 1861–1928; life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naschmarkt_um_1898.jpg",
+        "creditText": "August Stauda"
+      }
+    },
+    {
+      "id": "commons-moscow-vshivaya-gorka",
+      "workType": "photo",
+      "image": {
+        "src": "assets/07dd2a225f305927-1008w.jpg",
+        "srcset": "assets/07dd2a225f305927-480w.jpg 480w, assets/07dd2a225f305927-960w.jpg 960w, assets/07dd2a225f305927-1008w.jpg 1008w",
+        "width": 1008,
+        "height": 780,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "moscow-ru",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1884,
+        "maxYear": 1884
+      },
+      "creationDate": {
+        "minYear": 1884,
+        "maxYear": 1884
+      },
+      "classification": {
+        "region": "Eastern Europe",
+        "difficulty": 4,
+        "tags": [
+          "church",
+          "river",
+          "skyline"
+        ]
+      },
+      "clues": {
+        "region": "Eastern Europe",
+        "era": "1880s",
+        "country": "Russia"
+      },
+      "title": "View across the River from Vshivaya Gorka, Moscow",
+      "artistOrCreator": "Nikolay Naidenov",
+      "context": "Onion-domed church towers rise above the Moskva riverbank in this view from Vshivaya Gorka, photographed for Naidenov's survey of Moscow's historic districts.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Nikolay Naidenov, 1834–1905; published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vshivaya_Gorka,_View_across_the_River_Moscow.jpg",
+        "creditText": "Nikolay Naidenov"
+      }
+    },
+    {
+      "id": "commons-manila-view-1826",
+      "workType": "drawing",
+      "image": {
+        "src": "assets/2ce1c1b830db5089-1446w.jpg",
+        "srcset": "assets/2ce1c1b830db5089-480w.jpg 480w, assets/2ce1c1b830db5089-960w.jpg 960w, assets/2ce1c1b830db5089-1446w.jpg 1446w",
+        "width": 1446,
+        "height": 1024,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "manila-ph",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1826,
+        "maxYear": 1826
+      },
+      "creationDate": {
+        "minYear": 1826,
+        "maxYear": 1826
+      },
+      "classification": {
+        "region": "Southeast Asia",
+        "difficulty": 5,
+        "tags": [
+          "mission",
+          "genre-scene",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "Southeast Asia",
+        "era": "1820s",
+        "country": "Philippines"
+      },
+      "title": "View of Manila, Capital of Luzon Island",
+      "artistOrCreator": "Friedrich Heinrich von Kittlitz",
+      "context": "Naturalist-artist Friedrich Heinrich von Kittlitz sketched this scene of a Manila church and outlying houses during the Russian corvette Seniavin's 1826–1829 voyage of exploration.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Friedrich Heinrich von Kittlitz, 1799–1874; life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Manila,_Capital_of_Luzon_Island,_Philippine_Islands,_1826-1829.png",
+        "creditText": "Friedrich Heinrich von Kittlitz, National Library of Russia"
+      }
+    },
+    {
+      "id": "commons-batavia-kali-besar-1875",
+      "workType": "photo",
+      "image": {
+        "src": "assets/82988b2769eaf507-1500w.jpg",
+        "srcset": "assets/82988b2769eaf507-480w.jpg 480w, assets/82988b2769eaf507-960w.jpg 960w, assets/82988b2769eaf507-1500w.jpg 1500w",
+        "width": 1500,
+        "height": 1150,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "jakarta-id",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1875,
+        "maxYear": 1875
+      },
+      "creationDate": {
+        "minYear": 1875,
+        "maxYear": 1875
+      },
+      "classification": {
+        "region": "Southeast Asia",
+        "difficulty": 3,
+        "tags": [
+          "canal",
+          "warehouse",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "Southeast Asia",
+        "era": "1870s",
+        "country": "Indonesia"
+      },
+      "title": "De rede van Batavia, de Kali Besar en de Kleine Boom",
+      "artistOrCreator": "Woodbury & Page",
+      "context": "Warehouses line the Kali Besar canal at Batavia's roadstead — colonial Jakarta's harbor district, and still the site of the old town today.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Woodbury & Page; life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Collectie_NMvWereldculturen,_RV-A131-32,_Foto,_%27De_rede_van_Batavia,_de_Kali_Besar_en_de_Kleine_Boom_met_de_Hoenderpasarbrug_en_pakhuizen%27,_fotograaf_Woodbury_%26_Page,_ca._1875.jpg",
+        "creditText": "Woodbury & Page, Nationaal Museum van Wereldculturen"
+      }
+    },
+    {
+      "id": "commons-algiers-bay-1899",
+      "workType": "photo",
+      "image": {
+        "src": "assets/c58b67ae35e74d22-1600w.jpg",
+        "srcset": "assets/c58b67ae35e74d22-480w.jpg 480w, assets/c58b67ae35e74d22-960w.jpg 960w, assets/c58b67ae35e74d22-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1134,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "algiers-dz",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1890,
+        "maxYear": 1905
+      },
+      "creationDate": {
+        "minYear": 1890,
+        "maxYear": 1905
+      },
+      "classification": {
+        "region": "North Africa",
+        "difficulty": 3,
+        "tags": [
+          "harbour",
+          "hillside",
+          "panorama"
+        ]
+      },
+      "clues": {
+        "region": "North Africa",
+        "era": "1890s",
+        "country": "Algeria"
+      },
+      "title": "Algiers Bay, ca. 1899",
+      "artistOrCreator": null,
+      "context": "\"Algiers the White\" climbs the hillside above its bay in this photochrom print, its terraced Ottoman-and-French-era skyline still recognizable today.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (photochrom print, published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Algiers_bay_1899.jpg",
+        "creditText": "Library of Congress"
+      }
+    },
+    {
+      "id": "commons-lima-plaza-mayor-1870",
+      "workType": "photo",
+      "image": {
+        "src": "assets/02144b9ed555a34c-1600w.jpg",
+        "srcset": "assets/02144b9ed555a34c-480w.jpg 480w, assets/02144b9ed555a34c-960w.jpg 960w, assets/02144b9ed555a34c-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1330,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "lima-pe",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1870,
+        "maxYear": 1870
+      },
+      "creationDate": {
+        "minYear": 1870,
+        "maxYear": 1870
+      },
+      "classification": {
+        "region": "South America",
+        "difficulty": 2,
+        "tags": [
+          "cathedral",
+          "plaza",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "South America",
+        "era": "1870s",
+        "country": "Peru"
+      },
+      "title": "Plaza Mayor de Lima, ca. 1870",
+      "artistOrCreator": "Eugenio Courret",
+      "context": "Lima Cathedral's twin bell towers dominate the Plaza Mayor, the same square where Francisco Pizarro founded the city in 1535.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (PD-Peru-photo; PD-1923)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plaza_mayor_de_Lima,_a%C3%B1o_1870.jpg",
+        "creditText": "Eugenio Courret"
       }
     }
   ]

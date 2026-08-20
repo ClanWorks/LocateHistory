@@ -100,3 +100,34 @@ Net effect: the curated pool is **30**. Havana and Vancouver each lose their onl
 - 5 of the 12 spoiler-text rejections above are old maps/engravings with a caption printed in a distinctly separate margin (Mumbai, Lagos, Odense, Jaffna, London) — these might be salvageable by cropping the caption strip out, which the current build pipeline has no step for. Not attempted in this batch; a real option for a future one if the pool needs to grow further.
 - The 1 item held for graphic content (`kazan-capture-1894.jpg`) and the 1 held for incomplete license (`wquUYnM6bBs31jPB7JxR`, Victoria Terminus Bombay) were both genuinely evaluated and excluded, not left unprocessed — everything from the 62-record Firestore export has now been through this pipeline at least once. Any further growth needs either the cropping approach above or genuinely new sourcing beyond the original export, per the M5 play-test follow-up list.
 - Difficulty ratings for this batch are, as with M2, first-pass editorial judgment pending real play-test data.
+
+---
+
+# Tier 2 batch curation notes (2026-08-12): new sourcing beyond Firestore
+
+Every record in the original 62-record Firestore export had, by this point, been evaluated at least once (approved, rejected, or held) — see the "Known gaps" note directly above. Growing the pool further meant genuinely new sourcing, not re-processing the same export. This batch found candidates by browsing Wikimedia Commons categories directly (`Category:<City> in the 19th century` and similar), prioritized for geographic diversity against the post-Tier-1 pool's real gaps: no East or Southeast Asia beyond Seoul, no Southern Europe, no Central Europe beyond Prague, no Russia beyond Kazan, and thin Africa/South America coverage.
+
+Same two-gate process as every prior batch — real Commons license verification, then a direct visual inspection of every image for baked-in spoiler text — applied identically to new sourcing.
+
+## Funnel
+
+- **17** candidates identified, one per city, across Tokyo, Rome, Cairo, Bangkok, Buenos Aires, Shanghai, Stockholm, Istanbul, Cape Town, Rio de Janeiro, Vienna, Moscow, Manila, Batavia/Jakarta, Algiers, Melbourne, and Lima.
+- **17/17** passed license verification (a mix of PD-old/PD-life-plus-N, PD-1923/pre-1931-US-publication, LOC "no known restrictions," one PD-Norway50, and one CC BY 2.0 photochrom print; the Cairo painting's photograph carries CC BY-SA 4.0 like the Tier 1 Mexico City item).
+- **1** (Melbourne, `Melbourne_1880_by_Samuel_Calvert.jpg`) was below the 480px minimum (600×338) once decoded — no higher-resolution alternative was found on Commons in the time available. Dropped; Melbourne remains a real gap.
+- **3** of the remaining 16 were rejected after visual inspection for a caption printed directly on the image — the same pattern as every prior batch:
+  - `tokyo-kyobashi-bridge-1890.png` — "V 33 KYOBASHI TOKYO" printed in the bottom-right corner.
+  - `buenos-aires-panoramica-1890.jpg` — "...BUENOS AIRES VISTA PANORAMICA" printed in the bottom-left corner.
+  - `rio-guanabara-bay-1895.jpg` — "CAPITAL — RIO tomado de NICTHEROY — ... Rio de Janeiro" printed across the bottom.
+- **13 items were approved**: Rome, Cairo, Bangkok, Shanghai, Stockholm, Istanbul, Cape Town, Vienna, Moscow, Manila, Batavia (Jakarta), Algiers, and Lima. Pool: 30 → **43**.
+
+One judgment call worth recording: the Rome photo's storefront signage reads "MILANO" (a shop advertising a Milan branch) and "OPIFICIO... MAGAZZINI DI VENDITA MILANO" — this is real in-scene signage, not a curator's caption, and it names the *wrong* city (Milan, not Rome). It's a potential red herring for an unusually observant player, not a spoiler, so it wasn't disqualifying — flagged here in case it comes up in a future play-test.
+
+## Gazetteer
+
+No new gazetteer entries were needed — all 13 approved cities already existed as decoy entries in the 177-entry gazetteer from earlier curation passes. One update: added "Batavia" to `jakarta-id`'s `historicalNames`, since the Kali Besar item depicts colonial-era Batavia under that name.
+
+## Known gaps for a future batch
+
+- Melbourne has no approved item; a higher-resolution 1880s–1890s Collins Street or Bourke Street photograph likely exists on Commons but wasn't found in this pass.
+- Region coverage after this batch: 17 distinct `classification.region` values across 43 items, up from 14 across 30. Still thin or absent: Central America, most of the Caribbean, the Pacific Islands beyond Australia/NZ, and Scandinavia beyond Denmark/Norway/Sweden's one Stockholm entry.
+- This batch searched by city name via Commons category browsing — a systematic pass through Commons' own "19th-century photographs of [country]" category tree would likely surface more candidates per city (multiple angles, decades) than this single-image-per-city approach did.
