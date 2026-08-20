@@ -4,6 +4,13 @@
 // is and doesn't risk a garbled or inaccurate coastline. A real
 // landmass illustration is a plausible later polish pass, not a v1
 // requirement.
+//
+// M5 play-test found this read as broken ("the map never displayed,
+// only the points on the blank view") rather than deliberately minimal.
+// The rendering in app.js (renderRevealMap) now frames the grid, labels
+// the equator/prime-meridian lines, and adds a visible legend for the
+// pin colors — the geometry here is unchanged, only how the caller
+// presents it.
 
 /**
  * @param {number} lat -90..90

@@ -3,7 +3,7 @@
 // the DOM, and owns the one piece of impurity the reducer deliberately
 // stays out of — the round timer. See plan.md §6-§7.
 import { reduce, createInitialState, Status, REQUIRED_ROUNDS } from "./state-machine.js";
-import { calculateRoundScore, haversineDistanceKm, ROUND_DURATION_MS, CLUE_COSTS } from "./scoring.js";
+import { calculateRoundScore, calculateCountryCluePenalty, haversineDistanceKm, ROUND_DURATION_MS, CLUE_COSTS } from "./scoring.js";
 import { searchGazetteer } from "./city-search.js";
 import { project, graticuleLines } from "./map-projection.js";
 import { getHasSeenIntro, setHasSeenIntro, getBestScore, recordSessionScore } from "./storage.js";
@@ -19,6 +19,11 @@ let placesById = new Map();
 let timerHandle = null;
 let roundDeadline = null;
 let pendingGuessId = null;
+// Number of gazetteer places sharing the current round's answer country —
+// set once per round in renderPlaying, read by both the clue button label
+// and resolveRound's scoring call so the displayed cost and the charged
+// cost never drift apart. See calculateCountryCluePenalty in scoring.js.
+let countryCandidateCount = null;
 
 function dispatch(event) {
   state = reduce(state, event);
@@ -123,6 +128,7 @@ function resolveRound({ timedOut, guessPlaceId } = {}) {
     distanceKm: distanceKm ?? 0,
     remainingMs: remaining,
     cluesUsed,
+    countryCandidateCount,
   });
 
   dispatch({
@@ -242,6 +248,8 @@ function renderPlaying() {
   const item = currentItem();
   const round = state.context.currentRound;
   const roundNumber = state.context.roundIndex + 1;
+  const answerCountry = placesById.get(item.location.placeId)?.country;
+  countryCandidateCount = answerCountry ? gazetteer.filter((p) => p.country === answerCountry).length : null;
 
   gameRoot.innerHTML = `
     <h2 tabindex="-1" data-focus-target>Round ${roundNumber} of ${REQUIRED_ROUNDS}</h2>
@@ -280,9 +288,10 @@ function renderPlaying() {
   // readiness — see below for why the order matters.
   const clueButtonsEl = document.getElementById("clue-buttons");
   for (const clue of Object.keys(CLUE_COSTS)) {
+    const cost = clue === "country" ? calculateCountryCluePenalty(countryCandidateCount) : CLUE_COSTS[clue];
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.textContent = `${clue} (−${CLUE_COSTS[clue]} pts)`;
+    btn.textContent = `${clue} (−${cost} pts)`;
     btn.disabled = true; // locked until the image is ready; see onImageReady below
     btn.dataset.clue = clue;
     // Deliberately not routed through dispatch()/render(): a clue
@@ -425,7 +434,12 @@ function renderReveal() {
     </p>
     <p>Score this round: <strong>${completed.roundScore}</strong> / 1000
       (accuracy ${completed.accuracy}, time bonus ${completed.timeBonus}, clue cost −${completed.cluePenalty})</p>
+    <p id="reveal-map-caption">Simplified world map — latitude/longitude grid only, no coastlines.</p>
     <div id="reveal-map" role="img" aria-label="Map showing the guessed and correct locations"></div>
+    <ul id="reveal-map-legend">
+      <li><span class="legend-swatch legend-swatch--answer"></span> Correct location</li>
+      ${guessPlace ? `<li><span class="legend-swatch legend-swatch--guess"></span> Your guess</li>` : ""}
+    </ul>
     <img src="${item.image.src}" alt="${item.title}" width="200" />
     <p>${item.title}${item.artistOrCreator ? ` — ${item.artistOrCreator}` : ""}, ${item.depictedDate.minYear}${item.depictedDate.minYear !== item.depictedDate.maxYear ? `–${item.depictedDate.maxYear}` : ""}</p>
     <p>${item.context}</p>
@@ -455,6 +469,17 @@ function renderRevealMap(answerPlace, guessPlace) {
   svg.setAttribute("width", String(width));
   svg.setAttribute("height", String(height));
 
+  // Frame the grid so it reads as a deliberate map object rather than a
+  // blank area that failed to render — M5 play-test: "the map never
+  // displayed, only the points on the blank view."
+  const frame = document.createElementNS(svgNs, "rect");
+  frame.setAttribute("x", 0.5);
+  frame.setAttribute("y", 0.5);
+  frame.setAttribute("width", width - 1);
+  frame.setAttribute("height", height - 1);
+  frame.setAttribute("class", "map-frame");
+  svg.appendChild(frame);
+
   for (const line of graticuleLines(width, height)) {
     const el = document.createElementNS(svgNs, "line");
     el.setAttribute("x1", line.x1);
@@ -464,6 +489,11 @@ function renderRevealMap(answerPlace, guessPlace) {
     el.setAttribute("class", `graticule graticule--${line.emphasis}`);
     svg.appendChild(el);
   }
+
+  // Orientation labels on the two emphasized lines, so the grid reads as
+  // a real (if simplified) map rather than an unlabeled abstract pattern.
+  svg.appendChild(makeMapLabel(svgNs, 4, height / 2 - 4, "Equator"));
+  svg.appendChild(makeMapLabel(svgNs, width / 2 + 4, 12, "Prime meridian"));
 
   const answerPoint = project(answerPlace.lat, answerPlace.lng, width, height);
   if (guessPlace) {
@@ -480,6 +510,15 @@ function renderRevealMap(answerPlace, guessPlace) {
   svg.appendChild(makePin(svgNs, answerPoint, "answer", "Correct location"));
 
   container.appendChild(svg);
+}
+
+function makeMapLabel(svgNs, x, y, text) {
+  const el = document.createElementNS(svgNs, "text");
+  el.setAttribute("x", x);
+  el.setAttribute("y", y);
+  el.setAttribute("class", "map-label");
+  el.textContent = text;
+  return el;
 }
 
 function makePin(svgNs, point, cssClass, label) {
@@ -507,10 +546,10 @@ function renderResults() {
     <p>${isNewBest ? "New best score!" : `Best score: ${bestScore}`}</p>
     <ol id="results-breakdown">
       ${results
-        .map((r, i) => {
+        .map((r) => {
           const item = itemsById.get(r.itemId);
           const place = placesById.get(item.location.placeId);
-          return `<li>Round ${i + 1}: ${place.displayName} — ${r.roundScore} pts${r.reason === "timeout" ? " (timed out)" : ""}</li>`;
+          return `<li>${place.displayName} — ${r.roundScore} pts${r.reason === "timeout" ? " (timed out)" : ""}</li>`;
         })
         .join("")}
     </ol>

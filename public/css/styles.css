@@ -112,8 +112,13 @@ figure img, #round-image {
   color: #555;
 }
 
+#reveal-map-caption {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 1rem 0 0.25rem;
+}
 #reveal-map {
-  margin: 1rem 0;
+  margin: 0 0 0.5rem;
 }
 #reveal-map svg {
   width: 100%;
@@ -123,6 +128,8 @@ figure img, #round-image {
   background: #eef3f7;
   border-radius: 8px;
 }
+.map-frame { fill: none; stroke: #8fa8b8; stroke-width: 1; }
+.map-label { font-size: 9px; fill: #5c7385; font-family: inherit; }
 .graticule { stroke: #c3d2dd; stroke-width: 1; }
 .graticule--equator, .graticule--prime-meridian { stroke: #8fa8b8; stroke-width: 1.5; }
 .connector { stroke: #1a1a1a; stroke-width: 1.5; stroke-dasharray: 4 3; }
@@ -130,8 +137,46 @@ figure img, #round-image {
 .pin--answer { fill: #1a7f37; }
 .pin--guess { fill: #b35900; }
 
+#reveal-map-legend {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.9rem;
+}
+.legend-swatch {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  outline: 1px solid #999;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+.legend-swatch--answer { background: #1a7f37; }
+.legend-swatch--guess { background: #b35900; }
+
+/* Bounded height + visible border/background make this read as its own
+   scrollable region (same affordance pattern as #city-search-results)
+   instead of relying on the page's own scroll, which on a 10-round list
+   wasn't an obvious enough cue that there was more below the fold. */
 #results-breakdown {
-  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+  max-height: 40vh;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+#results-breakdown li {
+  padding: 0.25rem 0;
+}
+#results-breakdown li:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
 
 /* Visually hidden but still available to assistive tech — used for the

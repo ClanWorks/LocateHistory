@@ -252,19 +252,29 @@ Search covers display names and aliases but always resolves to the canonical ID.
 
 Each round lasts 30 seconds and is worth at most 1,000 points.
 
+**Revised after the M5 play-test** (`PLAYTEST.md`), which found two problems with the original flat-linear formula: the time bonus decayed from the first millisecond, so a true 1000 was mathematically unreachable, and it was earned independently of accuracy, so a fast-but-wrong guess scored nearly as well on the time axis as a fast-and-correct one.
+
 ```text
 if distanceKm <= 10:
   accuracy = 800
 else:
   accuracy = round(800 * exp(-(distanceKm - 10) / 750))
 
-timeBonus = round(200 * remainingMs / 30000)
+elapsedMs = 30000 - remainingMs
+graceMs = 3000
+if elapsedMs <= graceMs:
+  timeFraction = 1
+else:
+  timeFraction = clamp(1 - (elapsedMs - graceMs) / (30000 - graceMs), 0, 1)
+
+timeBonus = round(200 * timeFraction * (accuracy / 800))
 roundScore = max(0, accuracy + timeBonus - cluePenalties)
 ```
 
 - Distance uses the great-circle calculation.
 - Accuracy is clamped to 0–800; time bonus to 0–200.
-- Region costs 75 points, era 100, and country 200.
+- The first 3 seconds of a round earn full time-bonus credit regardless of when within that window the guess lands (the "penalty-free chance" the play-test asked for); after that it decays linearly to zero over the rest of the round, then the whole result is scaled by accuracy — so an instant guess that's also wildly wrong earns little or no time bonus, and a true instant + fully accurate guess reaches the full 1000.
+- Region costs 75 points; era costs 100. Country's *displayed reference cost* is 200, but its real cost scales with how many gazetteer places share the answer's country — `round(clamp(200 * 4 / candidateCount, 150, 400))` — since a flat cost is nearly a giveaway for a country with only one or two gazetteer entries and mild for one with a dozen. A caller with no gazetteer context (e.g. a bare score calculation) falls back to the flat 200.
 - Clues do not pause the timer and can each be requested once.
 - Timeout scores zero.
 - Accepted alternative places use the most favorable valid coordinate.
