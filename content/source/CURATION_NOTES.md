@@ -80,6 +80,21 @@ The Tier 1 batch above added 17 new items but left three pre-existing M2 items u
 
 Net effect: the curated pool is **34** (37 from the Tier 1 batch, minus these 3), and the gazetteer's `goa-in` entry now has zero approved items (kept as a valid future-use/decoy entry, not removed).
 
+## Full spoiler audit of the remaining original M2 items (2026-08-12)
+
+The correction above only re-checked the two items `PLAYTEST.md` had already flagged. Follow-up item #1 on the play-test list ("audit all published items for answers visible in the image itself") was still only partially done — of the M2 seed batch's other 18 items, only `odense-braun-hogenberg-1593.jpg` had been looked at (in M5, as a "weaker case," and not pulled at the time). The other 17 had never been opened and inspected. All 18 were now checked directly, applying the same bar used throughout the Tier 1 batch: any legible caption or title naming the depicted place, in any language or period typeface, is a reject — a landmark or building name (Fort William, Imperial Hotel) is not, since it doesn't hand a player the city itself.
+
+Four more confirmed spoilers, removed the same way as the correction above:
+
+- `odense-braun-hogenberg-1593.jpg` (`fs-ainmquqvrbjrpyr0jxhf`) — titled "CIVITATIS EPISCOPALIS OTHENARUM SIVE OTTHONIAE..." across the top; "Othenarum"/"Otthoniae" are Latin forms of Odense. This is the same item the M5 log called "a much weaker case" and chose not to pull — revisited here because leaving it in was inconsistent with rejecting `oslo-lamotte-1813.jpg` in the Tier 1 batch for the historical-name caption "Vue proche de Christiania," which is exactly the same pattern (a period/historical name for the city, not its modern English name, still legible and still identifying).
+- `havana-panorama-17th-century.jpg` (`fs-gdmnp3qxdritrpuku4kn`) — "HAVANR" (stylized "HAVANA") in a cartouche at the top.
+- `kazan-olearius-1656.jpg` (`fs-bgvtpznqa9idpj5ss65j`) — captioned "Casan Tartarorum" ("Kazan of the Tartars") on the plate.
+- `vancouver-fairview-1904.jpg` (`fs-ew10gpluzoe9ikpp2o3j`) — a photochrom-style print with "VANCOUVER, B.C. FROM FAIRVIEW" printed directly in the bottom-left corner.
+
+The other 14 (Kolkata, San Francisco, Manchester, Sydney, Varanasi bathing ghat, Baghdad mosque, Wellington, Lahore street scene, Prague, Accra, Kampala, Durban, Montevideo, Seoul) were confirmed clean.
+
+Net effect: the curated pool is **30**. Havana and Vancouver each lose their only approved item and now have zero items in the pool (both gazetteer entries kept as decoys, not removed) — a real cost of applying the standard consistently, but the alternative is knowingly shipping a spoiler because it happens to be in a dead language.
+
 ## Known gaps for a future batch
 
 - 5 of the 12 spoiler-text rejections above are old maps/engravings with a caption printed in a distinctly separate margin (Mumbai, Lagos, Odense, Jaffna, London) — these might be salvageable by cropping the caption strip out, which the current build pipeline has no step for. Not attempted in this batch; a real option for a future one if the pool needs to grow further.

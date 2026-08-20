@@ -159,43 +159,45 @@ simple math, which is exactly what got reported). That's the highest-
 leverage fix available, more so than anything else on this list.
 
 **Prioritized follow-up work:**
-1. **Audit all 20 published items for answers visible in the image
-   itself**, not just the two confirmed above — old maps/engravings/
-   atlas plates are the highest-risk category (Havana, Kazan, and any
-   other "plate"/"engraving from a book" item should be checked first).
-   Pull or crop anything that fails. This is a content-integrity bug,
-   not polish — it breaks the actual premise of the round for whatever
-   fraction of the 20 items are affected.
-2. **Curate more content.** The 41 already-exported, not-yet-curated
-   Firestore records (`content/source/_firestore_export_flat.json`,
-   per `CURATION_NOTES.md`) are the fastest path — same pipeline as M2,
-   no new sourcing work, just running the license-check-and-curate
-   process against records that already exist. This is what directly
-   fixes the replay-motivation collapse.
-3. **Results screen: fix the double-numbering bug.** The list renders
-   as `<ol>`, which the browser auto-numbers, on top of each item's own
-   "Round N:" text — producing literal "4. Round 4: …". Drop one of the
-   two numbering sources.
-4. **Results screen: fix the list being cut off / not obviously there.**
-   Needs an actual layout/scroll fix, not just "it's below the fold."
-5. **Rescale scoring so a fast-wrong guess isn't nearly as rewarding.**
-   Time bonus is currently earned independently of accuracy, so
-   guessing immediately and randomly nets ~200 points regardless of how
-   wrong it is. Also add a short grace period before the time bonus
-   starts decaying — right now even an instant answer can't reach a
-   true 1000, since some real reaction time always elapses first.
-6. **Reconsider clue costs, especially "country".** Confirmed
-   disproportionately powerful for smaller/less common countries even
-   after the M2-review gazetteer expansion (20 → 173 entries). A
-   percentage-of-remaining-score cost, as suggested in session 1, is
-   worth prototyping against the fixed-cost model.
-7. **Reveal map: fix it reading as broken, not minimal.** The
-   graticule-only design was a deliberate M3 call to avoid a garbled
-   landmass outline, documented as a known tradeoff at the time — but
-   "the map never displayed" is exactly the failure mode that tradeoff
-   risked, and it happened. Needs either a real (correct) landmass
-   illustration, or a clearer deliberate-minimal presentation (labels,
-   legend, something that reads as "on purpose").
+1. ~~**Audit all 20 published items for answers visible in the image
+   itself.**~~ **Done (2026-08-12).** All 20 M2 items and all 41 Tier 1
+   candidates were opened and visually inspected, not just metadata-
+   checked. Confirmed spoilers pulled: Goa (`goa-plan-de-goa-1750.jpg`),
+   Bogotá, Mumbai, Lagos, Odense (both the M2 and a Tier 1 candidate),
+   Jaffna, Colombo, Basra, London, Oslo (a caption and separately
+   legible building signage), Copenhagen (a small photochrom caption),
+   Varanasi, Baghdad, Havana, Kazan, Vancouver — 16 items total across
+   both batches. See `content/source/CURATION_NOTES.md` for the full
+   per-item record.
+2. ~~**Curate more content.**~~ **Done (2026-08-12).** The Tier 1 batch
+   processed all 42 remaining Firestore records; after the spoiler
+   audit, undersized-image rejections, and a graphic-content hold, the
+   curated pool grew from 20 to **30** approved items.
+3. ~~**Results screen: fix the double-numbering bug.**~~ **Done.**
+   Dropped the redundant "Round N:" text; the `<ol>`'s own numbering is
+   now the only number shown.
+4. ~~**Results screen: fix the list being cut off / not obviously
+   there.**~~ **Done.** The list is now a bounded, visibly-bordered
+   scrollable box (same affordance pattern as the city search results),
+   not an ambiguous full-page scroll.
+5. ~~**Rescale scoring.**~~ **Done.** Added a 3-second grace period
+   (full time bonus anywhere inside it, decaying linearly afterward —
+   a true instant + fully accurate guess can now reach 1000) and scaled
+   the time bonus by accuracy, so a fast-but-wrong guess earns little or
+   no time bonus instead of the old flat ~200. See plan.md §12.
+6. ~~**Reconsider clue costs, especially "country".**~~ **Done**, via a
+   data-driven rework rather than a flat percentage: the country clue's
+   cost now scales inversely with how many gazetteer places share the
+   answer's country (150–400 pts, vs. the old flat 200), so it's
+   expensive exactly when it's most informative (a country with only
+   one or two gazetteer cities) and cheaper when it barely narrows
+   anything down. See `calculateCountryCluePenalty` in scoring.js.
+7. ~~**Reveal map: fix it reading as broken, not minimal.**~~ **Done**,
+   via the "clearer deliberate-minimal" option rather than a real
+   coastline (still avoiding the garbled-outline risk that was the
+   original tradeoff): the grid now has a visible frame, "Equator"/
+   "Prime meridian" labels, and an explicit color-swatch legend below
+   the map instead of relying on the aria-label alone.
 8. *(Considered, deferred, not scheduled)* — a clickable map for
    **input**, replacing the searchable city selector. Real preference,
    real usability upside, but a bigger scope change than the rest of
