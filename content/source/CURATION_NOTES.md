@@ -131,3 +131,40 @@ No new gazetteer entries were needed — all 13 approved cities already existed 
 - Melbourne has no approved item; a higher-resolution 1880s–1890s Collins Street or Bourke Street photograph likely exists on Commons but wasn't found in this pass.
 - Region coverage after this batch: 17 distinct `classification.region` values across 43 items, up from 14 across 30. Still thin or absent: Central America, most of the Caribbean, the Pacific Islands beyond Australia/NZ, and Scandinavia beyond Denmark/Norway/Sweden's one Stockholm entry.
 - This batch searched by city name via Commons category browsing — a systematic pass through Commons' own "19th-century photographs of [country]" category tree would likely surface more candidates per city (multiple angles, decades) than this single-image-per-city approach did.
+
+---
+
+# Tier 3 batch curation notes (2026-08-13): parallel-sourced, 43 → 111
+
+Triggered by an explicit push for volume ("we need content and lots of it," "think 100s"). Given the scale, sourcing was parallelized across 5 independent research agents, each assigned ~15 cities across a distinct region (Americas/Caribbean, Western/Northern Europe, Eastern Europe/Middle East, Africa, Asia) and given the exact same two-gate process used in every prior batch verbatim: find a wide cityscape/street/harbor candidate on Commons, verify its license against the actual File: page, download it, check resolution ≥480px both dimensions, and — non-negotiably — visually inspect the downloaded image via the Read tool for any legible text baked into the image naming the depicted place, in any language or historical name, before reporting it approved.
+
+## Process notes specific to this batch
+
+- **Two agent runs were interrupted mid-task** by a session restart; their work wasn't lost (files already on disk, per plan.md's originals being local not committed) but 2 of 5 lost their conversation transcripts and had to be relaunched fresh, pointed at the partial downloads already present so they wouldn't repeat search work. The 2 that kept their transcripts (Americas/Caribbean, Western/Northern Europe) resumed cleanly.
+- **Centralized re-verification, not blind trust of agent self-report.** Every item's `attribution.sourceUrl` and license were independently re-derived and re-confirmed against the actual Commons file page by the coordinating session — not copied from agent prose — because two of the five agents' final reports omitted a source-URL column entirely. This surfaced real gaps: 4 approved-by-agent candidates (Santo Domingo, Monrovia, Maputo, Windhoek) could not be re-matched to a specific, confirmable Commons file after real effort and were dropped rather than shipped with a guessed or unverifiable citation, even though their images were already confirmed visually clean.
+- **A personal visual spot-check** (18 images, sampled across all 5 batches, prioritizing the highest-risk categories — old engravings, photochrom prints, postcards) was run in addition to the agents' own reported Read-tool inspections, specifically because one agent (Africa) deviated from the established "reject, don't crop" precedent by cropping 6 spoiler-captioned images instead of discarding them. All 6 crops were re-inspected directly and are genuinely clean; this is the first batch where cropping was used and accepted, a real process change worth flagging for future batches.
+- **One agent-approved item was overridden on inspection**: the Eastern Europe/Middle East agent's Sana'a candidate was dated 2014 — a modern photograph, not historical content, which fails the project's basic premise regardless of its (correctly reported) clean license and clean spoiler check. Dropped.
+- **Two cities remain genuinely unresolved after real effort**, not merely unattempted: La Paz and Valparaíso. Every plausible period source found for either city baked the city's name into the image one way or another (a postcard caption, a photographic negative-plate etching, or an artist's inscription directly on the canvas) — three separate candidates were tried and rejected for each.
+
+## Funnel
+
+- **75** candidate cities assigned across the 5 batches.
+- Of those, license-clear, spoiler-clean images were found and independently re-verified for **68** cities: 12 Americas/Caribbean, 15 Western/Northern Europe, 14 Eastern Europe/Middle East, 12 Africa, 15 Asia.
+- **7** were dropped after agent approval for reasons other than a failed spoiler/license check: Sana'a (non-historical image), Santo Domingo / Monrovia / Maputo / Windhoek (sourceUrl could not be independently re-confirmed), La Paz / Valparaíso (no clean candidate exists after multiple genuine attempts).
+- Numerous further candidates were rejected by the agents themselves during sourcing for baked-in spoiler text before reaching a clean final pick — see each agent's individual findings; representative examples include Kyoto (multiple candidates rejected for "KIOTO" stamped in the corner, a systematic pattern in that city's studio photography), Baku (a postcard captioned "Баку" directly), Chennai and Hyderabad (stale pre-existing downloads that couldn't be matched to any real Commons source were discarded and replaced with fresh, verified candidates).
+- **68 items were approved**, bringing the pool from **43 to 111**.
+
+## Gazetteer
+
+18 new entries added (177 → 195): Panama City, Guatemala City, Recife, Quebec City, Munich, Hamburg, Barcelona, Gothenburg, Bergen, Sofia, Muscat, Baku, Tbilisi, Zanzibar City, Hyderabad, Guangzhou, Nagasaki, Kyoto. All other approved cities already existed as decoy entries from earlier batches.
+
+## Region coverage
+
+20 distinct `classification.region` values across 111 items (up from 17 across 43), with genuinely new coverage in East Asia, Southeast Asia, the Caucasus, Central America, and the Caribbean — regions that were entirely or nearly absent before this batch.
+
+## Known gaps for a future batch
+
+- The 7 dropped-after-approval cities above are real, specific targets for a focused follow-up: each already has a known, license-checked, visually-clean candidate (or, for La Paz/Valparaíso, a documented reason every attempt so far has failed) — this is faster to close than fresh sourcing from zero.
+- Melbourne (carried over from Tier 2) is still unresolved.
+- The Pacific Islands beyond Australia/NZ, and most of Central Asia beyond Kabul, remain thin or absent.
+- Difficulty ratings for this batch are, as with every prior batch, first-pass editorial judgment pending real play-test data — and this batch in particular never got a human spot-check of gameplay feel, only content-integrity checks.

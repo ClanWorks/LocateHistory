@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
-  "generatedAt": "2026-08-20T08:10:43.631Z",
-  "contentHash": "f22dbfd783347c90",
+  "generatedAt": "2026-08-22T07:33:19.141Z",
+  "contentHash": "dafe4870df2d26fe",
   "items": [
     {
       "id": "fs-0mdvrwolpwuvp64rm7xt",
@@ -1970,6 +1970,3134 @@
         "license": "Public Domain (PD-Peru-photo; PD-1923)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plaza_mayor_de_Lima,_a%C3%B1o_1870.jpg",
         "creditText": "Eugenio Courret"
+      }
+    },
+    {
+      "id": "commons-havana-morro-castle",
+      "workType": "photo",
+      "image": {
+        "src": "assets/9215dd65e7ab7515-1600w.jpg",
+        "srcset": "assets/9215dd65e7ab7515-480w.jpg 480w, assets/9215dd65e7ab7515-960w.jpg 960w, assets/9215dd65e7ab7515-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1602,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "havana-cu",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1860,
+        "maxYear": 1860
+      },
+      "creationDate": {
+        "minYear": 1860,
+        "maxYear": 1860
+      },
+      "classification": {
+        "region": "Caribbean",
+        "difficulty": 2,
+        "tags": [
+          "harbor",
+          "fortress",
+          "ships"
+        ]
+      },
+      "clues": {
+        "region": "Caribbean",
+        "era": "1860s",
+        "country": "Cuba"
+      },
+      "title": "Havana Harbor and Morro Castle",
+      "artistOrCreator": null,
+      "context": "Castillo del Morro guards the narrow entrance to Havana harbor, a fortress that has watched over the port since the 1580s.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Havana_-_Harbor_and_Morro_Castle.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-kingston-king-street",
+      "workType": "photo",
+      "image": {
+        "src": "assets/d5b7849910d7fa0f-1600w.jpg",
+        "srcset": "assets/d5b7849910d7fa0f-480w.jpg 480w, assets/d5b7849910d7fa0f-960w.jpg 960w, assets/d5b7849910d7fa0f-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1230,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "kingston-jm",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1865,
+        "maxYear": 1865
+      },
+      "creationDate": {
+        "minYear": 1865,
+        "maxYear": 1865
+      },
+      "classification": {
+        "region": "Caribbean",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "market",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "Caribbean",
+        "era": "1860s",
+        "country": "Jamaica"
+      },
+      "title": "King Street, Looking South, Kingston, Jamaica",
+      "artistOrCreator": "Duperly Brothers",
+      "context": "King Street was colonial Kingston's principal commercial artery, running down to the waterfront through the heart of the merchant district.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US; also PD in Jamaica, life+50 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duperly_Brothers_-_King_Street,_Looking_South,_Kingston,_Jamaica,_ca_1865_3008070443.jpg",
+        "creditText": "Duperly Brothers"
+      }
+    },
+    {
+      "id": "commons-port-au-prince-1907",
+      "workType": "photo",
+      "image": {
+        "src": "assets/97ca72a98759b580-1600w.jpg",
+        "srcset": "assets/97ca72a98759b580-480w.jpg 480w, assets/97ca72a98759b580-960w.jpg 960w, assets/97ca72a98759b580-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 999,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "port-au-prince-ht",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1907,
+        "maxYear": 1907
+      },
+      "creationDate": {
+        "minYear": 1907,
+        "maxYear": 1907
+      },
+      "classification": {
+        "region": "Caribbean",
+        "difficulty": 3,
+        "tags": [
+          "harbor",
+          "panorama",
+          "hillside"
+        ]
+      },
+      "clues": {
+        "region": "Caribbean",
+        "era": "1900s",
+        "country": "Haiti"
+      },
+      "title": "Port-au-Prince, 1907",
+      "artistOrCreator": null,
+      "context": "Port-au-Prince rises from its harbor toward the surrounding hills in this frontispiece photograph from a 1907 history of Haiti.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Port-au-Prince_1907.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-san-juan-plaza-santiago",
+      "workType": "photo",
+      "image": {
+        "src": "assets/bd0501744a2d6738-1600w.jpg",
+        "srcset": "assets/bd0501744a2d6738-480w.jpg 480w, assets/bd0501744a2d6738-960w.jpg 960w, assets/bd0501744a2d6738-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1318,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "san-juan-pr",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1892,
+        "maxYear": 1892
+      },
+      "creationDate": {
+        "minYear": 1892,
+        "maxYear": 1892
+      },
+      "classification": {
+        "region": "Caribbean",
+        "difficulty": 3,
+        "tags": [
+          "plaza",
+          "statue",
+          "fortress"
+        ]
+      },
+      "clues": {
+        "region": "Caribbean",
+        "era": "1890s",
+        "country": "Puerto Rico"
+      },
+      "title": "Plaza de Santiago, San Juan",
+      "artistOrCreator": null,
+      "context": "Now Plaza Colón, this square anchors the entrance to Old San Juan, with the walls of El Morro visible on the hill beyond.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PlazadeSantiago.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-nassau-street-1897",
+      "workType": "photo",
+      "image": {
+        "src": "assets/5147e8b237479d06-1191w.jpg",
+        "srcset": "assets/5147e8b237479d06-480w.jpg 480w, assets/5147e8b237479d06-960w.jpg 960w, assets/5147e8b237479d06-1191w.jpg 1191w",
+        "width": 1191,
+        "height": 1657,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "nassau-bs",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1897,
+        "maxYear": 1897
+      },
+      "creationDate": {
+        "minYear": 1897,
+        "maxYear": 1897
+      },
+      "classification": {
+        "region": "Caribbean",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "colonial",
+          "vendors"
+        ]
+      },
+      "clues": {
+        "region": "Caribbean",
+        "era": "1890s",
+        "country": "Bahamas"
+      },
+      "title": "A Street in Nassau",
+      "artistOrCreator": null,
+      "context": "A narrow residential street of shuttered colonial houses in 1890s Nassau, published as an illustration in Popular Science Monthly.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PSM_V52_D801_A_street_in_nassau.jpg",
+        "creditText": "Popular Science Monthly, v.52"
+      }
+    },
+    {
+      "id": "commons-panama-city-panorama",
+      "workType": "photo",
+      "image": {
+        "src": "assets/bfba215e0c1a9623-1536w.jpg",
+        "srcset": "assets/bfba215e0c1a9623-480w.jpg 480w, assets/bfba215e0c1a9623-960w.jpg 960w, assets/bfba215e0c1a9623-1536w.jpg 1536w",
+        "width": 1536,
+        "height": 707,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "panama-city-pa",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1909,
+        "maxYear": 1909
+      },
+      "creationDate": {
+        "minYear": 1909,
+        "maxYear": 1909
+      },
+      "classification": {
+        "region": "Central America",
+        "difficulty": 3,
+        "tags": [
+          "panorama",
+          "railroad",
+          "street"
+        ]
+      },
+      "clues": {
+        "region": "Central America",
+        "era": "1900s",
+        "country": "Panama"
+      },
+      "title": "Panorama of Panama City",
+      "artistOrCreator": null,
+      "context": "Panama City's streets and railroad station, photographed as the Panama Canal construction was reshaping the isthmus.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_of_Panama_City,_Republic_of_Panama,_showing_street,_buildings_and_railroad_station_in_right_center_LCCN2002697775.tif",
+        "creditText": "Library of Congress"
+      }
+    },
+    {
+      "id": "commons-guatemala-city-1890",
+      "workType": "drawing",
+      "image": {
+        "src": "assets/2fd3620c97c93761-1407w.jpg",
+        "srcset": "assets/2fd3620c97c93761-480w.jpg 480w, assets/2fd3620c97c93761-960w.jpg 960w, assets/2fd3620c97c93761-1407w.jpg 1407w",
+        "width": 1407,
+        "height": 905,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "guatemala-city-gt",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1890,
+        "maxYear": 1890
+      },
+      "creationDate": {
+        "minYear": 1890,
+        "maxYear": 1890
+      },
+      "classification": {
+        "region": "Central America",
+        "difficulty": 3,
+        "tags": [
+          "cathedral",
+          "volcano",
+          "cityscape"
+        ]
+      },
+      "clues": {
+        "region": "Central America",
+        "era": "1890s",
+        "country": "Guatemala"
+      },
+      "title": "Guatemala City, 1890",
+      "artistOrCreator": "H. D. Rose",
+      "context": "Guatemala City's cathedral towers rise before a backdrop of volcanoes in this 1890 sketch, published not long after the capital's earlier earthquake reconstructions.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guatemala1890.jpg",
+        "creditText": "H. D. Rose"
+      }
+    },
+    {
+      "id": "commons-quito-plaza-grande",
+      "workType": "photo",
+      "image": {
+        "src": "assets/7d4b729c9040dfb6-800w.jpg",
+        "srcset": "assets/7d4b729c9040dfb6-480w.jpg 480w, assets/7d4b729c9040dfb6-800w.jpg 800w",
+        "width": 800,
+        "height": 564,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "quito-ec",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1870,
+        "maxYear": 1870
+      },
+      "creationDate": {
+        "minYear": 1870,
+        "maxYear": 1870
+      },
+      "classification": {
+        "region": "South America",
+        "difficulty": 3,
+        "tags": [
+          "plaza",
+          "cathedral",
+          "earthquake"
+        ]
+      },
+      "clues": {
+        "region": "South America",
+        "era": "1870s",
+        "country": "Ecuador"
+      },
+      "title": "Plaza Grande, Quito",
+      "artistOrCreator": null,
+      "context": "Quito's central Plaza Grande, photographed around the time of the 1868 earthquake that damaged the cathedral's bell tower visible here.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plaza_Grande_(circa_1870).jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-caracas-panorama-1900",
+      "workType": "photo",
+      "image": {
+        "src": "assets/9c7f23b52a9861b7-1600w.jpg",
+        "srcset": "assets/9c7f23b52a9861b7-480w.jpg 480w, assets/9c7f23b52a9861b7-960w.jpg 960w, assets/9c7f23b52a9861b7-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1246,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "caracas-ve",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1900,
+        "maxYear": 1900
+      },
+      "creationDate": {
+        "minYear": 1900,
+        "maxYear": 1900
+      },
+      "classification": {
+        "region": "South America",
+        "difficulty": 2,
+        "tags": [
+          "panorama",
+          "mountains",
+          "cathedral"
+        ]
+      },
+      "clues": {
+        "region": "South America",
+        "era": "1900s",
+        "country": "Venezuela"
+      },
+      "title": "Panoramic view of Caracas",
+      "artistOrCreator": "Juan José Benzo",
+      "context": "Caracas fills its mountain valley beneath the Ávila range, its cathedral spire visible among the rooftops in this panorama from El Calvario.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC0 1.0 (restoration released to public domain)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panoramic_view_of_Caracas,_Venezuela_1900_restored_version.jpg",
+        "creditText": "Juan José Benzo"
+      }
+    },
+    {
+      "id": "commons-bogota-calle-real-1869",
+      "workType": "drawing",
+      "image": {
+        "src": "assets/fbb85c47437136e4-1228w.jpg",
+        "srcset": "assets/fbb85c47437136e4-480w.jpg 480w, assets/fbb85c47437136e4-960w.jpg 960w, assets/fbb85c47437136e4-1228w.jpg 1228w",
+        "width": 1228,
+        "height": 864,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "bogota-co",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1869,
+        "maxYear": 1869
+      },
+      "creationDate": {
+        "minYear": 1869,
+        "maxYear": 1869
+      },
+      "classification": {
+        "region": "South America",
+        "difficulty": 4,
+        "tags": [
+          "street",
+          "engraving",
+          "andes"
+        ]
+      },
+      "clues": {
+        "region": "South America",
+        "era": "1860s",
+        "country": "Colombia"
+      },
+      "title": "Calle Real de Bogotá en 1869",
+      "artistOrCreator": "Therond",
+      "context": "Bogotá's Calle Real, the city's principal commercial street, sketched with the Andean foothills rising directly behind the rooftops.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calle_real_de_Bogot%C3%A1_en_1869_dibujo_de_Therond.jpg",
+        "creditText": "Therond"
+      }
+    },
+    {
+      "id": "commons-recife-bom-jesus-1880",
+      "workType": "photo",
+      "image": {
+        "src": "assets/a5d980971d67129a-1600w.jpg",
+        "srcset": "assets/a5d980971d67129a-480w.jpg 480w, assets/a5d980971d67129a-960w.jpg 960w, assets/a5d980971d67129a-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1094,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "recife-br",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1880,
+        "maxYear": 1880
+      },
+      "creationDate": {
+        "minYear": 1880,
+        "maxYear": 1880
+      },
+      "classification": {
+        "region": "South America",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "colonial",
+          "synagogue"
+        ]
+      },
+      "clues": {
+        "region": "South America",
+        "era": "1880s",
+        "country": "Brazil"
+      },
+      "title": "Rua do Bom Jesus, Recife",
+      "artistOrCreator": "Guilherme Gaensly",
+      "context": "Rua do Bom Jesus, in Recife's old Jewish quarter, lined with the colonial merchant houses that still define the street today.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rua_do_Bom_Jesus_-_1880.jpg",
+        "creditText": "Guilherme Gaensly"
+      }
+    },
+    {
+      "id": "commons-quebec-from-citadel",
+      "workType": "painting",
+      "image": {
+        "src": "assets/a008c363083eb331-1600w.jpg",
+        "srcset": "assets/a008c363083eb331-480w.jpg 480w, assets/a008c363083eb331-960w.jpg 960w, assets/a008c363083eb331-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 633,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "quebec-city-ca",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1839,
+        "maxYear": 1839
+      },
+      "creationDate": {
+        "minYear": 1839,
+        "maxYear": 1839
+      },
+      "classification": {
+        "region": "North America",
+        "difficulty": 3,
+        "tags": [
+          "panorama",
+          "ramparts",
+          "harbor"
+        ]
+      },
+      "clues": {
+        "region": "North America",
+        "era": "1830s",
+        "country": "Canada"
+      },
+      "title": "Quebec from the Citadel",
+      "artistOrCreator": "Millicent Mary Chaplin",
+      "context": "An English officer's wife paints the walled city and St Lawrence harbor from the ramparts of the Citadelle, during her four-year posting to Quebec.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quebec_from_the_Citadel_-_Millicent_Mary_Chaplin.jpg",
+        "creditText": "Millicent Mary Chaplin"
+      }
+    },
+    {
+      "id": "commons-paris-boulevard-du-temple",
+      "workType": "photo",
+      "image": {
+        "src": "assets/e1a9822e0396c232-1600w.jpg",
+        "srcset": "assets/e1a9822e0396c232-480w.jpg 480w, assets/e1a9822e0396c232-960w.jpg 960w, assets/e1a9822e0396c232-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1149,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "paris-fr",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1838,
+        "maxYear": 1838
+      },
+      "creationDate": {
+        "minYear": 1838,
+        "maxYear": 1838
+      },
+      "classification": {
+        "region": "Western Europe",
+        "difficulty": 4,
+        "tags": [
+          "daguerreotype",
+          "early photography",
+          "boulevard"
+        ]
+      },
+      "clues": {
+        "region": "Western Europe",
+        "era": "1830s",
+        "country": "France"
+      },
+      "title": "Boulevard du Temple",
+      "artistOrCreator": "Louis Daguerre",
+      "context": "One of the earliest surviving photographs, taken from a high window over a Paris boulevard — a man having his shoes shined at lower left is traditionally cited as the first person ever photographed.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Louis Daguerre, d. 1851; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boulevard_du_Temple_by_Daguerre.jpg",
+        "creditText": "Louis Daguerre"
+      }
+    },
+    {
+      "id": "commons-berlin-unter-den-linden",
+      "workType": "painting",
+      "image": {
+        "src": "assets/c6a4f2370b823760-1600w.jpg",
+        "srcset": "assets/c6a4f2370b823760-480w.jpg 480w, assets/c6a4f2370b823760-960w.jpg 960w, assets/c6a4f2370b823760-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 859,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "berlin-de",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1845,
+        "maxYear": 1845
+      },
+      "creationDate": {
+        "minYear": 1845,
+        "maxYear": 1845
+      },
+      "classification": {
+        "region": "Central Europe",
+        "difficulty": 3,
+        "tags": [
+          "opera house",
+          "boulevard",
+          "neoclassical"
+        ]
+      },
+      "clues": {
+        "region": "Central Europe",
+        "era": "1840s",
+        "country": "Germany"
+      },
+      "title": "Ansicht der Königlichen Oper und Unter den Linden, Berlin",
+      "artistOrCreator": "Eduard Gaertner",
+      "context": "A view down Unter den Linden toward the colonnaded Royal Opera House, with mounted guards and marching soldiers filling the boulevard.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Eduard Gaertner, d. 1877; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eduard_Gaertner_-_Ansicht_der_K%C3%B6niglichen_Oper_und_Unter_den_Linden,_Berlin_(1845).jpg",
+        "creditText": "Eduard Gaertner, Museo Thyssen-Bornemisza"
+      }
+    },
+    {
+      "id": "commons-amsterdam-panorama-ruisdael",
+      "workType": "painting",
+      "image": {
+        "src": "assets/2fee15099568bb6a-1600w.jpg",
+        "srcset": "assets/2fee15099568bb6a-480w.jpg 480w, assets/2fee15099568bb6a-960w.jpg 960w, assets/2fee15099568bb6a-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1657,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "amsterdam-nl",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1665,
+        "maxYear": 1670
+      },
+      "creationDate": {
+        "minYear": 1665,
+        "maxYear": 1670
+      },
+      "classification": {
+        "region": "Western Europe",
+        "difficulty": 4,
+        "tags": [
+          "harbor",
+          "skyline",
+          "golden age"
+        ]
+      },
+      "clues": {
+        "region": "Western Europe",
+        "era": "1660s",
+        "country": "Netherlands"
+      },
+      "title": "A View of Amsterdam",
+      "artistOrCreator": "Jacob van Ruisdael",
+      "context": "A dramatic cloud-filled sky looms over Amsterdam's rooftops, harbor, and a prominent church tower, painted from the scaffolding of the new town hall.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Jacob van Ruisdael, d. 1682; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacob_van_Ruisdael_-_A_view_of_Amsterdam_1665-1670.jpg",
+        "creditText": "Jacob van Ruisdael, National Gallery, London"
+      }
+    },
+    {
+      "id": "commons-brussels-grand-place-market",
+      "workType": "painting",
+      "image": {
+        "src": "assets/48194ab75b589bf9-1162w.jpg",
+        "srcset": "assets/48194ab75b589bf9-480w.jpg 480w, assets/48194ab75b589bf9-960w.jpg 960w, assets/48194ab75b589bf9-1162w.jpg 1162w",
+        "width": 1162,
+        "height": 891,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "brussels-be",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1850,
+        "maxYear": 1875
+      },
+      "creationDate": {
+        "minYear": 1850,
+        "maxYear": 1875
+      },
+      "classification": {
+        "region": "Western Europe",
+        "difficulty": 2,
+        "tags": [
+          "town hall",
+          "market",
+          "gothic"
+        ]
+      },
+      "clues": {
+        "region": "Western Europe",
+        "era": "1860s",
+        "country": "Belgium"
+      },
+      "title": "Scène de marché sur la Grand-Place à Bruxelles",
+      "artistOrCreator": "Paul Lauters",
+      "context": "A bustling market day on the Grand Place, with the Gothic spire of Brussels' Town Hall towering over the guild houses and stalls below.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (faithful reproduction of a 2D public domain work; artist d. 1875)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lauters,_Sc%C3%A8ne_de_march%C3%A9_sur_la_Grand-Place_%C3%A0_Bruxelles.png",
+        "creditText": "Paul Lauters"
+      }
+    },
+    {
+      "id": "commons-madrid-puerta-del-sol-1773",
+      "workType": "painting",
+      "image": {
+        "src": "assets/05c757c670265234-850w.jpg",
+        "srcset": "assets/05c757c670265234-480w.jpg 480w, assets/05c757c670265234-850w.jpg 850w",
+        "width": 850,
+        "height": 771,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "madrid-es",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1773,
+        "maxYear": 1773
+      },
+      "creationDate": {
+        "minYear": 1773,
+        "maxYear": 1773
+      },
+      "classification": {
+        "region": "Southern Europe",
+        "difficulty": 4,
+        "tags": [
+          "church",
+          "plaza",
+          "carriages"
+        ]
+      },
+      "clues": {
+        "region": "Southern Europe",
+        "era": "1770s",
+        "country": "Spain"
+      },
+      "title": "La Puerta del Sol en Madrid",
+      "artistOrCreator": "Luis Paret y Alcázar",
+      "context": "A crowded plaza scene outside a baroque church, since demolished, with carriages, street vendors, and fashionable onlookers filling the Puerta del Sol.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Luis Paret y Alcázar, d. 1799; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luis_Paret_y_Alc%C3%A1zar_-_La_Puerta_del_Sol_en_Madrid.jpg",
+        "creditText": "Luis Paret y Alcázar, Museo Nacional de Bellas Artes, Havana"
+      }
+    },
+    {
+      "id": "commons-lisbon-terreiro-do-paco",
+      "workType": "painting",
+      "image": {
+        "src": "assets/469ea2846f0f78c9-1600w.jpg",
+        "srcset": "assets/469ea2846f0f78c9-480w.jpg 480w, assets/469ea2846f0f78c9-960w.jpg 960w, assets/469ea2846f0f78c9-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1130,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "lisbon-pt",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1662,
+        "maxYear": 1662
+      },
+      "creationDate": {
+        "minYear": 1662,
+        "maxYear": 1662
+      },
+      "classification": {
+        "region": "Southern Europe",
+        "difficulty": 4,
+        "tags": [
+          "royal palace",
+          "plaza",
+          "pre-earthquake"
+        ]
+      },
+      "clues": {
+        "region": "Southern Europe",
+        "era": "1660s",
+        "country": "Portugal"
+      },
+      "title": "Terreiro do Paço em 1662",
+      "artistOrCreator": "Dirk Stoop",
+      "context": "The royal square before the Ribeira Palace, filled with courtiers and carriages — a rare record of the grand waterfront complex destroyed in the 1755 earthquake.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Dirk Stoop, d. 1686; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Terreiro_do_Pa%C3%A7o_em_1662.jpg",
+        "creditText": "Dirk Stoop"
+      }
+    },
+    {
+      "id": "commons-munich-marienplatz-1865",
+      "workType": "photo",
+      "image": {
+        "src": "assets/87363b4b91c6a635-1280w.jpg",
+        "srcset": "assets/87363b4b91c6a635-480w.jpg 480w, assets/87363b4b91c6a635-960w.jpg 960w, assets/87363b4b91c6a635-1280w.jpg 1280w",
+        "width": 1280,
+        "height": 960,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "munich-de",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1865,
+        "maxYear": 1865
+      },
+      "creationDate": {
+        "minYear": 1865,
+        "maxYear": 1865
+      },
+      "classification": {
+        "region": "Central Europe",
+        "difficulty": 3,
+        "tags": [
+          "town hall",
+          "column",
+          "plaza"
+        ]
+      },
+      "clues": {
+        "region": "Central Europe",
+        "era": "1860s",
+        "country": "Germany"
+      },
+      "title": "Marienplatz, Munich",
+      "artistOrCreator": null,
+      "context": "An early photograph of Marienplatz looking toward the Old Town Hall tower and the Mariensäule column, a horse-drawn carriage crossing the cobblestones.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photo_-_M%C3%BCnchen_-_Marienplatz_-_1865.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-hamburg-alster-bilderuhr",
+      "workType": "painting",
+      "image": {
+        "src": "assets/2b6a6c48f986912d-1600w.jpg",
+        "srcset": "assets/2b6a6c48f986912d-480w.jpg 480w, assets/2b6a6c48f986912d-960w.jpg 960w, assets/2b6a6c48f986912d-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1306,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "hamburg-de",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1830,
+        "maxYear": 1839
+      },
+      "creationDate": {
+        "minYear": 1830,
+        "maxYear": 1839
+      },
+      "classification": {
+        "region": "Central Europe",
+        "difficulty": 3,
+        "tags": [
+          "church spires",
+          "river",
+          "picnic"
+        ]
+      },
+      "clues": {
+        "region": "Central Europe",
+        "era": "1830s",
+        "country": "Germany"
+      },
+      "title": "Kaffeegesellschaft an der Alster mit Blick über Lombardsbrücke auf die Stadt",
+      "artistOrCreator": null,
+      "context": "A leisurely gathering beside the Alster, with Hamburg's distinctive multi-spire church skyline, a windmill, and a bridge visible across the water.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC0 1.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kaffeegesellschaft_an_der_Alster_mit_Blick_%C3%BCber_Lombardsbr%C3%BCcke_auf_die_Stadt_-_Hamburger_Bilderuhr.JPG",
+        "creditText": "Museum für Hamburgische Geschichte"
+      }
+    },
+    {
+      "id": "commons-dublin-college-green-1779",
+      "workType": "painting",
+      "image": {
+        "src": "assets/6d3325fb6f407617-1600w.jpg",
+        "srcset": "assets/6d3325fb6f407617-480w.jpg 480w, assets/6d3325fb6f407617-960w.jpg 960w, assets/6d3325fb6f407617-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 895,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "dublin-ie",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1779,
+        "maxYear": 1779
+      },
+      "creationDate": {
+        "minYear": 1779,
+        "maxYear": 1779
+      },
+      "classification": {
+        "region": "Western Europe",
+        "difficulty": 3,
+        "tags": [
+          "parade",
+          "statue",
+          "parliament"
+        ]
+      },
+      "clues": {
+        "region": "Western Europe",
+        "era": "1770s",
+        "country": "Ireland"
+      },
+      "title": "The Dublin Volunteers on College Green",
+      "artistOrCreator": "Francis Wheatley",
+      "context": "A grand militia parade on College Green, with the domed Parliament House and an equestrian statue of William III in the background.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Francis Wheatley, d. 1801; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francis_Wheatley_-_The_Dublin_Volunteers_on_College_Green.jpg",
+        "creditText": "Francis Wheatley, National Gallery of Ireland"
+      }
+    },
+    {
+      "id": "commons-edinburgh-princes-street-1825",
+      "workType": "painting",
+      "image": {
+        "src": "assets/7e472165c53992f2-1600w.jpg",
+        "srcset": "assets/7e472165c53992f2-480w.jpg 480w, assets/7e472165c53992f2-960w.jpg 960w, assets/7e472165c53992f2-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1173,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "edinburgh-gb",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1825,
+        "maxYear": 1825
+      },
+      "creationDate": {
+        "minYear": 1825,
+        "maxYear": 1825
+      },
+      "classification": {
+        "region": "Western Europe",
+        "difficulty": 3,
+        "tags": [
+          "skyline",
+          "construction",
+          "carriages"
+        ]
+      },
+      "clues": {
+        "region": "Western Europe",
+        "era": "1820s",
+        "country": "United Kingdom"
+      },
+      "title": "Princes Street with the Commencement of the Building of the Royal Institution",
+      "artistOrCreator": "Alexander Nasmyth",
+      "context": "A panoramic view down Princes Street toward Edinburgh's Old Town skyline, with construction work, carriages, and pedestrians filling the foreground.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexander_Nasmyth_-_Princes_Street_with_the_Commencement_of_the_Building_of_the_Royal_Institution_-_Google_Art_Project.jpg",
+        "creditText": "Alexander Nasmyth, Scottish National Gallery"
+      }
+    },
+    {
+      "id": "commons-barcelona-panorama-1850",
+      "workType": "drawing",
+      "image": {
+        "src": "assets/70f2af7f93111de0-1600w.jpg",
+        "srcset": "assets/70f2af7f93111de0-480w.jpg 480w, assets/70f2af7f93111de0-960w.jpg 960w, assets/70f2af7f93111de0-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1029,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "barcelona-es",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1850,
+        "maxYear": 1850
+      },
+      "creationDate": {
+        "minYear": 1856,
+        "maxYear": 1856
+      },
+      "classification": {
+        "region": "Southern Europe",
+        "difficulty": 3,
+        "tags": [
+          "harbor",
+          "panorama",
+          "ships"
+        ]
+      },
+      "clues": {
+        "region": "Southern Europe",
+        "era": "1850s",
+        "country": "Spain"
+      },
+      "title": "Barcelona en 1850",
+      "artistOrCreator": "Alfred Guesdon",
+      "context": "A bird's-eye lithograph of Barcelona and its harbor seen from above the railway station, with Montjuïc hill rising beyond a forest of ship masts.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Alfred Guesdon, d. 1876; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barcelona_en_1850.jpg",
+        "creditText": "Alfred Guesdon"
+      }
+    },
+    {
+      "id": "commons-helsinki-senaatintori-1891",
+      "workType": "photo",
+      "image": {
+        "src": "assets/5c2efb1ed308ceaf-1600w.jpg",
+        "srcset": "assets/5c2efb1ed308ceaf-480w.jpg 480w, assets/5c2efb1ed308ceaf-960w.jpg 960w, assets/5c2efb1ed308ceaf-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1314,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "helsinki-fi",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1891,
+        "maxYear": 1892
+      },
+      "creationDate": {
+        "minYear": 1891,
+        "maxYear": 1892
+      },
+      "classification": {
+        "region": "Northern Europe",
+        "difficulty": 4,
+        "tags": [
+          "square",
+          "carriages",
+          "cobblestone"
+        ]
+      },
+      "clues": {
+        "region": "Northern Europe",
+        "era": "1890s",
+        "country": "Finland"
+      },
+      "title": "Helsinki 1891, Senaatintori",
+      "artistOrCreator": "Alfred Edvard Rosenbröijer",
+      "context": "A quiet corner of Senate Square with horse-drawn carriages waiting outside period townhouses.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC BY 4.0 International",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helsinki_1891,_Senaatintori._Aleksanterinkatu_14,_16,_18,_20._Snellmaninkatu_1._Katariinankatu_3._-_G16174_-_hkm.HKMS000005-km0000m8tc.jpg",
+        "creditText": "Alfred Edvard Rosenbröijer, Helsinki City Museum (CC BY 4.0)"
+      }
+    },
+    {
+      "id": "commons-gothenburg-centralen-1903",
+      "workType": "photo",
+      "image": {
+        "src": "assets/28450145d22fe0dc-1600w.jpg",
+        "srcset": "assets/28450145d22fe0dc-480w.jpg 480w, assets/28450145d22fe0dc-960w.jpg 960w, assets/28450145d22fe0dc-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1149,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "gothenburg-se",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1903,
+        "maxYear": 1903
+      },
+      "creationDate": {
+        "minYear": 1903,
+        "maxYear": 1903
+      },
+      "classification": {
+        "region": "Northern Europe",
+        "difficulty": 4,
+        "tags": [
+          "commercial building",
+          "storefronts",
+          "flags"
+        ]
+      },
+      "clues": {
+        "region": "Northern Europe",
+        "era": "1900s",
+        "country": "Sweden"
+      },
+      "title": "Centralen, corner building with Boye & Thoresens Elektriska Aktiebolag",
+      "artistOrCreator": "Aron Jonason",
+      "context": "A commercial corner building named \"Centralen,\" its ground floor lined with shops and an electrical company's offices, at a busy Gothenburg street intersection.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain in the US and Sweden (SFS 1960:729)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fotografi,_photography-Aron_Jonason_-_G%C3%B6teborgs_stadsmuseum_-_GhmE_383.tif",
+        "creditText": "Aron Jonason, Museum of Gothenburg / Wikimedia Sverige"
+      }
+    },
+    {
+      "id": "commons-bergen-bryggen-1866",
+      "workType": "photo",
+      "image": {
+        "src": "assets/5f13543c627424bf-1024w.jpg",
+        "srcset": "assets/5f13543c627424bf-480w.jpg 480w, assets/5f13543c627424bf-960w.jpg 960w, assets/5f13543c627424bf-1024w.jpg 1024w",
+        "width": 1024,
+        "height": 708,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "bergen-no",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1865,
+        "maxYear": 1866
+      },
+      "creationDate": {
+        "minYear": 1865,
+        "maxYear": 1866
+      },
+      "classification": {
+        "region": "Northern Europe",
+        "difficulty": 2,
+        "tags": [
+          "harbor",
+          "wooden warehouses",
+          "fishing boats"
+        ]
+      },
+      "clues": {
+        "region": "Northern Europe",
+        "era": "1860s",
+        "country": "Norway"
+      },
+      "title": "Bryggen in Bergen",
+      "artistOrCreator": "Knud Knudsen",
+      "context": "A dense forest of ship masts fills the harbor before the historic wooden warehouses of Bryggen, with cargo and fishing boats crowding the wharf.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain Mark 1.0 / PD-old",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bryggen_in_Bergen_by_Knud_Knudsen_abt_1866.jpg",
+        "creditText": "Knud Knudsen"
+      }
+    },
+    {
+      "id": "commons-london-ludgate-evening",
+      "workType": "painting",
+      "image": {
+        "src": "assets/8b049353a70d96ae-1600w.jpg",
+        "srcset": "assets/8b049353a70d96ae-480w.jpg 480w, assets/8b049353a70d96ae-960w.jpg 960w, assets/8b049353a70d96ae-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 2320,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "london-gb",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1887,
+        "maxYear": 1887
+      },
+      "creationDate": {
+        "minYear": 1887,
+        "maxYear": 1887
+      },
+      "classification": {
+        "region": "Western Europe",
+        "difficulty": 2,
+        "tags": [
+          "cathedral",
+          "dome",
+          "omnibus"
+        ]
+      },
+      "clues": {
+        "region": "Western Europe",
+        "era": "1880s",
+        "country": "United Kingdom"
+      },
+      "title": "Ludgate, Evening",
+      "artistOrCreator": "John O'Connor",
+      "context": "St Paul's Cathedral rises above the rooftops of Fleet Street in this atmospheric evening view from Ludgate Hill, with omnibuses and carriages crowding the street below.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_O%27Connor_-_Ludgate,_Evening_-_1887.jpg",
+        "creditText": "John O'Connor"
+      }
+    },
+    {
+      "id": "commons-budapest-chain-bridge",
+      "workType": "painting",
+      "image": {
+        "src": "assets/e7b37738ecc25135-804w.jpg",
+        "srcset": "assets/e7b37738ecc25135-480w.jpg 480w, assets/e7b37738ecc25135-804w.jpg 804w",
+        "width": 804,
+        "height": 563,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "budapest-hu",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1880,
+        "maxYear": 1880
+      },
+      "creationDate": {
+        "minYear": 1880,
+        "maxYear": 1880
+      },
+      "classification": {
+        "region": "Eastern Europe",
+        "difficulty": 2,
+        "tags": [
+          "bridge",
+          "river",
+          "harbor"
+        ]
+      },
+      "clues": {
+        "region": "Eastern Europe",
+        "era": "1880s",
+        "country": "Hungary"
+      },
+      "title": "View of Budapest with Chain Bridge and the Royal Palace",
+      "artistOrCreator": "Rudolf von Alt",
+      "context": "The Chain Bridge spans the Danube toward the Royal Palace on Buda's hill, the crossing that first linked Buda and Pest as a single city.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Rudolf von Alt, d. 1905; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rudolf_Alt_View_of_Budapest_with_Chain_Bridge_and_the_Royal_Palace_1880.jpg",
+        "creditText": "Rudolf von Alt"
+      }
+    },
+    {
+      "id": "commons-warsaw-view-from-praga",
+      "workType": "painting",
+      "image": {
+        "src": "assets/83849f0d47a40c29-1600w.jpg",
+        "srcset": "assets/83849f0d47a40c29-480w.jpg 480w, assets/83849f0d47a40c29-960w.jpg 960w, assets/83849f0d47a40c29-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1045,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "warsaw-pl",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1770,
+        "maxYear": 1770
+      },
+      "creationDate": {
+        "minYear": 1770,
+        "maxYear": 1770
+      },
+      "classification": {
+        "region": "Eastern Europe",
+        "difficulty": 3,
+        "tags": [
+          "riverbank",
+          "panorama",
+          "18th-century"
+        ]
+      },
+      "clues": {
+        "region": "Eastern Europe",
+        "era": "1770s",
+        "country": "Poland"
+      },
+      "title": "View of Warsaw from Praga",
+      "artistOrCreator": "Bernardo Bellotto",
+      "context": "Warsaw's skyline rises across the Vistula in this view painted from Praga, the river district on the eastern bank.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Bernardo Bellotto, d. 1780; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bellotto_View_of_Warsaw_from_Praga.jpg",
+        "creditText": "Bernardo Bellotto"
+      }
+    },
+    {
+      "id": "commons-bucharest-lipscani-1900",
+      "workType": "photo",
+      "image": {
+        "src": "assets/cbdd35132a683118-1600w.jpg",
+        "srcset": "assets/cbdd35132a683118-480w.jpg 480w, assets/cbdd35132a683118-960w.jpg 960w, assets/cbdd35132a683118-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1129,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "bucharest-ro",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1900,
+        "maxYear": 1900
+      },
+      "creationDate": {
+        "minYear": 1900,
+        "maxYear": 1900
+      },
+      "classification": {
+        "region": "Eastern Europe",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "shops",
+          "belle-epoque"
+        ]
+      },
+      "clues": {
+        "region": "Eastern Europe",
+        "era": "1900s",
+        "country": "Romania"
+      },
+      "title": "Lipscani",
+      "artistOrCreator": "Alexandru Antoniu",
+      "context": "Lipscani, Bucharest's old merchant quarter, lined with belle-époque shopfronts at the turn of the century.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Alexandru Antoniu, d. 1925; life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antoniu_-_Lipscani.jpg",
+        "creditText": "Alexandru Antoniu"
+      }
+    },
+    {
+      "id": "commons-sofia-street-1881",
+      "workType": "photo",
+      "image": {
+        "src": "assets/228569930ba54ccd-1600w.jpg",
+        "srcset": "assets/228569930ba54ccd-480w.jpg 480w, assets/228569930ba54ccd-960w.jpg 960w, assets/228569930ba54ccd-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1133,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "sofia-bg",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1881,
+        "maxYear": 1881
+      },
+      "creationDate": {
+        "minYear": 1881,
+        "maxYear": 1881
+      },
+      "classification": {
+        "region": "Eastern Europe",
+        "difficulty": 4,
+        "tags": [
+          "rooftops",
+          "minaret",
+          "ottoman-era"
+        ]
+      },
+      "clues": {
+        "region": "Eastern Europe",
+        "era": "1880s",
+        "country": "Bulgaria"
+      },
+      "title": "Photograph of Sofia, Bulgaria, c. 1881",
+      "artistOrCreator": null,
+      "context": "Sofia's rooftops and a minaret, photographed just a few years after Bulgaria's liberation from Ottoman rule made the city its new capital.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photograph_of_Sofia,_Bulgaria,_c_1881.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-kyiv-pechersk-lavra-gate",
+      "workType": "photo",
+      "image": {
+        "src": "assets/793b3b33f378530f-1600w.jpg",
+        "srcset": "assets/793b3b33f378530f-480w.jpg 480w, assets/793b3b33f378530f-960w.jpg 960w, assets/793b3b33f378530f-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 2191,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "kyiv-ua",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1896,
+        "maxYear": 1896
+      },
+      "creationDate": {
+        "minYear": 1896,
+        "maxYear": 1896
+      },
+      "classification": {
+        "region": "Eastern Europe",
+        "difficulty": 2,
+        "tags": [
+          "monastery",
+          "church",
+          "photochrom"
+        ]
+      },
+      "clues": {
+        "region": "Eastern Europe",
+        "era": "1890s",
+        "country": "Ukraine"
+      },
+      "title": "Kiev, 1890s",
+      "artistOrCreator": null,
+      "context": "The gate church of the Kyiv Pechersk Lavra, its gilded and painted facade a landmark of the monastery complex overlooking the Dnieper.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark / PD-Detroit)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kiev_1890s.jpg",
+        "creditText": "Detroit Publishing Company"
+      }
+    },
+    {
+      "id": "commons-st-petersburg-english-embankment",
+      "workType": "painting",
+      "image": {
+        "src": "assets/228cbe5709bcf4ab-1476w.jpg",
+        "srcset": "assets/228cbe5709bcf4ab-480w.jpg 480w, assets/228cbe5709bcf4ab-960w.jpg 960w, assets/228cbe5709bcf4ab-1476w.jpg 1476w",
+        "width": 1476,
+        "height": 1033,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "saint-petersburg-ru",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1799,
+        "maxYear": 1799
+      },
+      "creationDate": {
+        "minYear": 1799,
+        "maxYear": 1799
+      },
+      "classification": {
+        "region": "Eastern Europe",
+        "difficulty": 3,
+        "tags": [
+          "embankment",
+          "ships",
+          "neoclassical"
+        ]
+      },
+      "clues": {
+        "region": "Eastern Europe",
+        "era": "1790s",
+        "country": "Russia"
+      },
+      "title": "View of English Embankment from Vasilyevsky Island",
+      "artistOrCreator": "Benjamin Patersen",
+      "context": "A military parade and carriage traffic pass along the neoclassical English Embankment, seen from across the Neva on Vasilyevsky Island.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark / PD-old-auto-expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paterssen_View_of_English_Embankment_from_Vasilyevsky_Island_part1_1799.jpg",
+        "creditText": "Benjamin Patersen"
+      }
+    },
+    {
+      "id": "commons-damascus-bazaar-entrance",
+      "workType": "painting",
+      "image": {
+        "src": "assets/7182b8f0c3acdeeb-800w.jpg",
+        "srcset": "assets/7182b8f0c3acdeeb-480w.jpg 480w, assets/7182b8f0c3acdeeb-800w.jpg 800w",
+        "width": 800,
+        "height": 623,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "damascus-sy",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1901,
+        "maxYear": 1901
+      },
+      "creationDate": {
+        "minYear": 1901,
+        "maxYear": 1901
+      },
+      "classification": {
+        "region": "Middle East",
+        "difficulty": 3,
+        "tags": [
+          "bazaar",
+          "minaret",
+          "orientalist"
+        ]
+      },
+      "clues": {
+        "region": "Middle East",
+        "era": "1900s",
+        "country": "Syria"
+      },
+      "title": "Entry to the Bazaar in Damascus",
+      "artistOrCreator": "Jan Ciągliński",
+      "context": "Painted during a journey through Ottoman Palestine and Syria, this oil sketch captures a covered bazaar entrance in Damascus's old city.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Jan Ciągliński, d. 1912; life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_Ci%C4%85gli%C5%84ski_-_Entry_to_the_bazaar_in_Damascus._From_the_journey_to_Palestine_-_MP_1532_MNW_-_National_Museum_in_Warsaw.jpg",
+        "creditText": "Jan Ciągliński, National Museum in Warsaw"
+      }
+    },
+    {
+      "id": "commons-jerusalem-street-1898",
+      "workType": "photo",
+      "image": {
+        "src": "assets/ba502c55c70102f6-1528w.jpg",
+        "srcset": "assets/ba502c55c70102f6-480w.jpg 480w, assets/ba502c55c70102f6-960w.jpg 960w, assets/ba502c55c70102f6-1528w.jpg 1528w",
+        "width": 1528,
+        "height": 1040,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "jerusalem-il",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1898,
+        "maxYear": 1898
+      },
+      "creationDate": {
+        "minYear": 1898,
+        "maxYear": 1898
+      },
+      "classification": {
+        "region": "Middle East",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "ottoman-era",
+          "shuttered-windows"
+        ]
+      },
+      "clues": {
+        "region": "Middle East",
+        "era": "1890s",
+        "country": "Israel"
+      },
+      "title": "Street in Jerusalem (before 1899)",
+      "artistOrCreator": null,
+      "context": "A narrow street of shuttered stone houses in Ottoman-era Jerusalem, photographed by the American Colony's photographic department.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Street_in_Jerusalem_(before_1899).jpg",
+        "creditText": "American Colony Photo Department"
+      }
+    },
+    {
+      "id": "commons-beirut-emir-bashir-street",
+      "workType": "photo",
+      "image": {
+        "src": "assets/acb45c2a6e2858f5-1017w.jpg",
+        "srcset": "assets/acb45c2a6e2858f5-480w.jpg 480w, assets/acb45c2a6e2858f5-960w.jpg 960w, assets/acb45c2a6e2858f5-1017w.jpg 1017w",
+        "width": 1017,
+        "height": 1015,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "beirut-lb",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1910,
+        "maxYear": 1910
+      },
+      "creationDate": {
+        "minYear": 1910,
+        "maxYear": 1910
+      },
+      "classification": {
+        "region": "Middle East",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "shops",
+          "ottoman-era"
+        ]
+      },
+      "clues": {
+        "region": "Middle East",
+        "era": "1910s",
+        "country": "Lebanon"
+      },
+      "title": "Emir Bashir Street, Beirut, 1910",
+      "artistOrCreator": null,
+      "context": "Emir Bashir Street's shopfronts and balconies, a commercial artery of late-Ottoman Beirut just a few years before the First World War.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (PD-Ottoman)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emir_Bashir_Street,_Beirut_1910.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-tehran-plaza-of-canons",
+      "workType": "photo",
+      "image": {
+        "src": "assets/e1d8b4a2e0b294dd-1600w.jpg",
+        "srcset": "assets/e1d8b4a2e0b294dd-480w.jpg 480w, assets/e1d8b4a2e0b294dd-960w.jpg 960w, assets/e1d8b4a2e0b294dd-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1351,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "tehran-ir",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1850,
+        "maxYear": 1859
+      },
+      "creationDate": {
+        "minYear": 1850,
+        "maxYear": 1859
+      },
+      "classification": {
+        "region": "Middle East",
+        "difficulty": 4,
+        "tags": [
+          "plaza",
+          "qajar-era",
+          "arcade"
+        ]
+      },
+      "clues": {
+        "region": "Middle East",
+        "era": "1850s",
+        "country": "Iran"
+      },
+      "title": "Plaza of Canons, Teheran (Maydan-i Top-khaneh)",
+      "artistOrCreator": "Luigi Pesce",
+      "context": "The arcaded Maydan-i Top-khaneh (Plaza of Canons) in Qajar-era Tehran, among the earliest photographs taken in Iran.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC0 1.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:-Plaza_of_Canons,_Teheran,_Iran-_(Maydan-i_Top-khaneh)_MET_DP202922.jpg",
+        "creditText": "Luigi Pesce, Metropolitan Museum of Art"
+      }
+    },
+    {
+      "id": "commons-muscat-harbor-1913",
+      "workType": "photo",
+      "image": {
+        "src": "assets/6f425630336d26f4-1210w.jpg",
+        "srcset": "assets/6f425630336d26f4-480w.jpg 480w, assets/6f425630336d26f4-960w.jpg 960w, assets/6f425630336d26f4-1210w.jpg 1210w",
+        "width": 1210,
+        "height": 950,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "muscat-om",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1913,
+        "maxYear": 1913
+      },
+      "creationDate": {
+        "minYear": 1913,
+        "maxYear": 1913
+      },
+      "classification": {
+        "region": "Middle East",
+        "difficulty": 3,
+        "tags": [
+          "harbor",
+          "palace",
+          "mountains"
+        ]
+      },
+      "clues": {
+        "region": "Middle East",
+        "era": "1910s",
+        "country": "Oman"
+      },
+      "title": "Muscat, 1913",
+      "artistOrCreator": "Arne C. Wærn",
+      "context": "Muscat's harbor, hemmed in by bare mountains, with the old town's fortified waterfront visible along the shore.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muscat_1913.jpg",
+        "creditText": "Arne C. Wærn"
+      }
+    },
+    {
+      "id": "commons-tripoli-street-mosque",
+      "workType": "photo",
+      "image": {
+        "src": "assets/58f9ce22c8233ab8-783w.jpg",
+        "srcset": "assets/58f9ce22c8233ab8-480w.jpg 480w, assets/58f9ce22c8233ab8-783w.jpg 783w",
+        "width": 783,
+        "height": 1024,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "tripoli-ly",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1860,
+        "maxYear": 1900
+      },
+      "creationDate": {
+        "minYear": 1860,
+        "maxYear": 1900
+      },
+      "classification": {
+        "region": "North Africa",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "mosque",
+          "minaret"
+        ]
+      },
+      "clues": {
+        "region": "North Africa",
+        "era": "1800s",
+        "country": "Libya"
+      },
+      "title": "Tripoli, 19th-century street",
+      "artistOrCreator": null,
+      "context": "A covered arcade street leads toward a minaret in Ottoman-era Tripoli, women in wrapped white barracans passing beneath the shops.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tripoli_19th_century_Street.jpg",
+        "creditText": "Library of Congress"
+      }
+    },
+    {
+      "id": "commons-baku-panorama-early-1900s",
+      "workType": "photo",
+      "image": {
+        "src": "assets/e01d6f614a13880f-1600w.jpg",
+        "srcset": "assets/e01d6f614a13880f-480w.jpg 480w, assets/e01d6f614a13880f-960w.jpg 960w, assets/e01d6f614a13880f-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1136,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "baku-az",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1900,
+        "maxYear": 1910
+      },
+      "creationDate": {
+        "minYear": 1900,
+        "maxYear": 1910
+      },
+      "classification": {
+        "region": "Caucasus",
+        "difficulty": 4,
+        "tags": [
+          "panorama",
+          "harbor",
+          "cityscape"
+        ]
+      },
+      "clues": {
+        "region": "Caucasus",
+        "era": "1900s",
+        "country": "Azerbaijan"
+      },
+      "title": "View of Baku",
+      "artistOrCreator": null,
+      "context": "Baku spreads along the Caspian shore in this early-20th-century panorama, oil derricks already visible on the city's outskirts.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+70 expired / CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Baku_3.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-tbilisi-erivan-square",
+      "workType": "photo",
+      "image": {
+        "src": "assets/74c3670d85da91b1-1600w.jpg",
+        "srcset": "assets/74c3670d85da91b1-480w.jpg 480w, assets/74c3670d85da91b1-960w.jpg 960w, assets/74c3670d85da91b1-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1055,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "tbilisi-ge",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1885,
+        "maxYear": 1885
+      },
+      "creationDate": {
+        "minYear": 1885,
+        "maxYear": 1885
+      },
+      "classification": {
+        "region": "Caucasus",
+        "difficulty": 3,
+        "tags": [
+          "square",
+          "tram",
+          "carriages"
+        ]
+      },
+      "clues": {
+        "region": "Caucasus",
+        "era": "1880s",
+        "country": "Georgia"
+      },
+      "title": "Old Tbilisi, Erivan Square",
+      "artistOrCreator": "Dimitri Ermakov",
+      "context": "A horse-drawn tram crosses Erivan Square before Tbilisi's arcaded caravanserai building, photographed by pioneering Georgian photographer Dimitri Ermakov.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ermakov._Old_Tbilisi._107.jpg",
+        "creditText": "Dimitri Ermakov"
+      }
+    },
+    {
+      "id": "commons-lagos-ebute-ero-street",
+      "workType": "photo",
+      "image": {
+        "src": "assets/d437b150c757129b-1600w.jpg",
+        "srcset": "assets/d437b150c757129b-480w.jpg 480w, assets/d437b150c757129b-960w.jpg 960w, assets/d437b150c757129b-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1162,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "lagos-ng",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1910,
+        "maxYear": 1913
+      },
+      "creationDate": {
+        "minYear": 1910,
+        "maxYear": 1913
+      },
+      "classification": {
+        "region": "West Africa",
+        "difficulty": 3,
+        "tags": [
+          "street",
+          "market",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "West Africa",
+        "era": "1910s",
+        "country": "Nigeria"
+      },
+      "title": "1910s Ebute Ero Street, Lagos",
+      "artistOrCreator": "H. Hunting",
+      "context": "Ebute Ero Street on Lagos Island, near the market that has anchored the neighborhood's trade for well over a century.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1910s_Ebute_Ero_Street_Lagos_Nigeria_by_H_Hunting_of_Paterson_Zochonis_4546023860_University_of_Toronto.jpg",
+        "creditText": "H. Hunting, Paterson Zochonis / University of Toronto"
+      }
+    },
+    {
+      "id": "commons-dakar-harbor-1905",
+      "workType": "photo",
+      "image": {
+        "src": "assets/72ed1508bdb026c9-1600w.jpg",
+        "srcset": "assets/72ed1508bdb026c9-480w.jpg 480w, assets/72ed1508bdb026c9-960w.jpg 960w, assets/72ed1508bdb026c9-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 796,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "dakar-sn",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1905,
+        "maxYear": 1905
+      },
+      "creationDate": {
+        "minYear": 1905,
+        "maxYear": 1905
+      },
+      "classification": {
+        "region": "West Africa",
+        "difficulty": 3,
+        "tags": [
+          "harbor",
+          "boats",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "West Africa",
+        "era": "1900s",
+        "country": "Senegal"
+      },
+      "title": "Le port de Dakar vers 1905",
+      "artistOrCreator": "Fortier",
+      "context": "Small craft crowd the roadstead below Dakar's colonial waterfront, photographed as the port was being expanded into French West Africa's main harbor.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_port_de_Dakar_vers_1905.jpg",
+        "creditText": "Fortier, Dakar"
+      }
+    },
+    {
+      "id": "commons-freetown-view-1856",
+      "workType": "drawing",
+      "image": {
+        "src": "assets/d65ab68a037c8d03-1255w.jpg",
+        "srcset": "assets/d65ab68a037c8d03-480w.jpg 480w, assets/d65ab68a037c8d03-960w.jpg 960w, assets/d65ab68a037c8d03-1255w.jpg 1255w",
+        "width": 1255,
+        "height": 744,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "freetown-sl",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1856,
+        "maxYear": 1856
+      },
+      "creationDate": {
+        "minYear": 1856,
+        "maxYear": 1856
+      },
+      "classification": {
+        "region": "West Africa",
+        "difficulty": 3,
+        "tags": [
+          "harbor",
+          "hillside",
+          "engraving"
+        ]
+      },
+      "clues": {
+        "region": "West Africa",
+        "era": "1850s",
+        "country": "Sierra Leone"
+      },
+      "title": "Freetown, Sierra Leone, ca. 1856",
+      "artistOrCreator": null,
+      "context": "Sailing ships anchor before Freetown's hillside settlement, a resettlement colony for formerly enslaved people since 1792.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+70 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Freetown,_Sierra_Leone_ca_1856.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-abidjan-street-1950",
+      "workType": "photo",
+      "image": {
+        "src": "assets/fdaa2fd3dcb80e4b-1287w.jpg",
+        "srcset": "assets/fdaa2fd3dcb80e4b-480w.jpg 480w, assets/fdaa2fd3dcb80e4b-960w.jpg 960w, assets/fdaa2fd3dcb80e4b-1287w.jpg 1287w",
+        "width": 1287,
+        "height": 853,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "abidjan-ci",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1950,
+        "maxYear": 1950
+      },
+      "creationDate": {
+        "minYear": 1950,
+        "maxYear": 1950
+      },
+      "classification": {
+        "region": "West Africa",
+        "difficulty": 2,
+        "tags": [
+          "street",
+          "cars",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "West Africa",
+        "era": "1950s",
+        "country": "Ivory Coast"
+      },
+      "title": "A street of Abidjan in 1950",
+      "artistOrCreator": null,
+      "context": "Cars and pedestrians share a mid-century Abidjan street, photographed as the city was growing into French West Africa's commercial hub.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Côte d'Ivoire Law No. 96-564; anonymous work, 70 years elapsed)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abidjan_street_1950.jpg",
+        "creditText": "Wikimedia Commons"
+      }
+    },
+    {
+      "id": "commons-nairobi-government-road",
+      "workType": "photo",
+      "image": {
+        "src": "assets/4efdd5890f03c434-1600w.jpg",
+        "srcset": "assets/4efdd5890f03c434-480w.jpg 480w, assets/4efdd5890f03c434-960w.jpg 960w, assets/4efdd5890f03c434-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1302,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "nairobi-ke",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1936,
+        "maxYear": 1936
+      },
+      "creationDate": {
+        "minYear": 1936,
+        "maxYear": 1936
+      },
+      "classification": {
+        "region": "East Africa",
+        "difficulty": 2,
+        "tags": [
+          "street",
+          "shops",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "East Africa",
+        "era": "1930s",
+        "country": "Kenya"
+      },
+      "title": "Kenya Colony. Nairobi. Government Road",
+      "artistOrCreator": null,
+      "context": "Government Road, colonial Nairobi's main commercial street, lined with shopfronts and street traffic in the 1930s.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Matson Collection, Library of Congress)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kenya_Colony._Nairobi._Government_Road_LOC_matpc.00369.jpg",
+        "creditText": "Matson Photo Service, Library of Congress"
+      }
+    },
+    {
+      "id": "commons-addis-ababa-street-scene",
+      "workType": "photo",
+      "image": {
+        "src": "assets/9607b56d0dcaf12b-1600w.jpg",
+        "srcset": "assets/9607b56d0dcaf12b-480w.jpg 480w, assets/9607b56d0dcaf12b-960w.jpg 960w, assets/9607b56d0dcaf12b-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1686,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "addis-ababa-et",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1934,
+        "maxYear": 1934
+      },
+      "creationDate": {
+        "minYear": 1934,
+        "maxYear": 1934
+      },
+      "classification": {
+        "region": "East Africa",
+        "difficulty": 3,
+        "tags": [
+          "market",
+          "street",
+          "crowd"
+        ]
+      },
+      "clues": {
+        "region": "East Africa",
+        "era": "1930s",
+        "country": "Ethiopia"
+      },
+      "title": "Strassenszene in Addis Abeba",
+      "artistOrCreator": "Walter Mittelholzer",
+      "context": "A crowded street scene in Addis Ababa, photographed during Swiss aviator Walter Mittelholzer's 1934 aerial survey of Abyssinia.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ETH-BIB-Strassenszene_in_Addis_Abeba-Abessinienflug_1934-LBS_MH02-22-0983.tif",
+        "creditText": "Walter Mittelholzer, ETH-Bibliothek"
+      }
+    },
+    {
+      "id": "commons-zanzibar-sultans-palace",
+      "workType": "photo",
+      "image": {
+        "src": "assets/6767b03d53556c3d-1600w.jpg",
+        "srcset": "assets/6767b03d53556c3d-480w.jpg 480w, assets/6767b03d53556c3d-960w.jpg 960w, assets/6767b03d53556c3d-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1216,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "zanzibar-city-tz",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1936,
+        "maxYear": 1936
+      },
+      "creationDate": {
+        "minYear": 1936,
+        "maxYear": 1936
+      },
+      "classification": {
+        "region": "East Africa",
+        "difficulty": 2,
+        "tags": [
+          "palace",
+          "harbor",
+          "seafront"
+        ]
+      },
+      "clues": {
+        "region": "East Africa",
+        "era": "1930s",
+        "country": "Tanzania"
+      },
+      "title": "Zanzibar. Sultan's palace on the sea front",
+      "artistOrCreator": null,
+      "context": "The Sultan's palace faces the Indian Ocean along Zanzibar City's seafront, part of the Stone Town waterfront skyline.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (Matson Collection, Library of Congress)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zanzibar._Sultan's_palace_on_the_sea_front_LOC_matpc.07420.jpg",
+        "creditText": "Matson Photo Service, Library of Congress"
+      }
+    },
+    {
+      "id": "commons-dar-es-salaam-panorama",
+      "workType": "photo",
+      "image": {
+        "src": "assets/8e9e9757263f2cd8-800w.jpg",
+        "srcset": "assets/8e9e9757263f2cd8-480w.jpg 480w, assets/8e9e9757263f2cd8-800w.jpg 800w",
+        "width": 800,
+        "height": 593,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "dar-es-salaam-tz",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1906,
+        "maxYear": 1918
+      },
+      "creationDate": {
+        "minYear": 1906,
+        "maxYear": 1918
+      },
+      "classification": {
+        "region": "East Africa",
+        "difficulty": 4,
+        "tags": [
+          "plaza",
+          "colonial",
+          "street"
+        ]
+      },
+      "clues": {
+        "region": "East Africa",
+        "era": "1910s",
+        "country": "Tanzania"
+      },
+      "title": "Platz in Daressalam",
+      "artistOrCreator": "Walther Dobbertin",
+      "context": "A colonial-era square in Dar es Salaam, photographed during German East Africa's brief period as a colonial capital.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC BY-SA 3.0 DE",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_105-DOA0021,_Deutsch-Ostafrika,_Platz_in_Daressalam.jpg",
+        "creditText": "Bundesarchiv, Bild 105-DOA0021 / Walther Dobbertin"
+      }
+    },
+    {
+      "id": "commons-johannesburg-railway-station",
+      "workType": "photo",
+      "image": {
+        "src": "assets/0f1b820a91f1fed0-1600w.jpg",
+        "srcset": "assets/0f1b820a91f1fed0-480w.jpg 480w, assets/0f1b820a91f1fed0-960w.jpg 960w, assets/0f1b820a91f1fed0-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1227,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "johannesburg-za",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1900,
+        "maxYear": 1900
+      },
+      "creationDate": {
+        "minYear": 1900,
+        "maxYear": 1900
+      },
+      "classification": {
+        "region": "Southern Africa",
+        "difficulty": 3,
+        "tags": [
+          "station",
+          "railway",
+          "colonial"
+        ]
+      },
+      "clues": {
+        "region": "Southern Africa",
+        "era": "1900s",
+        "country": "South Africa"
+      },
+      "title": "View of Johannesburg railway station",
+      "artistOrCreator": null,
+      "context": "Johannesburg's railway station around the time of the Second Boer War, the city still only a decade past its founding as a gold-rush mining camp.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photo_View_of_Johannesburg_railway_station_1900_-_Touring_Club_Italiano_BBs_237.jpg",
+        "creditText": "Archivio Storico Touring Club Italiano"
+      }
+    },
+    {
+      "id": "commons-tunis-bab-souika-1899",
+      "workType": "photo",
+      "image": {
+        "src": "assets/25efb9d021f75d36-1600w.jpg",
+        "srcset": "assets/25efb9d021f75d36-480w.jpg 480w, assets/25efb9d021f75d36-960w.jpg 960w, assets/25efb9d021f75d36-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1080,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "tunis-tn",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1890,
+        "maxYear": 1905
+      },
+      "creationDate": {
+        "minYear": 1890,
+        "maxYear": 1905
+      },
+      "classification": {
+        "region": "North Africa",
+        "difficulty": 2,
+        "tags": [
+          "square",
+          "mosque",
+          "market"
+        ]
+      },
+      "clues": {
+        "region": "North Africa",
+        "era": "1890s",
+        "country": "Tunisia"
+      },
+      "title": "Bab Souika, Tunis",
+      "artistOrCreator": null,
+      "context": "The domed Sidi Mahrez mosque overlooks a busy market square at Bab Souika, one of the gates of the Tunis medina.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (photochrom print, Library of Congress)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tunis_Bab_Souika_1899.jpg",
+        "creditText": "Library of Congress"
+      }
+    },
+    {
+      "id": "commons-casablanca-harbor-district",
+      "workType": "photo",
+      "image": {
+        "src": "assets/8440fcfd7373da36-1600w.jpg",
+        "srcset": "assets/8440fcfd7373da36-480w.jpg 480w, assets/8440fcfd7373da36-960w.jpg 960w, assets/8440fcfd7373da36-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1175,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "casablanca-ma",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1930,
+        "maxYear": 1931
+      },
+      "creationDate": {
+        "minYear": 1930,
+        "maxYear": 1931
+      },
+      "classification": {
+        "region": "North Africa",
+        "difficulty": 4,
+        "tags": [
+          "harbor",
+          "aerial",
+          "rooftops"
+        ]
+      },
+      "clues": {
+        "region": "North Africa",
+        "era": "1930s",
+        "country": "Morocco"
+      },
+      "title": "Das Hafenquartier von Casablanca aus 300 m Höhe",
+      "artistOrCreator": "Walter Mittelholzer",
+      "context": "Casablanca's harbor district from 300 meters up, photographed during Walter Mittelholzer's 1930–31 aerial survey across Africa.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ETH-BIB-Das_Hafenquartier_von_Casablanca_aus_300_m_H%C3%B6he-Tschadseeflug_1930-31-LBS_MH02-08-0275.tif",
+        "creditText": "Walter Mittelholzer, ETH-Bibliothek"
+      }
+    },
+    {
+      "id": "commons-khartoum-general-view-1906",
+      "workType": "photo",
+      "image": {
+        "src": "assets/8c7972495da44f2b-1600w.jpg",
+        "srcset": "assets/8c7972495da44f2b-480w.jpg 480w, assets/8c7972495da44f2b-960w.jpg 960w, assets/8c7972495da44f2b-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 834,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "khartoum-sd",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1906,
+        "maxYear": 1906
+      },
+      "creationDate": {
+        "minYear": 1906,
+        "maxYear": 1906
+      },
+      "classification": {
+        "region": "North Africa",
+        "difficulty": 3,
+        "tags": [
+          "view",
+          "palms",
+          "riverside"
+        ]
+      },
+      "clues": {
+        "region": "North Africa",
+        "era": "1900s",
+        "country": "Sudan"
+      },
+      "title": "General View, Khartoum",
+      "artistOrCreator": "G. N. Morhig",
+      "context": "Khartoum's rooftops seen over a foreground of date palms, photographed less than a decade after the city's reconstruction following the Mahdist War.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (PD-1923)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:General_View,_Khartoum_(1906)_-_TIMEA.jpg",
+        "creditText": "G. N. Morhig"
+      }
+    },
+    {
+      "id": "commons-delhi-chandni-chowk-1860",
+      "workType": "photo",
+      "image": {
+        "src": "assets/941a6c99f0e0ac48-1600w.jpg",
+        "srcset": "assets/941a6c99f0e0ac48-480w.jpg 480w, assets/941a6c99f0e0ac48-960w.jpg 960w, assets/941a6c99f0e0ac48-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1166,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "delhi-in",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1860,
+        "maxYear": 1860
+      },
+      "creationDate": {
+        "minYear": 1860,
+        "maxYear": 1860
+      },
+      "classification": {
+        "region": "South Asia",
+        "difficulty": 3,
+        "tags": [
+          "market",
+          "colonial architecture",
+          "street"
+        ]
+      },
+      "clues": {
+        "region": "South Asia",
+        "era": "1860s",
+        "country": "India"
+      },
+      "title": "Chandney Chouk road at Delhi in India",
+      "artistOrCreator": "Samuel Bourne",
+      "context": "Chandni Chowk, Old Delhi's main market street, laid out in the 17th century and still one of India's busiest commercial thoroughfares.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:KITLV_91988_-_Samuel_Bourne_-_Chandney_Chouk_road_at_Delhi_in_India_-_Around_1860.tif",
+        "creditText": "Samuel Bourne, KITLV, Leiden University Library"
+      }
+    },
+    {
+      "id": "commons-mumbai-elphinstone-circle",
+      "workType": "photo",
+      "image": {
+        "src": "assets/3d40d33e92f47f09-976w.jpg",
+        "srcset": "assets/3d40d33e92f47f09-480w.jpg 480w, assets/3d40d33e92f47f09-960w.jpg 960w, assets/3d40d33e92f47f09-976w.jpg 976w",
+        "width": 976,
+        "height": 623,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "mumbai-in",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1870,
+        "maxYear": 1879
+      },
+      "creationDate": {
+        "minYear": 1870,
+        "maxYear": 1879
+      },
+      "classification": {
+        "region": "South Asia",
+        "difficulty": 2,
+        "tags": [
+          "colonial architecture",
+          "arcade",
+          "plaza"
+        ]
+      },
+      "clues": {
+        "region": "South Asia",
+        "era": "1870s",
+        "country": "India"
+      },
+      "title": "Elphinstone Circle, Bombay in the 1870s",
+      "artistOrCreator": null,
+      "context": "The arcaded circular plaza of Elphinstone Circle (now Horniman Circle), laid out in 1869 as the commercial heart of colonial Bombay.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elphinstone_Circle,_Bombay_in_the_1870s_(1).jpg",
+        "creditText": "Lee-Warner Collection"
+      }
+    },
+    {
+      "id": "commons-chennai-fort-st-george-1858",
+      "workType": "drawing",
+      "image": {
+        "src": "assets/7ba1facdffc303f1-1600w.jpg",
+        "srcset": "assets/7ba1facdffc303f1-480w.jpg 480w, assets/7ba1facdffc303f1-960w.jpg 960w, assets/7ba1facdffc303f1-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1017,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "chennai-in",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1858,
+        "maxYear": 1858
+      },
+      "creationDate": {
+        "minYear": 1858,
+        "maxYear": 1858
+      },
+      "classification": {
+        "region": "South Asia",
+        "difficulty": 3,
+        "tags": [
+          "fort",
+          "coast",
+          "engraving"
+        ]
+      },
+      "clues": {
+        "region": "South Asia",
+        "era": "1850s",
+        "country": "India"
+      },
+      "title": "Fort St George, Madras, 1858",
+      "artistOrCreator": null,
+      "context": "Fort St George on the Madras coast, the first English fortified settlement in India, with fishing boats and an ox cart in the foreground.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "No known copyright restrictions",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fort_St_George_Madras_1858.jpg",
+        "creditText": "Internet Archive Book Images, from The Indian Empire (1858)"
+      }
+    },
+    {
+      "id": "commons-hyderabad-charminar-street",
+      "workType": "photo",
+      "image": {
+        "src": "assets/965f92878f7a86bd-1600w.jpg",
+        "srcset": "assets/965f92878f7a86bd-480w.jpg 480w, assets/965f92878f7a86bd-960w.jpg 960w, assets/965f92878f7a86bd-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1188,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "hyderabad-in",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1880,
+        "maxYear": 1889
+      },
+      "creationDate": {
+        "minYear": 1880,
+        "maxYear": 1889
+      },
+      "classification": {
+        "region": "South Asia",
+        "difficulty": 2,
+        "tags": [
+          "charminar",
+          "bazaar",
+          "street"
+        ]
+      },
+      "clues": {
+        "region": "South Asia",
+        "era": "1880s",
+        "country": "India"
+      },
+      "title": "Principal Street, Hyderabad, India",
+      "artistOrCreator": "Lala Deen Dayal",
+      "context": "A bird's-eye view down Hyderabad's principal street toward the Charminar and Mecca Masjid, photographed by the court photographer to the Nizam.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (PD-old-100 / PD-Art)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Principal_Street,_Hyderabad,_India.jpg",
+        "creditText": "Lala Deen Dayal, British Library"
+      }
+    },
+    {
+      "id": "commons-peshawar-qissa-khwani-bazaar",
+      "workType": "photo",
+      "image": {
+        "src": "assets/0bece8f944ea566f-938w.jpg",
+        "srcset": "assets/0bece8f944ea566f-480w.jpg 480w, assets/0bece8f944ea566f-938w.jpg 938w",
+        "width": 938,
+        "height": 572,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "peshawar-pk",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1903,
+        "maxYear": 1903
+      },
+      "creationDate": {
+        "minYear": 1903,
+        "maxYear": 1903
+      },
+      "classification": {
+        "region": "South Asia",
+        "difficulty": 3,
+        "tags": [
+          "bazaar",
+          "street",
+          "market"
+        ]
+      },
+      "clues": {
+        "region": "South Asia",
+        "era": "1900s",
+        "country": "Pakistan"
+      },
+      "title": "A busy street near Qissa Khwani Bazaar, Peshawar",
+      "artistOrCreator": "Gertrude Bell",
+      "context": "The Qissa Khwani Bazaar, Peshawar's \"Street of Storytellers,\" a caravan-trade crossroads photographed by the traveler and archaeologist Gertrude Bell.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain Mark 1.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photograph_of_a_busy_street_near_Qissa_Khwani_Bazaar_(Story-tellers_Bazaar)_near_Kabuli_Gate,_Peshawar,_by_Gertrude_Bell,_January_1903.png",
+        "creditText": "Gertrude Bell Archive, Newcastle University"
+      }
+    },
+    {
+      "id": "commons-colombo-grand-oriental-hotel",
+      "workType": "drawing",
+      "image": {
+        "src": "assets/6bf3a766bc28ff4d-891w.jpg",
+        "srcset": "assets/6bf3a766bc28ff4d-480w.jpg 480w, assets/6bf3a766bc28ff4d-891w.jpg 891w",
+        "width": 891,
+        "height": 583,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "colombo-lk",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1896,
+        "maxYear": 1896
+      },
+      "creationDate": {
+        "minYear": 1896,
+        "maxYear": 1896
+      },
+      "classification": {
+        "region": "South Asia",
+        "difficulty": 3,
+        "tags": [
+          "hotel",
+          "colonial architecture",
+          "illustration"
+        ]
+      },
+      "clues": {
+        "region": "South Asia",
+        "era": "1890s",
+        "country": "Sri Lanka"
+      },
+      "title": "The Grand Oriental Hotel, Colombo",
+      "artistOrCreator": "Piotr Stachiewicz",
+      "context": "The Grand Oriental Hotel on Colombo's harborfront, illustrated for a Polish nobleman's account of his round-the-world hunting expedition.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GOH_1896.jpg",
+        "creditText": "Piotr Stachiewicz"
+      }
+    },
+    {
+      "id": "commons-rangoon-fytche-square",
+      "workType": "photo",
+      "image": {
+        "src": "assets/ee34c1a56841f854-1600w.jpg",
+        "srcset": "assets/ee34c1a56841f854-480w.jpg 480w, assets/ee34c1a56841f854-960w.jpg 960w, assets/ee34c1a56841f854-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1251,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "yangon-mm",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1895,
+        "maxYear": 1895
+      },
+      "creationDate": {
+        "minYear": 1895,
+        "maxYear": 1895
+      },
+      "classification": {
+        "region": "Southeast Asia",
+        "difficulty": 2,
+        "tags": [
+          "pagoda",
+          "park",
+          "skyline"
+        ]
+      },
+      "clues": {
+        "region": "Southeast Asia",
+        "era": "1890s",
+        "country": "Myanmar"
+      },
+      "title": "Fytche Square, Rangoon",
+      "artistOrCreator": "Philip Adolphe Klier",
+      "context": "Fytche Square's gardens toward the golden Sule Pagoda, the landmark stupa that still marks the center of downtown Yangon.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fytche_Square,_Rangoon.jpg",
+        "creditText": "Philip Adolphe Klier, British Library"
+      }
+    },
+    {
+      "id": "commons-beijing-tiananmen-gate-drawing",
+      "workType": "drawing",
+      "image": {
+        "src": "assets/341ddc8bc17762bf-1600w.jpg",
+        "srcset": "assets/341ddc8bc17762bf-480w.jpg 480w, assets/341ddc8bc17762bf-960w.jpg 960w, assets/341ddc8bc17762bf-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1295,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "beijing-cn",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1860,
+        "maxYear": 1860
+      },
+      "creationDate": {
+        "minYear": 1860,
+        "maxYear": 1860
+      },
+      "classification": {
+        "region": "East Asia",
+        "difficulty": 2,
+        "tags": [
+          "gate",
+          "drawing",
+          "imperial architecture"
+        ]
+      },
+      "clues": {
+        "region": "East Asia",
+        "era": "1860s",
+        "country": "China"
+      },
+      "title": "Gate of Heavenly Peace, Peking",
+      "artistOrCreator": "G. V. Yudin",
+      "context": "The Gate of Heavenly Peace — Tiananmen — the ceremonial entrance to the Forbidden City, drawn during the Second Opium War era.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain Mark 1.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gate_of_heavenly_peace,_Peking;_includes_Chinese_language_characters_on_right_margin_LCCN2004679130.jpg",
+        "creditText": "Library of Congress"
+      }
+    },
+    {
+      "id": "commons-hongkong-harbour-painting-1888",
+      "workType": "painting",
+      "image": {
+        "src": "assets/4f9e5da60d57db00-1600w.jpg",
+        "srcset": "assets/4f9e5da60d57db00-480w.jpg 480w, assets/4f9e5da60d57db00-960w.jpg 960w, assets/4f9e5da60d57db00-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1065,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "hong-kong-hk",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1888,
+        "maxYear": 1888
+      },
+      "creationDate": {
+        "minYear": 1888,
+        "maxYear": 1888
+      },
+      "classification": {
+        "region": "East Asia",
+        "difficulty": 3,
+        "tags": [
+          "harbour",
+          "junks",
+          "painting"
+        ]
+      },
+      "clues": {
+        "region": "East Asia",
+        "era": "1880s",
+        "country": "Hong Kong"
+      },
+      "title": "Hafen von Hong Kong",
+      "artistOrCreator": "Alfred Prinon",
+      "context": "Junks and sailing ships crowd Hong Kong's harbor below the hillside town, painted at the height of the colony's growth as a trading port.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (life+100 expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alfred_Prinon_-_Hafen_von_Hong_Kong_(1888).jpg",
+        "creditText": "Alfred Prinon"
+      }
+    },
+    {
+      "id": "commons-guangzhou-pearl-river-shipping",
+      "workType": "painting",
+      "image": {
+        "src": "assets/2ad4b68cb85eda90-1600w.jpg",
+        "srcset": "assets/2ad4b68cb85eda90-480w.jpg 480w, assets/2ad4b68cb85eda90-960w.jpg 960w, assets/2ad4b68cb85eda90-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 696,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "guangzhou-cn",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1850,
+        "maxYear": 1850
+      },
+      "creationDate": {
+        "minYear": 1850,
+        "maxYear": 1850
+      },
+      "classification": {
+        "region": "East Asia",
+        "difficulty": 3,
+        "tags": [
+          "river",
+          "harbour",
+          "trading houses"
+        ]
+      },
+      "clues": {
+        "region": "East Asia",
+        "era": "1850s",
+        "country": "China"
+      },
+      "title": "Shipping in the Pearl River off Honam Island, Canton",
+      "artistOrCreator": null,
+      "context": "A dense flotilla of junks and sampans fills the Pearl River off Honam Island, painted before Canton's waterfront foreign factories were rebuilt.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (published before 1931 in the US)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shipping_in_the_Pearl_River_off_Honam_Island,_Canton_RMG_BHC1786.tiff",
+        "creditText": "Royal Museums Greenwich"
+      }
+    },
+    {
+      "id": "commons-nagasaki-harbor-panorama-1868",
+      "workType": "photo",
+      "image": {
+        "src": "assets/ce94d2b9f7b5e248-1600w.jpg",
+        "srcset": "assets/ce94d2b9f7b5e248-480w.jpg 480w, assets/ce94d2b9f7b5e248-960w.jpg 960w, assets/ce94d2b9f7b5e248-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1276,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "nagasaki-jp",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1867,
+        "maxYear": 1868
+      },
+      "creationDate": {
+        "minYear": 1867,
+        "maxYear": 1868
+      },
+      "classification": {
+        "region": "East Asia",
+        "difficulty": 2,
+        "tags": [
+          "harbour",
+          "bay",
+          "hills"
+        ]
+      },
+      "clues": {
+        "region": "East Asia",
+        "era": "1860s",
+        "country": "Japan"
+      },
+      "title": "Partial Panoramic View of Nagasaki",
+      "artistOrCreator": "Felice Beato",
+      "context": "Nagasaki's harbor and hillside town, photographed from the surrounding hills at the very end of the Edo period.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (PD-Art / PD-old-100-expired)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Felice_Beato_(British,_born_Italy_-_(Partial_Panoramic_View_of_Nagasaki)_-_Google_Art_Project.jpg",
+        "creditText": "Felice Beato, J. Paul Getty Museum"
+      }
+    },
+    {
+      "id": "commons-kyoto-street-scenes-screen",
+      "workType": "painting",
+      "image": {
+        "src": "assets/637650b8e7dbbe2c-1600w.jpg",
+        "srcset": "assets/637650b8e7dbbe2c-480w.jpg 480w, assets/637650b8e7dbbe2c-960w.jpg 960w, assets/637650b8e7dbbe2c-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 780,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "kyoto-jp",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1615,
+        "maxYear": 1699
+      },
+      "creationDate": {
+        "minYear": 1615,
+        "maxYear": 1699
+      },
+      "classification": {
+        "region": "East Asia",
+        "difficulty": 5,
+        "tags": [
+          "genre painting",
+          "street",
+          "screen painting"
+        ]
+      },
+      "clues": {
+        "region": "East Asia",
+        "era": "1600s",
+        "country": "Japan"
+      },
+      "title": "Street Scenes in Kyoto",
+      "artistOrCreator": null,
+      "context": "A gold-ground Edo-period folding screen depicting everyday street life in Kyoto, a genre known as rakuchū rakugai-zu (\"scenes in and around the capital\").",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC0 1.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anonymous_-_Street_Scenes_in_Kyoto_-_57.70.5_-_Metropolitan_Museum_of_Art.jpg",
+        "creditText": "Metropolitan Museum of Art"
+      }
+    },
+    {
+      "id": "commons-singapore-harbor-godowns",
+      "workType": "photo",
+      "image": {
+        "src": "assets/9f9e6ed531658027-1600w.jpg",
+        "srcset": "assets/9f9e6ed531658027-480w.jpg 480w, assets/9f9e6ed531658027-960w.jpg 960w, assets/9f9e6ed531658027-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1081,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "singapore-sg",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1867,
+        "maxYear": 1880
+      },
+      "creationDate": {
+        "minYear": 1867,
+        "maxYear": 1880
+      },
+      "classification": {
+        "region": "Southeast Asia",
+        "difficulty": 4,
+        "tags": [
+          "harbour",
+          "godowns",
+          "river"
+        ]
+      },
+      "clues": {
+        "region": "Southeast Asia",
+        "era": "1870s",
+        "country": "Singapore"
+      },
+      "title": "Gezicht op de haven van Singapore",
+      "artistOrCreator": "G. R. Lambert & Co.",
+      "context": "Riverfront godowns (warehouses) and boat traffic on the Singapore River, photographed as the free port grew into Southeast Asia's leading entrepôt.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "CC0 1.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gezicht_op_de_haven_van_Singapore,_RP-F-F01025-BD.jpg",
+        "creditText": "G. R. Lambert & Co., Rijksmuseum"
+      }
+    },
+    {
+      "id": "commons-hanoi-petit-lac-1900",
+      "workType": "photo",
+      "image": {
+        "src": "assets/ba926340ea5272bb-1600w.jpg",
+        "srcset": "assets/ba926340ea5272bb-480w.jpg 480w, assets/ba926340ea5272bb-960w.jpg 960w, assets/ba926340ea5272bb-1600w.jpg 1600w",
+        "width": 1600,
+        "height": 1104,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "hanoi-vn",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1900,
+        "maxYear": 1900
+      },
+      "creationDate": {
+        "minYear": 1900,
+        "maxYear": 1900
+      },
+      "classification": {
+        "region": "Southeast Asia",
+        "difficulty": 2,
+        "tags": [
+          "lake",
+          "temple",
+          "bridge"
+        ]
+      },
+      "clues": {
+        "region": "Southeast Asia",
+        "era": "1900s",
+        "country": "Vietnam"
+      },
+      "title": "Hanoï, le Petit Lac vers 1900",
+      "artistOrCreator": null,
+      "context": "Hoan Kiem Lake — the \"Petit Lac\" of French colonial Hanoi — with its pavilion and the red bridge leading to Ngoc Son Temple.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (PD-Art / PD-old-auto)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hano%C3%AF_le_Petit_Lac_vers_1900.jpg",
+        "creditText": "Revue illustrée, 1902"
+      }
+    },
+    {
+      "id": "commons-kuala-lumpur-panorama-1884",
+      "workType": "photo",
+      "image": {
+        "src": "assets/dd3bc0a735172790-1465w.jpg",
+        "srcset": "assets/dd3bc0a735172790-480w.jpg 480w, assets/dd3bc0a735172790-960w.jpg 960w, assets/dd3bc0a735172790-1465w.jpg 1465w",
+        "width": 1465,
+        "height": 537,
+        "placeholder": null
+      },
+      "location": {
+        "placeId": "kuala-lumpur-my",
+        "acceptedPlaceIds": []
+      },
+      "depictedDate": {
+        "minYear": 1884,
+        "maxYear": 1884
+      },
+      "creationDate": {
+        "minYear": 1884,
+        "maxYear": 1884
+      },
+      "classification": {
+        "region": "Southeast Asia",
+        "difficulty": 4,
+        "tags": [
+          "early settlement",
+          "attap houses",
+          "panorama"
+        ]
+      },
+      "clues": {
+        "region": "Southeast Asia",
+        "era": "1880s",
+        "country": "Malaysia"
+      },
+      "title": "Panorama of Kuala Lumpur, ca. 1884",
+      "artistOrCreator": "G. R. Lambert & Co.",
+      "context": "One of the earliest known photographs of Kuala Lumpur, then a small tin-mining settlement of attap-roofed houses at the confluence of two rivers.",
+      "attribution": {
+        "source": "Wikimedia Commons",
+        "license": "Public Domain (CC-PD-Mark)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_of_Kuala_Lumpur_ca._1884.jpg",
+        "creditText": "G. R. Lambert & Co."
       }
     }
   ]

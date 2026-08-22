@@ -1839,5 +1839,193 @@
       "Puducherry"
     ],
     "historicalNames": []
+  },
+  {
+    "id": "panama-city-pa",
+    "displayName": "Panama City",
+    "country": "Panama",
+    "countryCode": "PA",
+    "lat": 8.9824,
+    "lng": -79.5199,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "guatemala-city-gt",
+    "displayName": "Guatemala City",
+    "country": "Guatemala",
+    "countryCode": "GT",
+    "lat": 14.6349,
+    "lng": -90.5069,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "recife-br",
+    "displayName": "Recife",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "lat": -8.0476,
+    "lng": -34.877,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "quebec-city-ca",
+    "displayName": "Quebec City",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 46.8139,
+    "lng": -71.208,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "munich-de",
+    "displayName": "Munich",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 48.1351,
+    "lng": 11.582,
+    "aliases": [],
+    "historicalNames": [
+      "München"
+    ]
+  },
+  {
+    "id": "hamburg-de",
+    "displayName": "Hamburg",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 53.5511,
+    "lng": 9.9937,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "barcelona-es",
+    "displayName": "Barcelona",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 41.3851,
+    "lng": 2.1734,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "gothenburg-se",
+    "displayName": "Gothenburg",
+    "country": "Sweden",
+    "countryCode": "SE",
+    "lat": 57.7089,
+    "lng": 11.9746,
+    "aliases": [],
+    "historicalNames": [
+      "Göteborg"
+    ]
+  },
+  {
+    "id": "bergen-no",
+    "displayName": "Bergen",
+    "country": "Norway",
+    "countryCode": "NO",
+    "lat": 60.3913,
+    "lng": 5.3221,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "sofia-bg",
+    "displayName": "Sofia",
+    "country": "Bulgaria",
+    "countryCode": "BG",
+    "lat": 42.6977,
+    "lng": 23.3219,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "muscat-om",
+    "displayName": "Muscat",
+    "country": "Oman",
+    "countryCode": "OM",
+    "lat": 23.5859,
+    "lng": 58.4059,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "baku-az",
+    "displayName": "Baku",
+    "country": "Azerbaijan",
+    "countryCode": "AZ",
+    "lat": 40.4093,
+    "lng": 49.8671,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tbilisi-ge",
+    "displayName": "Tbilisi",
+    "country": "Georgia",
+    "countryCode": "GE",
+    "lat": 41.7151,
+    "lng": 44.8271,
+    "aliases": [],
+    "historicalNames": [
+      "Tiflis"
+    ]
+  },
+  {
+    "id": "zanzibar-city-tz",
+    "displayName": "Zanzibar City",
+    "country": "Tanzania",
+    "countryCode": "TZ",
+    "lat": -6.1659,
+    "lng": 39.1985,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "hyderabad-in",
+    "displayName": "Hyderabad",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 17.385,
+    "lng": 78.4867,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "guangzhou-cn",
+    "displayName": "Guangzhou",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 23.1291,
+    "lng": 113.2644,
+    "aliases": [],
+    "historicalNames": [
+      "Canton"
+    ]
+  },
+  {
+    "id": "nagasaki-jp",
+    "displayName": "Nagasaki",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 32.7503,
+    "lng": 129.8779,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kyoto-jp",
+    "displayName": "Kyoto",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 35.0116,
+    "lng": 135.7681,
+    "aliases": [],
+    "historicalNames": []
   }
 ]
