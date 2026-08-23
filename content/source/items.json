@@ -15059,5 +15059,170 @@
     "importSource": "commons:commons-nicosia-tripiodis-street",
     "createdAt": "2026-08-23T00:00:00.000Z",
     "updatedAt": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "commons-riyadh-margab-fort-1939",
+    "status": "approved",
+    "workType": "photo",
+    "title": "Margab Fort, Riyadh",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1939,
+      "maxYear": 1939
+    },
+    "creationDate": {
+      "minYear": 1939,
+      "maxYear": 1939
+    },
+    "location": {
+      "placeId": "riyadh-sa",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Middle East",
+      "difficulty": 4,
+      "landmarkCategory": "fort",
+      "tags": [
+        "fort",
+        "mudbrick",
+        "towers"
+      ]
+    },
+    "clues": {
+      "region": "Middle East",
+      "era": "1930s",
+      "country": "Saudi Arabia"
+    },
+    "media": {
+      "originalPath": "riyadh-margab-fort-1939.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margab_Fort_Riyadh,_1939.jpg",
+      "creditText": "Wikimedia Commons"
+    },
+    "context": "The mudbrick towers of Margab Fort in early Riyadh, before the city's mid-20th-century growth.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-23T00:00:00.000Z",
+      "notes": "Wave 2 item approved but accidentally omitted from the main wave2 script; added after a post-hoc audit of content/originals/ against items.json caught the gap."
+    },
+    "importSource": "commons:commons-riyadh-margab-fort-1939",
+    "createdAt": "2026-08-23T00:00:00.000Z",
+    "updatedAt": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "commons-aarhus-gronnegade-1898",
+    "status": "approved",
+    "workType": "photo",
+    "title": "1898 Grønnegade",
+    "artistOrCreator": null,
+    "depictedDate": {
+      "minYear": 1898,
+      "maxYear": 1898
+    },
+    "creationDate": {
+      "minYear": 1898,
+      "maxYear": 1898
+    },
+    "location": {
+      "placeId": "aarhus-dk",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "Northern Europe",
+      "difficulty": 3,
+      "landmarkCategory": "street",
+      "tags": [
+        "cobblestone",
+        "old-town",
+        "long-exposure"
+      ]
+    },
+    "clues": {
+      "region": "Northern Europe",
+      "era": "1890s",
+      "country": "Denmark"
+    },
+    "media": {
+      "originalPath": "aarhus-gronnegade-street-1898.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (life+70 expired)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1898_Gr%C3%B8nnegade.jpg",
+      "creditText": "Wikimedia Commons"
+    },
+    "context": "A cobblestone street in old Aarhus, with period buildings and figures blurred by the long exposure.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-23T00:00:00.000Z",
+      "notes": "Wave 2 item approved but accidentally omitted from the main wave2 script; added after a post-hoc audit of content/originals/ against items.json caught the gap."
+    },
+    "importSource": "commons:commons-aarhus-gronnegade-1898",
+    "createdAt": "2026-08-23T00:00:00.000Z",
+    "updatedAt": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "commons-buenos-aires-vista-bossi-1859",
+    "status": "approved",
+    "workType": "painting",
+    "title": "Vista de Buenos Aires, según Bossi",
+    "artistOrCreator": "Bartolomé Bossi",
+    "depictedDate": {
+      "minYear": 1859,
+      "maxYear": 1859
+    },
+    "creationDate": {
+      "minYear": 1859,
+      "maxYear": 1859
+    },
+    "location": {
+      "placeId": "buenos-aires-ar",
+      "acceptedPlaceIds": []
+    },
+    "classification": {
+      "region": "South America",
+      "difficulty": 3,
+      "landmarkCategory": "harbour",
+      "tags": [
+        "harbour",
+        "steamships",
+        "waterfront"
+      ]
+    },
+    "clues": {
+      "region": "South America",
+      "era": "1850s",
+      "country": "Argentina"
+    },
+    "media": {
+      "originalPath": "buenos-aires-vista-bossi-1859.jpg",
+      "focalPoint": null
+    },
+    "attribution": {
+      "source": "Wikimedia Commons",
+      "license": "Public Domain (CC-PD-Mark)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vista_de_Buenos_Aires,_seg%C3%BAn_Bossi.tif",
+      "creditText": "Bartolomé Bossi"
+    },
+    "context": "A hand-colored 1859 painting of the Buenos Aires waterfront, crowded with paddle steamers and sailing ships.",
+    "contentWarning": null,
+    "curation": {
+      "approvedBy": "andrew",
+      "approvedAt": "2026-08-23T00:00:00.000Z",
+      "notes": "Wave 2 item approved but accidentally omitted from the main wave2 script; added after a post-hoc audit of content/originals/ against items.json caught the gap."
+    },
+    "importSource": "commons:commons-buenos-aires-vista-bossi-1859",
+    "createdAt": "2026-08-23T00:00:00.000Z",
+    "updatedAt": "2026-08-23T00:00:00.000Z"
   }
 ]
