@@ -168,3 +168,41 @@ Triggered by an explicit push for volume ("we need content and lots of it," "thi
 - Melbourne (carried over from Tier 2) is still unresolved.
 - The Pacific Islands beyond Australia/NZ, and most of Central Asia beyond Kabul, remain thin or absent.
 - Difficulty ratings for this batch are, as with every prior batch, first-pass editorial judgment pending real play-test data — and this batch in particular never got a human spot-check of gameplay feel, only content-integrity checks.
+
+---
+
+# Wave 2 (2026-08-23): the "think 1000" push, 111 → 274
+
+Explicit instruction to keep scaling volume ("i think 1000 is a reasonable target"). Sourcing was parallelized across 10 research agents, each covering ~15-20 cities in a distinct region, using the exact same two-gate process as every prior batch: real Commons license verification against the actual file page, then a mandatory visual inspection for baked-in spoiler text before approval.
+
+## Process notes specific to this wave
+
+- **Session interruption mid-run.** Partway through, all 10 agents' sessions were affected by a genuine multi-day gap (the harness restarted); 2 of 10 agents recovered cleanly from their saved transcripts when resumed, and 4 more hit outright API/network failures (`ENOTFOUND`) rather than the earlier Wikimedia-rate-limit pattern. All 4 of those had already saved real progress to `content/originals/` before failing, so 4 small follow-up agents were launched pointed at exactly the missing remainder (e.g. "you did 13 of 18 cities, finish the other 5") rather than restarting from scratch. Only one batch (retries + small European capitals) had made zero download progress and needed a genuine fresh start.
+- **Centralized re-verification remained non-negotiable**, same as Wave 1: every `sourceUrl`/license was checked or re-derived directly against the Commons file page, not taken from agent prose alone. This is what caught a real problem the agents themselves reported cleanly but that still needed a judgment call: **Lusaka's only candidate is a 2008 photograph** — the agent's own report flagged this (no clean pre-1970 candidate exists for a city founded in 1935) rather than hiding it, but a modern photo still fails the game's basic "historical" premise regardless of a clean license and spoiler check, so it was dropped, matching the earlier Sana'a-2014 precedent from Wave 1.
+- **A second, more serious issue surfaced on personal re-inspection, not from any agent report**: the Middle East/Central Asia batch's Sana'a candidate — a different one from Wave 1's rejected 2014 photo, sourced this time from a non-institutional Yemeni heritage-photo website — has a visibly blurred/pixelated rectangular patch inside the image itself. The agent's report called this a probable print/moiré artifact and moved on; direct visual inspection did not find that explanation convincing enough given the combination of weak provenance and an unusual-looking artifact, so it was rejected. Yemen has no item in the pool as a result — a deliberate omission, not an oversight.
+- **One further agent-approved image was independently rejected on inspection**: a Mosul candidate (LOC Matson Collection) has an illegible cursive annotation in the photo's margin that could not be confidently ruled out as naming the city. The agent's own report had already rejected two *other* Mosul candidates for exactly this failure mode (a printed "Mosul." caption, and separately an "ambiguous Arabic handwriting" case treated the same cautious way) — this third candidate got the same treatment for consistency. Mosul has no item in the pool.
+- **Wikimedia's rate limiting became the dominant practical constraint** for the South Asia and Middle East/Central Asia batches specifically: both agents did real, complete research (candidate found, license verified against the real Commons page, exact sourceUrl recorded) for cities where the download-and-visually-inspect steps kept failing with HTTP 429s. Rather than either approving on research alone (a hard no — the visual check is the whole point) or discarding the research, those items were finished centrally: 6 of Middle East's 9 stalled candidates and all 4 of a further round were downloaded and inspected directly (`Erbil`, `Jaffa`, `Samarkand`, `Bukhara`, `Haifa`, `Alexandria`, `Port Said`, `Riyadh`, `Jeddah` all cleared this way), bringing that batch to 16 of 18 cities. **12 of South Asia's 14 stalled candidates could not be completed** before rate-limiting became severe enough (`Retry-After: 600`) that continuing wasn't a good use of the session — those 12 (Pune, Surat, Indore, Amritsar, Srinagar, Kanpur, Patna, Bhopal, Multan, Rawalpindi, Quetta, Chittagong, Kandy, Jaffna) are genuinely research-complete and ready for a fast follow-up pass: real license-verified sourceUrls exist for all of them, only the download+inspect steps remain.
+
+## Funnel
+
+- ~189 candidate cities assigned across the 10 batches.
+- **163 items were approved** and integrated after the full pipeline (agent sourcing + centralized re-verification, including the South Asia/Middle East finishing work above). Pool: 111 → **274**.
+- Explicitly excluded despite an agent reporting a clean result: Lusaka (non-historical image), Sana'a (unresolved authenticity concern on personal inspection), Mosul (unresolved spoiler-text concern on personal inspection).
+- No clean candidate exists at all: Doha (every pre-1940 image found is either too small or has "DOHA(CENTRAL)" stamped on it).
+- Held for a fast follow-up (research complete, download+inspect remaining): 12 South Asia cities — see above.
+- Two rejected-and-cropped candidates were used this wave, in addition to the six already used in a prior batch: Zurich (a Photoglob-Wehrli plate with "ZÜRICH. Sonnenquai." printed in the border, cropped and re-verified clean) and, in the retry batch, Stavanger and Luxembourg City (both postcards/plates with a printed caption strip, cropped and re-verified clean). All three were personally re-inspected after cropping, not just trusted from the agent's own claim.
+
+## Gazetteer
+
+123 new entries proposed, 118 actually new after dedup against a handful already present (177 → ~295), plus one entry (`frankfurt-de`) that was missed in the initial batch and caught by the build's own cross-reference check before the final build — 314 gazetteer entries total. New coverage includes essentially all of interior China, Japan beyond Kyoto/Nagasaki/Tokyo/Osaka/Shanghai, the whole of Western/Southern/Eastern Europe's second-tier capitals, most of Central Africa, most of interior South America, and the wider Pacific (Fiji, Samoa, Tonga, Papua New Guinea, New Caledonia, French Polynesia).
+
+## Region coverage
+
+21 distinct `classification.region` values across 274 items, up from 20 across 111. 270 distinct cities across those 274 items — the pool is now close to one-item-per-city rather than concentrated in a few well-covered capitals, which was a deliberate choice given how much of Wave 1's growth came from adding depth to already-covered cities.
+
+## Known gaps for a future batch
+
+- The 12 held South Asia cities (see above) are the fastest possible next increment — no new research needed, just execute the pipeline's last two steps once Wikimedia's rate limit clears.
+- Yemen (Sana'a) and Qatar (Doha) have no item and no immediately obvious clean candidate; both would need genuinely fresh sourcing attempts, not a retry of what's already been tried.
+- Getting toward "1000" from here will need either (a) many more waves at this same breadth-first pace, which faces diminishing returns as fewer never-covered cities remain, or (b) a deliberate shift to depth — a second or third image for cities already in the pool (Paris, London, Rome, etc. almost certainly have many more qualifying Commons candidates each) — which hasn't been attempted at all yet.
+- As with every prior batch, difficulty ratings are first-pass editorial judgment pending real play-test data, and this wave in particular has had zero human playtesting at its new scale.
