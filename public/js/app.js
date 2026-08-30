@@ -3,7 +3,7 @@
 // the DOM, and owns the one piece of impurity the reducer deliberately
 // stays out of — the round timer. See plan.md §6-§7.
 import { reduce, createInitialState, Status, REQUIRED_ROUNDS } from "./state-machine.js";
-import { calculateRoundScore, calculateCountryCluePenalty, haversineDistanceKm, ROUND_DURATION_MS, CLUE_COSTS, MAX_ROUND_SCORE } from "./scoring.js";
+import { calculateRoundScore, calculateCountryCluePenalty, calculateConfoundScore, haversineDistanceKm, ROUND_DURATION_MS, CLUE_COSTS, MAX_ROUND_SCORE } from "./scoring.js";
 import { searchGazetteer } from "./city-search.js";
 import { getHasSeenIntro, setHasSeenIntro, getBestScore, recordSessionScore } from "./storage.js";
 import { createGuessMap } from "./guess-map.js";
@@ -21,11 +21,11 @@ let timerHandle = null;
 let roundDeadline = null;
 let pendingGuess = null; // {lat, lng} | null
 let activeMap = null; // whichever of guess-map.js / reveal-map.js is currently mounted
-// Number of gazetteer places sharing the current round's answer country —
-// set once per round in renderPlaying, read by both the clue button label
-// and resolveRound's scoring call so the displayed cost and the charged
-// cost never drift apart. See calculateCountryCluePenalty in scoring.js.
-let countryCandidateCount = null;
+// The answer's confound score (calculateConfoundScore in scoring.js) —
+// set once per round in renderPlaying, read by both the clue button
+// label and resolveRound's scoring call so the displayed cost and the
+// charged cost never drift apart. See calculateCountryCluePenalty.
+let countryClueConfoundScore = null;
 
 function dispatch(event) {
   state = reduce(state, event);
@@ -99,7 +99,16 @@ function startTimer() {
     }
     if (remaining <= 0) {
       stopTimer();
-      resolveRound({ timedOut: true });
+      // A pin already placed (map click or search selection) when time
+      // runs out counts as a real guess, not a wasted round — it still
+      // scores full accuracy for the actual distance, the time bonus
+      // just naturally comes out at ~0 since no time was left, which is
+      // the fair outcome: credit for the guess, none for the speed.
+      if (pendingGuess) {
+        resolveRound({ timedOut: false, guess: pendingGuess });
+      } else {
+        resolveRound({ timedOut: true });
+      }
     }
   }, 250);
   updateTimerDisplay(ROUND_DURATION_MS);
@@ -164,7 +173,7 @@ function resolveRound({ timedOut, guess } = {}) {
     distanceKm: distanceKm ?? 0,
     remainingMs: remaining,
     cluesUsed,
-    countryCandidateCount,
+    countryClueConfoundScore,
   });
 
   dispatch({
@@ -235,6 +244,10 @@ function disposeActiveMap() {
 
 function render() {
   disposeActiveMap();
+  // Only the round screen needs the wider, two-column layout (see
+  // #round-columns in styles.css) — every other screen stays at the
+  // narrower reading width.
+  gameRoot.classList.toggle("layout-round", state.status === Status.PLAYING);
   switch (state.status) {
     case Status.BOOT:
     case Status.LOADING:
@@ -297,8 +310,8 @@ function renderPlaying() {
   const item = currentItem();
   const round = state.context.currentRound;
   const roundNumber = state.context.roundIndex + 1;
-  const answerCountry = placesById.get(item.location.placeId)?.country;
-  countryCandidateCount = answerCountry ? gazetteer.filter((p) => p.country === answerCountry).length : null;
+  const answerPlace = placesById.get(item.location.placeId);
+  countryClueConfoundScore = answerPlace ? calculateConfoundScore(answerPlace, gazetteer) : null;
 
   gameRoot.innerHTML = `
     <h2 tabindex="-1" data-focus-target>Round ${roundNumber} of ${REQUIRED_ROUNDS}</h2>
@@ -317,44 +330,51 @@ function renderPlaying() {
       </div>
     </div>
     <p id="timer-announcer" class="sr-only" aria-live="polite"></p>
-    <!-- Fixed-height "frame" (not the image's own natural height) so
-         extreme aspect ratios — a hand-cropped panorama at 17:1 is a
-         real case in the pool — never render as a paper-thin sliver, and
-         so the page doesn't jump in height once the image finishes
-         loading (the frame reserves its space immediately). -->
-    <figure id="photo-frame">
-      <img src="${item.image.src}" srcset="${item.image.srcset}" sizes="(max-width: 700px) 100vw, 700px"
-           width="${item.image.width}" height="${item.image.height}"
-           alt="Historical image to identify" id="round-image" />
-      <figcaption id="image-loading-note">Loading image&hellip;</figcaption>
-    </figure>
-    <div id="clue-panel">
-      <p id="clue-panel-label">Clues</p>
-      <div id="clue-buttons"></div>
-      <ul id="revealed-clues"></ul>
-    </div>
-    <div id="city-selector">
-      <label for="city-search-input">Guess the location</label>
-      <!-- Click-to-guess map: a mouse/touch affordance only (the WebGL
-           canvas MapLibre draws into isn't keyboard-operable), so it's
-           hidden from the accessibility tree. The text search below is
-           the fully accessible way to submit the exact same kind of
-           guess — both write to the same pendingGuess {lat,lng} and
-           reach the same submit button. See guess-map.js and
-           wireGuessInputs(). -->
-      <div id="guess-map" aria-hidden="true"></div>
-      <input type="text" id="city-search-input" autocomplete="off" aria-describedby="city-search-help" />
-      <p id="city-search-help">Click the map to drop a pin, or type to search for a city and choose from the list.</p>
-      <!-- Deliberately a plain list of real <button> elements, not an
-           ARIA listbox/combobox: role="listbox" previously claimed
-           semantics (aria-activedescendant, option children, arrow-key
-           navigation) that nothing here implemented. A real combobox
-           pattern is more machinery than this v1 search needs — plain
-           buttons are natively Tab/Enter accessible with no ARIA at
-           all, which is what's actually true of this UI. -->
-      <ul id="city-search-results" aria-label="City search results"></ul>
-      <p id="selected-city" aria-live="polite"></p>
-      <button type="button" id="submit-guess-btn" disabled>Submit guess</button>
+    <!-- Side by side on a wide-enough viewport (see #round-columns in
+         styles.css) so a full round fits without scrolling — stacked on
+         mobile, same as before. -->
+    <div id="round-columns">
+      <div id="round-col-photo">
+        <!-- Fixed-height "frame" (not the image's own natural height) so
+             extreme aspect ratios — a hand-cropped panorama at 17:1 is a
+             real case in the pool — never render as a paper-thin sliver,
+             and so the page doesn't jump in height once the image
+             finishes loading (the frame reserves its space immediately). -->
+        <figure id="photo-frame">
+          <img src="${item.image.src}" srcset="${item.image.srcset}" sizes="(max-width: 700px) 100vw, 700px"
+               width="${item.image.width}" height="${item.image.height}"
+               alt="Historical image to identify" id="round-image" />
+          <figcaption id="image-loading-note">Loading image&hellip;</figcaption>
+        </figure>
+        <div id="clue-panel">
+          <p id="clue-panel-label">Clues</p>
+          <div id="clue-buttons"></div>
+          <ul id="revealed-clues"></ul>
+        </div>
+      </div>
+      <div id="city-selector">
+        <label for="city-search-input">Guess the location</label>
+        <!-- Click-to-guess map: a mouse/touch affordance only (the WebGL
+             canvas MapLibre draws into isn't keyboard-operable), so it's
+             hidden from the accessibility tree. The text search below is
+             the fully accessible way to submit the exact same kind of
+             guess — both write to the same pendingGuess {lat,lng} and
+             reach the same submit button. See guess-map.js and
+             wireGuessInputs(). -->
+        <div id="guess-map" aria-hidden="true"></div>
+        <input type="text" id="city-search-input" autocomplete="off" aria-describedby="city-search-help" />
+        <p id="city-search-help">Click the map to drop a pin, or type to search for a city and choose from the list.</p>
+        <!-- Deliberately a plain list of real <button> elements, not an
+             ARIA listbox/combobox: role="listbox" previously claimed
+             semantics (aria-activedescendant, option children, arrow-key
+             navigation) that nothing here implemented. A real combobox
+             pattern is more machinery than this v1 search needs — plain
+             buttons are natively Tab/Enter accessible with no ARIA at
+             all, which is what's actually true of this UI. -->
+        <ul id="city-search-results" aria-label="City search results"></ul>
+        <p id="selected-city" aria-live="polite"></p>
+        <button type="button" id="submit-guess-btn" disabled>Submit guess</button>
+      </div>
     </div>
   `;
   focusHeading();
@@ -363,7 +383,7 @@ function renderPlaying() {
   // readiness — see below for why the order matters.
   const clueButtonsEl = document.getElementById("clue-buttons");
   for (const clue of Object.keys(CLUE_COSTS)) {
-    const cost = clue === "country" ? calculateCountryCluePenalty(countryCandidateCount) : CLUE_COSTS[clue];
+    const cost = clue === "country" ? calculateCountryCluePenalty(countryClueConfoundScore) : CLUE_COSTS[clue];
     const btn = document.createElement("button");
     btn.type = "button";
     btn.textContent = `${clue} (−${cost} pts)`;

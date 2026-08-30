@@ -16,6 +16,18 @@
   --accent-soft: #5c7ba6;
   --accent-2: #9c6b24;
   --focus-ring: #24476f;
+
+  /* Depth instead of outlines — a warm-tinted shadow (not flat black),
+     matching the ink color, so elevated surfaces read as raised objects
+     on the paper rather than boxes drawn with a border. This is the main
+     fix for the page reading as dated: almost nothing below draws a
+     hard 1px border around itself anymore. */
+  --shadow-sm: 0 1px 2px rgba(28, 27, 23, 0.09);
+  --shadow-md: 0 1px 2px rgba(28, 27, 23, 0.06), 0 6px 16px rgba(28, 27, 23, 0.12);
+  --shadow-accent: 0 2px 8px rgba(36, 71, 111, 0.32);
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
 }
 
 /* Reset & base */
@@ -34,6 +46,35 @@ header, main, footer {
   max-width: 720px;
   margin: 0 auto;
   padding: 1rem 1.25rem;
+}
+
+/* The round screen alone gets a wider container, so its two-column
+   layout (#round-columns below) has room to sit side by side instead of
+   stacking the photo, clues, map, and guess controls into one long
+   scroll — that vertical pile-up was the actual complaint this fixes.
+   Every other screen (intro, reveal, results) stays at the narrower
+   720px reading width above; ID beats the type-selector group above it,
+   so this wins without needing !important. */
+#game-root.layout-round {
+  max-width: 1100px;
+}
+
+/* Stacked by default (mobile and any narrow viewport — unchanged from
+   before). At 860px+ there's room for the photo/clues and the guess
+   map/search to sit side by side, so a full round fits without
+   scrolling on anything laptop-sized or larger. */
+#round-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+@media (min-width: 860px) {
+  #round-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 1.75rem;
+  }
 }
 
 header {
@@ -70,42 +111,46 @@ h2:focus-visible {
 }
 
 /* Buttons: minimum comfortable touch target, visible focus state, no
-   reliance on color alone (also uses text/icons throughout). Primary
-   actions (advancing the game) get a filled accent treatment; smaller
-   in-context actions (clue requests, search results) stay outlined. */
+   reliance on color alone (also uses text/icons throughout). Filled, not
+   outlined — a border-only button is exactly the "generic form control"
+   look this page was reading as; a filled surface with a soft shadow
+   reads as an actual pressable object instead. Primary actions
+   (advancing the game) get the accent fill and a stronger shadow. */
 button {
   font: inherit;
   font-weight: 500;
   min-height: 44px;
   padding: 0.5rem 1.1rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 6px;
-  background: var(--surface);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
   color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
+  transition: background-color 0.12s ease, box-shadow 0.12s ease, transform 0.05s ease;
 }
-button:hover:not(:disabled) { background: var(--surface-2); }
-button:disabled { opacity: 0.5; cursor: not-allowed; }
+button:hover:not(:disabled) { background: var(--border); }
+button:active:not(:disabled) { transform: translateY(1px); box-shadow: none; }
+button:disabled { opacity: 0.55; cursor: not-allowed; box-shadow: none; }
 button:focus-visible {
   outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
 #start-btn, #submit-guess-btn, #next-btn, #replay-btn, #retry-btn {
-  border-color: var(--accent);
   background: var(--accent);
   color: #f7f5ee;
+  box-shadow: var(--shadow-accent);
 }
 #start-btn:hover:not(:disabled), #submit-guess-btn:hover:not(:disabled),
 #next-btn:hover:not(:disabled), #replay-btn:hover:not(:disabled), #retry-btn:hover:not(:disabled) {
   background: var(--accent-soft);
-  border-color: var(--accent-soft);
 }
 #start-btn:disabled, #submit-guess-btn:disabled, #next-btn:disabled,
 #replay-btn:disabled, #retry-btn:disabled {
   background: var(--surface-2);
-  border-color: var(--border-strong);
   color: var(--text-muted);
+  box-shadow: none;
   opacity: 1;
 }
 
@@ -125,10 +170,15 @@ button:focus-visible {
 }
 #clue-buttons button {
   font-size: 0.9rem;
-  padding: 0.4rem 0.85rem;
+  padding: 0.4rem 0.95rem;
   min-height: 38px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
 }
 
+/* Rounded-rectangle, not pill, and no shadow — these are settled facts
+   once revealed, not pressable objects, so they're deliberately quieter
+   than the pill-shaped clue buttons that produced them. */
 #revealed-clues {
   list-style: none;
   margin: 0.5rem 0 0;
@@ -142,9 +192,8 @@ button:focus-visible {
   align-items: center;
   gap: 0.4rem;
   padding: 0.3rem 0.7rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 5px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
 }
 #revealed-clues .clue-key {
@@ -159,15 +208,19 @@ button:focus-visible {
   font-weight: 500;
 }
 
+/* Recessed, not outlined — an inset shadow instead of a border reads as
+   a field you type INTO, distinct from the raised, shadowed buttons and
+   cards around it. */
 input[type="text"] {
   font: inherit;
   min-height: 44px;
   width: 100%;
   padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 6px;
+  border: none;
+  border-radius: var(--radius-sm);
   background: var(--surface);
   color: var(--text-primary);
+  box-shadow: inset 0 1px 3px rgba(28, 27, 23, 0.14);
 }
 input[type="text"]:focus-visible {
   outline: 3px solid var(--focus-ring);
@@ -176,12 +229,13 @@ input[type="text"]:focus-visible {
 input[type="text"]:disabled {
   background: var(--surface-2);
   color: var(--text-secondary); /* 4.9:1+ on --surface-2 — WCAG AA doesn't require disabled controls to meet contrast, but no reason not to */
+  box-shadow: none;
 }
 
 #guess-map, #reveal-map {
   height: 260px;
-  border: 1px solid var(--border-strong);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 #guess-map { margin: 0.5rem 0; }
@@ -194,13 +248,25 @@ input[type="text"]:disabled {
   max-height: 220px;
   overflow-y: auto;
 }
+/* Only when populated — an empty list has nothing to frame as a card.
+   overflow-y stays auto (a long result list must still scroll), so the
+   rounded-card look comes from rounding the first/last button directly
+   rather than clipping the whole list — clipping would also clip away
+   the scrollbar/cut off scrolled content. */
+#city-search-results:not(:empty) {
+  box-shadow: var(--shadow-md);
+}
 #city-search-results li { margin: 0; }
+#city-search-results li:first-child button { border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+#city-search-results li:last-child button { border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+#city-search-results li:only-child button { border-radius: var(--radius-sm); }
+#city-search-results li:not(:last-child) button { border-bottom: 1px solid var(--border); }
 #city-search-results button {
   width: 100%;
   text-align: left;
   border-radius: 0;
-  border-color: var(--border);
   background: var(--surface);
+  box-shadow: none;
 }
 
 figure {
@@ -221,8 +287,8 @@ figure {
   align-items: center;
   justify-content: center;
   background: var(--surface-2);
-  border: 1px solid var(--border-strong);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 #photo-frame img {
@@ -253,8 +319,8 @@ figure {
   align-items: center;
   justify-content: center;
   background: var(--surface-2);
-  border: 1px solid var(--border-strong);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 #reveal-thumb img {
@@ -304,8 +370,8 @@ figure {
   padding: 0.5rem 0.5rem 0.5rem 1.75rem;
   max-height: 40vh;
   overflow-y: auto;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   background: var(--surface);
 }
 #results-breakdown li {

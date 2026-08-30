@@ -21,6 +21,29 @@ test("a round that times out with no guess scores zero and reveals the answer", 
   await expect(page.locator("#next-btn")).toBeVisible();
 });
 
+test("a round that times out with a pin already placed (but not submitted) still counts the guess", async ({ page }) => {
+  test.slow(); // this test waits out a real ~30s round timer
+
+  await page.goto("/");
+  await page.click("#start-btn");
+  await expect(page.locator("#city-search-input")).toBeEnabled();
+
+  // Place a pin but deliberately never click "Submit guess" — the pin
+  // itself should still count once the clock runs out.
+  const canvas = page.locator("#guess-map canvas");
+  const box = await canvas.boundingBox();
+  await canvas.click({ position: { x: box.width * 0.4, y: box.height * 0.5 }, force: true });
+  await expect(page.locator("#submit-guess-btn")).toBeEnabled();
+
+  // "Round result", not "Time's up" — reaching this heading at all is
+  // most of the proof that the placed pin resolved as a real guess
+  // rather than a discarded timeout.
+  await expect(page.getByText("Round result")).toBeVisible({ timeout: ROUND_DURATION_MS + 5_000 });
+  await expect(page.locator("main")).toContainText(/You guessed near/);
+  await expect(page.locator("main")).toContainText(/Score this round: \d+ \/ 1000/);
+  await expect(page.locator("#next-btn")).toBeVisible();
+});
+
 test("a failed image load shows the error screen, and retry recovers to a playable round", async ({ page }) => {
   const consoleErrors = [];
   page.on("pageerror", (err) => consoleErrors.push(err.message));

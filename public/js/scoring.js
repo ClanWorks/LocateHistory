@@ -39,15 +39,33 @@ export const CLUE_COSTS = Object.freeze({
 // especially when the location was in a small country. Consider a
 // percentage drop." A flat 200-point country clue is nearly a giveaway
 // when the gazetteer has only one or two cities in that country, and
-// mild when it has a dozen. The cost scales inversely with how many
-// gazetteer places share the answer's country: fewer candidates (more
-// informative clue) costs more, more candidates (less informative)
-// costs less. COUNTRY_CLUE_REFERENCE_CANDIDATES is calibrated so a
-// "typical" country-size clue still costs close to the old flat 200.
+// mild when it has a dozen. The cost scales inversely with the answer's
+// confound score (see calculateConfoundScore) — fewer plausible
+// confounds (more informative clue) costs more, more confounds (less
+// informative) costs less. COUNTRY_CLUE_REFERENCE_SCORE is calibrated
+// so a "typical" location's clue still costs close to the old flat 200.
 export const COUNTRY_CLUE_BASE_COST = 200;
-export const COUNTRY_CLUE_REFERENCE_CANDIDATES = 4;
+export const COUNTRY_CLUE_REFERENCE_SCORE = 74;
 export const COUNTRY_CLUE_MIN_COST = 150;
 export const COUNTRY_CLUE_MAX_COST = 400;
+
+// calculateConfoundScore's ring weights: a nearby city is nearly as much
+// of a real confound as a same-country one, even across a border — a
+// small country with dense neighbors just outside it (Luxembourg, next
+// to Paris/Brussels/the Rhineland) isn't nearly as isolating a clue as
+// its own tiny same-country count alone would suggest. Weights halve at
+// each wider ring; a same-country city beyond 5000km (opposite ends of a
+// large country) counts for the least, since it's a weak confound. The
+// two outer rings (2000/5000km) exist specifically so a genuinely remote
+// place (Suva, Fiji; Timbuktu, Mali) still picks up *some* continental-
+// scale signal instead of falling off a cliff to a score of exactly 0 —
+// every one of the 706 gazetteer places now scores above zero.
+export const CONFOUND_RING_100KM_WEIGHT = 4;
+export const CONFOUND_RING_500KM_WEIGHT = 2;
+export const CONFOUND_RING_1000KM_WEIGHT = 1;
+export const CONFOUND_RING_2000KM_WEIGHT = 0.5;
+export const CONFOUND_RING_5000KM_WEIGHT = 0.25;
+export const CONFOUND_FAR_COUNTRY_WEIGHT = 0.125;
 
 function toRadians(deg) {
   return (deg * Math.PI) / 180;
@@ -74,19 +92,59 @@ export function haversineDistanceKm(a, b) {
 }
 
 /**
- * The country clue's real cost: inversely proportional to how many
- * gazetteer places share the answer's country, clamped to a sane range.
- * @param {number | null | undefined} candidateCount number of gazetteer
- *   entries sharing the round's answer country; null/undefined falls back
- *   to CLUE_COSTS.country (used when the caller doesn't have gazetteer
- *   context, e.g. a bare unit test).
+ * How many plausible confounds surround `place`: other gazetteer places
+ * within 100/500/1000/2000/5000km (each ring weighted down with
+ * distance, and mutually exclusive — a place 300km away counts once, in
+ * the 500km ring, not again in any wider one), plus same-country places
+ * beyond 5000km at a low weight. Higher score = more plausible nearby-
+ * or-compatriot answers = a country clue here reveals less and should
+ * cost less; every real gazetteer place scores above 0 (the two outer
+ * rings exist specifically so a genuinely remote place still picks up
+ * some continental-scale signal — see the comment above the weights).
+ * @param {{lat: number, lng: number, country: string, id?: string}} place
+ * @param {Array<{lat: number, lng: number, country: string, id?: string}>} gazetteer
  */
-export function calculateCountryCluePenalty(candidateCount) {
-  if (candidateCount == null) return CLUE_COSTS.country;
-  if (!Number.isInteger(candidateCount) || candidateCount < 1) {
-    throw new RangeError(`candidateCount must be a positive integer, got ${JSON.stringify(candidateCount)}`);
+export function calculateConfoundScore(place, gazetteer) {
+  let ring100 = 0;
+  let ring500 = 0;
+  let ring1000 = 0;
+  let ring2000 = 0;
+  let ring5000 = 0;
+  let farCountry = 0;
+  for (const other of gazetteer) {
+    if (other === place || (place.id !== undefined && other.id === place.id)) continue;
+    const d = haversineDistanceKm(place, other);
+    if (d <= 100) ring100++;
+    else if (d <= 500) ring500++;
+    else if (d <= 1000) ring1000++;
+    else if (d <= 2000) ring2000++;
+    else if (d <= 5000) ring5000++;
+    else if (other.country === place.country) farCountry++;
   }
-  const raw = COUNTRY_CLUE_BASE_COST * (COUNTRY_CLUE_REFERENCE_CANDIDATES / candidateCount);
+  return (
+    CONFOUND_RING_100KM_WEIGHT * ring100 +
+    CONFOUND_RING_500KM_WEIGHT * ring500 +
+    CONFOUND_RING_1000KM_WEIGHT * ring1000 +
+    CONFOUND_RING_2000KM_WEIGHT * ring2000 +
+    CONFOUND_RING_5000KM_WEIGHT * ring5000 +
+    CONFOUND_FAR_COUNTRY_WEIGHT * farCountry
+  );
+}
+
+/**
+ * The country clue's real cost: inversely proportional to the answer's
+ * confound score (calculateConfoundScore), clamped to a sane range.
+ * @param {number | null | undefined} confoundScore null/undefined falls
+ *   back to CLUE_COSTS.country (used when the caller doesn't have
+ *   gazetteer context, e.g. a bare unit test).
+ */
+export function calculateCountryCluePenalty(confoundScore) {
+  if (confoundScore == null) return CLUE_COSTS.country;
+  assertFiniteNumber(confoundScore, "confoundScore");
+  if (confoundScore < 0) {
+    throw new RangeError(`confoundScore must not be negative, got ${confoundScore}`);
+  }
+  const raw = COUNTRY_CLUE_BASE_COST * (COUNTRY_CLUE_REFERENCE_SCORE / (confoundScore + 1));
   return Math.round(Math.min(COUNTRY_CLUE_MAX_COST, Math.max(COUNTRY_CLUE_MIN_COST, raw)));
 }
 
@@ -97,7 +155,7 @@ export function calculateCountryCluePenalty(candidateCount) {
  * the caller.
  * @param {string[]} cluesUsed
  * @param {object} [options]
- * @param {number} [options.countryCandidateCount] see calculateCountryCluePenalty
+ * @param {number} [options.countryClueConfoundScore] see calculateCountryCluePenalty
  */
 export function calculateCluePenalty(cluesUsed, options = {}) {
   if (!Array.isArray(cluesUsed)) {
@@ -107,7 +165,7 @@ export function calculateCluePenalty(cluesUsed, options = {}) {
   let total = 0;
   for (const clue of unique) {
     if (clue === "country") {
-      total += calculateCountryCluePenalty(options.countryCandidateCount);
+      total += calculateCountryCluePenalty(options.countryClueConfoundScore);
     } else {
       total += CLUE_COSTS[clue] ?? 0;
     }
@@ -178,11 +236,11 @@ export function calculateTimeBonus(remainingMs, roundDurationMs = ROUND_DURATION
  * @param {number} [input.remainingMs] required unless timedOut
  * @param {string[]} [input.cluesUsed]
  * @param {number} [input.roundDurationMs]
- * @param {number} [input.countryCandidateCount] see calculateCountryCluePenalty
+ * @param {number} [input.countryClueConfoundScore] see calculateCountryCluePenalty
  * @returns {{ roundScore: number, accuracy: number, timeBonus: number, cluePenalty: number }}
  */
 export function calculateRoundScore(input) {
-  const cluePenalty = calculateCluePenalty(input.cluesUsed ?? [], { countryCandidateCount: input.countryCandidateCount });
+  const cluePenalty = calculateCluePenalty(input.cluesUsed ?? [], { countryClueConfoundScore: input.countryClueConfoundScore });
 
   if (input.timedOut) {
     return { roundScore: 0, accuracy: 0, timeBonus: 0, cluePenalty };

@@ -6,12 +6,14 @@ import {
   calculateTimeBonus,
   calculateCluePenalty,
   calculateCountryCluePenalty,
+  calculateConfoundScore,
   calculateRoundScore,
   ROUND_DURATION_MS,
   TIME_BONUS_GRACE_MS,
   ACCURACY_MAX,
   COUNTRY_CLUE_MIN_COST,
   COUNTRY_CLUE_MAX_COST,
+  COUNTRY_CLUE_REFERENCE_SCORE,
   DISTANCE_FULL_CREDIT_KM,
   DISTANCE_DECAY_KM,
 } from "../public/js/scoring.js";
@@ -133,32 +135,67 @@ describe("calculateTimeBonus", () => {
   });
 });
 
+describe("calculateConfoundScore", () => {
+  test("a place with nothing else nearby or in-country scores zero", () => {
+    const isolated = { id: "a", lat: 0, lng: 0, country: "Nowhereland" };
+    const farAway = { id: "b", lat: 45, lng: 90, country: "Elsewhere" };
+    assert.equal(calculateConfoundScore(isolated, [isolated, farAway]), 0);
+  });
+
+  test("a nearby place (within 100km) weighs more than an equally-distant same-country place beyond 5000km", () => {
+    const place = { id: "a", lat: 0, lng: 0, country: "A-land" };
+    const near = { id: "b", lat: 0.5, lng: 0, country: "Other" }; // ~55km away
+    const farCompatriot = { id: "c", lat: 50, lng: 0, country: "A-land" }; // ~5560km away, same country
+    const scoreWithNear = calculateConfoundScore(place, [place, near]);
+    const scoreWithFarCompatriot = calculateConfoundScore(place, [place, farCompatriot]);
+    assert.ok(scoreWithNear > scoreWithFarCompatriot, `expected a 100km neighbor (${scoreWithNear}) to outweigh a same-country place 5560km away (${scoreWithFarCompatriot})`);
+  });
+
+  test("a remote place with nothing within 1000km still scores above zero if something is within 5000km (M6: no cliff to zero for e.g. Fiji)", () => {
+    const place = { id: "a", lat: 0, lng: 0, country: "Remoteland" };
+    const distant = { id: "b", lat: 25, lng: 0, country: "Other" }; // ~2780km away — inside the 2000-5000km ring, not same country
+    const score = calculateConfoundScore(place, [place, distant]);
+    assert.ok(score > 0, `expected a 2780km neighbor to still contribute something, got ${score}`);
+  });
+
+  test("excludes the place itself from its own gazetteer scan", () => {
+    const place = { id: "a", lat: 0, lng: 0, country: "A-land" };
+    assert.equal(calculateConfoundScore(place, [place]), 0);
+  });
+});
+
 describe("calculateCountryCluePenalty", () => {
-  test("falls back to the flat reference cost when candidateCount is unknown", () => {
+  test("falls back to the flat reference cost when confoundScore is unknown", () => {
     assert.equal(calculateCountryCluePenalty(null), 200);
     assert.equal(calculateCountryCluePenalty(undefined), 200);
   });
 
-  test("costs more when the country has few gazetteer candidates (M5: small-country giveaway)", () => {
-    assert.equal(calculateCountryCluePenalty(1), COUNTRY_CLUE_MAX_COST);
-    assert.equal(calculateCountryCluePenalty(2), COUNTRY_CLUE_MAX_COST);
+  test("costs the most for a fully isolated place — zero confounds (M5: small-country giveaway)", () => {
+    assert.equal(calculateCountryCluePenalty(0), COUNTRY_CLUE_MAX_COST);
   });
 
-  test("costs less when the country has many gazetteer candidates", () => {
-    assert.equal(calculateCountryCluePenalty(20), COUNTRY_CLUE_MIN_COST);
+  test("costs close to the base amount right at the reference score", () => {
+    // Not exactly 200 — the formula divides by (score + 1), not score, to
+    // stay finite at score 0 — but close, which is all the constant is
+    // calibrated for (see the comment above COUNTRY_CLUE_REFERENCE_SCORE).
+    assertClose(calculateCountryCluePenalty(COUNTRY_CLUE_REFERENCE_SCORE), 200, 10);
+  });
+
+  test("costs less the more confounds surround the place", () => {
+    assert.equal(calculateCountryCluePenalty(100), COUNTRY_CLUE_MIN_COST);
   });
 
   test("is clamped, never below MIN or above MAX", () => {
-    for (const n of [1, 2, 3, 4, 5, 8, 12, 50, 1000]) {
+    for (const n of [0, 1, 2, 3, 4, 5, 8, 12, 50, 1000]) {
       const cost = calculateCountryCluePenalty(n);
       assert.ok(cost >= COUNTRY_CLUE_MIN_COST && cost <= COUNTRY_CLUE_MAX_COST, `cost ${cost} for n=${n} out of range`);
     }
   });
 
-  test("rejects a non-positive-integer candidateCount", () => {
-    assert.throws(() => calculateCountryCluePenalty(0), RangeError);
+  test("rejects a negative or non-finite confoundScore", () => {
     assert.throws(() => calculateCountryCluePenalty(-1), RangeError);
-    assert.throws(() => calculateCountryCluePenalty(1.5), RangeError);
+    assert.throws(() => calculateCountryCluePenalty(NaN), TypeError);
+    assert.throws(() => calculateCountryCluePenalty(Infinity), TypeError);
   });
 });
 
@@ -179,9 +216,9 @@ describe("calculateCluePenalty", () => {
     assert.equal(calculateCluePenalty(["not-a-real-clue"]), 0);
   });
 
-  test("threads countryCandidateCount through to the country clue's real cost", () => {
-    assert.equal(calculateCluePenalty(["country"], { countryCandidateCount: 1 }), COUNTRY_CLUE_MAX_COST);
-    assert.equal(calculateCluePenalty(["country"], { countryCandidateCount: 20 }), COUNTRY_CLUE_MIN_COST);
+  test("threads countryClueConfoundScore through to the country clue's real cost", () => {
+    assert.equal(calculateCluePenalty(["country"], { countryClueConfoundScore: 0 }), COUNTRY_CLUE_MAX_COST);
+    assert.equal(calculateCluePenalty(["country"], { countryClueConfoundScore: 100 }), COUNTRY_CLUE_MIN_COST);
   });
 
   test("rejects a non-array cluesUsed", () => {
@@ -219,9 +256,9 @@ describe("calculateRoundScore", () => {
     assert.ok(result.timeBonus < 20, `expected a near-zero time bonus for a near-zero-accuracy guess, got ${result.timeBonus}`);
   });
 
-  test("passes countryCandidateCount through to the country clue's real cost", () => {
-    const rare = calculateRoundScore({ timedOut: false, distanceKm: 0, remainingMs: 0, cluesUsed: ["country"], countryCandidateCount: 1 });
-    const common = calculateRoundScore({ timedOut: false, distanceKm: 0, remainingMs: 0, cluesUsed: ["country"], countryCandidateCount: 20 });
+  test("passes countryClueConfoundScore through to the country clue's real cost", () => {
+    const rare = calculateRoundScore({ timedOut: false, distanceKm: 0, remainingMs: 0, cluesUsed: ["country"], countryClueConfoundScore: 0 });
+    const common = calculateRoundScore({ timedOut: false, distanceKm: 0, remainingMs: 0, cluesUsed: ["country"], countryClueConfoundScore: 100 });
     assert.equal(rare.cluePenalty, COUNTRY_CLUE_MAX_COST);
     assert.equal(common.cluePenalty, COUNTRY_CLUE_MIN_COST);
   });
