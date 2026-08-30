@@ -1,5 +1,7 @@
 # PhotoLocation
 
+**[Play it: photolocation.pages.dev](https://photolocation.pages.dev)**
+
 A GeoGuessr-style game: you're shown a historical photograph, painting,
 or drawing and have to guess which city it depicts. Ten rounds per
 session, three optional clues (region, era, country — each costs
