@@ -12,6 +12,8 @@ import {
   ACCURACY_MAX,
   COUNTRY_CLUE_MIN_COST,
   COUNTRY_CLUE_MAX_COST,
+  DISTANCE_FULL_CREDIT_KM,
+  DISTANCE_DECAY_KM,
 } from "../public/js/scoring.js";
 
 function assertClose(actual, expected, tolerance, message) {
@@ -50,12 +52,16 @@ describe("calculateAccuracy", () => {
   });
 
   test("decays just past the boundary", () => {
-    const value = calculateAccuracy(11);
-    assert.ok(value < 800 && value > 790, `expected a small decay just past 10km, got ${value}`);
+    // The GeoGuessr-calibrated decay constant (~2,000km) is gentle enough
+    // that 1km past the boundary rounds back to 800 — this checks a
+    // distance where the decay is actually detectable instead.
+    const value = calculateAccuracy(DISTANCE_FULL_CREDIT_KM + 100);
+    assert.ok(value < 800 && value > 700, `expected a small decay 100km past the boundary, got ${value}`);
   });
 
-  test("decays substantially by 760km (~1/e)", () => {
-    assertClose(calculateAccuracy(760), 294, 2);
+  test("decays to ~1/e of max one decay-constant past the full-credit boundary", () => {
+    const distance = DISTANCE_FULL_CREDIT_KM + DISTANCE_DECAY_KM;
+    assertClose(calculateAccuracy(distance), ACCURACY_MAX / Math.E, 2);
   });
 
   test("never goes negative for very large distances", () => {

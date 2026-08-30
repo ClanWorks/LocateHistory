@@ -7,8 +7,16 @@ export const MAX_ROUND_SCORE = 1000;
 export const ACCURACY_MAX = 800;
 export const TIME_BONUS_MAX = 200;
 export const DISTANCE_FULL_CREDIT_KM = 10;
-export const DISTANCE_DECAY_KM = 750;
 export const EARTH_RADIUS_KM = 6371;
+// Calibrated to mimic real GeoGuessr's own world-map curve, not picked
+// arbitrarily: GeoGuessr's documented formula is score = max * exp(-10*d/D),
+// where D is the diagonal of the map's bounding box — for a full world
+// map that's essentially the antipodal distance, D = pi * EARTH_RADIUS_KM
+// ~= 20,015 km, giving a decay constant (D/10) of ~2,000 km. The
+// previous value (750) was several times steeper than that — a guess
+// 2,000 km off (e.g. the wrong country in the same region) scored only
+// ~56/800 instead of GeoGuessr's own ~296/800 for an equivalent miss.
+export const DISTANCE_DECAY_KM = Math.round((Math.PI * EARTH_RADIUS_KM) / 10);
 
 // M5 play-test (PLAYTEST.md, session 2): "The time penalty kicks in
 // instantly, this means a perfect score is not possible, there should be

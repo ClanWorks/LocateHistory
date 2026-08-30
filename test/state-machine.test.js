@@ -102,36 +102,39 @@ describe("playing", () => {
 
   test("a guess moves to resolving with the guess recorded", () => {
     const playing = freshPlayingState();
-    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
     assert.equal(resolving.status, Status.RESOLVING);
-    assert.equal(resolving.context.currentRound.guessPlaceId, "paris");
+    assert.equal(resolving.context.currentRound.guessLat, 48.8566);
+    assert.equal(resolving.context.currentRound.guessLng, 2.3522);
     assert.equal(resolving.context.currentRound.reason, "guess");
   });
 
-  test("a guess with no guessPlaceId throws instead of silently locking in null", () => {
+  test("a guess with no guessLat/guessLng throws instead of silently locking in null", () => {
     const playing = freshPlayingState();
     assert.throws(() => reduce(playing, { type: "GUESS_SUBMITTED", payload: {} }));
-    assert.throws(() => reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "" } }));
+    assert.throws(() => reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566 } }));
+    assert.throws(() => reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: NaN, guessLng: 2.3522 } }));
   });
 
   test("a timer expiry moves to resolving with no guess and reason timeout", () => {
     const playing = freshPlayingState();
     const resolving = reduce(playing, { type: "TIMER_EXPIRED" });
     assert.equal(resolving.status, Status.RESOLVING);
-    assert.equal(resolving.context.currentRound.guessPlaceId, null);
+    assert.equal(resolving.context.currentRound.guessLat, null);
+    assert.equal(resolving.context.currentRound.guessLng, null);
     assert.equal(resolving.context.currentRound.reason, "timeout");
   });
 
   test("double-submitting a guess after resolving has already started is a no-op", () => {
     const playing = freshPlayingState();
-    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
-    const again = reduce(resolving, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "london" } });
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
+    const again = reduce(resolving, { type: "GUESS_SUBMITTED", payload: { guessLat: 51.5074, guessLng: -0.1278 } });
     assert.equal(again, resolving, "a second guess must not overwrite the frozen round snapshot");
   });
 
   test("a late timer expiry after a guess was already submitted is a no-op", () => {
     const playing = freshPlayingState();
-    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
     const afterTimeout = reduce(resolving, { type: "TIMER_EXPIRED" });
     assert.equal(afterTimeout, resolving, "timeout firing after a guess was locked in must not flip the outcome");
   });
@@ -140,7 +143,7 @@ describe("playing", () => {
 describe("resolving -> answered/timed_out -> results", () => {
   test("RESOLUTION_COMPUTED after a guess produces an answered round", () => {
     const playing = freshPlayingState();
-    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
     const answered = reduce(resolving, {
       type: "RESOLUTION_COMPUTED",
       payload: { roundScore: 950, accuracy: 800, timeBonus: 150, cluePenalty: 0, distanceKm: 3 },
@@ -154,7 +157,7 @@ describe("resolving -> answered/timed_out -> results", () => {
 
   test("RESOLUTION_COMPUTED rejects a non-numeric score payload instead of storing garbage", () => {
     const playing = freshPlayingState();
-    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
     assert.throws(() => reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: undefined, accuracy: 800, timeBonus: 150, cluePenalty: 0 } }));
     assert.throws(() => reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: NaN, accuracy: 800, timeBonus: 150, cluePenalty: 0 } }));
     assert.throws(() => reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: 950, accuracy: 800, timeBonus: 150, cluePenalty: 0, distanceKm: "close" } }));
@@ -177,7 +180,7 @@ describe("resolving -> answered/timed_out -> results", () => {
 
   test("ROUND_ADVANCED moves to the next round", () => {
     const playing = freshPlayingState();
-    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
     const answered = reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: 100, accuracy: 100, timeBonus: 0, cluePenalty: 0, distanceKm: 500 } });
     const nextRound = reduce(answered, { type: "ROUND_ADVANCED" });
     assert.equal(nextRound.status, Status.PLAYING);
@@ -188,7 +191,7 @@ describe("resolving -> answered/timed_out -> results", () => {
   test("ROUND_ADVANCED after the final round goes to results", () => {
     let state = freshPlayingState();
     for (let i = 0; i < REQUIRED_ROUNDS; i++) {
-      const resolving = reduce(state, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+      const resolving = reduce(state, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
       const answered = reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: 10, accuracy: 10, timeBonus: 0, cluePenalty: 0, distanceKm: 9000 } });
       state = reduce(answered, { type: "ROUND_ADVANCED" });
     }
@@ -241,7 +244,7 @@ describe("error recovery", () => {
     // straight to playing would leave currentRound null, and the next
     // CLUE_REQUESTED or GUESS_SUBMITTED would crash trying to read it.
     const playing = freshPlayingState();
-    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
     const answered = reduce(resolving, { type: "RESOLUTION_COMPUTED", payload: { roundScore: 950, accuracy: 800, timeBonus: 150, cluePenalty: 0, distanceKm: 3 } });
     const errored = reduce(answered, { type: "ERROR_OCCURRED", payload: { reason: "map_load_failed" } });
     assert.equal(errored.context.error.recoverTo, Status.ANSWERED);
@@ -266,17 +269,18 @@ describe("error recovery", () => {
 
   test("an error while resolving recovers to playing with the in-flight guess cleared for resubmission", () => {
     const playing = freshPlayingState();
-    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "paris" } });
+    const resolving = reduce(playing, { type: "GUESS_SUBMITTED", payload: { guessLat: 48.8566, guessLng: 2.3522 } });
     const errored = reduce(resolving, { type: "ERROR_OCCURRED", payload: { reason: "scoring_failed" } });
     assert.equal(errored.context.error.recoverTo, Status.PLAYING);
 
     const retried = reduce(errored, { type: "RETRY" });
     assert.equal(retried.status, Status.PLAYING);
-    assert.equal(retried.context.currentRound.guessPlaceId, null, "stale guess must be cleared, not resurrected");
+    assert.equal(retried.context.currentRound.guessLat, null, "stale guess must be cleared, not resurrected");
+    assert.equal(retried.context.currentRound.guessLng, null, "stale guess must be cleared, not resurrected");
     assert.equal(retried.context.currentRound.reason, null);
 
     // A fresh guess after recovery must work normally.
-    const resolvingAgain = reduce(retried, { type: "GUESS_SUBMITTED", payload: { guessPlaceId: "london" } });
+    const resolvingAgain = reduce(retried, { type: "GUESS_SUBMITTED", payload: { guessLat: 51.5074, guessLng: -0.1278 } });
     assert.equal(resolvingAgain.status, Status.RESOLVING);
   });
 });

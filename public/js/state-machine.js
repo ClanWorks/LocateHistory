@@ -18,7 +18,7 @@
 // TIMER_EXPIRED after a guess already resolved the round, has no effect
 // the second time because the status has already moved on.
 
-export const REQUIRED_ROUNDS = 10;
+export const REQUIRED_ROUNDS = 5;
 
 export const Status = Object.freeze({
   BOOT: "boot",
@@ -68,12 +68,6 @@ const ALLOWED_RECOVERY_TARGETS = Object.freeze([
   Status.TIMED_OUT,
   Status.RESULTS,
 ]);
-
-function assertNonEmptyString(value, label) {
-  if (typeof value !== "string" || value.length === 0) {
-    throw new TypeError(`${label} must be a non-empty string, got ${JSON.stringify(value)}`);
-  }
-}
 
 function assertFiniteNumber(value, label) {
   if (typeof value !== "number" || !Number.isFinite(value)) {
@@ -157,7 +151,7 @@ export function reduce(state, event) {
         roundItemIds: Object.freeze([...roundItemIds]),
         roundIndex: 0,
         roundResults: Object.freeze([]),
-        currentRound: Object.freeze({ itemId: roundItemIds[0], cluesUsed: Object.freeze([]), guessPlaceId: null, reason: null }),
+        currentRound: Object.freeze({ itemId: roundItemIds[0], cluesUsed: Object.freeze([]), guessLat: null, guessLng: null, reason: null }),
       });
     }
 
@@ -181,10 +175,11 @@ export function reduce(state, event) {
 
     case "GUESS_SUBMITTED": {
       if (state.status !== Status.PLAYING) return state;
-      assertNonEmptyString(payload.guessPlaceId, "GUESS_SUBMITTED payload.guessPlaceId");
+      assertFiniteNumber(payload.guessLat, "GUESS_SUBMITTED payload.guessLat");
+      assertFiniteNumber(payload.guessLng, "GUESS_SUBMITTED payload.guessLng");
       const current = state.context.currentRound;
       return toStatus(state, Status.RESOLVING, {
-        currentRound: Object.freeze({ ...current, guessPlaceId: payload.guessPlaceId, reason: "guess" }),
+        currentRound: Object.freeze({ ...current, guessLat: payload.guessLat, guessLng: payload.guessLng, reason: "guess" }),
       });
     }
 
@@ -192,7 +187,7 @@ export function reduce(state, event) {
       if (state.status !== Status.PLAYING) return state;
       const current = state.context.currentRound;
       return toStatus(state, Status.RESOLVING, {
-        currentRound: Object.freeze({ ...current, guessPlaceId: null, reason: "timeout" }),
+        currentRound: Object.freeze({ ...current, guessLat: null, guessLng: null, reason: "timeout" }),
       });
     }
 
@@ -209,7 +204,8 @@ export function reduce(state, event) {
       const completed = Object.freeze({
         itemId: current.itemId,
         cluesUsed: current.cluesUsed,
-        guessPlaceId: current.guessPlaceId,
+        guessLat: current.guessLat,
+        guessLng: current.guessLng,
         reason: current.reason,
         roundScore: payload.roundScore,
         accuracy: payload.accuracy,
@@ -235,7 +231,8 @@ export function reduce(state, event) {
         currentRound: Object.freeze({
           itemId: state.context.roundItemIds[nextIndex],
           cluesUsed: Object.freeze([]),
-          guessPlaceId: null,
+          guessLat: null,
+          guessLng: null,
           reason: null,
         }),
       });
@@ -258,7 +255,7 @@ export function reduce(state, event) {
       // half-resolved round sitting in context.
       const contextPatch = { error: null };
       if (target === Status.PLAYING && state.context.currentRound) {
-        contextPatch.currentRound = Object.freeze({ ...state.context.currentRound, guessPlaceId: null, reason: null });
+        contextPatch.currentRound = Object.freeze({ ...state.context.currentRound, guessLat: null, guessLng: null, reason: null });
       }
       return toStatus(withContext(state, contextPatch), target);
     }

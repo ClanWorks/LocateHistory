@@ -52,7 +52,7 @@ test("a full session completes from intro through results, replay, and best-scor
   expect(Number(bestScore)).toBeGreaterThan(0);
 
   await page.click("#replay-btn");
-  await expect(page.locator("h2")).toHaveText("Round 1 of 10");
+  await expect(page.locator("h2")).toHaveText(`Round 1 of ${REQUIRED_ROUNDS}`);
   await expect(page.locator("#round-image")).toBeVisible();
 
   expect(consoleErrors, `unexpected console errors: ${consoleErrors.join("; ")}`).toEqual([]);

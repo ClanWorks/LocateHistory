@@ -15,7 +15,7 @@ const fixturesOriginalsDir = path.join(__dirname, "fixtures", "originals");
 const buildScript = path.join(repoRoot, "scripts", "build-content.js");
 
 // Fixtures intentionally keep to a small, fast 2-approved-item set — well
-// below production's REQUIRED_ROUNDS (10) minimum. Every call below opts
+// below production's REQUIRED_ROUNDS (5) minimum. Every call below opts
 // into that explicitly via minApprovedItems, which is exactly the
 // fixture/test-mode escape hatch: production (the CLI's default) never
 // gets to skip the minimum, only tests that say so on purpose. Likewise
@@ -125,7 +125,7 @@ describe("buildManifest (fixture content)", () => {
 
   test("the production default requires REQUIRED_ROUNDS approved items, not just whatever exists", async () => {
     // No minApprovedItems override here — this is the CLI's real default.
-    await assert.rejects(() => buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minDimensionPx: FIXTURE_MIN_DIMENSION }), /need at least 10/);
+    await assert.rejects(() => buildManifest({ sourceDir: fixturesSourceDir, assetsOutDir, minDimensionPx: FIXTURE_MIN_DIMENSION }), /need at least 5/);
   });
 
   test("rejects an image below the minimum dimension", async () => {
