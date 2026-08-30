@@ -481,6 +481,12 @@ figure {
    the accessibility tree as the screen's orienting cue for keyboard/
    screen-reader users, but isn't rendered — the score itself already
    makes the screen's purpose obvious to sighted players. */
+/* Centered, matching the columns below (photo caption, map legend) —
+   the whole reveal screen reads as one centered composition instead of
+   a left-aligned block sitting on top of centered content. */
+.score-hero, .score-breakdown, .reveal-verdict {
+  text-align: center;
+}
 .score-hero {
   margin: 0 0 0.3rem;
 }
