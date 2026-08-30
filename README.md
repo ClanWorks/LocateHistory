@@ -1,6 +1,6 @@
-# PhotoLocation
+# LocateHistory
 
-**[Play it: photolocation.pages.dev](https://photolocation.pages.dev)**
+**[Play it: photolocation.pages.dev](https://photolocation.pages.dev)** (moving to locatehistory.com)
 
 A GeoGuessr-style game: you're shown a historical photograph, painting,
 or drawing and have to guess which city it depicts. Ten rounds per
