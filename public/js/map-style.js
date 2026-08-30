@@ -28,18 +28,20 @@
 
 // Shared between guess-map.js (the click-to-guess round map) and
 // reveal-map.js (the round-result map) so both render as the same
-// object. Matches the colors the old SVG pins used (.pin--answer /
-// .pin--guess in styles.css), kept for continuity with the legend
-// swatches, which still use plain CSS color, not MapLibre.
+// object. A dark map to match the dark "light table" identity — water
+// reads as the room's darkness, land as a lit-from-below tan surface,
+// so the map itself feels like part of the same lit-object language as
+// the photo frame rather than a bright rectangle dropped onto a dark
+// page.
 export const PALETTE = {
-  land: "#e8e4d8",
-  water: "#cfe0ea",
-  border: "#9aa4ab",
-  labelText: "#4a453a",
-  labelHalo: "#f7f5f0",
+  land: "#3a3226",
+  water: "#12171f",
+  border: "#6b5c42",
+  labelText: "#d8cbb0",
+  labelHalo: "#12171f",
 };
-export const ANSWER_MARKER_COLOR = "#1a7f37";
-export const GUESS_MARKER_COLOR = "#b35900";
+export const ANSWER_MARKER_COLOR = "#2fae5a";
+export const GUESS_MARKER_COLOR = "#e8a23c";
 
 /** @param {{ land: string, water: string, border: string, labelText: string, labelHalo: string }} palette */
 export function buildMapStyle(palette) {

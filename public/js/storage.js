@@ -39,18 +39,31 @@ export function setHasSeenIntro(storage) {
   safeStorage(storage).setItem(HAS_SEEN_INTRO_KEY, "true");
 }
 
-export function getBestScore(storage) {
+/**
+ * @param {Storage} [storage]
+ * @param {number} [maxPossibleScore] the current rules' actual ceiling
+ *   (REQUIRED_ROUNDS * MAX_ROUND_SCORE). A stored value above it can only
+ *   be left over from a since-changed rule set (e.g. this project went
+ *   from 10 rounds to 5, roughly halving the real maximum) — displaying
+ *   it as someone's "best score" would show an impossible, permanently
+ *   unbeatable number instead of a real one. Optional so callers without
+ *   rules context (e.g. a bare unit test) still get the raw stored value.
+ */
+export function getBestScore(storage, maxPossibleScore) {
   const raw = safeStorage(storage).getItem(BEST_SCORE_KEY);
   const parsed = raw === null ? null : Number(raw);
-  return Number.isFinite(parsed) ? parsed : null;
+  if (!Number.isFinite(parsed)) return null;
+  if (maxPossibleScore !== undefined && parsed > maxPossibleScore) return null;
+  return parsed;
 }
 
 /**
+ * @param {number} [maxPossibleScore] see getBestScore
  * @returns {{ bestScore: number, isNewBest: boolean }}
  */
-export function recordSessionScore(score, storage) {
+export function recordSessionScore(score, storage, maxPossibleScore) {
   const store = safeStorage(storage);
-  const current = getBestScore(storage);
+  const current = getBestScore(storage, maxPossibleScore);
   if (current === null || score > current) {
     store.setItem(BEST_SCORE_KEY, String(score));
     return { bestScore: score, isNewBest: true };

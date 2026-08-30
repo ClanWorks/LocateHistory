@@ -1,30 +1,44 @@
-/* Design tokens — an archive/light-table palette (warm paper, cyanotype
-   blue, a little album-print gold) grounded in the subject: historical
-   photography, catalogued and mapped. Same language as the project's
-   milestone report, reused here for a coherent brand rather than two
-   unrelated looks. Light-only for now — see plan.md interface to-do. */
+/* Design tokens — "the light table": a dim archive room where the one
+   thing actually lit is the photograph on the table in front of you.
+   Committing to dark rather than the earlier warm-paper look was a
+   deliberate swing, not a coat of paint — real cyanotype prints (the
+   accent's own namesake) are a vivid, saturated Prussian blue, not the
+   muted navy the paper-toned version used; a dark ground is what lets
+   that color, and the photo itself, actually read as *lit* rather than
+   just "the two least-beige things on the page." Elevation on a dark
+   ground mostly comes from surfaces getting lighter as they get closer
+   (--surface, --surface-2, --surface-3), the way real dark UIs do it —
+   a black shadow is invisible on a near-black page. The one thing that
+   gets an actual glow is the photo frame itself: everything else stays
+   quiet so that one glow reads as deliberate, not decorative. */
 :root {
-  --bg: #e4e1d6;
-  --surface: #efede3;
-  --surface-2: #dad6c7;
-  --border: #c7c3b2;
-  --border-strong: #a9a48f;
-  --text-primary: #1c1b17;
-  --text-secondary: #57543a;
-  --text-muted: #8b8672;
-  --accent: #24476f;
-  --accent-soft: #5c7ba6;
-  --accent-2: #9c6b24;
-  --focus-ring: #24476f;
+  --bg: #16130f;
+  --surface: #211c16;
+  --surface-2: #2c251d;
+  --surface-3: #3a3226;
+  --border: #423a2c;
+  --border-strong: #5c5140;
+  --text-primary: #f2ead9;
+  --text-secondary: #c2b7a0;
+  --text-muted: #8c8168;
+  /* Darkened from the first pass specifically so white-ish button text
+     sitting on top of it clears 4.5:1 (verified, not eyeballed — see
+     CURATION_NOTES-style reasoning: brighter blues read as more "vivid"
+     but paradoxically fail contrast against light text sooner, since
+     they're closer in luminance to it). --accent-soft is the one used
+     as *text* (links) against the dark background instead. */
+  --accent: #2a5fd0;
+  --accent-soft: #6b9bf2;
+  --accent-2: #e8a23c;
+  --focus-ring: #6b9bf2;
 
-  /* Depth instead of outlines — a warm-tinted shadow (not flat black),
-     matching the ink color, so elevated surfaces read as raised objects
-     on the paper rather than boxes drawn with a border. This is the main
-     fix for the page reading as dated: almost nothing below draws a
-     hard 1px border around itself anymore. */
-  --shadow-sm: 0 1px 2px rgba(28, 27, 23, 0.09);
-  --shadow-md: 0 1px 2px rgba(28, 27, 23, 0.06), 0 6px 16px rgba(28, 27, 23, 0.12);
-  --shadow-accent: 0 2px 8px rgba(36, 71, 111, 0.32);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.3), 0 10px 28px rgba(0, 0, 0, 0.4);
+  --shadow-accent: 0 3px 14px rgba(42, 95, 208, 0.45);
+  /* The photo frame's signature: a warm glow (the "lamp") plus a cool
+     blue undertone (the cyanotype accent, everywhere else in the UI) —
+     the one place the two accent colors meet at once. */
+  --glow-photo: 0 0 1px rgba(232, 162, 60, 0.4), 0 12px 20px rgba(0, 0, 0, 0.5), 0 0 90px -10px rgba(232, 162, 60, 0.35), 0 0 140px -20px rgba(42, 95, 208, 0.3);
   --radius-sm: 7px;
   --radius-md: 10px;
   --radius-pill: 999px;
@@ -32,13 +46,43 @@
 
 /* Reset & base */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+/* Standard screen-reader-only pattern: kept in the accessibility tree
+   (and as a real focus target) but removed from sighted view. Used for
+   heading labels — "Round result", "Results" — whose content is
+   already obvious on screen from the score itself, but that
+   screen-reader users and keyboard focus still benefit from as an
+   orienting cue when a new screen renders. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Two guards against a white flash at the page edges on a dark theme —
+   the browser's own default background is light, so anything that
+   reveals it even briefly (a margin-collapse gap, or the elastic
+   overscroll "rubber-band" bounce past the top/bottom on trackpad
+   scroll) reads as a jarring visible bug against --bg. html's own
+   background matches the page's in case anything still peeks through;
+   overscroll-behavior stops the bounce from happening in the first
+   place. */
+html {
+  background: var(--bg);
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+}
 body {
   margin: 0;
   font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
   color: var(--text-primary);
   background: var(--bg);
+  overscroll-behavior: none;
   overflow-x: hidden;
 }
 
@@ -59,6 +103,15 @@ header, main, footer {
   max-width: 1100px;
 }
 
+/* The reveal screen gets a middling-width container too — enough for
+   the photo and map to sit side by side (#reveal-columns below)
+   without the photo shrinking back down to a thumbnail, but not as
+   wide as the round screen, which also has to fit a search box and
+   clue buttons. */
+#game-root.layout-reveal {
+  max-width: 900px;
+}
+
 /* Stacked by default (mobile and any narrow viewport — unchanged from
    before). At 860px+ there's room for the photo/clues and the guess
    map/search to sit side by side, so a full round fits without
@@ -77,7 +130,42 @@ header, main, footer {
   }
 }
 
+/* Same stack-then-grid pattern as #round-columns, just at a lower
+   breakpoint — the reveal screen's two columns (photo+details, map)
+   don't need to fit a search box, so they're comfortable side by side
+   sooner. The photo column gets more than half the width: the photo
+   itself, plus its title/context/attribution, is the actual point of
+   the game, and the map only needs enough room for two pins. */
+#reveal-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (min-width: 700px) {
+  #reveal-columns {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+    gap: 1.75rem;
+  }
+}
+/* Centered below both columns, not left-aligned under whichever column
+   happens to be taller (the photo column usually is) — a shared,
+   centered action reads as belonging to the whole layout instead of
+   looking stuck to one side of it. Same treatment as #replay-btn. */
+#next-btn {
+  display: block;
+  margin: 1.75rem auto 0;
+}
+
+/* Centered deliberately, not left by default: the round screen's own
+   content spans a wider container than the header does (see
+   #game-root.layout-round), so a left-aligned wordmark just sits at the
+   edge of a column nothing else lines up with. Both containers share
+   the same page center regardless of their own width, so centering here
+   keeps the title visually anchored to the content below it either way. */
 header {
+  text-align: center;
   border-bottom: 1px solid var(--border-strong);
   padding-bottom: 0.75rem;
 }
@@ -85,8 +173,8 @@ header h1 {
   font-family: "Fraunces", Georgia, serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: 1.65rem;
-  letter-spacing: -0.01em;
+  font-size: 2.3rem;
+  letter-spacing: -0.015em;
   margin: 0.5rem 0;
   color: var(--text-primary);
 }
@@ -101,7 +189,7 @@ h2 {
   font-family: "Fraunces", Georgia, serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.55rem;
   color: var(--text-primary);
   outline: none; /* it's a programmatic focus target, not a visible focus ring on click */
 }
@@ -129,7 +217,7 @@ button {
   cursor: pointer;
   transition: background-color 0.12s ease, box-shadow 0.12s ease, transform 0.05s ease;
 }
-button:hover:not(:disabled) { background: var(--border); }
+button:hover:not(:disabled) { background: var(--surface-3); }
 button:active:not(:disabled) { transform: translateY(1px); box-shadow: none; }
 button:disabled { opacity: 0.55; cursor: not-allowed; box-shadow: none; }
 button:focus-visible {
@@ -220,7 +308,7 @@ input[type="text"] {
   border-radius: var(--radius-sm);
   background: var(--surface);
   color: var(--text-primary);
-  box-shadow: inset 0 1px 3px rgba(28, 27, 23, 0.14);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 input[type="text"]:focus-visible {
   outline: 3px solid var(--focus-ring);
@@ -288,7 +376,7 @@ figure {
   justify-content: center;
   background: var(--surface-2);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--glow-photo);
   overflow: hidden;
 }
 #photo-frame img {
@@ -310,17 +398,21 @@ figure {
   color: var(--text-muted);
 }
 
+/* The historical photo is the actual point of the game, so on the
+   reveal screen it gets the same full-width, same-height-as-the-map,
+   glowing "lit" treatment as #photo-frame during the round itself —
+   not demoted to a small thumbnail underneath the map, which is what
+   this used to be. */
 #reveal-thumb {
-  height: 140px;
-  width: fit-content;
-  max-width: 100%;
+  height: 260px;
+  width: 100%;
   margin: 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--surface-2);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glow-photo);
   overflow: hidden;
 }
 #reveal-thumb img {
@@ -331,12 +423,29 @@ figure {
   height: auto;
   object-fit: contain;
 }
+/* Centered, matching the map column's centered legend below — with the
+   photo column running noticeably taller than the map column, matching
+   captions on both sides is what keeps the two feel like a deliberate
+   pair instead of one side just trailing off past the other. */
+#reveal-photo-col {
+  text-align: center;
+}
+.reveal-photo-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0.75rem 0 0.35rem;
+}
+.reveal-photo-context {
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem;
+}
 
 .attribution {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
-.attribution a { color: var(--accent); }
+.attribution a { color: var(--accent-soft); }
 
 #reveal-map-legend {
   list-style: none;
@@ -344,6 +453,7 @@ figure {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.25rem 1rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
@@ -358,16 +468,114 @@ figure {
   margin-right: 0.35rem;
   vertical-align: middle;
 }
-.legend-swatch--answer { background: #1a7f37; }
-.legend-swatch--guess { background: #b35900; }
+/* Matches ANSWER_MARKER_COLOR / GUESS_MARKER_COLOR in map-style.js — the
+   map pins and this text legend are the same two colors everywhere. */
+.legend-swatch--answer { background: #2fae5a; }
+.legend-swatch--guess { background: #e8a23c; }
+
+/* Reveal screen: the round score leads as a big, glowing headline
+   figure rather than a plain sentence — same idea as the results
+   screen's own hero figure below, just smaller since a per-round
+   score isn't the session's main event. The "Round result" / "Time's
+   up" heading above it (h2, .visually-hidden in the markup) stays in
+   the accessibility tree as the screen's orienting cue for keyboard/
+   screen-reader users, but isn't rendered — the score itself already
+   makes the screen's purpose obvious to sighted players. */
+.score-hero {
+  margin: 0 0 0.3rem;
+}
+.score-hero-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-right: 0.5rem;
+}
+.score-hero-figure {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  text-shadow: 0 0 40px rgba(232, 162, 60, 0.35);
+}
+.score-hero-max {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+.score-breakdown {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.25rem;
+}
+.reveal-verdict {
+  margin: 0 0 1.5rem;
+}
+
+/* Results screen: the total score is the session's one headline
+   moment, so it gets its own glowing "victory card" — a radial fade
+   from --surface-2 down to --bg plus the same warm/cool double glow as
+   the photo frame — instead of sitting as a plain paragraph above the
+   round list. */
+.victory-card {
+  position: relative;
+  text-align: center;
+  padding: 2.5rem 1.5rem 2.25rem;
+  border-radius: var(--radius-md);
+  background: radial-gradient(120% 140% at 50% 0%, var(--surface-2) 0%, var(--surface) 55%, var(--bg) 100%);
+  box-shadow: 0 0 1px rgba(232, 162, 60, 0.4), 0 16px 30px rgba(0, 0, 0, 0.5), 0 0 100px -20px rgba(232, 162, 60, 0.3), 0 0 160px -30px rgba(42, 95, 208, 0.28);
+  margin: 1rem 0 1.75rem;
+}
+/* Its "Results" / "Total score:" labels (h2 + span, both
+   .visually-hidden in the markup) stay in the accessibility tree but
+   aren't rendered — a huge glowing number inside its own card is
+   already unambiguous without them. */
+.victory-figure {
+  margin: 0;
+}
+.victory-figure-number {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.victory-figure-max {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+}
+.victory-badge-wrap {
+  margin: 1rem 0 0;
+}
+.badge {
+  display: inline-block;
+  background: rgba(232, 162, 60, 0.16);
+  color: var(--accent-2);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.victory-best {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+.results-list-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
 
 /* Bounded height + visible border/background make this read as its own
    scrollable region (same affordance pattern as #city-search-results)
    instead of relying on the page's own scroll, which on a 10-round list
    wasn't an obvious enough cue that there was more below the fold. */
 #results-breakdown {
+  list-style: none;
   margin: 0.75rem 0;
-  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+  padding: 0.4rem 0.5rem;
   max-height: 40vh;
   overflow-y: auto;
   border-radius: var(--radius-md);
@@ -379,6 +587,10 @@ figure {
 }
 #results-breakdown li:not(:last-child) {
   border-bottom: 1px solid var(--border);
+}
+#replay-btn {
+  display: block;
+  margin: 1.5rem auto 0;
 }
 
 /* Each round's own fraction of MAX_ROUND_SCORE, as a bar filled behind
@@ -397,17 +609,24 @@ figure {
   padding: 0.3rem 0.6rem;
   overflow: hidden;
 }
+/* A soft trailing fade instead of a hard rectangular cutoff — the same
+   proportional read, without looking like a raw <progress> bar. */
 .score-row-fill {
   position: absolute;
   inset: 0;
   width: var(--score-pct, 0%);
-  background: var(--accent);
-  opacity: 0.16;
+  background: linear-gradient(to right, color-mix(in srgb, var(--accent) 40%, transparent), color-mix(in srgb, var(--accent) 40%, transparent) 80%, transparent);
   z-index: 0;
 }
-.score-row-label, .score-row-value {
+.score-row-rank, .score-row-label, .score-row-value {
   position: relative;
   z-index: 1;
+}
+.score-row-rank {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-right: 0.4rem;
 }
 .score-row-label {
   color: var(--text-primary);
@@ -427,11 +646,28 @@ figure {
 
 /* The round timer reads as data, not prose — tabular digits so it
    doesn't jitter in width as it counts down. */
+/* Round counter and timer share one row now, instead of the counter
+   owning a full heading-sized line of its own above a second row for
+   the timer — "Round 2 of 5" is orientation, not the main event, so it
+   reads at a label-like size next to the ring rather than competing
+   with it. */
+#round-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.75rem 0;
+}
+#round-heading {
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
 #round-timer-row {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin: 0.5rem 0;
 }
 #round-timer-label {
   font-size: 0.85rem;
@@ -463,7 +699,7 @@ figure {
   transition: stroke-dashoffset 0.25s linear, stroke 0.3s ease;
 }
 #timer-ring.timer-ring--urgent {
-  stroke: #b3261e;
+  stroke: #e5484d;
 }
 #timer-remaining {
   position: absolute;

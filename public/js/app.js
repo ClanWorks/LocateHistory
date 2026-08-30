@@ -244,10 +244,12 @@ function disposeActiveMap() {
 
 function render() {
   disposeActiveMap();
-  // Only the round screen needs the wider, two-column layout (see
-  // #round-columns in styles.css) — every other screen stays at the
-  // narrower reading width.
+  // The round screen and the reveal screen both need a wider,
+  // two-column layout (see #round-columns / #reveal-columns in
+  // styles.css) — every other screen stays at the narrower reading
+  // width.
   gameRoot.classList.toggle("layout-round", state.status === Status.PLAYING);
+  gameRoot.classList.toggle("layout-reveal", state.status === Status.ANSWERED || state.status === Status.TIMED_OUT);
   switch (state.status) {
     case Status.BOOT:
     case Status.LOADING:
@@ -314,19 +316,21 @@ function renderPlaying() {
   countryClueConfoundScore = answerPlace ? calculateConfoundScore(answerPlace, gazetteer) : null;
 
   gameRoot.innerHTML = `
-    <h2 tabindex="-1" data-focus-target>Round ${roundNumber} of ${REQUIRED_ROUNDS}</h2>
-    <!-- Decorative — the ring and the number both restate what
-         #timer-announcer already says to assistive tech at the same two
-         thresholds, so the whole row is hidden from the accessibility
-         tree rather than read twice. -->
-    <div id="round-timer-row" aria-hidden="true">
-      <span id="round-timer-label">Time left</span>
-      <div id="round-timer">
-        <svg viewBox="0 0 44 44">
-          <circle class="timer-track" cx="22" cy="22" r="19"></circle>
-          <circle id="timer-ring" cx="22" cy="22" r="19"></circle>
-        </svg>
-        <span id="timer-remaining">${Math.ceil(ROUND_DURATION_MS / 1000)}</span>
+    <div id="round-status-row">
+      <h2 id="round-heading" tabindex="-1" data-focus-target>Round ${roundNumber} of ${REQUIRED_ROUNDS}</h2>
+      <!-- Decorative — the ring and the number both restate what
+           #timer-announcer already says to assistive tech at the same
+           two thresholds, so the whole row is hidden from the
+           accessibility tree rather than read twice. -->
+      <div id="round-timer-row" aria-hidden="true">
+        <span id="round-timer-label">Time left</span>
+        <div id="round-timer">
+          <svg viewBox="0 0 44 44">
+            <circle class="timer-track" cx="22" cy="22" r="19"></circle>
+            <circle id="timer-ring" cx="22" cy="22" r="19"></circle>
+          </svg>
+          <span id="timer-remaining">${Math.ceil(ROUND_DURATION_MS / 1000)}</span>
+        </div>
       </div>
     </div>
     <p id="timer-announcer" class="sr-only" aria-live="polite"></p>
@@ -548,8 +552,10 @@ function renderReveal() {
   const isLastRound = state.context.roundIndex + 1 >= state.context.roundItemIds.length;
 
   gameRoot.innerHTML = `
-    <h2 tabindex="-1" data-focus-target>${state.status === Status.TIMED_OUT ? "Time's up" : "Round result"}</h2>
-    <p>
+    <h2 tabindex="-1" data-focus-target class="visually-hidden">${state.status === Status.TIMED_OUT ? "Time's up" : "Round result"}</h2>
+    <p class="score-hero"><span class="score-hero-label">Score this round:</span> <span class="score-hero-figure score-figure">${completed.roundScore}</span><span class="score-hero-max"> / 1000</span></p>
+    <p class="score-breakdown">accuracy ${completed.accuracy} &middot; time bonus ${completed.timeBonus} &middot; clue cost &minus;${completed.cluePenalty}</p>
+    <p class="reveal-verdict">
       ${
         state.status === Status.TIMED_OUT
           ? `The answer was <strong>${answerPlace.displayName}, ${answerPlace.country}</strong>.`
@@ -558,22 +564,27 @@ function renderReveal() {
             : ""
       }
     </p>
-    <p>Score this round: <strong class="score-figure">${completed.roundScore}</strong> / 1000
-      (accuracy ${completed.accuracy}, time bonus ${completed.timeBonus}, clue cost −${completed.cluePenalty})</p>
-    <!-- Non-interactive (no click handler) but still a real MapLibre
-         canvas, so it's hidden from the accessibility tree the same way
-         as #guess-map — the paragraph above already states the guess,
-         the answer, and the distance between them in text. -->
-    <div id="reveal-map" aria-hidden="true"></div>
-    <ul id="reveal-map-legend">
-      <li><span class="legend-swatch legend-swatch--answer"></span> Correct location</li>
-      ${guessPlace ? `<li><span class="legend-swatch legend-swatch--guess"></span> Your guess</li>` : ""}
-    </ul>
-    <figure id="reveal-thumb"><img src="${item.image.src}" alt="${item.title}" /></figure>
-    <p>${item.title}${item.artistOrCreator ? ` — ${item.artistOrCreator}` : ""}, ${item.depictedDate.minYear}${item.depictedDate.minYear !== item.depictedDate.maxYear ? `–${item.depictedDate.maxYear}` : ""}</p>
-    <p>${item.context}</p>
-    <p class="attribution">Source: ${item.attribution.source}${item.attribution.creditText ? ` (${item.attribution.creditText})` : ""}, ${item.attribution.license}.
-      <a href="${item.attribution.sourceUrl}" target="_blank" rel="noopener noreferrer">View source</a></p>
+    <div id="reveal-columns">
+      <div id="reveal-photo-col">
+        <figure id="reveal-thumb"><img src="${item.image.src}" alt="${item.title}" /></figure>
+        <p class="reveal-photo-title">${item.title}${item.artistOrCreator ? ` — ${item.artistOrCreator}` : ""}, ${item.depictedDate.minYear}${item.depictedDate.minYear !== item.depictedDate.maxYear ? `–${item.depictedDate.maxYear}` : ""}</p>
+        <p class="reveal-photo-context">${item.context}</p>
+        <p class="attribution">Source: ${item.attribution.source}${item.attribution.creditText ? ` (${item.attribution.creditText})` : ""}, ${item.attribution.license}.
+          <a href="${item.attribution.sourceUrl}" target="_blank" rel="noopener noreferrer">View source</a></p>
+      </div>
+      <div id="reveal-map-col">
+        <!-- Non-interactive (no click handler) but still a real MapLibre
+             canvas, so it's hidden from the accessibility tree the same
+             way as #guess-map — the verdict paragraph above already
+             states the guess, the answer, and the distance between them
+             in text. -->
+        <div id="reveal-map" aria-hidden="true"></div>
+        <ul id="reveal-map-legend">
+          <li><span class="legend-swatch legend-swatch--answer"></span> Correct location</li>
+          ${guessPlace ? `<li><span class="legend-swatch legend-swatch--guess"></span> Your guess</li>` : ""}
+        </ul>
+      </div>
+    </div>
     <button type="button" id="next-btn">${isLastRound ? "See results" : "Next round"}</button>
   `;
   focusHeading();
@@ -588,22 +599,28 @@ function renderReveal() {
 function renderResults() {
   const results = state.context.roundResults;
   const total = results.reduce((sum, r) => sum + r.roundScore, 0);
-  const { bestScore, isNewBest } = recordSessionScore(total);
+  const { bestScore, isNewBest } = recordSessionScore(total, undefined, REQUIRED_ROUNDS * MAX_ROUND_SCORE);
 
   gameRoot.innerHTML = `
-    <h2 tabindex="-1" data-focus-target>Results</h2>
-    <p>Total score: <strong class="score-figure">${total}</strong> / ${REQUIRED_ROUNDS * 1000}</p>
-    <p>${isNewBest ? "New best score!" : `Best score: <span class="score-figure">${bestScore}</span>`}</p>
+    <div class="victory-card">
+      <h2 tabindex="-1" data-focus-target class="visually-hidden">Results</h2>
+      <p class="victory-figure"><span class="visually-hidden">Total score:</span> <span class="victory-figure-number score-figure">${total}</span><span class="victory-figure-max"> / ${REQUIRED_ROUNDS * 1000}</span></p>
+      <p class="victory-badge-wrap">${isNewBest ? `<span class="badge">New best score!</span>` : `<span class="victory-best">Best score: <span class="score-figure">${bestScore}</span></span>`}</p>
+    </div>
+    <p class="results-list-label">Round by round</p>
     <ol id="results-breakdown">
       ${results
-        .map((r) => {
+        .map((r, i) => {
           const item = itemsById.get(r.itemId);
           const place = placesById.get(item.location.placeId);
           const pct = Math.max(0, Math.min(100, (r.roundScore / MAX_ROUND_SCORE) * 100));
           return `<li>
             <div class="score-row" style="--score-pct: ${pct}%">
               <span class="score-row-fill"></span>
-              <span class="score-row-label">${place.displayName}${r.reason === "timeout" ? " (timed out)" : ""}</span>
+              <span>
+                <span class="score-row-rank">${i + 1}.</span>
+                <span class="score-row-label">${place.displayName}${r.reason === "timeout" ? " (timed out)" : ""}</span>
+              </span>
               <span class="score-row-value score-figure">${r.roundScore}</span>
             </div>
           </li>`;

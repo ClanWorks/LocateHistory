@@ -50,6 +50,16 @@ describe("bestScore / recordSessionScore", () => {
     assert.deepEqual(result, { bestScore: 6000, isNewBest: true });
   });
 
+  test("a stored score above the current rules' max is treated as if nothing were stored (M6: a since-changed round count)", () => {
+    const storage = makeFakeStorage();
+    storage.setItem("photolocation:bestScore", "9472"); // e.g. left over from a 10-round session, now impossible under 5
+    assert.equal(getBestScore(storage, 5000), null);
+    assert.equal(getBestScore(storage), 9472, "without rules context, the raw stored value still comes back");
+
+    const result = recordSessionScore(1818, storage, 5000);
+    assert.deepEqual(result, { bestScore: 1818, isNewBest: true }, "a real score should be able to beat a stale, impossible one");
+  });
+
   test("degrades gracefully when the storage backend throws (e.g. private browsing)", () => {
     const throwingStorage = {
       getItem: () => {
