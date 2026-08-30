@@ -1,5 +1,160 @@
 [
   {
+    "id": "bandar-seri-begawan-bn",
+    "displayName": "Bandar Seri Begawan",
+    "country": "Brunei",
+    "countryCode": "BN",
+    "lat": 4.9031,
+    "lng": 114.9398,
+    "aliases": [
+      "BSB"
+    ],
+    "historicalNames": [
+      "Brunei Town",
+      "Bruni"
+    ]
+  },
+  {
+    "id": "kota-kinabalu-my",
+    "displayName": "Kota Kinabalu",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "lat": 5.9804,
+    "lng": 116.0735,
+    "aliases": [],
+    "historicalNames": [
+      "Jesselton",
+      "Api-Api"
+    ]
+  },
+  {
+    "id": "kuching-my",
+    "displayName": "Kuching",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "lat": 1.5533,
+    "lng": 110.3592,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "baguio-ph",
+    "displayName": "Baguio",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "lat": 16.4023,
+    "lng": 120.596,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cebu-city-ph",
+    "displayName": "Cebu City",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "lat": 10.3157,
+    "lng": 123.8854,
+    "aliases": [
+      "Cebu"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "hue-vn",
+    "displayName": "Hue",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "lat": 16.4637,
+    "lng": 107.5909,
+    "aliases": [
+      "Huế"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "da-nang-vn",
+    "displayName": "Da Nang",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "lat": 16.0544,
+    "lng": 108.2022,
+    "aliases": [],
+    "historicalNames": [
+      "Tourane"
+    ]
+  },
+  {
+    "id": "siem-reap-kh",
+    "displayName": "Siem Reap",
+    "country": "Cambodia",
+    "countryCode": "KH",
+    "lat": 13.3633,
+    "lng": 103.8564,
+    "aliases": [],
+    "historicalNames": [
+      "Siemreap"
+    ]
+  },
+  {
+    "id": "luang-prabang-la",
+    "displayName": "Luang Prabang",
+    "country": "Laos",
+    "countryCode": "LA",
+    "lat": 19.8856,
+    "lng": 102.1347,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "chiang-mai-th",
+    "displayName": "Chiang Mai",
+    "country": "Thailand",
+    "countryCode": "TH",
+    "lat": 18.7883,
+    "lng": 98.9853,
+    "aliases": [],
+    "historicalNames": [
+      "Chiengmai",
+      "Zimmè"
+    ]
+  },
+  {
+    "id": "denpasar-id",
+    "displayName": "Denpasar",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": -8.6705,
+    "lng": 115.2126,
+    "aliases": [
+      "Bali"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "makassar-id",
+    "displayName": "Makassar",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": -5.1477,
+    "lng": 119.4327,
+    "aliases": [
+      "Ujung Pandang"
+    ],
+    "historicalNames": [
+      "Macassar"
+    ]
+  },
+  {
+    "id": "palembang-id",
+    "displayName": "Palembang",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": -2.9909,
+    "lng": 104.7566,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
     "id": "kolkata-in",
     "displayName": "Kolkata",
     "country": "India",
@@ -91,6 +246,18 @@
     "lng": 49.0661,
     "aliases": [],
     "historicalNames": []
+  },
+  {
+    "id": "samara-ru",
+    "displayName": "Samara",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 53.1959,
+    "lng": 50.1002,
+    "aliases": [],
+    "historicalNames": [
+      "Kuybyshev"
+    ]
   },
   {
     "id": "baghdad-iq",
@@ -471,7 +638,8 @@
     "lat": 59.9311,
     "lng": 30.3609,
     "aliases": [
-      "St Petersburg"
+      "St Petersburg",
+      "St. Petersburg"
     ],
     "historicalNames": [
       "Leningrad",
@@ -3257,5 +3425,4133 @@
     "lng": 8.6821,
     "aliases": [],
     "historicalNames": []
+  },
+  {
+    "id": "jaffna-lk",
+    "displayName": "Jaffna",
+    "country": "Sri Lanka",
+    "countryCode": "LK",
+    "lat": 9.6615,
+    "lng": 80.0255,
+    "aliases": [],
+    "historicalNames": [
+      "Jaffnapatnam"
+    ]
+  },
+  {
+    "id": "berbera-so",
+    "displayName": "Berbera",
+    "country": "Somalia",
+    "countryCode": "SO",
+    "lat": 10.4396,
+    "lng": 45.0143,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "asmara-er",
+    "displayName": "Asmara",
+    "country": "Eritrea",
+    "countryCode": "ER",
+    "lat": 15.3229,
+    "lng": 38.9251,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "djibouti-city-dj",
+    "displayName": "Djibouti City",
+    "country": "Djibouti",
+    "countryCode": "DJ",
+    "lat": 11.5721,
+    "lng": 43.1456,
+    "aliases": [
+      "Djibouti"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "bridgetown-bb",
+    "displayName": "Bridgetown",
+    "country": "Barbados",
+    "countryCode": "BB",
+    "lat": 13.0969,
+    "lng": -59.6145,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tegucigalpa-hn",
+    "displayName": "Tegucigalpa",
+    "country": "Honduras",
+    "countryCode": "HN",
+    "lat": 14.0723,
+    "lng": -87.1921,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "pune-in",
+    "displayName": "Pune",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 18.5204,
+    "lng": 73.8567,
+    "aliases": [],
+    "historicalNames": [
+      "Poona"
+    ]
+  },
+  {
+    "id": "bangui-cf",
+    "displayName": "Bangui",
+    "country": "Central African Republic",
+    "countryCode": "CF",
+    "lat": 4.3947,
+    "lng": 18.5582,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "malabo-gq",
+    "displayName": "Malabo",
+    "country": "Equatorial Guinea",
+    "countryCode": "GQ",
+    "lat": 3.7523,
+    "lng": 8.7742,
+    "aliases": [],
+    "historicalNames": [
+      "Santa Isabel"
+    ]
+  },
+  {
+    "id": "lubumbashi-cd",
+    "displayName": "Lubumbashi",
+    "country": "DR Congo",
+    "countryCode": "CD",
+    "lat": -11.6609,
+    "lng": 27.4794,
+    "aliases": [],
+    "historicalNames": [
+      "Élisabethville"
+    ]
+  },
+  {
+    "id": "athens-gr",
+    "displayName": "Athens",
+    "country": "Greece",
+    "countryCode": "GR",
+    "lat": 37.9838,
+    "lng": 23.7275,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "mandalay-mm",
+    "displayName": "Mandalay",
+    "country": "Myanmar",
+    "countryCode": "MM",
+    "lat": 21.9588,
+    "lng": 96.0891,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "malacca-my",
+    "displayName": "Malacca",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "lat": 2.1896,
+    "lng": 102.2501,
+    "aliases": [
+      "Melaka"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "dili-tl",
+    "displayName": "Dili",
+    "country": "Timor-Leste",
+    "countryCode": "TL",
+    "lat": -8.5569,
+    "lng": 125.5603,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "detroit-us",
+    "displayName": "Detroit",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 42.3314,
+    "lng": -83.0458,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "ashgabat-tm",
+    "displayName": "Ashgabat",
+    "country": "Turkmenistan",
+    "countryCode": "TM",
+    "lat": 37.9601,
+    "lng": 58.3261,
+    "aliases": [],
+    "historicalNames": [
+      "Askhabad",
+      "Poltoratsk"
+    ]
+  },
+  {
+    "id": "khiva-uz",
+    "displayName": "Khiva",
+    "country": "Uzbekistan",
+    "countryCode": "UZ",
+    "lat": 41.3783,
+    "lng": 60.3639,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kashgar-cn",
+    "displayName": "Kashgar",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 39.4704,
+    "lng": 75.9898,
+    "aliases": [
+      "Kashi"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "almaty-kz",
+    "displayName": "Almaty",
+    "country": "Kazakhstan",
+    "countryCode": "KZ",
+    "lat": 43.222,
+    "lng": 76.8512,
+    "aliases": [],
+    "historicalNames": [
+      "Verny"
+    ]
+  },
+  {
+    "id": "astana-kz",
+    "displayName": "Astana",
+    "country": "Kazakhstan",
+    "countryCode": "KZ",
+    "lat": 51.1694,
+    "lng": 71.4491,
+    "aliases": [
+      "Nur-Sultan"
+    ],
+    "historicalNames": [
+      "Akmolinsk",
+      "Tselinograd"
+    ]
+  },
+  {
+    "id": "batumi-ge",
+    "displayName": "Batumi",
+    "country": "Georgia",
+    "countryCode": "GE",
+    "lat": 41.6168,
+    "lng": 41.6367,
+    "aliases": [],
+    "historicalNames": [
+      "Batum"
+    ]
+  },
+  {
+    "id": "sukhumi-ge",
+    "displayName": "Sukhumi",
+    "country": "Georgia",
+    "countryCode": "GE",
+    "lat": 43.0034,
+    "lng": 41.0234,
+    "aliases": [],
+    "historicalNames": [
+      "Sukhum-Kale"
+    ]
+  },
+  {
+    "id": "gyumri-am",
+    "displayName": "Gyumri",
+    "country": "Armenia",
+    "countryCode": "AM",
+    "lat": 40.7942,
+    "lng": 43.8475,
+    "aliases": [],
+    "historicalNames": [
+      "Alexandropol",
+      "Leninakan"
+    ]
+  },
+  {
+    "id": "nakhchivan-az",
+    "displayName": "Nakhchivan",
+    "country": "Azerbaijan",
+    "countryCode": "AZ",
+    "lat": 39.2089,
+    "lng": 45.4122,
+    "aliases": [],
+    "historicalNames": [
+      "Nakhitschevan"
+    ]
+  },
+  {
+    "id": "port-of-spain-tt",
+    "displayName": "Port of Spain",
+    "country": "Trinidad and Tobago",
+    "countryCode": "TT",
+    "lat": 10.6549,
+    "lng": -61.5019,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "willemstad-cw",
+    "displayName": "Willemstad",
+    "country": "Curaçao",
+    "countryCode": "CW",
+    "lat": 12.1091,
+    "lng": -68.9316,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "st-pierre-mq",
+    "displayName": "St. Pierre",
+    "country": "Martinique",
+    "countryCode": "MQ",
+    "lat": 14.7456,
+    "lng": -61.1758,
+    "aliases": [
+      "Saint-Pierre"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "basseterre-kn",
+    "displayName": "Basseterre",
+    "country": "Saint Kitts and Nevis",
+    "countryCode": "KN",
+    "lat": 17.3026,
+    "lng": -62.7177,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "st-georges-gd",
+    "displayName": "St. George's",
+    "country": "Grenada",
+    "countryCode": "GD",
+    "lat": 12.0561,
+    "lng": -61.7488,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "castries-lc",
+    "displayName": "Castries",
+    "country": "Saint Lucia",
+    "countryCode": "LC",
+    "lat": 14.0101,
+    "lng": -60.9875,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "oranjestad-aw",
+    "displayName": "Oranjestad",
+    "country": "Aruba",
+    "countryCode": "AW",
+    "lat": 12.5092,
+    "lng": -70.0086,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "belize-city-bz",
+    "displayName": "Belize City",
+    "country": "Belize",
+    "countryCode": "BZ",
+    "lat": 17.5046,
+    "lng": -88.1962,
+    "aliases": [
+      "Belize"
+    ],
+    "historicalNames": [
+      "British Honduras"
+    ]
+  },
+  {
+    "id": "managua-ni",
+    "displayName": "Managua",
+    "country": "Nicaragua",
+    "countryCode": "NI",
+    "lat": 12.115,
+    "lng": -86.2362,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "baltimore-us",
+    "displayName": "Baltimore",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.2904,
+    "lng": -76.6122,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "surat-in",
+    "displayName": "Surat",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 21.1702,
+    "lng": 72.8311,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "indore-in",
+    "displayName": "Indore",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 22.7196,
+    "lng": 75.8577,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "amritsar-in",
+    "displayName": "Amritsar",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 31.634,
+    "lng": 74.8723,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "srinagar-in",
+    "displayName": "Srinagar",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 34.0837,
+    "lng": 74.7973,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kanpur-in",
+    "displayName": "Kanpur",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 26.4499,
+    "lng": 80.3319,
+    "aliases": [],
+    "historicalNames": [
+      "Cawnpore"
+    ]
+  },
+  {
+    "id": "patna-in",
+    "displayName": "Patna",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 25.5941,
+    "lng": 85.1376,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bhopal-in",
+    "displayName": "Bhopal",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 23.2599,
+    "lng": 77.4126,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "rawalpindi-pk",
+    "displayName": "Rawalpindi",
+    "country": "Pakistan",
+    "countryCode": "PK",
+    "lat": 33.5651,
+    "lng": 73.0169,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "quetta-pk",
+    "displayName": "Quetta",
+    "country": "Pakistan",
+    "countryCode": "PK",
+    "lat": 30.1798,
+    "lng": 66.975,
+    "aliases": [
+      "Kwettah"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "chittagong-bd",
+    "displayName": "Chittagong",
+    "country": "Bangladesh",
+    "countryCode": "BD",
+    "lat": 22.3569,
+    "lng": 91.7832,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kandy-lk",
+    "displayName": "Kandy",
+    "country": "Sri Lanka",
+    "countryCode": "LK",
+    "lat": 7.2906,
+    "lng": 80.6337,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "vientiane-la",
+    "displayName": "Vientiane",
+    "country": "Laos",
+    "countryCode": "LA",
+    "lat": 17.9757,
+    "lng": 102.6331,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "george-town-my",
+    "displayName": "George Town",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "lat": 5.4141,
+    "lng": 100.3288,
+    "aliases": [
+      "Penang"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "ho-chi-minh-city-vn",
+    "displayName": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "lat": 10.8231,
+    "lng": 106.6297,
+    "aliases": [],
+    "historicalNames": [
+      "Saigon"
+    ]
+  },
+  {
+    "id": "darwin-au",
+    "displayName": "Darwin",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -12.4634,
+    "lng": 130.8456,
+    "aliases": [],
+    "historicalNames": [
+      "Palmerston"
+    ]
+  },
+  {
+    "id": "dalian-cn",
+    "displayName": "Dalian",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 38.914,
+    "lng": 121.6147,
+    "aliases": [],
+    "historicalNames": [
+      "Dalny",
+      "Dairen"
+    ]
+  },
+  {
+    "id": "qingdao-cn",
+    "displayName": "Qingdao",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 36.0671,
+    "lng": 120.3826,
+    "aliases": [],
+    "historicalNames": [
+      "Tsingtau"
+    ]
+  },
+  {
+    "id": "charlotte-amalie-vi",
+    "displayName": "Charlotte Amalie",
+    "country": "U.S. Virgin Islands",
+    "countryCode": "VI",
+    "lat": 18.3419,
+    "lng": -64.9307,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cotonou-bj",
+    "displayName": "Cotonou",
+    "country": "Benin",
+    "countryCode": "BJ",
+    "lat": 6.3703,
+    "lng": 2.3912,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "porto-novo-bj",
+    "displayName": "Porto-Novo",
+    "country": "Benin",
+    "countryCode": "BJ",
+    "lat": 6.4969,
+    "lng": 2.6289,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "lome-tg",
+    "displayName": "Lomé",
+    "country": "Togo",
+    "countryCode": "TG",
+    "lat": 6.1319,
+    "lng": 1.2228,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "banjul-gm",
+    "displayName": "Banjul",
+    "country": "The Gambia",
+    "countryCode": "GM",
+    "lat": 13.4549,
+    "lng": -16.579,
+    "aliases": [],
+    "historicalNames": [
+      "Bathurst"
+    ]
+  },
+  {
+    "id": "bissau-gw",
+    "displayName": "Bissau",
+    "country": "Guinea-Bissau",
+    "countryCode": "GW",
+    "lat": 11.8636,
+    "lng": -15.5977,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "praia-cv",
+    "displayName": "Praia",
+    "country": "Cape Verde",
+    "countryCode": "CV",
+    "lat": 14.933,
+    "lng": -23.5133,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "aswan-eg",
+    "displayName": "Aswan",
+    "country": "Egypt",
+    "countryCode": "EG",
+    "lat": 24.0889,
+    "lng": 32.8998,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tangier-ma",
+    "displayName": "Tangier",
+    "country": "Morocco",
+    "countryCode": "MA",
+    "lat": 35.7595,
+    "lng": -5.834,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "meknes-ma",
+    "displayName": "Meknes",
+    "country": "Morocco",
+    "countryCode": "MA",
+    "lat": 33.8935,
+    "lng": -5.5473,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "isfahan-ir",
+    "displayName": "Isfahan",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 32.6539,
+    "lng": 51.666,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "shiraz-ir",
+    "displayName": "Shiraz",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 29.5918,
+    "lng": 52.5837,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tabriz-ir",
+    "displayName": "Tabriz",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 38.08,
+    "lng": 46.2919,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "najaf-iq",
+    "displayName": "Najaf",
+    "country": "Iraq",
+    "countryCode": "IQ",
+    "lat": 31.995,
+    "lng": 44.322,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "karbala-iq",
+    "displayName": "Karbala",
+    "country": "Iraq",
+    "countryCode": "IQ",
+    "lat": 32.616,
+    "lng": 44.0249,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nazareth-il",
+    "displayName": "Nazareth",
+    "country": "Israel",
+    "countryCode": "IL",
+    "lat": 32.7018,
+    "lng": 35.2975,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bethlehem-ps",
+    "displayName": "Bethlehem",
+    "country": "Palestine",
+    "countryCode": "PS",
+    "lat": 31.7054,
+    "lng": 35.2024,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nablus-ps",
+    "displayName": "Nablus",
+    "country": "Palestine",
+    "countryCode": "PS",
+    "lat": 32.2211,
+    "lng": 35.2544,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bulawayo-zw",
+    "displayName": "Bulawayo",
+    "country": "Zimbabwe",
+    "countryCode": "ZW",
+    "lat": -20.15,
+    "lng": 28.5833,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kimberley-za",
+    "displayName": "Kimberley",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "lat": -28.7382,
+    "lng": 24.7633,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "east-london-za",
+    "displayName": "East London",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "lat": -33.0153,
+    "lng": 27.9116,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kisumu-ke",
+    "displayName": "Kisumu",
+    "country": "Kenya",
+    "countryCode": "KE",
+    "lat": -0.0917,
+    "lng": 34.768,
+    "aliases": [],
+    "historicalNames": [
+      "Port Florence"
+    ]
+  },
+  {
+    "id": "mombasa-ke",
+    "displayName": "Mombasa",
+    "country": "Kenya",
+    "countryCode": "KE",
+    "lat": -4.0435,
+    "lng": 39.6682,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "beira-mz",
+    "displayName": "Beira",
+    "country": "Mozambique",
+    "countryCode": "MZ",
+    "lat": -19.8317,
+    "lng": 34.85,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "mahajanga-mg",
+    "displayName": "Mahajanga",
+    "country": "Madagascar",
+    "countryCode": "MG",
+    "lat": -15.7167,
+    "lng": 46.3167,
+    "aliases": [],
+    "historicalNames": [
+      "Majunga"
+    ]
+  },
+  {
+    "id": "nosy-be-mg",
+    "displayName": "Nosy Be",
+    "country": "Madagascar",
+    "countryCode": "MG",
+    "lat": -13.3167,
+    "lng": 48.2667,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cochabamba-bo",
+    "displayName": "Cochabamba",
+    "country": "Bolivia",
+    "countryCode": "BO",
+    "lat": -17.3895,
+    "lng": -66.1568,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "georgetown-gy",
+    "displayName": "Georgetown",
+    "country": "Guyana",
+    "countryCode": "GY",
+    "lat": 6.8013,
+    "lng": -58.1551,
+    "aliases": [],
+    "historicalNames": [
+      "Demerara"
+    ]
+  },
+  {
+    "id": "paramaribo-sr",
+    "displayName": "Paramaribo",
+    "country": "Suriname",
+    "countryCode": "SR",
+    "lat": 5.852,
+    "lng": -55.2038,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "maracaibo-ve",
+    "displayName": "Maracaibo",
+    "country": "Venezuela",
+    "countryCode": "VE",
+    "lat": 10.6427,
+    "lng": -71.6125,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "concepcion-cl",
+    "displayName": "Concepción",
+    "country": "Chile",
+    "countryCode": "CL",
+    "lat": -36.827,
+    "lng": -73.0498,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "poznan-pl",
+    "displayName": "Poznań",
+    "country": "Poland",
+    "countryCode": "PL",
+    "lat": 52.4064,
+    "lng": 16.9252,
+    "aliases": [],
+    "historicalNames": [
+      "Posen"
+    ]
+  },
+  {
+    "id": "kosice-sk",
+    "displayName": "Košice",
+    "country": "Slovakia",
+    "countryCode": "SK",
+    "lat": 48.7164,
+    "lng": 21.2611,
+    "aliases": [],
+    "historicalNames": [
+      "Kassa"
+    ]
+  },
+  {
+    "id": "graz-at",
+    "displayName": "Graz",
+    "country": "Austria",
+    "countryCode": "AT",
+    "lat": 47.0707,
+    "lng": 15.4395,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "salzburg-at",
+    "displayName": "Salzburg",
+    "country": "Austria",
+    "countryCode": "AT",
+    "lat": 47.8095,
+    "lng": 13.055,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "innsbruck-at",
+    "displayName": "Innsbruck",
+    "country": "Austria",
+    "countryCode": "AT",
+    "lat": 47.2692,
+    "lng": 11.4041,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nuremberg-de",
+    "displayName": "Nuremberg",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 49.4521,
+    "lng": 11.0767,
+    "aliases": [
+      "Nürnberg"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "leipzig-de",
+    "displayName": "Leipzig",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 51.3397,
+    "lng": 12.3731,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "livingstone-zm",
+    "displayName": "Livingstone",
+    "country": "Zambia",
+    "countryCode": "ZM",
+    "lat": -17.8419,
+    "lng": 25.8543,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tanga-tz",
+    "displayName": "Tanga",
+    "country": "Tanzania",
+    "countryCode": "TZ",
+    "lat": -5.0689,
+    "lng": 39.0982,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "stuttgart-de",
+    "displayName": "Stuttgart",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 48.7758,
+    "lng": 9.1829,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "dusseldorf-de",
+    "displayName": "Düsseldorf",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 51.2277,
+    "lng": 6.7735,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "essen-de",
+    "displayName": "Essen",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 51.4556,
+    "lng": 7.0116,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bremen-de",
+    "displayName": "Bremen",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 53.0793,
+    "lng": 8.8017,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "hanover-de",
+    "displayName": "Hanover",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 52.3759,
+    "lng": 9.732,
+    "aliases": [
+      "Hannover"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "rostock-de",
+    "displayName": "Rostock",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 54.0887,
+    "lng": 12.14,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "lviv-ua",
+    "displayName": "Lviv",
+    "country": "Ukraine",
+    "countryCode": "UA",
+    "lat": 49.8397,
+    "lng": 24.0297,
+    "aliases": [],
+    "historicalNames": [
+      "Lwów",
+      "Lemberg"
+    ]
+  },
+  {
+    "id": "kaifeng-cn",
+    "displayName": "Kaifeng",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 34.7986,
+    "lng": 114.3055,
+    "aliases": [],
+    "historicalNames": [
+      "Bianjing",
+      "Bianliang"
+    ]
+  },
+  {
+    "id": "kaohsiung-tw",
+    "displayName": "Kaohsiung",
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "lat": 22.6273,
+    "lng": 120.3014,
+    "aliases": [],
+    "historicalNames": [
+      "Takao",
+      "Takow"
+    ]
+  },
+  {
+    "id": "nagoya-jp",
+    "displayName": "Nagoya",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 35.1815,
+    "lng": 136.9066,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "udaipur-in",
+    "displayName": "Udaipur",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 24.5854,
+    "lng": 73.7125,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "vadodara-in",
+    "displayName": "Vadodara",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 22.3072,
+    "lng": 73.1812,
+    "aliases": [],
+    "historicalNames": [
+      "Baroda"
+    ]
+  },
+  {
+    "id": "bhubaneswar-in",
+    "displayName": "Bhubaneswar",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 20.2961,
+    "lng": 85.8245,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kochi-in",
+    "displayName": "Kochi",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 9.9312,
+    "lng": 76.2673,
+    "aliases": [],
+    "historicalNames": [
+      "Cochin"
+    ]
+  },
+  {
+    "id": "hyderabad-pk",
+    "displayName": "Hyderabad",
+    "country": "Pakistan",
+    "countryCode": "PK",
+    "lat": 25.396,
+    "lng": 68.3578,
+    "aliases": [
+      "Hyderabad Sindh"
+    ],
+    "historicalNames": [
+      "Hyderabad Scinde"
+    ]
+  },
+  {
+    "id": "thiruvananthapuram-in",
+    "displayName": "Thiruvananthapuram",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 8.5241,
+    "lng": 76.9366,
+    "aliases": [],
+    "historicalNames": [
+      "Trivandrum"
+    ]
+  },
+  {
+    "id": "jodhpur-in",
+    "displayName": "Jodhpur",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 26.2389,
+    "lng": 73.0243,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "mysore-in",
+    "displayName": "Mysore",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 12.2958,
+    "lng": 76.6394,
+    "aliases": [
+      "Mysuru"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "bloemfontein-za",
+    "displayName": "Bloemfontein",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "lat": -29.0852,
+    "lng": 26.1596,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "maseru-ls",
+    "displayName": "Maseru",
+    "country": "Lesotho",
+    "countryCode": "LS",
+    "lat": -29.3151,
+    "lng": 27.4869,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "port-louis-mu",
+    "displayName": "Port Louis",
+    "country": "Mauritius",
+    "countryCode": "MU",
+    "lat": -20.1609,
+    "lng": 57.5012,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "ajmer-in",
+    "displayName": "Ajmer",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 26.4499,
+    "lng": 74.6399,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "aurangabad-in",
+    "displayName": "Aurangabad",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 19.8762,
+    "lng": 75.3433,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bareilly-in",
+    "displayName": "Bareilly",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 28.367,
+    "lng": 79.4304,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "gwalior-in",
+    "displayName": "Gwalior",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 26.2183,
+    "lng": 78.1828,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kolhapur-in",
+    "displayName": "Kolhapur",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 16.705,
+    "lng": 74.2433,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nagpur-in",
+    "displayName": "Nagpur",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 21.1458,
+    "lng": 79.0882,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nashik-in",
+    "displayName": "Nashik",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 19.9975,
+    "lng": 73.7898,
+    "aliases": [],
+    "historicalNames": [
+      "Nasik"
+    ]
+  },
+  {
+    "id": "denver-us",
+    "displayName": "Denver",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.7392,
+    "lng": -104.9903,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "surabaya-id",
+    "displayName": "Surabaya",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": -7.2575,
+    "lng": 112.7521,
+    "aliases": [
+      "Soerabaja",
+      "Soerabaia"
+    ],
+    "historicalNames": [
+      "Soerabaja"
+    ]
+  },
+  {
+    "id": "medan-id",
+    "displayName": "Medan",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": 3.5952,
+    "lng": 98.6722,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "semarang-id",
+    "displayName": "Semarang",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": -6.9932,
+    "lng": 110.4203,
+    "aliases": [],
+    "historicalNames": [
+      "Samarang"
+    ]
+  },
+  {
+    "id": "yogyakarta-id",
+    "displayName": "Yogyakarta",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": -7.7956,
+    "lng": 110.3695,
+    "aliases": [
+      "Jogja",
+      "Jogjakarta"
+    ],
+    "historicalNames": [
+      "Djokjakarta",
+      "Jogjakarta"
+    ]
+  },
+  {
+    "id": "bandung-id",
+    "displayName": "Bandung",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": -6.9175,
+    "lng": 107.6191,
+    "aliases": [
+      "Bandoeng"
+    ],
+    "historicalNames": [
+      "Bandoeng"
+    ]
+  },
+  {
+    "id": "kano-ng",
+    "displayName": "Kano",
+    "country": "Nigeria",
+    "countryCode": "NG",
+    "lat": 12.0022,
+    "lng": 8.592,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "ibadan-ng",
+    "displayName": "Ibadan",
+    "country": "Nigeria",
+    "countryCode": "NG",
+    "lat": 7.3775,
+    "lng": 3.947,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "seattle-us",
+    "displayName": "Seattle",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 47.6062,
+    "lng": -122.3321,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "wuxi-cn",
+    "displayName": "Wuxi",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 31.59,
+    "lng": 120.3119,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "zhenjiang-cn",
+    "displayName": "Zhenjiang",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 32.2044,
+    "lng": 119.4551,
+    "aliases": [],
+    "historicalNames": [
+      "Chinkiang",
+      "Chin-keang-foo"
+    ]
+  },
+  {
+    "id": "puebla-mx",
+    "displayName": "Puebla",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 19.0414,
+    "lng": -98.2063,
+    "aliases": [
+      "Puebla de Zaragoza"
+    ],
+    "historicalNames": [
+      "Puebla de los Ángeles"
+    ]
+  },
+  {
+    "id": "tijuana-mx",
+    "displayName": "Tijuana",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 32.5149,
+    "lng": -117.0382,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kunming-cn",
+    "displayName": "Kunming",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 25.0389,
+    "lng": 102.7183,
+    "aliases": [
+      "Yunnanfu",
+      "Yunnan-fu"
+    ],
+    "historicalNames": [
+      "Yunnanfu"
+    ]
+  },
+  {
+    "id": "salt-lake-city-us",
+    "displayName": "Salt Lake City",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 40.7608,
+    "lng": -111.891,
+    "aliases": [
+      "SLC"
+    ],
+    "historicalNames": [
+      "Great Salt Lake City"
+    ]
+  },
+  {
+    "id": "queretaro-mx",
+    "displayName": "Queretaro",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 20.5888,
+    "lng": -100.3899,
+    "aliases": [
+      "Santiago de Queretaro"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "jinan-cn",
+    "displayName": "Jinan",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 36.6512,
+    "lng": 117.1201,
+    "aliases": [
+      "Tsinan",
+      "Chinan"
+    ],
+    "historicalNames": [
+      "Tsinan",
+      "Tsinanfu"
+    ]
+  },
+  {
+    "id": "taiyuan-cn",
+    "displayName": "Taiyuan",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 37.8706,
+    "lng": 112.5489,
+    "aliases": [
+      "Taiyuanfu"
+    ],
+    "historicalNames": [
+      "Taiyuanfu",
+      "Yangku"
+    ]
+  },
+  {
+    "id": "portland-or-us",
+    "displayName": "Portland",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 45.5152,
+    "lng": -122.6784,
+    "aliases": [
+      "Portland, Oregon",
+      "Portland, OR"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "sacramento-us",
+    "displayName": "Sacramento",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 38.5816,
+    "lng": -121.4944,
+    "aliases": [
+      "Sacramento City"
+    ],
+    "historicalNames": [
+      "Sacramento City"
+    ]
+  },
+  {
+    "id": "san-diego-us",
+    "displayName": "San Diego",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 32.7157,
+    "lng": -117.1611,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "phoenix-us",
+    "displayName": "Phoenix",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 33.4484,
+    "lng": -112.074,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "hohhot-cn",
+    "displayName": "Hohhot",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 40.8414,
+    "lng": 111.7519,
+    "aliases": [
+      "Huhhot",
+      "Kweisui",
+      "Guisui"
+    ],
+    "historicalNames": [
+      "Guihua",
+      "Guisui",
+      "Kweisui"
+    ]
+  },
+  {
+    "id": "lhasa-cn",
+    "displayName": "Lhasa",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 29.65,
+    "lng": 91.1,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "trujillo-pe",
+    "displayName": "Trujillo",
+    "country": "Peru",
+    "countryCode": "PE",
+    "lat": -8.1116,
+    "lng": -79.0288,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "mendoza-ar",
+    "displayName": "Mendoza",
+    "country": "Argentina",
+    "countryCode": "AR",
+    "lat": -32.8895,
+    "lng": -68.8458,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "novgorod-ru",
+    "displayName": "Veliky Novgorod",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 58.5215,
+    "lng": 31.2755,
+    "aliases": [
+      "Novgorod",
+      "Novgorod the Great"
+    ],
+    "historicalNames": [
+      "Novgorod"
+    ]
+  },
+  {
+    "id": "lyon-fr",
+    "displayName": "Lyon",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 45.764,
+    "lng": 4.8357,
+    "aliases": [],
+    "historicalNames": [
+      "Lugdunum"
+    ]
+  },
+  {
+    "id": "marseille-fr",
+    "displayName": "Marseille",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 43.2965,
+    "lng": 5.3698,
+    "aliases": [
+      "Marseilles"
+    ],
+    "historicalNames": [
+      "Massalia"
+    ]
+  },
+  {
+    "id": "nice-fr",
+    "displayName": "Nice",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 43.7102,
+    "lng": 7.262,
+    "aliases": [],
+    "historicalNames": [
+      "Nizza"
+    ]
+  },
+  {
+    "id": "strasbourg-fr",
+    "displayName": "Strasbourg",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 48.5734,
+    "lng": 7.7521,
+    "aliases": [],
+    "historicalNames": [
+      "Straßburg",
+      "Strassburg"
+    ]
+  },
+  {
+    "id": "toulouse-fr",
+    "displayName": "Toulouse",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 43.6047,
+    "lng": 1.4442,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nantes-fr",
+    "displayName": "Nantes",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 47.2184,
+    "lng": -1.5536,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bordeaux-fr",
+    "displayName": "Bordeaux",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 44.8378,
+    "lng": -0.5792,
+    "aliases": [],
+    "historicalNames": [
+      "Burdigala"
+    ]
+  },
+  {
+    "id": "bilbao-es",
+    "displayName": "Bilbao",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 43.263,
+    "lng": -2.935,
+    "aliases": [
+      "Bilbo"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "mecca-sa",
+    "displayName": "Mecca",
+    "country": "Saudi Arabia",
+    "countryCode": "SA",
+    "lat": 21.3891,
+    "lng": 39.8579,
+    "aliases": [
+      "Makkah"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "medina-sa",
+    "displayName": "Medina",
+    "country": "Saudi Arabia",
+    "countryCode": "SA",
+    "lat": 24.5247,
+    "lng": 39.5692,
+    "aliases": [
+      "Al Madinah"
+    ],
+    "historicalNames": [
+      "Yathrib"
+    ]
+  },
+  {
+    "id": "mashhad-ir",
+    "displayName": "Mashhad",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 36.2605,
+    "lng": 59.6168,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "lille-fr",
+    "displayName": "Lille",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 50.6292,
+    "lng": 3.0573,
+    "aliases": [],
+    "historicalNames": [
+      "Rijsel"
+    ]
+  },
+  {
+    "id": "rennes-fr",
+    "displayName": "Rennes",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 48.1173,
+    "lng": -1.6778,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "reims-fr",
+    "displayName": "Reims",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 49.2583,
+    "lng": 4.0317,
+    "aliases": [
+      "Rheims"
+    ],
+    "historicalNames": [
+      "Durocortorum"
+    ]
+  },
+  {
+    "id": "geneva-ch",
+    "displayName": "Geneva",
+    "country": "Switzerland",
+    "countryCode": "CH",
+    "lat": 46.2044,
+    "lng": 6.1432,
+    "aliases": [
+      "Genève",
+      "Genf"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "bern-ch",
+    "displayName": "Bern",
+    "country": "Switzerland",
+    "countryCode": "CH",
+    "lat": 46.948,
+    "lng": 7.4474,
+    "aliases": [
+      "Berne"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "basel-ch",
+    "displayName": "Basel",
+    "country": "Switzerland",
+    "countryCode": "CH",
+    "lat": 47.5596,
+    "lng": 7.5886,
+    "aliases": [
+      "Bâle",
+      "Basle"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "lausanne-ch",
+    "displayName": "Lausanne",
+    "country": "Switzerland",
+    "countryCode": "CH",
+    "lat": 46.5197,
+    "lng": 6.6323,
+    "aliases": [],
+    "historicalNames": [
+      "Lausonna"
+    ]
+  },
+  {
+    "id": "bruges-be",
+    "displayName": "Bruges",
+    "country": "Belgium",
+    "countryCode": "BE",
+    "lat": 51.2093,
+    "lng": 3.2247,
+    "aliases": [
+      "Brugge"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "zaragoza-es",
+    "displayName": "Zaragoza",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 41.6488,
+    "lng": -0.8891,
+    "aliases": [
+      "Saragossa"
+    ],
+    "historicalNames": [
+      "Caesaraugusta"
+    ]
+  },
+  {
+    "id": "utrecht-nl",
+    "displayName": "Utrecht",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lat": 52.0907,
+    "lng": 5.1214,
+    "aliases": [],
+    "historicalNames": [
+      "Trajectum"
+    ]
+  },
+  {
+    "id": "granada-es",
+    "displayName": "Granada",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 37.1773,
+    "lng": -3.5986,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "malaga-es",
+    "displayName": "Málaga",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 36.7213,
+    "lng": -4.4214,
+    "aliases": [
+      "Malaga"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "coimbra-pt",
+    "displayName": "Coimbra",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "lat": 40.2033,
+    "lng": -8.4103,
+    "aliases": [],
+    "historicalNames": [
+      "Aeminium"
+    ]
+  },
+  {
+    "id": "changsha-cn",
+    "displayName": "Changsha",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 28.2282,
+    "lng": 112.9388,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "fort-de-france-mq",
+    "displayName": "Fort-de-France",
+    "country": "Martinique",
+    "countryCode": "MQ",
+    "lat": 14.6161,
+    "lng": -61.0588,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "gustavia-bl",
+    "displayName": "Gustavia",
+    "country": "Saint Barthélemy",
+    "countryCode": "BL",
+    "lat": 17.8962,
+    "lng": -62.8496,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "roseau-dm",
+    "displayName": "Roseau",
+    "country": "Dominica",
+    "countryCode": "DM",
+    "lat": 15.3092,
+    "lng": -61.3794,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "faro-pt",
+    "displayName": "Faro",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "lat": 37.0194,
+    "lng": -7.9304,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "funchal-pt",
+    "displayName": "Funchal",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "lat": 32.6669,
+    "lng": -16.9241,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "turku-fi",
+    "displayName": "Turku",
+    "country": "Finland",
+    "countryCode": "FI",
+    "lat": 60.4518,
+    "lng": 22.2666,
+    "aliases": [],
+    "historicalNames": [
+      "Åbo"
+    ]
+  },
+  {
+    "id": "cork-ie",
+    "displayName": "Cork",
+    "country": "Ireland",
+    "countryCode": "IE",
+    "lat": 51.8985,
+    "lng": -8.4756,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "glasgow-gb",
+    "displayName": "Glasgow",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 55.8642,
+    "lng": -4.2518,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cardiff-gb",
+    "displayName": "Cardiff",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 51.4816,
+    "lng": -3.1791,
+    "aliases": [
+      "Caerdydd"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "belfast-gb",
+    "displayName": "Belfast",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 54.5973,
+    "lng": -5.9301,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "izmir-tr",
+    "displayName": "Izmir",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "aliases": [],
+    "historicalNames": [
+      "Smyrna"
+    ],
+    "lat": 38.4237,
+    "lng": 27.1428
+  },
+  {
+    "id": "aden-ye",
+    "displayName": "Aden",
+    "country": "Yemen",
+    "countryCode": "YE",
+    "aliases": [],
+    "historicalNames": [
+      "Aden Settlement",
+      "Colony of Aden"
+    ],
+    "lat": 12.7797,
+    "lng": 45.0095
+  },
+  {
+    "id": "bursa-tr",
+    "displayName": "Bursa",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "aliases": [],
+    "historicalNames": [
+      "Brusa",
+      "Prusa"
+    ],
+    "lat": 40.1885,
+    "lng": 29.061
+  },
+  {
+    "id": "yaroslavl-ru",
+    "displayName": "Yaroslavl",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 57.6261,
+    "lng": 39.8845,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nizhny-novgorod-ru",
+    "displayName": "Nizhny Novgorod",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 56.2965,
+    "lng": 43.9361,
+    "aliases": [],
+    "historicalNames": [
+      "Gorky"
+    ]
+  },
+  {
+    "id": "volgograd-ru",
+    "displayName": "Volgograd",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 48.708,
+    "lng": 44.5133,
+    "aliases": [],
+    "historicalNames": [
+      "Tsaritsyn",
+      "Stalingrad"
+    ]
+  },
+  {
+    "id": "rostov-on-don-ru",
+    "displayName": "Rostov-on-Don",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 47.2357,
+    "lng": 39.7015,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "irkutsk-ru",
+    "displayName": "Irkutsk",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 52.2978,
+    "lng": 104.2964,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tomsk-ru",
+    "displayName": "Tomsk",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 56.4977,
+    "lng": 84.9744,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "omsk-ru",
+    "displayName": "Omsk",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 54.9885,
+    "lng": 73.3242,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "vladivostok-ru",
+    "displayName": "Vladivostok",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 43.1198,
+    "lng": 131.8869,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "jammu-in",
+    "displayName": "Jammu",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 32.7266,
+    "lng": 74.857,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "madurai-in",
+    "displayName": "Madurai",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 9.9252,
+    "lng": 78.1198,
+    "aliases": [
+      "Madura"
+    ],
+    "historicalNames": [
+      "Madura"
+    ]
+  },
+  {
+    "id": "tiruchirappalli-in",
+    "displayName": "Tiruchirappalli",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 10.7905,
+    "lng": 78.7047,
+    "aliases": [
+      "Trichy"
+    ],
+    "historicalNames": [
+      "Trichinopoly"
+    ]
+  },
+  {
+    "id": "orebro-se",
+    "displayName": "Örebro",
+    "country": "Sweden",
+    "countryCode": "SE",
+    "lat": 59.2753,
+    "lng": 15.2134,
+    "aliases": [
+      "Orebro"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "norrkoping-se",
+    "displayName": "Norrköping",
+    "country": "Sweden",
+    "countryCode": "SE",
+    "lat": 58.5877,
+    "lng": 16.1924,
+    "aliases": [
+      "Norrkoping"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "tromso-no",
+    "displayName": "Tromsø",
+    "country": "Norway",
+    "countryCode": "NO",
+    "lat": 69.6492,
+    "lng": 18.9553,
+    "aliases": [
+      "Tromso"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "esbjerg-dk",
+    "displayName": "Esbjerg",
+    "country": "Denmark",
+    "countryCode": "DK",
+    "lat": 55.4765,
+    "lng": 8.4594,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "oulu-fi",
+    "displayName": "Oulu",
+    "country": "Finland",
+    "countryCode": "FI",
+    "lat": 65.0121,
+    "lng": 25.4651,
+    "aliases": [],
+    "historicalNames": [
+      "Uleåborg"
+    ]
+  },
+  {
+    "id": "vaasa-fi",
+    "displayName": "Vaasa",
+    "country": "Finland",
+    "countryCode": "FI",
+    "lat": 63.0951,
+    "lng": 21.6165,
+    "aliases": [
+      "Vasa"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "rovaniemi-fi",
+    "displayName": "Rovaniemi",
+    "country": "Finland",
+    "countryCode": "FI",
+    "lat": 66.5039,
+    "lng": 25.7294,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tartu-ee",
+    "displayName": "Tartu",
+    "country": "Estonia",
+    "countryCode": "EE",
+    "lat": 58.378,
+    "lng": 26.729,
+    "aliases": [],
+    "historicalNames": [
+      "Dorpat",
+      "Yuryev"
+    ]
+  },
+  {
+    "id": "narva-ee",
+    "displayName": "Narva",
+    "country": "Estonia",
+    "countryCode": "EE",
+    "lat": 59.3773,
+    "lng": 28.1903,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "meerut-in",
+    "displayName": "Meerut",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 28.9845,
+    "lng": 77.7064,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "prayagraj-in",
+    "displayName": "Prayagraj",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 25.4358,
+    "lng": 81.8463,
+    "aliases": [
+      "Allahabad"
+    ],
+    "historicalNames": [
+      "Allahabad",
+      "Prayag"
+    ]
+  },
+  {
+    "id": "bhaktapur-np",
+    "displayName": "Bhaktapur",
+    "country": "Nepal",
+    "countryCode": "NP",
+    "lat": 27.671,
+    "lng": 85.4298,
+    "aliases": [],
+    "historicalNames": [
+      "Bhatgaon"
+    ]
+  },
+  {
+    "id": "patan-np",
+    "displayName": "Patan",
+    "country": "Nepal",
+    "countryCode": "NP",
+    "lat": 27.6588,
+    "lng": 85.3247,
+    "aliases": [
+      "Lalitpur"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "solapur-in",
+    "displayName": "Solapur",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 17.6599,
+    "lng": 75.9064,
+    "aliases": [],
+    "historicalNames": [
+      "Sholapur"
+    ]
+  },
+  {
+    "id": "mangalore-in",
+    "displayName": "Mangalore",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 12.9141,
+    "lng": 74.856,
+    "aliases": [
+      "Mangaluru"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "canberra-au",
+    "displayName": "Canberra",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -35.2809,
+    "lng": 149.13,
+    "aliases": [
+      "ACT"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "geelong-au",
+    "displayName": "Geelong",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -38.1499,
+    "lng": 144.3617,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "himeji-jp",
+    "displayName": "Himeji",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 34.8394,
+    "lng": 134.6939,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "hakodate-jp",
+    "displayName": "Hakodate",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 41.7687,
+    "lng": 140.7288,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kumamoto-jp",
+    "displayName": "Kumamoto",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 32.8032,
+    "lng": 130.7079,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nikko-jp",
+    "displayName": "Nikko",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 36.7198,
+    "lng": 139.6982,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kagoshima-jp",
+    "displayName": "Kagoshima",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 31.5966,
+    "lng": 130.5571,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "shimonoseki-jp",
+    "displayName": "Shimonoseki",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 33.95,
+    "lng": 130.9333,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tainan-tw",
+    "displayName": "Tainan",
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "lat": 22.9997,
+    "lng": 120.227,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "chiayi-tw",
+    "displayName": "Chiayi",
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "lat": 23.4801,
+    "lng": 120.4491,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kaesong-kp",
+    "displayName": "Kaesong",
+    "country": "North Korea",
+    "countryCode": "KP",
+    "lat": 37.97,
+    "lng": 126.55,
+    "aliases": [],
+    "historicalNames": [
+      "Songdo"
+    ]
+  },
+  {
+    "id": "toowoomba-au",
+    "displayName": "Toowoomba",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -27.5598,
+    "lng": 151.9507,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "ballarat-au",
+    "displayName": "Ballarat",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -37.5622,
+    "lng": 143.8503,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bendigo-au",
+    "displayName": "Bendigo",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -36.757,
+    "lng": 144.2794,
+    "aliases": [],
+    "historicalNames": [
+      "Sandhurst"
+    ]
+  },
+  {
+    "id": "broken-hill-au",
+    "displayName": "Broken Hill",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -31.9538,
+    "lng": 141.4539,
+    "aliases": [
+      "Silver City"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "launceston-au",
+    "displayName": "Launceston",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -41.4332,
+    "lng": 147.1441,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "wollongong-au",
+    "displayName": "Wollongong",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -34.4278,
+    "lng": 150.8931,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "townsville-au",
+    "displayName": "Townsville",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -19.259,
+    "lng": 146.8169,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cairns-au",
+    "displayName": "Cairns",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -16.9186,
+    "lng": 145.7781,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "sao-tome-st",
+    "displayName": "São Tomé",
+    "country": "Sao Tome and Principe",
+    "countryCode": "ST",
+    "lat": 0.3365,
+    "lng": 6.7273,
+    "aliases": [
+      "Sao Tome",
+      "San Thomé"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "yantai-cn",
+    "displayName": "Yantai",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 37.4638,
+    "lng": 121.4478,
+    "aliases": [],
+    "historicalNames": [
+      "Chefoo"
+    ]
+  },
+  {
+    "id": "weihai-cn",
+    "displayName": "Weihai",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 37.5128,
+    "lng": 122.1201,
+    "aliases": [],
+    "historicalNames": [
+      "Weihaiwei"
+    ]
+  },
+  {
+    "id": "nelson-nz",
+    "displayName": "Nelson",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -41.2706,
+    "lng": 173.284,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "napier-nz",
+    "displayName": "Napier",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -39.4928,
+    "lng": 176.912,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "invercargill-nz",
+    "displayName": "Invercargill",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -46.4132,
+    "lng": 168.3538,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "palmerston-north-nz",
+    "displayName": "Palmerston North",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -40.3523,
+    "lng": 175.6082,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "hamilton-nz",
+    "displayName": "Hamilton",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -37.787,
+    "lng": 175.2793,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "rotorua-nz",
+    "displayName": "Rotorua",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -38.1368,
+    "lng": 176.2497,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "jilin-cn",
+    "displayName": "Jilin City",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 43.8378,
+    "lng": 126.5495,
+    "aliases": [
+      "Kirin"
+    ],
+    "historicalNames": [
+      "Girin"
+    ]
+  },
+  {
+    "id": "koror-pw",
+    "displayName": "Koror",
+    "country": "Palau",
+    "countryCode": "PW",
+    "lat": 7.3419,
+    "lng": 134.4791,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "hagatna-gu",
+    "displayName": "Hagåtña",
+    "country": "Guam",
+    "countryCode": "GU",
+    "lat": 13.4745,
+    "lng": 144.7504,
+    "aliases": [
+      "Agana"
+    ],
+    "historicalNames": [
+      "Agana"
+    ]
+  },
+  {
+    "id": "pointe-noire-cg",
+    "displayName": "Pointe-Noire",
+    "country": "Republic of the Congo",
+    "countryCode": "CG",
+    "lat": -4.7761,
+    "lng": 11.8636,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "salta-ar",
+    "displayName": "Salta",
+    "country": "Argentina",
+    "countryCode": "AR",
+    "lat": -24.7859,
+    "lng": -65.4117,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "louisville-us",
+    "displayName": "Louisville",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 38.2527,
+    "lng": -85.7585,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "minneapolis-us",
+    "displayName": "Minneapolis",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 44.9778,
+    "lng": -93.265,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "st-paul-us",
+    "displayName": "St. Paul",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 44.9537,
+    "lng": -93.09,
+    "aliases": [
+      "Saint Paul"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "kansas-city-us",
+    "displayName": "Kansas City",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.0997,
+    "lng": -94.5786,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "trieste-it",
+    "displayName": "Trieste",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 45.6495,
+    "lng": 13.7768,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "antofagasta-cl",
+    "displayName": "Antofagasta",
+    "country": "Chile",
+    "countryCode": "CL",
+    "lat": -23.6509,
+    "lng": -70.3975,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "san-miguel-de-tucuman-ar",
+    "displayName": "San Miguel de Tucumán",
+    "country": "Argentina",
+    "countryCode": "AR",
+    "lat": -26.8083,
+    "lng": -65.2176,
+    "aliases": [
+      "Tucuman"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "bucaramanga-co",
+    "displayName": "Bucaramanga",
+    "country": "Colombia",
+    "countryCode": "CO",
+    "lat": 7.1193,
+    "lng": -73.1227,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "columbus-oh-us",
+    "displayName": "Columbus",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.9612,
+    "lng": -82.9988,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "nashville-us",
+    "displayName": "Nashville",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "memphis-us",
+    "displayName": "Memphis",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 35.1495,
+    "lng": -90.049,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "austin-us",
+    "displayName": "Austin",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 30.2672,
+    "lng": -97.7431,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "el-paso-us",
+    "displayName": "El Paso",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 31.7619,
+    "lng": -106.485,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "little-rock-us",
+    "displayName": "Little Rock",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 34.7465,
+    "lng": -92.2896,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "jackson-ms-us",
+    "displayName": "Jackson",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 32.2988,
+    "lng": -90.1848,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "mobile-us",
+    "displayName": "Mobile",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 30.6954,
+    "lng": -88.0399,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "potosi-bo",
+    "displayName": "Potosí",
+    "country": "Bolivia",
+    "countryCode": "BO",
+    "lat": -19.5836,
+    "lng": -65.7531,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "tallahassee-us",
+    "displayName": "Tallahassee",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 30.4383,
+    "lng": -84.2807,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "milwaukee-us",
+    "displayName": "Milwaukee",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 43.0389,
+    "lng": -87.9065,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "boise-us",
+    "displayName": "Boise",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 43.615,
+    "lng": -116.2023,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "corrientes-ar",
+    "displayName": "Corrientes",
+    "country": "Argentina",
+    "countryCode": "AR",
+    "lat": -27.4806,
+    "lng": -58.8341,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "helena-us",
+    "displayName": "Helena",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 46.5891,
+    "lng": -112.0391,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cheyenne-us",
+    "displayName": "Cheyenne",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 41.14,
+    "lng": -104.8202,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "anchorage-us",
+    "displayName": "Anchorage",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 61.2181,
+    "lng": -149.9003,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "spokane-us",
+    "displayName": "Spokane",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 47.6588,
+    "lng": -117.426,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "albuquerque-us",
+    "displayName": "Albuquerque",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 35.0844,
+    "lng": -106.6504,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "san-antonio-us",
+    "displayName": "San Antonio",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 29.4241,
+    "lng": -98.4936,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "oklahoma-city-us",
+    "displayName": "Oklahoma City",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 35.4676,
+    "lng": -97.5164,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "verona-it",
+    "displayName": "Verona",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 45.4384,
+    "lng": 10.9916,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "modena-it",
+    "displayName": "Modena",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 44.6471,
+    "lng": 10.9252,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "pisa-it",
+    "displayName": "Pisa",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 43.7228,
+    "lng": 10.4017,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "siena-it",
+    "displayName": "Siena",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 43.3188,
+    "lng": 11.3308,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "catania-it",
+    "displayName": "Catania",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 37.5079,
+    "lng": 15.083,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "messina-it",
+    "displayName": "Messina",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 38.1938,
+    "lng": 15.554,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cagliari-it",
+    "displayName": "Cagliari",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 39.2238,
+    "lng": 9.1217,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "indianapolis-us",
+    "displayName": "Indianapolis",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.7684,
+    "lng": -86.1581,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "toledo-es",
+    "displayName": "Toledo",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 39.8628,
+    "lng": -4.0273,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "salamanca-es",
+    "displayName": "Salamanca",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 40.9701,
+    "lng": -5.6635,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cadiz-es",
+    "displayName": "Cádiz",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 36.5297,
+    "lng": -6.2925,
+    "aliases": [
+      "Cadiz"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "murcia-es",
+    "displayName": "Murcia",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 37.9922,
+    "lng": -1.1307,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "braga-pt",
+    "displayName": "Braga",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "lat": 41.5454,
+    "lng": -8.4265,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cordoba-es",
+    "displayName": "Córdoba",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 37.8882,
+    "lng": -4.7794,
+    "aliases": [
+      "Cordoba"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "omaha-us",
+    "displayName": "Omaha",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 41.2565,
+    "lng": -95.9345,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "des-moines-us",
+    "displayName": "Des Moines",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 41.5868,
+    "lng": -93.625,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "wichita-us",
+    "displayName": "Wichita",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 37.6872,
+    "lng": -97.3301,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "thessaloniki-gr",
+    "displayName": "Thessaloniki",
+    "country": "Greece",
+    "countryCode": "GR",
+    "lat": 40.6401,
+    "lng": 22.9444,
+    "aliases": [
+      "Salonica"
+    ],
+    "historicalNames": [
+      "Salonique",
+      "Selanik"
+    ]
+  },
+  {
+    "id": "skopje-mk",
+    "displayName": "Skopje",
+    "country": "North Macedonia",
+    "countryCode": "MK",
+    "lat": 41.9973,
+    "lng": 21.428,
+    "aliases": [],
+    "historicalNames": [
+      "Uskub",
+      "Üsküb"
+    ]
+  },
+  {
+    "id": "podgorica-me",
+    "displayName": "Podgorica",
+    "country": "Montenegro",
+    "countryCode": "ME",
+    "lat": 42.4304,
+    "lng": 19.2594,
+    "aliases": [],
+    "historicalNames": [
+      "Podgoritza",
+      "Titograd"
+    ]
+  },
+  {
+    "id": "pristina-xk",
+    "displayName": "Pristina",
+    "country": "Kosovo",
+    "countryCode": "XK",
+    "lat": 42.6629,
+    "lng": 21.1655,
+    "aliases": [
+      "Prishtina"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "raleigh-us",
+    "displayName": "Raleigh",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 35.7796,
+    "lng": -78.6382,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "norfolk-us",
+    "displayName": "Norfolk",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 36.8508,
+    "lng": -76.2859,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "richmond-us",
+    "displayName": "Richmond",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 37.5407,
+    "lng": -77.436,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "hartford-us",
+    "displayName": "Hartford",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 41.7658,
+    "lng": -72.6734,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "providence-us",
+    "displayName": "Providence",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 41.824,
+    "lng": -71.4128,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "liege-be",
+    "displayName": "Liège",
+    "country": "Belgium",
+    "countryCode": "BE",
+    "lat": 50.6326,
+    "lng": 5.5797,
+    "aliases": [
+      "Liege"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "namur-be",
+    "displayName": "Namur",
+    "country": "Belgium",
+    "countryCode": "BE",
+    "lat": 50.4674,
+    "lng": 4.872,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "groningen-nl",
+    "displayName": "Groningen",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lat": 53.2194,
+    "lng": 6.5665,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "montpellier-fr",
+    "displayName": "Montpellier",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 43.6108,
+    "lng": 3.8767,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "dijon-fr",
+    "displayName": "Dijon",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 47.322,
+    "lng": 5.0415,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "le-havre-fr",
+    "displayName": "Le Havre",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 49.4944,
+    "lng": 0.1079,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "albany-us",
+    "displayName": "Albany",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 42.6526,
+    "lng": -73.7562,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "rochester-us",
+    "displayName": "Rochester",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 43.1566,
+    "lng": -77.6088,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "syracuse-us",
+    "displayName": "Syracuse",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 43.0481,
+    "lng": -76.1474,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "pittsburgh-us",
+    "displayName": "Pittsburgh",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 40.4406,
+    "lng": -79.9959,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cleveland-us",
+    "displayName": "Cleveland",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 41.4993,
+    "lng": -81.6944,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bismarck-us",
+    "displayName": "Bismarck",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 46.8083,
+    "lng": -100.7837,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "pierre-us",
+    "displayName": "Pierre",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 44.3683,
+    "lng": -100.351,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "fargo-us",
+    "displayName": "Fargo",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 46.8772,
+    "lng": -96.7898,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "sioux-falls-us",
+    "displayName": "Sioux Falls",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 43.5446,
+    "lng": -96.7311,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "winnipeg-ca",
+    "displayName": "Winnipeg",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 49.8951,
+    "lng": -97.1384,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "edmonton-ca",
+    "displayName": "Edmonton",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 53.5461,
+    "lng": -113.4938,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "saskatoon-ca",
+    "displayName": "Saskatoon",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 52.1332,
+    "lng": -106.67,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "regina-ca",
+    "displayName": "Regina",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 50.4452,
+    "lng": -104.6189,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "london-on-ca",
+    "displayName": "London",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 42.9849,
+    "lng": -81.2453,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "kitchener-ca",
+    "displayName": "Kitchener",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 43.4516,
+    "lng": -80.4925,
+    "aliases": [],
+    "historicalNames": [
+      "Berlin"
+    ]
+  },
+  {
+    "id": "st-johns-ca",
+    "displayName": "St. John's",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 47.5615,
+    "lng": -52.7126,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "fredericton-ca",
+    "displayName": "Fredericton",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 45.9636,
+    "lng": -66.6431,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "charlottetown-ca",
+    "displayName": "Charlottetown",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 46.2382,
+    "lng": -63.1311,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "aguascalientes-mx",
+    "displayName": "Aguascalientes",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 21.8853,
+    "lng": -102.2916,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "durango-mx",
+    "displayName": "Durango",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 24.0277,
+    "lng": -104.6532,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "chihuahua-mx",
+    "displayName": "Chihuahua",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 28.6353,
+    "lng": -106.0889,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "mazatlan-mx",
+    "displayName": "Mazatlán",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 23.2494,
+    "lng": -106.4111,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "hermosillo-mx",
+    "displayName": "Hermosillo",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 29.0729,
+    "lng": -110.9559,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "morelia-mx",
+    "displayName": "Morelia",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 19.7059,
+    "lng": -101.1949,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "toluca-mx",
+    "displayName": "Toluca",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 19.2926,
+    "lng": -99.6557,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cuernavaca-mx",
+    "displayName": "Cuernavaca",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 18.9242,
+    "lng": -99.2216,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "colima-mx",
+    "displayName": "Colima",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 19.2433,
+    "lng": -103.7247,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "torreon-mx",
+    "displayName": "Torreón",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 25.5428,
+    "lng": -103.4068,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "culiacan-mx",
+    "displayName": "Culiacán",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 24.8091,
+    "lng": -107.394,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "san-jose-cr",
+    "displayName": "San José",
+    "country": "Costa Rica",
+    "countryCode": "CR",
+    "lat": 9.9281,
+    "lng": -84.0907,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "colon-pa",
+    "displayName": "Colón",
+    "country": "Panama",
+    "countryCode": "PA",
+    "lat": 9.3547,
+    "lng": -79.9014,
+    "aliases": [],
+    "historicalNames": [
+      "Aspinwall"
+    ]
+  },
+  {
+    "id": "bangalore-in",
+    "displayName": "Bangalore",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 12.9716,
+    "lng": 77.5946,
+    "aliases": [
+      "Bengaluru"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "jhansi-in",
+    "displayName": "Jhansi",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 25.4484,
+    "lng": 78.5685,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "port-blair-in",
+    "displayName": "Port Blair",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 11.6234,
+    "lng": 92.7265,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "karlsruhe-de",
+    "displayName": "Karlsruhe",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 49.0069,
+    "lng": 8.4037,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "mannheim-de",
+    "displayName": "Mannheim",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 49.4875,
+    "lng": 8.466,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "wiesbaden-de",
+    "displayName": "Wiesbaden",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 50.0782,
+    "lng": 8.2398,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "mainz-de",
+    "displayName": "Mainz",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 49.9929,
+    "lng": 8.2473,
+    "aliases": [],
+    "historicalNames": [
+      "Mayence"
+    ]
+  },
+  {
+    "id": "freiburg-de",
+    "displayName": "Freiburg",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 47.999,
+    "lng": 7.8421,
+    "aliases": [
+      "Freiburg im Breisgau"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "regensburg-de",
+    "displayName": "Regensburg",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 49.0134,
+    "lng": 12.1016,
+    "aliases": [],
+    "historicalNames": [
+      "Ratisbon"
+    ]
+  },
+  {
+    "id": "augsburg-de",
+    "displayName": "Augsburg",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 48.3705,
+    "lng": 10.8978,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "wurzburg-de",
+    "displayName": "Würzburg",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 49.7913,
+    "lng": 9.9534,
+    "aliases": [
+      "Wurzburg"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "kiel-de",
+    "displayName": "Kiel",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 54.3233,
+    "lng": 10.1228,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "magdeburg-de",
+    "displayName": "Magdeburg",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 52.1205,
+    "lng": 11.6276,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "erfurt-de",
+    "displayName": "Erfurt",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 50.9787,
+    "lng": 11.0328,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "potsdam-de",
+    "displayName": "Potsdam",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 52.3906,
+    "lng": 13.0645,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "aachen-de",
+    "displayName": "Aachen",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 50.7753,
+    "lng": 6.0839,
+    "aliases": [],
+    "historicalNames": [
+      "Aix-la-Chapelle"
+    ]
+  },
+  {
+    "id": "leeds-gb",
+    "displayName": "Leeds",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 53.8008,
+    "lng": -1.5491,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "sheffield-gb",
+    "displayName": "Sheffield",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 53.3811,
+    "lng": -1.4701,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bristol-gb",
+    "displayName": "Bristol",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 51.4545,
+    "lng": -2.5879,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "newcastle-upon-tyne-gb",
+    "displayName": "Newcastle upon Tyne",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 54.9783,
+    "lng": -1.6178,
+    "aliases": [
+      "Newcastle"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "nottingham-gb",
+    "displayName": "Nottingham",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 52.9548,
+    "lng": -1.1581,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "leicester-gb",
+    "displayName": "Leicester",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 52.6369,
+    "lng": -1.1398,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "coventry-gb",
+    "displayName": "Coventry",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 52.4068,
+    "lng": -1.5197,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "aberdeen-gb",
+    "displayName": "Aberdeen",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 57.1497,
+    "lng": -2.0943,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "inverness-gb",
+    "displayName": "Inverness",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 57.4778,
+    "lng": -4.2247,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "dundee-gb",
+    "displayName": "Dundee",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 56.462,
+    "lng": -2.9707,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "bath-gb",
+    "displayName": "Bath",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 51.3811,
+    "lng": -2.359,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "york-gb",
+    "displayName": "York",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 53.96,
+    "lng": -1.0873,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "oxford-gb",
+    "displayName": "Oxford",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 51.752,
+    "lng": -1.2577,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "cambridge-gb",
+    "displayName": "Cambridge",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 52.2053,
+    "lng": 0.1218,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "limerick-ie",
+    "displayName": "Limerick",
+    "country": "Ireland",
+    "countryCode": "IE",
+    "lat": 52.6638,
+    "lng": -8.6267,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "galway-ie",
+    "displayName": "Galway",
+    "country": "Ireland",
+    "countryCode": "IE",
+    "lat": 53.2707,
+    "lng": -9.0568,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "waterford-ie",
+    "displayName": "Waterford",
+    "country": "Ireland",
+    "countryCode": "IE",
+    "lat": 52.2593,
+    "lng": -7.1101,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "antalya-tr",
+    "displayName": "Antalya",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lat": 36.8969,
+    "lng": 30.7133,
+    "aliases": [],
+    "historicalNames": [
+      "Adalia",
+      "Attalia"
+    ]
+  },
+  {
+    "id": "konya-tr",
+    "displayName": "Konya",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lat": 37.8746,
+    "lng": 32.4932,
+    "aliases": [],
+    "historicalNames": [
+      "Konieh",
+      "Iconium"
+    ]
+  },
+  {
+    "id": "trabzon-tr",
+    "displayName": "Trabzon",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lat": 41.0027,
+    "lng": 39.7168,
+    "aliases": [],
+    "historicalNames": [
+      "Trebizond",
+      "Trapezus"
+    ]
+  },
+  {
+    "id": "gaziantep-tr",
+    "displayName": "Gaziantep",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lat": 37.0662,
+    "lng": 37.3833,
+    "aliases": [],
+    "historicalNames": [
+      "Aintab",
+      "Ayntab"
+    ]
+  },
+  {
+    "id": "qom-ir",
+    "displayName": "Qom",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 34.6401,
+    "lng": 50.8764,
+    "aliases": [
+      "Qum",
+      "Ghom"
+    ],
+    "historicalNames": []
+  },
+  {
+    "id": "rasht-ir",
+    "displayName": "Rasht",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 37.2808,
+    "lng": 49.5832,
+    "aliases": [],
+    "historicalNames": [
+      "Resht",
+      "Rescht"
+    ]
+  },
+  {
+    "id": "kerman-ir",
+    "displayName": "Kerman",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 30.2839,
+    "lng": 57.0834,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "yazd-ir",
+    "displayName": "Yazd",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 31.8974,
+    "lng": 54.3569,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "adana-tr",
+    "displayName": "Adana",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lat": 37,
+    "lng": 35.3213,
+    "aliases": [],
+    "historicalNames": []
+  },
+  {
+    "id": "eskisehir-tr",
+    "displayName": "Eskişehir",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lat": 39.7767,
+    "lng": 30.5206,
+    "aliases": [
+      "Eskisehir"
+    ],
+    "historicalNames": [
+      "Dorylaeum"
+    ]
+  },
+  {
+    "id": "bishkek-kg",
+    "displayName": "Bishkek",
+    "country": "Kyrgyzstan",
+    "countryCode": "KG",
+    "lat": 42.8746,
+    "lng": 74.5698,
+    "aliases": [],
+    "historicalNames": [
+      "Pishpek",
+      "Frunze"
+    ]
   }
 ]
