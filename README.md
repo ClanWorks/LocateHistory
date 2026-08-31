@@ -3,7 +3,7 @@
 **[Play it: locatehistory.com](https://locatehistory.com)**
 
 A GeoGuessr-style game: you're shown a historical photograph, painting,
-or drawing and have to guess which city it depicts. Ten rounds per
+or drawing and have to guess which city it depicts. Five rounds per
 session, three optional clues (region, era, country — each costs
 points), a countdown timer, distance-based scoring, and a reveal screen
 with a map, historical context, and full source attribution.
