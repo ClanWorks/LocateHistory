@@ -1,6 +1,6 @@
 # LocateHistory
 
-**[Play it: photolocation.pages.dev](https://photolocation.pages.dev)** (moving to locatehistory.com)
+**[Play it: locatehistory.com](https://locatehistory.com)**
 
 A GeoGuessr-style game: you're shown a historical photograph, painting,
 or drawing and have to guess which city it depicts. Ten rounds per
@@ -150,8 +150,10 @@ still has `firebase.json`/`.firebaserc` from the project's earlier
 Firestore-based version, which work fine for pure static hosting too),
 or a plain file server.
 
-**Live v1 deployment:** [photolocation.pages.dev](https://photolocation.pages.dev)
-(Cloudflare Pages, project name `photolocation`).
+**Live v1 deployment:** [locatehistory.com](https://locatehistory.com)
+(Cloudflare Pages, project name `photolocation`, custom domain
+`locatehistory.com` attached — the underlying `photolocation.pages.dev`
+subdomain still works too).
 
 To deploy a new version after changing `public/`:
 
